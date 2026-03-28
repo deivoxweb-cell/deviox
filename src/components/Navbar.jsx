@@ -38,7 +38,7 @@ const Navbar = () => {
               <Link to="/" className="flex items-center group">
                 <div className="relative transition-transform duration-300 group-hover:scale-110">
                   <img
-                    src="/images/logo.png"
+                    src="/images/Logo.png"
                     alt="Deivox Logo"
                     width={100}
                     height={120}

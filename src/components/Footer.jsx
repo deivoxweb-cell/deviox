@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="lg:col-span-4">
               <div className="mb-8">
                 <img
-                  src="/images/logo.png"
+                  src="/images/Logo.png"
                   alt="DEI VOX Logo"
                   width={140}
                   height={56}

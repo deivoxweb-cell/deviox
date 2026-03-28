@@ -30,7 +30,7 @@ const AboutSection = () => {
             {/* Logo box */}
             <div className="w-full bg-primary rounded-3xl p-10 flex items-center justify-center shadow-2xl shadow-primary/20">
               <img
-                src="/images/logo.png"
+                src="/images/Logo.png"
                 alt="DEI VOX Logo"
                 width={220}
                 height={220}

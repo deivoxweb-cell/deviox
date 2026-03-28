@@ -58,7 +58,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <div className="bg-primary rounded-3xl p-10 flex items-center justify-center shadow-2xl shadow-primary/20">
-              <img src="/images/logo.png" alt="DEI VOX Logo" width={200} height={200} className="object-contain brightness-0 invert" />
+              <img src="/images/Logo.png" alt="DEI VOX Logo" width={200} height={200} className="object-contain brightness-0 invert" />
             </div>
           </div>
           <div className="lg:col-span-8 space-y-6 text-foreground/70 leading-relaxed">
