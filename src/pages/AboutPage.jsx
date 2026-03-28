@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { CheckCircle2, MapPin, Award, Users, Target, Lightbulb } from "lucide-react";
+import { CheckCircle2, Award, Users, Lightbulb } from "lucide-react";
 
 const capabilities = [
   "BCP Consultancy (Sales & Marketing)",
@@ -37,7 +36,7 @@ const team = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-24  bg-white">
+    <div className="pt-24 bg-white">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
@@ -59,7 +58,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <div className="bg-primary rounded-3xl p-10 flex items-center justify-center shadow-2xl shadow-primary/20">
-              <Image src="/images/logo.png" alt="DEI VOX Logo" width={200} height={200} className="object-contain brightness-0 invert" />
+              <img src="/images/logo.png" alt="DEI VOX Logo" width={200} height={200} className="object-contain brightness-0 invert" />
             </div>
           </div>
           <div className="lg:col-span-8 space-y-6 text-foreground/70 leading-relaxed">

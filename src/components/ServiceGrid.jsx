@@ -1,9 +1,6 @@
-"use client";
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -52,7 +49,7 @@ const SERVICES = [
     image: "/images/reverse_engineering.png",
     bg: "from-[#111111] to-[#2a2a2a]",
   },
-] as const;
+];
 
 const CARD_STYLES = {
   mobile: [
@@ -65,21 +62,19 @@ const CARD_STYLES = {
     { scale: 0.85, opacity: 1, width: 320, height: 480, xFactor: 240, zIndex: 20 },
     { scale: 0.7, opacity: 1, width: 260, height: 420, xFactor: 450, zIndex: 10 },
   ],
-} as const;
+};
 
-function getCardStyle(offset: number, isMobile: boolean) {
+function getCardStyle(offset, isMobile) {
   const absOffset = Math.abs(offset);
   if (absOffset > 2) return null;
 
-  const { xFactor, ...rest } = isMobile
-    ? CARD_STYLES.mobile[absOffset]
-    : CARD_STYLES.desktop[absOffset];
+  const styles = isMobile ? CARD_STYLES.mobile[absOffset] : CARD_STYLES.desktop[absOffset];
+  const { xFactor, ...rest } = styles;
 
   return { ...rest, x: offset < 0 ? -xFactor : xFactor };
 }
 
-// ✅ Fixed: clean bidirectional offset with proper wrapping
-function getOffset(cardIndex: number, activeIndex: number) {
+function getOffset(cardIndex, activeIndex) {
   const total = SERVICES.length;
   let offset = cardIndex - activeIndex;
   if (offset > Math.floor(total / 2)) offset -= total;
@@ -90,7 +85,7 @@ function getOffset(cardIndex: number, activeIndex: number) {
 export default function ServiceGrid() {
   const [activeIndex, setActiveIndex] = useState(2);
   const isPaused = useRef(false);
-  const prevOffsets = useRef<Record<string, number>>({});
+  const prevOffsets = useRef({});
   const isMobile = useIsMobile();
 
   const advance = useCallback(() => {
@@ -104,7 +99,7 @@ export default function ServiceGrid() {
 
   return (
     <section
-      className="py-8 bg-[#f8f9fb] overflow-x-hidden"
+      className="py-16 bg-[#f8f9fb] overflow-x-hidden"
       onMouseEnter={() => { isPaused.current = true; }}
       onMouseLeave={() => { isPaused.current = false; }}
     >
@@ -162,18 +157,15 @@ export default function ServiceGrid() {
               >
                 {/* Top: image (55% height) */}
                 <div className="relative" style={{ height: "55%" }}>
-                  <Image
+                  <img
                     src={service.image}
                     alt={service.title}
-                    fill
-                    className={`object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100"}`}
+                    className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100"}`}
                   />
                   {/* Dark tint on side cards */}
                   {!isFocused && (
                     <div className="absolute inset-0 bg-black/50" />
                   )}
-                  {/* Accent ribbon top-left on focused */}
-
                 </div>
 
                 {/* Bottom: text panel */}
@@ -196,7 +188,7 @@ export default function ServiceGrid() {
                       <p className="text-foreground/60 text-[13px] font-semibold leading-relaxed flex-1 mb-4">
                         {service.description}
                       </p>
-                      <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <Link to={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
                         <button className="w-full py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white text-[10px] font-black uppercase tracking-widest transition-all active:scale-95 shadow-md shadow-accent/30">
                           Explore Solution
                         </button>

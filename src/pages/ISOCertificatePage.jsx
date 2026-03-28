@@ -1,9 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Award, Download, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import { Award, Download, ShieldCheck, CheckCircle2 } from "lucide-react";
 
-export default function IsoCertificatePage() {
+export default function ISOCertificatePage() {
   const certificates = [
     {
       id: "iso-9001",
@@ -86,11 +84,10 @@ export default function IsoCertificatePage() {
                     }`}
                   style={{ height: 480 }}
                 >
-                  <Image
+                  <img
                     src={cert.image}
                     alt={cert.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
                   {/* Number/Tag Overlay */}
                   <div className="absolute top-6 left-6 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-white/10">

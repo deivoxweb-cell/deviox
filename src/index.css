@@ -20,7 +20,7 @@
   --color-accent: var(--accent);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: "Inter", var(--font-geist-sans);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -28,6 +28,7 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", sans-serif;
 }
 
 @layer utilities {

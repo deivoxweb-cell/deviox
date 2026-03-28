@@ -1,7 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { CheckCircle2, Wrench, Zap, Settings, Package, Cog, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -82,7 +81,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24  bg-white">
+    <div className="pt-24 bg-white">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
@@ -114,11 +113,10 @@ export default function ServicesPage() {
               <div className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 ${i % 2 !== 0 ? "lg:order-2" : ""}`}
                 style={{ height: 360 }}
               >
-                <Image
+                <img
                   src={service.image}
                   alt={service.title}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
                 {/* Number overlay */}
                 <div className="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm text-white text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
@@ -161,7 +159,7 @@ export default function ServicesPage() {
           <p className="text-white/60 mb-10 max-w-xl mx-auto">
             Our team of experts is ready to assist you with specialized BCP maintenance, overhauling, and consultancy requirements.
           </p>
-          <Link href="/contact">
+          <Link to="/contact">
             <button className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-white font-black rounded-2xl tracking-widest uppercase shadow-xl shadow-accent/30 hover:-translate-y-0.5 transition-all active:scale-95">
               Get Technical Consultation <ArrowRight size={18} />
             </button>

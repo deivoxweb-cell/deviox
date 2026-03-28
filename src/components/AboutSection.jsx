@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, CheckCircle2, Phone } from "lucide-react";
 
@@ -32,7 +29,7 @@ const AboutSection = () => {
           >
             {/* Logo box */}
             <div className="w-full bg-primary rounded-3xl p-10 flex items-center justify-center shadow-2xl shadow-primary/20">
-              <Image
+              <img
                 src="/images/logo.png"
                 alt="DEI VOX Logo"
                 width={220}

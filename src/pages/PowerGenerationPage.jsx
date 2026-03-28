@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
-import { CheckCircle2, Zap, Settings, ShieldCheck, ClipboardCheck } from "lucide-react";
-import Link from "next/link";
+import { CheckCircle2, Settings, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function PowerGenerationPage() {
   return (
-    <div className="pt-24  bg-white">
+    <div className="pt-24 bg-white">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
@@ -57,11 +56,10 @@ export default function PowerGenerationPage() {
           </div>
 
           <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 h-[500px]">
-            <Image
+            <img
               src="/images/pump_rebuild.png"
               alt="Pump Rebuild and Maintenance"
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl">
               <div className="flex items-center gap-3 mb-2 text-accent">
@@ -87,12 +85,12 @@ export default function PowerGenerationPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact">
+              <Link to="/contact">
                 <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-2xl uppercase tracking-widest text-xs shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 active:scale-95">
                   Request an Inspection
                 </button>
               </Link>
-              <Link href="/services">
+              <Link to="/services">
                 <button className="px-8 py-4 border-2 border-primary/20 text-primary font-black rounded-2xl hover:bg-primary/5 uppercase tracking-widest text-xs transition-all">
                   Browse Services
                 </button>

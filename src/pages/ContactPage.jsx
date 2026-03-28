@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Paperclip } from "lucide-react";
 
@@ -27,11 +25,11 @@ export default function ContactPage() {
   });
   const [fileName, setFileName] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFile = (e) => {
     setFileName(e.target.files?.[0]?.name ?? "");
   };
 
@@ -147,7 +145,7 @@ export default function ContactPage() {
                     <input
                       name={field.id}
                       type={field.type}
-                      value={form[field.id as keyof typeof form]}
+                      value={form[field.id]}
                       onChange={handleChange}
                       placeholder={field.placeholder}
                       className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"

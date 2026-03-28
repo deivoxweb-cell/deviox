@@ -1,18 +1,9 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import NextImage from "next/image";
 
-interface NavLink {
-  name: string;
-  href: string;
-  hasDropdown?: boolean;
-}
-
-const navLinks: NavLink[] = [
+const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Power Generation", href: "/power-generation" },
@@ -44,9 +35,9 @@ const Navbar = () => {
           {/* Main Navbar Row */}
           <div className="flex justify-between items-center">
             <div className="shrink-0">
-              <Link href="/" className="flex items-center group">
+              <Link to="/" className="flex items-center group">
                 <div className="relative transition-transform duration-300 group-hover:scale-110">
-                  <NextImage
+                  <img
                     src="/images/logo.png"
                     alt="Deivox Logo"
                     width={100}
@@ -63,7 +54,7 @@ const Navbar = () => {
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative group">
                     <Link
-                      href={link.href}
+                      to={link.href}
                       className="text-sm font-black text-primary hover:text-accent transition-all uppercase tracking-tighter flex items-center gap-1.5"
                     >
                       {link.name}
@@ -117,7 +108,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="block text-xl font-black text-primary hover:text-accent uppercase tracking-tighter border-b border-primary/5 pb-4 last:border-0"
                   onClick={() => setIsOpen(false)}
                 >

@@ -1,10 +1,7 @@
-"use client";
-
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { MapPin, MessageSquare, Globe, Share2, Award, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import confetti from "canvas-confetti";
+import { MapPin, MessageSquare, Globe, Share2, Award, CheckCircle2 } from "lucide-react";
 
 const NAV_LINKS = {
   Company: [
@@ -37,7 +34,7 @@ const Footer = () => {
             {/* Brand block */}
             <div className="lg:col-span-4">
               <div className="mb-8">
-                <Image
+                <img
                   src="/images/logo.png"
                   alt="DEI VOX Logo"
                   width={140}
@@ -79,7 +76,7 @@ const Footer = () => {
                   {links.map((link) => (
                     <li key={link.label}>
                       <Link
-                        href={link.href}
+                        to={link.href}
                         className="text-xs text-white/50 hover:text-white font-bold uppercase tracking-wide transition-colors"
                       >
                         {link.label}
@@ -160,8 +157,8 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-4 text-[10px] font-black text-white/30 uppercase tracking-widest">
-              <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-              <Link href="#" className="hover:text-white transition-colors">Terms</Link>
+              <Link to="/" className="hover:text-white transition-colors">Privacy</Link>
+              <Link to="/" className="hover:text-white transition-colors">Terms</Link>
             </div>
 
           </div>

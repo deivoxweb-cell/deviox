@@ -1,13 +1,11 @@
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Phone } from "lucide-react";
-import Link from "next/link";
+import { Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden pt-45">
+    <section className="relative h-[90vh] flex items-center overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -66,12 +64,12 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
           >
-            <Link href="/services">
+            <Link to="/services">
               <button className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-accent hover:bg-accent/90 text-white font-black rounded-2xl transition-all shadow-xl shadow-accent/30 hover:-translate-y-0.5 uppercase tracking-widest text-sm active:scale-95">
                 Explore Services
               </button>
             </Link>
-            <Link href="/contact">
+            <Link to="/contact">
               <button className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white/10 transition-all uppercase tracking-widest text-sm">
                 <Phone size={16} />
                 Get a Free Consultation

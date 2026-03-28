@@ -1,7 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { CheckCircle2, ChevronRight, Settings } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const thermoplasticsUse = [
   { industry: "Aviation", desc: "Employed in aircraft bodies, panels, and cabin interiors to reduce overall weight and improve fuel economy without sacrificing strength." },
@@ -13,7 +12,7 @@ const thermoplasticsUse = [
 
 export default function CompositeMaterialPage() {
   return (
-    <div className="pt-24  bg-white">
+    <div className="pt-24 bg-white">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
@@ -96,11 +95,9 @@ export default function CompositeMaterialPage() {
             {/* Image Column */}
             <div className="lg:sticky lg:top-32">
               <div className="relative rounded-[40px] overflow-hidden shadow-2xl shadow-primary/10 border border-border group">
-                 <Image
+                 <img
                   src="/images/compositon.jpeg"
                   alt="Composite Materials Composition"
-                  width={1200}
-                  height={800}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent pointer-events-none" />
@@ -117,11 +114,10 @@ export default function CompositeMaterialPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 h-[450px]">
-                <Image
+                <img
                   src="/images/product_motor.png"
                   alt="Industrial Bearings"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -149,7 +145,7 @@ export default function CompositeMaterialPage() {
               </p>
 
               <div className="pt-6">
-                <Link href="/contact">
+                <Link to="/contact">
                   <button className="px-10 py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-xl uppercase tracking-widest text-xs shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 active:scale-95">
                     Enquire About Bearings
                   </button>
