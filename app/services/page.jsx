@@ -50,7 +50,7 @@ const services = [
 
 const ServiceScrollItem = ({ service, index, activeIndex, setActiveIndex }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
+  const isInView = useInView(ref, { margin: "-30% 0px -30% 0px" });
 
   useEffect(() => {
     if (isInView) setActiveIndex(index);
@@ -59,7 +59,7 @@ const ServiceScrollItem = ({ service, index, activeIndex, setActiveIndex }) => {
   const isActive = activeIndex === index;
 
   return (
-    <div ref={ref} className="min-h-[80vh] flex flex-col justify-center py-20">
+    <div ref={ref} className="min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center py-10 md:py-20">
       <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive ? "opacity-100 translate-x-0" : "opacity-20 -translate-x-8"}`}>
 
         <div className="flex items-center gap-6 mb-12">
@@ -116,18 +116,37 @@ export default function ServicesPage() {
   return (
     <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
 
-      {/* ── 1. Brutalist Hero ────────────────────────────── */}
-      <section className="relative min-h-[60svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white/2 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 opacity-10">
+      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
+      <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
+        {/* Massive Background Typography Mask with Parallax */}
+        <motion.div 
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
+          className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
+        >
           SERVICES
-        </div>
+        </motion.div>
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Core Solutions</p>
-          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8">
-            Precision<br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Engineering</span>.
-          </h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+          >
+            Core Solutions
+          </motion.p>
+          
+          <div className="overflow-hidden">
+            <motion.h1 
+              initial={{ opacity: 0, rotateX: 20, y: 40 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8"
+            >
+              Precision<br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Engineering</span>.
+            </motion.h1>
+          </div>
         </motion.div>
       </section>
 
@@ -149,8 +168,8 @@ export default function ServicesPage() {
           </div>
 
           {/* Right Sticky Image Pane (Desktop Only) */}
-          <div className="hidden lg:block w-7/12 sticky top-[15vh] h-[70vh] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950">
-            <AnimatePresence>
+          <div className="hidden lg:block w-7/12 sticky top-[15vh] h-[70vh] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950 z-10">
+            <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
                 initial={{ opacity: 0, scale: 1.05 }}
@@ -162,7 +181,7 @@ export default function ServicesPage() {
                 <img
                   src={services[activeIndex].image}
                   alt={services[activeIndex].title}
-                  className="w-full h-full object-cover mix-blend-luminosity opacity-80"
+                  className="w-full h-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-linear-to-tr from-primary/80 via-transparent to-transparent mix-blend-multiply" />
 

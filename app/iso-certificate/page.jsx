@@ -144,24 +144,46 @@ export default function ISOCertificatePage() {
   return (
     <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32 min-h-screen" ref={container}>
 
-      {/* ── 1. Brutalist Hero ────────────────────────────── */}
-      <section className="relative min-h-[60svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
-        <motion.div
-          className="absolute inset-0 z-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-20"
-          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"]) }}
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10 pointer-events-none" />
-
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 text-[180px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
-          ISO C.
-        </div>
+      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
+      <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
+        {/* Massive Background Typography Mask with Parallax */}
+        <motion.div 
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
+          className="absolute top-1/2 left-0 -translate-y-1/2 text-[150px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
+        >
+          ISO CERT
+        </motion.div>
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Quality Assured</p>
-          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8">
-            Global<br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Standards</span>
-          </h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+          >
+            Verified Compliance
+          </motion.p>
+          
+          <div className="overflow-hidden">
+            <motion.h1 
+              initial={{ opacity: 0, rotateX: 20, y: 40 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-7xl md:text-[8.5rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8"
+            >
+              Certified<br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Excellence</span>
+            </motion.h1>
+          </div>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed"
+          >
+            DEI VOX India maintains the highest international standards in quality, environment, and industrial safety. Lead with trust.
+          </motion.p>
         </motion.div>
       </section>
 

@@ -34,28 +34,47 @@ export default function CompositeMaterialPage() {
   return (
     <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
 
-      {/* ── 1. Brutalist Hero ────────────────────────────── */}
-      <section className="relative min-h-[70svh] lg:min-h-screen flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5">
-        <motion.div
-          className="absolute inset-0 z-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-30"
-          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"]) }}
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10 pointer-events-none" />
-
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 text-[150px] sm:text-[230px] md:text-[300px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
-          MATERIAL
-        </div>
+      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
+      <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 pb-12 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
+        {/* Massive Background Typography Mask with Parallax */}
+        <motion.div 
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
+          className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
+        >
+          COMPOSITES
+        </motion.div>
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Core Components</p>
-          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8">
-            Composite<br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Material</span>
-          </h1>
-          <p className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+          >
+            Core Components
+          </motion.p>
+          
+          <div className="overflow-hidden">
+            <motion.h1 
+              initial={{ opacity: 0, rotateX: 20, y: 40 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8"
+            >
+              Composite<br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Material</span>
+            </motion.h1>
+          </div>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed"
+          >
             Your elite solution for Thermoplastic Composites and Industrial Bearings.
             From aerospace tolerances to extreme boiler demands, we supply it all.
-          </p>
+          </motion.p>
         </motion.div>
       </section>
 

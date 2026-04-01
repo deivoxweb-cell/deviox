@@ -76,17 +76,46 @@ export default function ContactPage() {
   return (
     <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
 
-      {/* ── 1. Brutalist Hero ────────────────────────────── */}
-      <section className="relative min-h-[60svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
-        <h1 className="absolute top-1/2 right-0 -translate-y-1/2 text-[180px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
+      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
+      <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
+        {/* Massive Background Typography Mask with Parallax */}
+        <motion.div 
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
+          className="absolute top-1/2 left-0 -translate-y-1/2 text-[150px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
+        >
           CONTACT
-        </h1>
+        </motion.div>
+        
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Get In Touch</p>
-          <h2 className="text-6xl sm:text-8xl md:text-[9rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8">
-            Reach<br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">DEI VOX</span>
-          </h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+          >
+            Get In Touch
+          </motion.p>
+          
+          <div className="overflow-hidden">
+            <motion.h1 
+              initial={{ opacity: 0, rotateX: 20, y: 40 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-6xl sm:text-8xl md:text-[9rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8"
+            >
+              Reach<br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">DEI VOX</span>
+            </motion.h1>
+          </div>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed"
+          >
+            Our expert engineering team is available 24/7 for critical BCP support. Connect with India's leaders in rotating equipment.
+          </motion.p>
         </motion.div>
       </section>
 

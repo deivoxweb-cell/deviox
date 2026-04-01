@@ -33,8 +33,8 @@ const WordReveal = ({ children }) => {
 // Data Arrays
 const capabilities = [
   "BCP Consultancy (Sales & Mktg)", "Direct Customer Support", "Sales Support",
-  "In Situ Machining", "Overhauling", "Spare Parts Selling",
-  "On Site Troubleshooting", "On Site Service", "Motor Rewinding", "Reverse Engineering"
+  "In Situ Machining", "Spare Parts Selling",
+  "On Site Service", "Motor Rewinding", "Reverse Engineering"
 ];
 
 const team = [
@@ -61,20 +61,39 @@ export default function AboutPage() {
   return (
     <div className="bg-primary text-white selection:bg-accent selection:text-white" ref={container}>
 
-      {/* ── 1. Brutalist Parallax Hero ────────────────────────────── */}
-      <section className="relative min-h-[60svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
+      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
+      <section className="relative min-h-[85vh] flex flex-col justify-center py-20 overflow-hidden px-4 lg:px-10 perspective-1000">
+        {/* Massive Background Typography Mask with Parallax */}
         <motion.div
-          className="absolute inset-0 z-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-30"
-          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"]) }}
-        />
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
+          className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
+        >
+          ABOUT US
+        </motion.div>
+
         <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10" />
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">India's Leading Specialists</p>
-          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-6">
-            We<br />Are the<br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Core</span>
-          </h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+          >
+            India's Leading Specialists
+          </motion.p>
+
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, rotateX: 20, y: 40 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-6"
+            >
+              We<br />Are the<br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Core</span>
+            </motion.h1>
+          </div>
         </motion.div>
       </section>
 
