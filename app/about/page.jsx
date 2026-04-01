@@ -62,7 +62,7 @@ export default function AboutPage() {
     <div className="bg-primary text-white selection:bg-accent selection:text-white" ref={container}>
 
       {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center py-20 overflow-hidden px-4 lg:px-10 perspective-1000">
+      <section className="relative md:min-h-[95vh] min-h-[60vh] flex flex-col justify-center py-20 overflow-hidden px-4 lg:px-10 perspective-1000">
         {/* Massive Background Typography Mask with Parallax */}
         <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}

@@ -77,17 +77,17 @@ export default function ContactPage() {
     <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
 
       {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
+      <section className="relative md:min-h-[95vh] min-h-[60vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
         {/* Massive Background Typography Mask with Parallax */}
-        <motion.div 
+        <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
           className="absolute top-1/2 left-0 -translate-y-1/2 text-[150px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
         >
           CONTACT
         </motion.div>
-        
+
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -95,9 +95,9 @@ export default function ContactPage() {
           >
             Get In Touch
           </motion.p>
-          
+
           <div className="overflow-hidden">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, rotateX: 20, y: 40 }}
               animate={{ opacity: 1, rotateX: 0, y: 0 }}
               transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -107,8 +107,8 @@ export default function ContactPage() {
               <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">DEI VOX</span>
             </motion.h1>
           </div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -120,7 +120,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── 2. Immersive Form & Grid ──────────────────────── */}
-      <section className="py-24 w-full px-4 lg:px-10">
+      <section className="py-24 w-full px-1 lg:px-10">
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
           {/* Form Side */}

@@ -21,7 +21,7 @@ const Hero = () => {
     <div className="bg-primary" ref={container}>
       <section className="relative h-screen flex flex-col justify-center overflow-hidden">
         {/* Parallax Background */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 z-0 h-[120%]"
           style={{ y: yBackground, top: "-10%" }}
         >
@@ -37,7 +37,7 @@ const Hero = () => {
           <motion.div className="absolute inset-0 bg-linear-to-b from-primary/30 via-primary/80 to-primary" />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           style={{ y: yText, opacity: opacityText }}
           className="w-full px-4 lg:px-10 relative z-20 flex flex-col items-center text-center mt-20"
         >
@@ -125,7 +125,7 @@ const Hero = () => {
               </div>
 
               {/* Scroll Indicator */}
-              <div className="flex flex-col items-center justify-center">
+              {/* <div className="flex flex-col items-center justify-center">
                 <motion.div 
                   animate={{ y: [0, 8, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -133,7 +133,7 @@ const Hero = () => {
                 >
                   <motion.div className="w-1 h-2.5 md:h-3 bg-accent rounded-full" />
                 </motion.div>
-              </div>
+              </div> */}
 
               <div className="hidden md:block text-right font-black text-[9px] uppercase tracking-[0.2em] text-white/30">
                 <p>INDIA'S #1</p>

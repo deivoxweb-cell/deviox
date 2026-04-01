@@ -28,11 +28,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-        scrolled 
-          ? "bg-white/80 backdrop-blur-2xl shadow-[0_4px_30px_rgb(0,0,0,0.05)] py-2 border-b border-white/20" 
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled
+        ? "bg-white/80 backdrop-blur-2xl shadow-[0_4px_30px_rgb(0,0,0,0.05)] py-2 border-b border-white/20"
+        : "bg-transparent py-6"
+        }`}
     >
       <div className="w-full px-4 lg:px-10">
         <div className="flex flex-col">
@@ -59,9 +58,8 @@ const Navbar = () => {
                   <div key={link.name} className="relative group">
                     <Link
                       href={link.href}
-                      className={`text-[11px] font-black transition-all duration-500 uppercase tracking-widest flex items-center gap-1.5 ${
-                        scrolled ? "text-primary hover:text-accent" : "text-white/80 hover:text-white"
-                      }`}
+                      className={`text-[11px] font-black transition-all duration-500 uppercase tracking-widest flex items-center gap-1.5 ${scrolled ? "text-primary hover:text-accent" : "text-white/80 hover:text-white"
+                        }`}
                     >
                       {link.name}
                     </Link>
@@ -109,9 +107,9 @@ const Navbar = () => {
           >
             {/* Background Grain for Overlay */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
-            
+
             <div className="flex-1 flex flex-col justify-center px-8 relative z-10 w-full">
-              <motion.div 
+              <motion.div
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -119,10 +117,10 @@ const Navbar = () => {
                   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
                   hidden: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
                 }}
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-6 pt-10"
               >
                 {navLinks.map((link, i) => (
-                  <motion.div 
+                  <motion.div
                     key={link.name}
                     variants={{
                       hidden: { y: 40, opacity: 0 },
@@ -141,7 +139,7 @@ const Navbar = () => {
                 ))}
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.5 }}

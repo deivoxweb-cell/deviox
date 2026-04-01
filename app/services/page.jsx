@@ -48,54 +48,77 @@ const services = [
   },
 ];
 
-const ServiceScrollItem = ({ service, index, activeIndex, setActiveIndex }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-30% 0px -30% 0px" });
-
-  useEffect(() => {
-    if (isInView) setActiveIndex(index);
-  }, [isInView, index, setActiveIndex]);
-
-  const isActive = activeIndex === index;
-
+const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
   return (
-    <div ref={ref} className="min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center py-10 md:py-20">
-      <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive ? "opacity-100 translate-x-0" : "opacity-20 -translate-x-8"}`}>
+    <div
+      ref={itemRef}
+      className={`min-h-[70vh] md:min-h flex flex-col justify-center py-20 transition-all duration-1000 ${isActive ? "opacity-100" : "opacity-30 blur-[2px]"}`}
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Text Content */}
+        <div className="lg:col-span-7">
+          <div className="flex items-center gap-6 mb-12">
+            <span className="text-6xl md:text-8xl font-black text-white/5 tracking-tighter">
+              0{index + 1}
+            </span>
+            <div className="w-20 h-px bg-white/20" />
+          </div>
 
-        <div className="flex items-center gap-6 mb-12">
-          <span className="text-6xl md:text-8xl font-black text-white/5 tracking-tighter">
-            0{index + 1}
-          </span>
-          <div className="w-20 h-px bg-white/20" />
+          <div className="flex items-center gap-4 mb-8">
+            <div className="p-4 bg-white/5 border border-white/10 rounded-2xl text-accent backdrop-blur-md">
+              {service.icon}
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em] mb-1">
+                {service.tagline}
+              </p>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">
+                {service.title}
+              </h2>
+            </div>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isActive ? { opacity: 0.6, y: 0 } : { opacity: 0.2, y: 10 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-lg md:text-xl font-medium text-white leading-relaxed mb-10 max-w-xl"
+          >
+            {service.description}
+          </motion.p>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            {service.points.map((pt) => (
+              <li key={pt} className="flex items-start gap-4">
+                <CheckCircle2
+                  size={18}
+                  className="text-accent mt-1 shrink-0 bg-accent/10 rounded-full"
+                />
+                <span className="text-[11px] md:text-xs font-black text-white/70 uppercase tracking-[0.2em]">
+                  {pt}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="flex items-center gap-4 mb-6">
-          <div className="p-4 bg-white/5 border border-white/10 rounded-2xl text-accent backdrop-blur-md">
-            {service.icon}
-          </div>
-          <div>
-            <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em] mb-1">{service.tagline}</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">{service.title}</h2>
-          </div>
+        {/* Image Content (Inlined) */}
+        <div className="lg:col-span-5">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, x: 20 }}
+            animate={isActive ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0.3, scale: 0.95, x: 10 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
+            />
+            <div className={`absolute inset-0 bg-accent/10 transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-40"}`} />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+          </motion.div>
         </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isActive ? { opacity: 0.5, y: 0 } : { opacity: 0.2, y: 10 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-lg md:text-xl font-medium text-white leading-relaxed mb-10 max-w-xl"
-        >
-          {service.description}
-        </motion.p>
-
-        <ul className="space-y-4">
-          {service.points.map((pt) => (
-            <li key={pt} className="flex items-start gap-4">
-              <CheckCircle2 size={18} className="text-accent mt-1 shrink-0 bg-accent/10 rounded-full" />
-              <span className="text-[13px] md:text-sm font-black text-white/80 uppercase tracking-widest">{pt}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );
@@ -104,6 +127,7 @@ const ServiceScrollItem = ({ service, index, activeIndex, setActiveIndex }) => {
 export default function ServicesPage() {
   const container = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const itemRefs = useRef(services.map(() => React.createRef()));
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -113,13 +137,38 @@ export default function ServicesPage() {
   const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!window) return;
+      const viewportMid = window.innerHeight / 2;
+      let closestIndex = 0;
+      let closestDist = Infinity;
+
+      itemRefs.current.forEach((ref, i) => {
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const itemMid = rect.top + rect.height / 2;
+        const dist = Math.abs(itemMid - viewportMid);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIndex = i;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
 
       {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
-        {/* Massive Background Typography Mask with Parallax */}
-        <motion.div 
+      <section className="relative md:min-h-[95vh] min-h-[60vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
+        <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
           className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
         >
@@ -127,7 +176,7 @@ export default function ServicesPage() {
         </motion.div>
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -135,9 +184,9 @@ export default function ServicesPage() {
           >
             Core Solutions
           </motion.p>
-          
+
           <div className="overflow-hidden">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, rotateX: 20, y: 40 }}
               animate={{ opacity: 1, rotateX: 0, y: 0 }}
               transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -150,55 +199,39 @@ export default function ServicesPage() {
         </motion.div>
       </section>
 
-      {/* ── 2. Dual-Pane Sticky Interactive Scroll ───────── */}
+      {/* ── 2. Services Section ───────────────────────────────────── */}
       <section className="relative w-full px-4 lg:px-10 max-w-[1600px] mx-auto pt-24">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 relative items-start">
+        <div className="flex flex-col gap-12 relative items-start">
 
-          {/* Left Text Scroller */}
-          <div className="w-full lg:w-5/12 relative z-20">
+          <div className="sticky top-0 lg:top-16 z-40 bg-primary/90 backdrop-blur-xl py-8 border-b border-white/5 w-full flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-px bg-accent" />
+              <h2 className="text-accent text-[11px] font-black uppercase tracking-[0.5em]">Our Expert Services</h2>
+            </div>
+            <div className="hidden md:flex items-center gap-8">
+              {services.map((item, i) => (
+                <button
+                  key={item.title}
+                  onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                  className={`text-[9px] font-black uppercase tracking-widest transition-all ${activeIndex === i ? "text-white" : "text-white/20 hover:text-white/50"}`}
+                >
+                  {item.title.split(' ')[0]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full relative z-20 space-y-12">
             {services.map((service, i) => (
               <ServiceScrollItem
                 key={service.title}
                 service={service}
                 index={i}
-                activeIndex={activeIndex}
-                setActiveIndex={setActiveIndex}
+                itemRef={itemRefs.current[i]}
+                isActive={activeIndex === i}
               />
             ))}
           </div>
-
-          {/* Right Sticky Image Pane (Desktop Only) */}
-          <div className="hidden lg:block w-7/12 sticky top-[15vh] h-[70vh] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950 z-10">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 w-full h-full"
-              >
-                <img
-                  src={services[activeIndex].image}
-                  alt={services[activeIndex].title}
-                  className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-linear-to-tr from-primary/80 via-transparent to-transparent mix-blend-multiply" />
-
-                {/* Overlay Graphic Element */}
-                <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                  <div className="backdrop-blur-xl bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
-                    <p className="text-[10px] font-black tracking-[0.3em] uppercase text-accent mb-1">Active View</p>
-                    <p className="text-xl font-black uppercase tracking-tight text-white">{services[activeIndex].title}</p>
-                  </div>
-                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md">
-                    <ArrowRight className="text-white -rotate-45" />
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
         </div>
       </section>
 
