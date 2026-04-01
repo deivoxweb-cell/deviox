@@ -1,127 +1,168 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, Settings, ShieldCheck } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { CheckCircle2, ShieldCheck, Settings } from "lucide-react";
 import Link from "next/link";
+import Magnetic from "@/src/components/Magnetic";
 
 export default function PowerGenerationPage() {
-  return (
-    <div className="pt-24 bg-white overflow-hidden">
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
 
-      {/* ── Hero Banner ──────────────────────────────────── */}
-      <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  return (
+    <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
+
+      {/* ── 1. Brutalist Parallax Hero ────────────────────────────── */}
+      <section className="relative min-h-[80svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-           className="w-full px-4 lg:px-10 relative z-10"
-        >
-          <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Industries</p>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
+          className="absolute inset-0 z-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-30"
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"]) }}
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10 pointer-events-none" />
+
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 text-[180px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
+          POWER
+        </div>
+
+        <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
+          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Industries</p>
+          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8">
             Power<br />
-            <span className="text-accent">Generation</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Generation</span>
           </h1>
-          <p className="text-white/60 max-w-2xl text-base leading-relaxed">
-            India is powered mainly by Thermal plants! If you are not powered yet, then you are missing out on something big! Power Generation is the need of the hour and with our support in Boiler Water Circulating Pumps strictly, we are ensuring India is never left behind.
+          <p className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed">
+            India is powered mainly by Thermal plants! If you are not powered yet, you are missing out.
+            With our absolute expertise in Boiler Water Circulating Pumps, we ensure India is never left behind.
           </p>
         </motion.div>
       </section>
 
-      {/* ── Pump Rebuilds and Maintenance ───────────────── */}
-      <section className="py-20 w-full px-4 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* ── 2. Pump Rebuilds (Glassmorphic Tilt) ────────────────── */}
+      <section className="py-32 w-full px-4 lg:px-10 relative z-30">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
+            className="lg:order-2 relative"
           >
-            <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Specialized Service</p>
-            <h2 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase mb-6">
-              Pump Rebuilds &amp; Maintenance
-            </h2>
-            <div className="w-16 h-1.5 bg-accent rounded-full mb-8" />
+            <div className="relative rounded-[3rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.8)] border border-white/10 h-[600px] group">
+              <img
+                src="/images/pump_rebuild.png"
+                alt="Pump Rebuild"
+                className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
-            <div className="space-y-6 text-foreground/70 leading-relaxed">
+              <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20">
+                <div className="flex items-center gap-4 mb-3 text-accent">
+                  <ShieldCheck size={28} />
+                  <h3 className="font-black text-white uppercase tracking-tight text-lg">Best-in-Class Wet Stators</h3>
+                </div>
+                <p className="text-sm text-white/60 font-medium leading-relaxed">
+                  Our wet stators are the best available in the market, developed using specific designs and extreme high-tolerance specifications required by thermal plants.
+                </p>
+              </div>
+            </div>
+            {/* Outline decorative element */}
+            <div className="absolute -z-10 inset-0 border border-accent/20 rounded-[3rem] translate-x-4 translate-y-4 pointer-events-none" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="lg:order-1 flex flex-col gap-8"
+          >
+            <div>
+              <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-4">Specialized Service</p>
+              <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9]">
+                Pump<br />
+                <span className="text-white/30">Rebuilds & Maintenance</span>
+              </h2>
+            </div>
+
+            <div className="w-full h-px bg-white/10 my-4" />
+
+            <div className="space-y-6 text-lg md:text-xl font-medium text-white/50 leading-relaxed">
               <p>
-                BCP is a specialized product which requires deep expertise. First of all, we need to <strong className="text-primary">examine the pump physically</strong>. Then we complete the disassembling process, <strong className="text-primary">analyze to find the root cause</strong>, and complete our documentation and recommendation report properly.
+                BCP is a highly specialized product requiring deep metallurgical and mechanical expertise. We physically examine the pump on-site, analyze to find the root cause of failure, and complete our documentation before intervention.
               </p>
               <p>
-                Following approval, we <strong className="text-primary">replace, rebuild, or refurbish the parts</strong> properly, making sure not to miss out on the winding stator if required. Then we <strong className="text-primary">balance the rotating assembly</strong>, fix all the sub-assemblies, do the fit and build, and the final test. Your repaired BCP is then ready to ship.
-              </p>
-              <p>
-                Our Quality Assurance process is not complete until we do proper documentation of your BCW pumps and their components. We perform this check throughout our total facility to ensure the work has been done properly, while providing real-time updates to our clients.
+                We <strong className="text-white">replace, rebuild, or refurbish parts</strong> with micron-level precision, ensuring we evaluate the winding stator. The rotating assembly is dynamically balanced before final test and shipping.
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3 bg-[#f8f9fb] p-4 rounded-xl border border-border">
-                <CheckCircle2 size={18} className="text-accent mt-0.5" />
-                <span className="text-sm font-bold text-primary uppercase">Meticulous Documentation</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                <CheckCircle2 size={24} className="text-accent" />
+                <span className="text-xs font-black text-white tracking-widest uppercase">Meticulous Documentation</span>
               </div>
-              <div className="flex items-start gap-3 bg-[#f8f9fb] p-4 rounded-xl border border-border">
-                <CheckCircle2 size={18} className="text-accent mt-0.5" />
-                <span className="text-sm font-bold text-primary uppercase">Specialized Stator Design</span>
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                <CheckCircle2 size={24} className="text-accent" />
+                <span className="text-xs font-black text-white tracking-widest uppercase">Specialized Stator Design</span>
               </div>
             </div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 h-[500px]"
-          >
-            <img
-              src="/images/pump_rebuild.png"
-              alt="Pump Rebuild and Maintenance"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl">
-              <div className="flex items-center gap-3 mb-2 text-accent">
-                <ShieldCheck size={20} />
-                <h3 className="font-black text-primary uppercase tracking-tight text-sm">Best-in-Class Wet Stators</h3>
-              </div>
-              <p className="text-xs text-foreground/70 font-medium">
-                Our wet stators are the best possible ones present in the market, developed using specific designs and specifications as required by our clients.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* ── Total Restoration Capabilities ──────────────── */}
-      <section className="py-20 bg-[#f8f9fb] industrial-grid">
-        <div className="w-full px-4 lg:px-10">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="p-3 bg-accent/10 rounded-xl text-accent inline-block mb-6"><Settings size={28} /></div>
-            <h2 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase mb-6">Total Restoration At Our Facility</h2>
-            <p className="text-foreground/70 leading-relaxed text-base mb-10 max-w-3xl mx-auto">
-              We are capable of doing total restoration in our facility thanks to the availability of all kinds of equipment and human resources. You can test, refurbish and repair the whole unit or parts of the unit in our facility easily. If required, we can also send our engineers to your units to provide full on-site restoration services for any issues you face with BCW Pumps.
-            </p>
+      {/* ── 3. Total Restoration (Light CTA Block) ──────────────── */}
+      <section className="py-32 bg-[#fafafa] relative overflow-hidden flex items-center justify-center min-h-[60vh] border-y border-black/5">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact">
-                <span className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-2xl uppercase tracking-widest text-xs shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer">
-                  Request an Inspection
-                </span>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="w-full px-4 lg:px-10 max-w-5xl mx-auto text-center relative z-10"
+        >
+          <div className="w-20 h-20 bg-primary/5 border border-black/5 rounded-full flex items-center justify-center text-accent mx-auto mb-8 shadow-sm">
+            <Settings size={32} />
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-[0.9] mb-8">
+            Total Restoration<br />
+            <span className="text-accent">At Our Facility.</span>
+          </h2>
+
+          <p className="text-primary/60 text-lg md:text-xl font-bold leading-relaxed mb-16 max-w-3xl mx-auto">
+            From complete pump body restoration to high-tech motor rewinding, we house the equipment and talent to bring any BCP back to peak factory performance.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <Magnetic intensity={0.4}>
+              <Link href="/contact" className="inline-block">
+                <button className="relative overflow-hidden group px-12 h-20 min-w-[260px] bg-accent text-zinc-950 font-black rounded-full transition-all shadow-xl hover:shadow-2xl uppercase tracking-[0.2em] text-[12px] active:scale-95">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                    <span className="absolute transition-transform duration-500 group-hover:-translate-y-20">Request Inspection</span>
+                    <span className="absolute translate-y-20 transition-transform duration-500 group-hover:translate-y-0">Go to Contact</span>
+                  </div>
+                  <div className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-bottom scale-y-0 group-hover:scale-y-100 opacity-20 z-0" />
+                </button>
               </Link>
+            </Magnetic>
+
+            <Magnetic intensity={0.2}>
               <Link href="/services">
-                <span className="px-8 py-4 border-2 border-primary/20 text-primary font-black rounded-2xl hover:bg-primary/5 uppercase tracking-widest text-xs transition-all cursor-pointer">
+                <span className="px-12 h-20 min-w-[260px] flex items-center justify-center border border-primary/20 text-primary font-black rounded-full hover:bg-primary/5 uppercase tracking-[0.2em] text-[12px] transition-all cursor-pointer shadow-sm">
                   Browse Services
                 </span>
               </Link>
-            </div>
-          </motion.div>
-        </div>
+            </Magnetic>
+          </div>
+        </motion.div>
       </section>
 
     </div>

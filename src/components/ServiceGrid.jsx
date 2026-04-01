@@ -1,7 +1,44 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const TiltActiveCard = ({ children, isActive }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+
+  const handleMouseMove = (e) => {
+    if (!isActive) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    x.set((mouseX / width - 0.5) * 15);
+    y.set((mouseY / height - 0.5) * -15);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX: mouseYSpring, rotateY: mouseXSpring, transformStyle: "preserve-3d" }}
+      className="w-full h-full"
+    >
+      <div style={{ transform: isActive ? "translateZ(30px)" : "none" }} className="w-full h-full transition-transform duration-500">
+        {children}
+      </div>
+    </motion.div>
+  );
+};
+
 import Link from "next/link";
 
 function useIsMobile(breakpoint = 768) {
@@ -173,77 +210,79 @@ export default function ServiceGrid() {
               }}
             >
               {/* Card shell */}
-              <div
-                className={`relative w-full h-full rounded-3xl overflow-hidden flex flex-col
-                  ${isFocused
-                    ? "shadow-[0_30px_80px_-10px_rgba(0,0,0,0.5)] ring-2 ring-accent/40"
-                    : "shadow-xl ring-1 ring-white/20"
-                  }`}
-              >
-                {/* Top: image (55% height) */}
-                <div className="relative" style={{ height: "55%" }}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100"}`}
-                  />
-                  {/* Dark tint on side cards */}
-                  {!isFocused && (
-                    <div className="absolute inset-0 bg-black/50" />
-                  )}
-                </div>
-
-                {/* Bottom: text panel */}
+              <TiltActiveCard isActive={isFocused}>
                 <div
-                  className={`flex flex-col flex-1 px-5 py-4 transition-colors duration-300
-                    ${isFocused ? "bg-white" : "bg-primary"}`}
+                  className={`relative w-full h-full rounded-3xl overflow-hidden flex flex-col transition-all duration-500
+                    ${isFocused
+                      ? "shadow-[0_40px_100px_-10px_rgba(0,0,0,0.6)] ring-2 ring-accent/60"
+                      : "shadow-xl ring-1 ring-white/10"
+                    }`}
                 >
-                  <h3
-                    className={`font-black tracking-tight uppercase leading-tight mb-2 transition-colors
-                      ${isMobile ? "text-base" : "text-lg"}
-                      ${isFocused ? "text-primary" : "text-white/60"}`}
+                  {/* Top: image (55% height) */}
+                  <div className="relative" style={{ height: "55%" }}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100 grayscale-[0.3]"}`}
+                    />
+                    {/* Dark tint on side cards to create focus for the center card */}
+                    {!isFocused && (
+                      <div className="absolute inset-0 bg-primary/40" />
+                    )}
+                  </div>
+
+                  {/* Bottom: text panel */}
+                  <div
+                    className={`flex flex-col flex-1 px-5 py-4 transition-colors duration-500
+                      ${isFocused ? "bg-white" : "bg-primary"}`}
                   >
-                    {service.title}
-                  </h3>
+                    <h3
+                      className={`font-black tracking-tight uppercase leading-tight mb-2 transition-colors
+                        ${isMobile ? "text-base" : "text-lg"}
+                        ${isFocused ? "text-primary" : "text-white/60"}`}
+                    >
+                      {service.title}
+                    </h3>
 
-                  <div className={`w-8 h-0.5 mb-3 rounded-full ${isFocused ? "bg-accent" : "bg-white/10"}`} />
+                    <div className={`w-8 h-0.5 mb-3 rounded-full ${isFocused ? "bg-accent" : "bg-white/10"}`} />
 
-                  {isFocused ? (
-                    <>
-                      <p className="text-foreground/80 text-[13px] font-semibold leading-relaxed flex-1 mb-4 line-clamp-3 md:line-clamp-none">
-                        {isMobile && service.description.length > 100
-                          ? service.description.substring(0, 100) + "..."
-                          : service.description}
-                      </p>
-                      <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                        <button className="w-full py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-zinc-950 text-[10px] font-black uppercase tracking-widest transition-all active:scale-95 shadow-md shadow-accent/30">
-                          Explore Solution
-                        </button>
-                      </Link>
-                    </>
-                  ) : (
-                    <p className="text-white/70 text-[10px] uppercase tracking-widest font-bold mt-auto">Tap to view →</p>
-                  )}
+                    {isFocused ? (
+                      <>
+                        <p className="text-foreground/80 text-[13px] font-semibold leading-relaxed flex-1 mb-4 line-clamp-3 md:line-clamp-none">
+                          {isMobile && service.description.length > 100
+                            ? service.description.substring(0, 100) + "..."
+                            : service.description}
+                        </p>
+                        <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                          <button className="w-full overflow-hidden group relative py-3 rounded-xl bg-accent text-zinc-950 text-[10px] font-black uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)]">
+                            <span className="relative z-10">Explore Solution</span>
+                            <div className="absolute bottom-0 left-0 w-full h-0 bg-white transition-all duration-300 ease-out group-hover:h-full z-0 opacity-20" />
+                          </button>
+                        </Link>
+                      </>
+                    ) : (
+                      <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mt-auto blur-[1px]">Tap to view →</p>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </TiltActiveCard>
             </motion.div>
           );
         })}
       </div>
 
-      {/* Dots */}
-      <div className="flex justify-center gap-3 mt-10">
-        {SERVICES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveIndex(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-accent/50 ${i === activeIndex
-              ? "w-10 h-3.5 bg-accent"
-              : "w-3.5 h-3.5 bg-gray-300 hover:bg-gray-400"
-              }`}
+      {/* Premium Progress Bar */}
+      <div className="flex flex-col items-center justify-center gap-4 mt-16 max-w-[200px] mx-auto">
+        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden relative">
+          <motion.div
+            className="absolute top-0 left-0 h-full bg-accent"
+            animate={{ width: `${((activeIndex + 1) / SERVICES.length) * 100}%` }}
+            transition={{ duration: 0.5, ease: "anticipate" }}
           />
-        ))}
+        </div>
+        <div className="text-[10px] font-black tracking-[0.3em] uppercase text-primary/50">
+          {activeIndex + 1} / {SERVICES.length}
+        </div>
       </div>
     </section>
   );

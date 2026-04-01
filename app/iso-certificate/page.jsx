@@ -1,155 +1,195 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { Award, Download, ShieldCheck, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import Magnetic from "@/src/components/Magnetic";
 
-export default function ISOCertificatePage() {
-  const certificates = [
-    {
-      id: "iso-9001",
-      title: "ISO 9001:2015",
-      tagline: "Quality Management System",
-      image: "/images/cert1.png",
-      pdf: "/images/cert-1.pdf",
-      icon: <Award size={32} />,
-      description: "The primary standard for quality management systems (QMS), ensuring we consistently provide products and services that meet customer and regulatory requirements.",
-      points: [
-        "Repair & Refurbishment Excellence",
-        "Mechanical & Electrical Spares",
-        "HT/LT Motor Services",
-        "All Rotating Equipment Support",
-      ],
-    },
-    {
-      id: "iso-14001",
-      title: "ISO 14001:2015",
-      tagline: "Environmental Management",
-      image: "/images/cert2.png",
-      pdf: "/images/cert-2.pdf",
-      icon: <ShieldCheck size={32} />,
-      description: "Outlines the requirements for an effective environmental management system (EMS), emphasizing our commitment to reducing our environmental footprint.",
-      points: [
-        "Sustainable Industrial Practices",
-        "Resource Efficiency Optimization",
-        "Environmental Compliance Assurance",
-        "Reduced Operational Impact",
-      ],
-    },
-    {
-      id: "iso-45001",
-      title: "ISO 45001:2018",
-      tagline: "Occupational Health & Safety",
-      image: "/images/cert3.png",
-      pdf: "/images/cert-3.pdf",
-      icon: <CheckCircle2 size={32} />,
-      description: "The international standard for occupational health and safety (OH&S), designed to protect workers and visitors from work-related accidents and diseases.",
-      points: [
-        "Zero-Accident Safety Protocol",
-        "Worker Wellbeing Priority",
-        "Risk Mitigation & Management",
-        "Certified Safety Compliance",
-      ],
-    },
-  ];
+const certificates = [
+  {
+    id: "iso-9001",
+    title: "ISO 9001:2015",
+    tagline: "Quality Management System",
+    image: "/images/cert1.png",
+    pdf: "/images/cert-1.pdf",
+    icon: <Award size={32} />,
+    description: "The primary standard for quality management systems (QMS), ensuring we consistently provide products and services that exceed customer and regulatory requirements.",
+    points: ["Repair Excellence", "Mechanical Spares", "Motor Services", "Rotating Equipment Support"],
+  },
+  {
+    id: "iso-14001",
+    title: "ISO 14001:2015",
+    tagline: "Environmental Management",
+    image: "/images/cert2.png",
+    pdf: "/images/cert-2.pdf",
+    icon: <ShieldCheck size={32} />,
+    description: "Outlines the requirements for an effective environmental management system (EMS), emphasizing our aggressive commitment to reducing our environmental footprint.",
+    points: ["Sustainable Practices", "Resource Efficiency", "Compliance Assurance", "Reduced Impact"],
+  },
+  {
+    id: "iso-45001",
+    title: "ISO 45001:2018",
+    tagline: "Occupational Health",
+    image: "/images/cert3.png",
+    pdf: "/images/cert-3.pdf",
+    icon: <CheckCircle2 size={32} />,
+    description: "The international standard for occupational health and safety (OH&S), designed to protect workers and visitors from work-related accidents and diseases.",
+    points: ["Zero-Accident Protocol", "Worker Wellbeing", "Risk Mitigation", "Certified Safety"],
+  },
+];
+
+// Interactive 3D Physics Card
+const TiltCertCard = ({ cert, index }) => {
+  const ref = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 20 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
-    <div className="pt-24 bg-white overflow-hidden">
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="relative w-full h-[600px] rounded-[3rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between group cursor-pointer shadow-[0_0_60px_rgba(0,0,0,0.5)] lg:h-[700px]"
+    >
+      {/* Dynamic Glow Layer */}
+      <div className="absolute inset-0 bg-linear-to-b from-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[3rem]" />
 
-      {/* ── Hero Banner ──────────────────────────────────── */}
-      <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-primary/80" />
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-           className="w-full px-4 lg:px-10 relative z-10"
+      {/* Content Wrapper physically separated for 3D effect */}
+      <div style={{ transform: "translateZ(50px)" }} className="relative z-10 flex flex-col h-full pointer-events-none">
+
+        {/* Top Header */}
+        <div className="flex justify-between items-start mb-12">
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/20 flex flex-col items-center justify-center text-accent">
+              {cert.icon}
+            </div>
+            <div>
+              <p className="text-[9px] font-black text-white/50 uppercase tracking-[0.3em] mb-1">Standard</p>
+              <h3 className="text-xl lg:text-3xl font-black text-white uppercase tracking-tighter">{cert.title}</h3>
+            </div>
+          </div>
+          <div className="text-5xl lg:text-7xl font-black text-white-[0.05] tracking-tighter mix-blend-overlay">
+            0{index + 1}
+          </div>
+        </div>
+
+        {/* Certificate Image Mockup with extreme shadow */}
+        <div className="flex-1 w-full bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.5)] mb-8 relative">
+          <img src={cert.image} alt={cert.title} className="w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-80 group-hover:mix-blend-normal transition-all duration-700" />
+          <div className="absolute inset-0 bg-linear-to-tr from-primary/80 via-transparent to-transparent opacity-80" />
+        </div>
+
+        {/* Badge & Points */}
+        <div className="space-y-4">
+          <p className="text-xs font-black text-accent uppercase tracking-[0.2em]">{cert.tagline}</p>
+          <p className="text-sm font-medium text-white/60 line-clamp-2 md:line-clamp-3 leading-relaxed">{cert.description}</p>
+        </div>
+
+      </div>
+
+      {/* Interactive Download Action physically floating higher */}
+      <div className="mt-8 flex justify-end" style={{ transform: "translateZ(80px)" }}>
+        <a
+          href={cert.pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-16 h-16 rounded-full bg-white text-primary flex items-center justify-center hover:bg-accent hover:text-white transition-colors duration-300 pointer-events-auto"
         >
-          <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Commitment to Quality</p>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
-            ISO<br />
-            <span className="text-accent">Certificates</span>
+          <Download size={24} />
+        </a>
+      </div>
+    </motion.div>
+  );
+};
+
+export default function ISOCertificatePage() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
+
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  return (
+    <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32 min-h-screen" ref={container}>
+
+      {/* ── 1. Brutalist Hero ────────────────────────────── */}
+      <section className="relative min-h-[60svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
+        <motion.div
+          className="absolute inset-0 z-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-20"
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"]) }}
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10 pointer-events-none" />
+
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 text-[180px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
+          ISO C.
+        </div>
+
+        <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
+          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Quality Assured</p>
+          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8">
+            Global<br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Standards</span>
           </h1>
-          <p className="text-white/60 max-w-2xl text-base leading-relaxed">
-            The Significance of ISO Certification in Ensuring Quality and Global Competitiveness!
-          </p>
         </motion.div>
       </section>
 
-      {/* ── Certificates Gallery ────────────────────────── */}
-      <section className="py-24 w-full px-4 lg:px-10">
-        <div className="space-y-24 max-w-7xl mx-auto">
-          {certificates.map((cert, i) => {
-            const isEven = i % 2 === 0;
-            return (
-              <div
-                key={cert.id}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-              >
-                {/* Image Block */}
-                <motion.div
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border group ${!isEven ? "lg:order-last" : ""
-                    }`}
-                  style={{ height: 480 }}
-                >
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                  />
-                  {/* Number/Tag Overlay */}
-                  <div className="absolute top-6 left-6 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-white/10">
-                    {String(i + 1).padStart(2, "0")} — {cert.tagline}
-                  </div>
-                </motion.div>
-
-                {/* Text Block */}
-                <motion.div 
-                  initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className={!isEven ? "lg:order-first" : ""}
-                >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="p-3 bg-accent/10 rounded-xl text-accent">
-                      {cert.icon}
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em]">{cert.tagline}</p>
-                      <h2 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase">{cert.title}</h2>
-                    </div>
-                  </div>
-                  <div className="w-16 h-1.5 bg-accent rounded-full mb-6" />
-                  <p className="text-foreground/70 leading-relaxed mb-8 text-sm font-medium">{cert.description}</p>
-
-                  <ul className="space-y-4 mb-10">
-                    {cert.points.map((pt) => (
-                      <li key={pt} className="flex items-start gap-3">
-                        <CheckCircle2 size={16} className="text-accent mt-0.5 shrink-0" />
-                        <span className="text-sm font-bold text-primary uppercase tracking-wide">{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href={cert.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-black rounded-2xl uppercase tracking-widest text-xs hover:bg-accent hover:shadow-xl hover:shadow-accent/20 transition-all active:scale-95 group"
-                  >
-                    <Download size={16} className="group-hover:translate-y-1 transition-transform" />
-                    Download Certificate
-                  </a>
-                </motion.div>
-              </div>
-            );
-          })}
+      {/* ── 2. 3D Tilt Certificates Gallery ──────────────── */}
+      <section className="py-32 w-full px-4 lg:px-10 relative z-30" style={{ perspective: "2000px" }}>
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
+          {certificates.map((cert, i) => (
+            <TiltCertCard key={cert.id} cert={cert} index={i} />
+          ))}
         </div>
       </section>
+
+      {/* ── 3. Brutalist Footer Divider ──────────────────── */}
+      <div className="w-full px-4 lg:px-10 max-w-[1600px] mx-auto mt-20">
+        <div className="w-full h-px bg-white/10" />
+        <div className="pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <h2 className="text-3xl md:text-5xl font-black text-white/30 uppercase tracking-tighter">
+            Verified Compliance
+          </h2>
+          <Magnetic intensity={0.4}>
+            <Link href="/contact" className="inline-block">
+              <button className="px-12 h-20 min-w-[260px] bg-white text-primary font-black rounded-full transition-all hover:bg-accent hover:text-white uppercase tracking-[0.2em] text-[12px] active:scale-95 shadow-xl">
+                Request Audit Report
+              </button>
+            </Link>
+          </Magnetic>
+        </div>
+      </div>
 
     </div>
   );

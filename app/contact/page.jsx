@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Paperclip, ChevronDown } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MapPin, Paperclip, ChevronDown, Send } from "lucide-react";
+import Magnetic from "@/src/components/Magnetic";
 
 const SUBJECTS = [
   "General Inquiry",
@@ -16,231 +17,231 @@ const SUBJECTS = [
   "Quotation Request",
 ];
 
+const InputField = ({ id, label, type, form, handleChange }) => {
+  const [isFocused, setIsFocused] = useState(false);
+  const isActive = isFocused || form[id].length > 0;
+
+  return (
+    <div className="relative w-full z-10">
+      <motion.label
+        initial={false}
+        animate={{
+          y: isActive ? -28 : 16,
+          scale: isActive ? 0.8 : 1,
+          color: isActive ? "#f97316" : "rgba(255,255,255,0.4)"
+        }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className="absolute left-0 top-0 text-sm font-black uppercase tracking-widest origin-left pointer-events-none"
+      >
+        {label}
+      </motion.label>
+      <input
+        name={id}
+        type={type}
+        value={form[id]}
+        onChange={handleChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        className="w-full bg-transparent border-b border-white/20 py-4 text-white text-lg focus:outline-none focus:border-accent transition-colors font-medium rounded-none"
+      />
+    </div>
+  );
+};
+
 export default function ContactPage() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
+
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    company: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: "", phone: "", company: "", email: "", subject: "", message: "",
   });
   const [fileName, setFileName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleFile = (e) => setFileName(e.target.files?.[0]?.name ?? "");
 
-  const handleFile = (e) => {
-    setFileName(e.target.files?.[0]?.name ?? "");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => setIsSubmitting(false), 2000); // Simulate network
   };
 
   return (
-    <div className="pt-24 pb-24 bg-white overflow-hidden">
+    <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
 
-      {/* ── Hero Banner ──────────────────────────────────── */}
-      <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-           className="w-full px-4 lg:px-10 relative z-10"
-        >
-          <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Get In Touch</p>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
+      {/* ── 1. Brutalist Hero ────────────────────────────── */}
+      <section className="relative min-h-[60svh] lg:min-h-screen flex flex-col justify-center py-10 lg:py-20 overflow-hidden px-4 lg:px-10">
+        <h1 className="absolute top-1/2 right-0 -translate-y-1/2 text-[180px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
+          CONTACT
+        </h1>
+        <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
+          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Get In Touch</p>
+          <h2 className="text-6xl sm:text-8xl md:text-[9rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8">
             Reach<br />
-            <span className="text-accent">DEI VOX</span>
-          </h1>
-          <p className="text-white/60 max-w-xl text-base leading-relaxed">
-            Get the ultimate solution to your plant's circulating pump requirements.
-          </p>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">DEI VOX</span>
+          </h2>
         </motion.div>
       </section>
 
-      {/* ── Contact Cards ─────────────────────────────────── */}
-      <section className="py-16 w-full px-4 lg:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
-          {[
-            {
-              icon: <Phone size={22} />,
-              label: "Call Us",
-              primary: "+91-9886424770",
-              secondary: "+91-7428200229",
-            },
-            {
-              icon: <Mail size={22} />,
-              label: "Email Us",
-              primary: "sales@deivox.co.in",
-              secondary: "",
-            },
-            {
-              icon: <MapPin size={22} />,
-              label: "Regd. Office",
-              primary: "002/T S1, Vatika Town Square",
-              secondary: "Sector 83, Gurugram, Haryana 122004",
-            },
-          ].map((card, i) => (
-            <motion.div
-              key={card.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-card border border-border rounded-3xl p-6 hover:border-accent/40 hover:shadow-lg transition-all group"
-            >
-              <div className="p-3 bg-accent/10 text-accent rounded-xl inline-block mb-4 group-hover:bg-accent group-hover:text-white transition-all">
-                {card.icon}
-              </div>
-              <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-2">{card.label}</p>
-              <p className="text-sm font-black text-primary uppercase">{card.primary}</p>
-              {card.secondary && <p className="text-xs text-foreground/60 font-medium mt-1">{card.secondary}</p>}
-            </motion.div>
-          ))}
-        </div>
+      {/* ── 2. Immersive Form & Grid ──────────────────────── */}
+      <section className="py-24 w-full px-4 lg:px-10">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
-        {/* ── Main grid: locations + form ───────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-          {/* Office locations */}
-          <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="lg:col-span-4 space-y-6"
+          {/* Form Side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7 bg-white/3 backdrop-blur-3xl rounded-[3rem] p-8 md:p-16 border border-white/10 relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.5)]"
           >
-            <div>
-              <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-2">Our Locations</p>
-              <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-4">Where To Find Us</h2>
-              <div className="w-10 h-1 bg-accent rounded-full" />
-            </div>
+            {/* Ambient Background Glow in form */}
+            <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent opacity-20 blur-[120px] rounded-full pointer-events-none" />
 
-            <p className="text-foreground/70 text-sm leading-relaxed">
-              Our facility is located in Gujarat. We provide all types of motor winding, repairing, and testing in our service facilities. We welcome clients to visit and understand the value we bring.
-            </p>
-            <p className="text-foreground/70 text-sm leading-relaxed">
-              Our sales office is in <strong className="text-primary">Gurugram, Haryana</strong>. You can also visit our service support office in <strong className="text-primary">Bengaluru, Karnataka</strong>.
-            </p>
+            <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-16 relative z-10 leading-tight">
+              Send an <br /><span className="text-white/30">Enquiry.</span>
+            </h3>
 
-            {[
-              { tag: "Sales Office", loc: "Gurugram, Haryana, India", sub: "002/T S1, Vatika Town Square, Sector 83 – 122004" },
-              { tag: "Service Support", loc: "Bengaluru, Karnataka, India", sub: "" },
-            ].map((o) => (
-              <div key={o.tag} className="bg-card border border-border border-l-4 border-l-accent rounded-2xl p-5">
-                <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-1">{o.tag}</p>
-                <p className="text-sm font-black text-primary uppercase">{o.loc}</p>
-                {o.sub && <p className="text-xs text-foreground/50 mt-1 font-medium">{o.sub}</p>}
-              </div>
-            ))}
+            <form onSubmit={handleSubmit} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-14">
+              <InputField id="name" label="Full Name" type="text" form={form} handleChange={handleChange} />
+              <InputField id="company" label="Company" type="text" form={form} handleChange={handleChange} />
+              <InputField id="email" label="Email Address" type="email" form={form} handleChange={handleChange} />
+              <InputField id="phone" label="Phone Number" type="tel" form={form} handleChange={handleChange} />
 
-            <div className="bg-primary rounded-2xl p-6 text-white">
-              <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-3">DEI VOX INDIA PVT. LTD.</p>
-              <p className="text-xs text-white/70 leading-relaxed mb-3">
-                The right pick for any BCP maintenance, repairing, or rebuilding issues.
-              </p>
-              <div className="space-y-1">
-                <p className="text-xs text-white/80 font-bold">sales@deivox.co.in</p>
-                <p className="text-xs text-white/80 font-bold">+91-9886424770</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Contact form */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="lg:col-span-8"
-          >
-            <div className="bg-[#f8f9fb] rounded-3xl p-8 md:p-10 border border-border industrial-grid">
-              <h3 className="text-2xl font-black text-primary uppercase tracking-tighter mb-8">Send Us A Message</h3>
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  { id: "name", label: "Name", placeholder: "Your name", type: "text" },
-                  { id: "phone", label: "Phone Number", placeholder: "+91 XXXXX XXXXX", type: "tel" },
-                  { id: "company", label: "Company Name", placeholder: "Your company", type: "text" },
-                  { id: "email", label: "Email Address", placeholder: "you@company.com", type: "email" },
-                ].map((field) => (
-                  <div key={field.id}>
-                    <label className="block text-[10px] font-black text-foreground/60 uppercase tracking-widest mb-2">
-                      {field.label}
-                    </label>
-                    <input
-                      name={field.id}
-                      type={field.type}
-                      value={form[field.id]}
-                      onChange={handleChange}
-                      placeholder={field.placeholder}
-                      className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all font-medium"
-                    />
-                  </div>
-                ))}
-
-                {/* Subject dropdown */}
-                <div className="md:col-span-2">
-                  <label className="block text-[10px] font-black text-foreground/60 uppercase tracking-widest mb-2">Subject</label>
-                  <div className="relative">
-                    <select
-                      name="subject"
-                      value={form.subject}
-                      onChange={handleChange}
-                      className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all appearance-none cursor-pointer font-medium"
-                    >
-                      <option value="">Select a subject…</option>
-                      {SUBJECTS.map((s) => (
-                        <option key={s} value={s}>{s}</option>
-                      ))}
-                    </select>
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-foreground/30">
-                      <ChevronDown size={16} />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-[10px] font-black text-foreground/60 uppercase tracking-widest mb-2">Your Message</label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    value={form.message}
+              {/* Custom Subject Dropdown */}
+              <div className="md:col-span-2 relative mt-4">
+                <label className="text-xs font-black uppercase tracking-widest text-white/40 mb-4 block">Nature of Inquiry</label>
+                <div className="relative">
+                  <select
+                    name="subject"
+                    value={form.subject}
                     onChange={handleChange}
-                    placeholder="Describe your requirement or query..."
-                    className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all resize-none font-medium"
-                  />
-                </div>
-
-                {/* File upload */}
-                <div className="md:col-span-2">
-                  <label className="block text-[10px] font-black text-foreground/60 uppercase tracking-widest mb-2">Attach Image / Document <span className="normal-case text-foreground/30">(optional)</span></label>
-                  <label className="flex items-center gap-3 w-full bg-white border border-dashed border-border hover:border-accent rounded-xl px-4 py-3 cursor-pointer transition-all group">
-                    <div className="p-2 bg-accent/10 rounded-lg text-accent group-hover:bg-accent group-hover:text-white transition-all">
-                      <Paperclip size={16} />
-                    </div>
-                    <span className="text-sm text-foreground/50 group-hover:text-foreground transition-colors truncate font-medium">
-                      {fileName || "Click to upload an image or document…"}
-                    </span>
-                    <input
-                      type="file"
-                      accept="image/*,.pdf,.doc,.docx"
-                      className="hidden"
-                      onChange={handleFile}
-                    />
-                  </label>
-                </div>
-
-                <div className="md:col-span-2">
-                  <button
-                    type="button"
-                    className="w-full py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-xl uppercase tracking-widest text-sm shadow-lg shadow-accent/20 transition-all active:scale-95"
+                    className="w-full bg-transparent border-b border-white/20 py-4 text-white text-lg focus:outline-none focus:border-accent transition-colors font-medium appearance-none cursor-pointer rounded-none"
                   >
-                    Send Enquiry
-                  </button>
+                    <option value="" className="bg-primary">Select a topic...</option>
+                    {SUBJECTS.map((s) => (
+                      <option key={s} value={s} className="bg-primary text-white">{s}</option>
+                    ))}
+                  </select>
+                  <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" />
                 </div>
-              </form>
-            </div>
+              </div>
+
+              {/* Message Area */}
+              <div className="md:col-span-2 relative mt-4">
+                <label className="text-xs font-black uppercase tracking-widest text-white/40 mb-4 block">Your Message</label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  value={form.message}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-white/20 py-4 text-white text-lg focus:outline-none focus:border-accent transition-colors font-medium resize-none rounded-none placeholder:text-white/20"
+                  placeholder="Describe your requirement in detail..."
+                />
+              </div>
+
+              {/* File Upload UI */}
+              <div className="md:col-span-2 relative my-4">
+                <label className="flex items-center justify-between w-full bg-white/3 border border-dashed border-white/20 hover:border-accent rounded-3xl p-6 cursor-pointer transition-all group">
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-white/50 group-hover:bg-accent group-hover:text-zinc-950 transition-colors">
+                      <Paperclip size={24} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-black uppercase tracking-widest text-white mb-1">Attach Files</p>
+                      <p className="text-xs text-white/40 font-medium max-w-xs">{fileName || "Supported: Images, PDF, DOC. Max 10MB."}</p>
+                    </div>
+                  </div>
+                  <input type="file" className="hidden" onChange={handleFile} />
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <div className="md:col-span-2 flex justify-start">
+                <Magnetic intensity={0.4}>
+                  <button type="submit" className="relative overflow-hidden group px-12 h-20 min-w-[260px] bg-accent text-zinc-950 font-black rounded-full transition-all shadow-xl hover:shadow-2xl uppercase tracking-[0.2em] text-[12px] active:scale-95">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                      <span className="absolute transition-transform duration-500 group-hover:-translate-y-20">Send Message</span>
+                      <span className="absolute translate-y-20 transition-transform duration-500 group-hover:translate-y-0 text-zinc-950">Confirm Now</span>
+                    </div>
+                    <div className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-bottom scale-y-0 group-hover:scale-y-100 opacity-20 z-0" />
+                  </button>
+                </Magnetic>
+              </div>
+            </form>
           </motion.div>
+
+          {/* Contact Details Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 flex flex-col gap-8"
+          >
+            <div className="bg-black/50 border border-white/5 rounded-[3rem] p-10 lg:p-14 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent opacity-5 blur-[100px] pointer-events-none" />
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-12">Headquarters</p>
+
+              <div className="flex flex-col gap-12 relative z-10">
+                <div className="flex items-start gap-6 group/item">
+                  <div className="mt-1 text-white/20 group-hover/item:text-accent transition-colors"><MapPin size={28} /></div>
+                  <div>
+                    <p className="text-xs font-black text-white/40 uppercase tracking-widest mb-2">Regd. Office</p>
+                    <p className="text-xl font-bold text-white leading-snug">002/T S1, Vatika Town Sq, Sector 83, Gurugram, Haryana.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-6 group/item">
+                  <div className="mt-1 text-white/20 group-hover/item:text-accent transition-colors"><MapPin size={28} /></div>
+                  <div>
+                    <p className="text-xs font-black text-white/40 uppercase tracking-widest mb-2">Service Hub</p>
+                    <p className="text-xl font-bold text-white leading-snug">Bengaluru, Karnataka, India.</p>
+                    <p className="text-sm font-medium text-white/50 mt-2">Providing motor winding and testing.</p>
+                  </div>
+                </div>
+
+                <div className="w-full h-px bg-white/10" />
+
+                <div className="flex items-center gap-6 group/item">
+                  <div className="text-white/20 group-hover/item:text-accent transition-colors"><Phone size={28} /></div>
+                  <div>
+                    <p className="text-xs font-black text-white/40 uppercase tracking-widest mb-1">Direct Line</p>
+                    <p className="text-xl font-bold text-white tracking-wider">+91-9886424770</p>
+                    <p className="text-xl font-bold text-white/50 tracking-wider">+91-7428200229</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-6 group/item">
+                  <div className="text-white/20 group-hover/item:text-accent transition-colors"><Mail size={28} /></div>
+                  <div>
+                    <p className="text-xs font-black text-white/40 uppercase tracking-widest mb-1">Digital</p>
+                    <a href="mailto:sales@deivox.co.in" className="text-xl font-bold text-white hover:text-accent transition-colors relative inline-block">
+                      sales@deivox.co.in
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover/item:w-full" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual spacer map block */}
+            <div className="hidden lg:flex flex-1 rounded-[3rem] bg-white/5 border border-white/10 items-center justify-center min-h-[250px] relative overflow-hidden group">
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
+              <div className="absolute inset-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-30 group-hover:scale-110 transition-transform duration-1000" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="w-4 h-4 rounded-full bg-accent mb-4 animate-pulse shadow-[0_0_20px_rgba(249,115,22,1)]" />
+                <p className="text-[10px] font-black uppercase text-white tracking-[0.4em]">Presence Across India</p>
+              </div>
+            </div>
+
+          </motion.div>
+
         </div>
       </section>
 

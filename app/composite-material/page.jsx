@@ -1,218 +1,203 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle2, ChevronRight, Settings } from "lucide-react";
 import Link from "next/link";
+import Magnetic from "@/src/components/Magnetic";
 
 const thermoplasticsUse = [
-  { industry: "Aviation", desc: "Employed in aircraft bodies, panels, and cabin interiors to reduce overall weight and improve fuel economy without sacrificing strength." },
-  { industry: "Automobiles", desc: "Used in car bodywork, internal structures, and dashboard components to boost efficiency by cutting down on weight while keeping passengers safe." },
-  { industry: "Sports Gear", desc: "Common in products like helmets, rackets, and bicycles where strength and lightness are essential for performance." },
-  { industry: "Construction Sector", desc: "Utilized in making pipes, structural boards, and other infrastructure components that need to withstand harsh conditions." },
-  { industry: "Healthcare", desc: "Applied in creating prosthetics, surgical instruments, and orthopedic products due to their durability, sterilization ability, and biocompatibility." },
+  { industry: "Aviation", desc: "Employed in aircraft bodies, panels, and cabin interiors to reduce overall weight and improve fuel economy." },
+  { industry: "Automobiles", desc: "Used in car bodywork, internal structures, and components to boost efficiency by cutting down on weight." },
+  { industry: "Defense", desc: "Used for high-strength composite armor layering and radar-absorbent structures." },
+  { industry: "Infrastructure", desc: "Utilized in making structural boards and infrastructure components that need to withstand harsh conditions." },
+];
+
+const characteristics = [
+  { title: "Low Weight", desc: "Lighter than metals." },
+  { title: "High Strength", desc: "Fiber reinforced." },
+  { title: "Impact Resist", desc: "Resilient to stress." },
+  { title: "Eco-Friendly", desc: "Fully recyclable." },
+  { title: "Chemical Safe", desc: "Anti-corrosive." },
+  { title: "Moisture Safe", desc: "Maintains integrity." },
 ];
 
 export default function CompositeMaterialPage() {
-  return (
-    <div className="pt-24 bg-white overflow-hidden">
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
 
-      {/* ── Hero Banner ──────────────────────────────────── */}
-      <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  return (
+    <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
+
+      {/* ── 1. Brutalist Hero ────────────────────────────── */}
+      <section className="relative min-h-[70svh] lg:min-h-screen flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-full px-4 lg:px-10 relative z-10"
-        >
-          <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Industries & Materials</p>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
+          className="absolute inset-0 z-0 bg-[url('/images/hero_industrial.png')] bg-cover bg-center grayscale mix-blend-overlay opacity-30"
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "30%"]) }}
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10 pointer-events-none" />
+
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 text-[150px] sm:text-[230px] md:text-[300px] font-black tracking-tighter text-white/1 select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10">
+          MATERIAL
+        </div>
+
+        <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
+          <p className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4">Core Components</p>
+          <h1 className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8">
             Composite<br />
-            <span className="text-accent">Material</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Material</span>
           </h1>
-          <p className="text-white/60 max-w-2xl text-base leading-relaxed">
-            Your One-Stop Solution for All Types of Bearings – Ball, Roller, Thrust, Needle, Tapered, and More for Industrial, Automotive, and Custom Applications!
+          <p className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed">
+            Your elite solution for Thermoplastic Composites and Industrial Bearings.
+            From aerospace tolerances to extreme boiler demands, we supply it all.
           </p>
         </motion.div>
       </section>
 
-      {/* ── Thermoplastics Overview ─────────────────────── */}
-      <section className="py-20 w-full px-4 lg:px-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            
-            {/* Content Column */}
-            <div className="space-y-12">
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Innovation in Materials</p>
-                <h2 className="text-3xl md:text-5xl font-black text-primary tracking-tighter uppercase mb-6">
-                  Thermoplastic Composites
-                </h2>
-                <div className="w-16 h-1.5 bg-accent rounded-full mb-8" />
-                <div className="space-y-6 text-foreground/70 leading-relaxed font-medium text-lg">
-                  <p>
-                    Thermoplastic composites are formed by blending thermoplastic polymers with reinforcing fibers such as carbon, glass, or aramid.
-                  </p>
-                  <p>
-                    These materials are becoming more popular across industries like aerospace and automotive thanks to their low weight and reusability.
-                  </p>
-                </div>
-              </motion.div>
+      {/* ── 2. Thermoplastics (Glass & Dark Sticky) ──────────────── */}
+      <section className="py-32 w-full px-4 lg:px-10 relative z-30">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-black text-primary uppercase tracking-tight mb-6">Main Characteristics</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { title: "Low Weight", desc: "Significantly lighter than traditional metals." },
-                    { title: "High Mechanical Performance", desc: "Reinforced fibers for durability." },
-                    { title: "Impact Resistance", desc: "Highly resilient to physical stress." },
-                    { title: "Eco-Friendly", desc: "Reusable and fully recyclable." },
-                    { title: "Chemical Resistant", desc: "Stable in corrosive environments." },
-                    { title: "Moisture Resistant", desc: "Maintains integrity over time." },
-                  ].map((char, i) => (
-                    <motion.div 
-                      key={char.title}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: i * 0.05 }}
-                      viewport={{ once: true }}
-                      className="flex items-center gap-3 p-4 bg-[#f8f9fb] border border-border rounded-2xl hover:border-accent/40 transition-colors"
-                    >
-                      <div className="text-accent shrink-0"><CheckCircle2 size={16} /></div>
-                      <div>
-                        <p className="text-xs font-black text-primary uppercase tracking-tight">{char.title}</p>
-                        <p className="text-[10px] text-foreground/50">{char.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                 <h3 className="text-xl font-black text-primary uppercase tracking-tight mb-6">Where Are They Used?</h3>
-                 <div className="space-y-6">
-                   {thermoplasticsUse.map((use, i) => (
-                     <motion.div 
-                       key={use.industry}
-                       initial={{ opacity: 0, x: -20 }}
-                       whileInView={{ opacity: 1, x: 0 }}
-                       transition={{ duration: 0.5, delay: i * 0.1 }}
-                       viewport={{ once: true }}
-                       className="group border-l-4 border-accent/10 hover:border-accent pl-6 transition-all"
-                     >
-                       <h4 className="flex items-center gap-2 text-sm font-black text-accent uppercase tracking-widest mb-1">
-                         <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                         {use.industry}
-                       </h4>
-                       <p className="text-xs text-foreground/60 leading-relaxed font-medium">
-                         {use.desc}
-                       </p>
-                     </motion.div>
-                   ))}
-                 </div>
-              </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-8 relative lg:sticky lg:top-32"
+          >
+            <div>
+              <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-4">Innovation in Materials</p>
+              <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9]">
+                Thermoplastic<br />
+                <span className="text-white/30">Composites</span>
+              </h2>
             </div>
 
-            {/* Image Column */}
-            <motion.div 
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:sticky lg:top-32"
-            >
-              <div className="relative rounded-[40px] overflow-hidden shadow-2xl shadow-primary/10 border border-border group">
-                 <img
-                  src="/images/compositon.jpeg"
-                  alt="Composite Materials Composition"
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent pointer-events-none" />
-              </div>
-            </motion.div>
+            <div className="w-full h-px bg-white/10 my-4" />
 
-          </div>
+            <p className="text-lg md:text-xl font-medium text-white/50 leading-relaxed">
+              Formed by blending high-grade thermoplastic polymers with reinforcing carbon, glass, or aramid fibers.
+              These materials dominate aerospace and automotive fields due to extreme tensile strength and shocking weight reduction.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 mt-8">
+              {characteristics.map((char, i) => (
+                <div key={i} className="flex flex-col gap-2 bg-white/5 backdrop-blur-md p-6 rounded-3xl border border-white/10">
+                  <CheckCircle2 size={24} className="text-accent mb-2" />
+                  <span className="text-sm font-black text-white uppercase tracking-tight">{char.title}</span>
+                  <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">{char.desc}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-8"
+          >
+            <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] mb-12">
+              <img
+                src="/images/compositon.jpeg"
+                alt="Composite Material Layering"
+                className="w-full h-[400px] object-cover grayscale-[0.3]"
+              />
+              <div className="absolute inset-0 bg-primary/40 mix-blend-multiply" />
+            </div>
+
+            <h3 className="text-2xl font-black text-white tracking-tighter uppercase border-b border-white/10 pb-4">
+              Industry Application
+            </h3>
+            <div className="space-y-4">
+              {thermoplasticsUse.map((use, i) => (
+                <div key={i} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="text-sm font-black text-accent uppercase tracking-widest">{use.industry}</h4>
+                    <ChevronRight className="text-white/20 group-hover:text-accent transition-colors" size={16} />
+                  </div>
+                  <p className="text-sm font-medium text-white/50">{use.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
-      {/* ── We Do All Types of Bearings ───────────────── */}
-      <section className="py-20 bg-[#f8f9fb] border-t border-border overflow-hidden">
-        <div className="w-full px-4 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="lg:col-span-5"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 h-[450px]">
-                <img
-                  src="/images/product_motor.png"
-                  alt="Industrial Bearings"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
+      {/* ── 3. Bearing Supply (Light Callout Layout) ─────────────── */}
+      <section className="py-32 bg-[#fafafa] relative min-h-screen flex items-center border-y border-black/5">
+        <div className="max-w-[1400px] mx-auto w-full px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-            <motion.div 
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="lg:col-span-7 space-y-6 text-foreground/70 leading-relaxed"
-            >
-              <div className="flex items-center gap-3 mb-2 text-accent">
-                <Settings size={24} />
-                <h2 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase">
-                  We Do All Types of Bearings
-                </h2>
-              </div>
-              <div className="w-16 h-1 bg-accent rounded-full mb-6" />
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="w-20 h-20 bg-primary/5 border border-black/5 rounded-full flex items-center justify-center text-accent mb-8 shadow-sm">
+              <Settings size={32} />
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-[0.9] mb-8">
+              All Types of<br />
+              <span className="text-primary/30">Bearings.</span>
+            </h2>
+            <div className="space-y-6 text-lg text-primary/70 font-bold leading-relaxed">
+              <p>
+                We specialize in providing high-tolerance bearings. From high-speed aviation performance to heavy-load industrial endurance, we supply the exact mechanical component required.
+              </p>
+              <p className="text-primary font-black uppercase tracking-tight">
+                Ball bearings, roller bearings, thrust bearings, needle bearings, precision taper bearings, and spherical bearings.
+              </p>
+            </div>
 
-              <p>
-                At our company, we specialize in providing all types of bearings to meet the diverse needs of various industries. Bearings play a vital role in reducing friction between moving parts, enabling smooth and efficient mechanical operations.
-              </p>
-              <p>
-                Our inventory includes <strong className="text-primary">ball bearings, roller bearings, thrust bearings, needle bearings, taper bearings, spherical bearings</strong>, and more. We work with leading manufacturers to ensure every bearing we supply meets the highest standards of quality, precision, and durability. From high-speed performance to heavy-load endurance, we have the right bearing for every requirement.
-              </p>
-              <p>
-                We also provide custom solutions and technical support to help our customers choose the most suitable bearing for their specific needs. Our team of experts ensures timely delivery and professional service for both small-scale and bulk orders.
-              </p>
-              <motion.p 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="font-bold text-primary italic text-lg mt-4 text-center p-6 bg-white border border-border rounded-xl shadow-sm"
-              >
-                "Whether you’re looking for standard, miniature, or high-performance bearings, you can count on us for reliability, competitive pricing, and top-notch support. We do all types of bearings, and we do them right."
-              </motion.p>
-
-              <div className="pt-6">
-                <Link href="/contact">
-                  <span className="px-10 py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-xl uppercase tracking-widest text-xs shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer">
-                    Enquire About Bearings
-                  </span>
+            <div className="mt-12 flex flex-wrap gap-6">
+              <Magnetic intensity={0.4}>
+                <Link href="/contact" className="inline-block">
+                  <button className="relative overflow-hidden group px-12 h-20 min-w-[260px] bg-accent text-zinc-950 font-black rounded-full transition-all shadow-xl hover:shadow-2xl uppercase tracking-[0.2em] text-[12px] active:scale-95">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                      <span className="absolute transition-transform duration-500 group-hover:-translate-y-20">Request Specs</span>
+                      <span className="absolute translate-y-20 transition-transform duration-500 group-hover:translate-y-0">Contact Sales</span>
+                    </div>
+                    <div className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-bottom scale-y-0 group-hover:scale-y-100 opacity-20 z-0" />
+                  </button>
                 </Link>
+              </Magnetic>
+            </div>
+
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 relative"
+          >
+            <div className="relative rounded-[3rem] overflow-hidden border border-black/10 shadow-xl group flex flex-col lg:block bg-gray-50">
+              <img
+                src="/images/product_motor.png"
+                alt="Industrial Bearings"
+                className="w-full h-80 lg:h-[600px] object-cover grayscale-[0.3] group-hover:grayscale-0 lg:group-hover:scale-105 transition-all duration-1000"
+              />
+
+              {/* Mobile-Stacked / Desktop-Floating Quote Card */}
+              <div className="relative lg:absolute lg:bottom-8 lg:left-8 lg:right-8 xl:left-1/4 bg-gray-50/80 lg:bg-gray-50/60 backdrop-blur-2xl p-8 rounded-b-[3rem] lg:rounded-3xl border-t lg:border border-black/10 shadow-xl">
+                <p className="text-[10px] font-black tracking-widest uppercase text-accent mb-4">Quality Promise</p>
+                <p className="text-sm md:text-base font-medium text-primary/80 italic leading-relaxed">
+                  "Whether you’re looking for standard, miniature, or high-performance composites and bearings, you can count on absolute reliability and top-notch precision."
+                </p>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 

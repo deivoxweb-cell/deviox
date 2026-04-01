@@ -25,42 +25,46 @@ const NAV_LINKS = {
 
 const Footer = () => {
   return (
-    <footer className="text-white">
+    <footer className="text-white relative overflow-hidden bg-primary">
+      {/* Massive Brutalist Background Typography */}
+      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 text-[120px] sm:text-[200px] md:text-[300px] lg:text-[450px] font-black tracking-[-0.05em] text-white/20 select-none pointer-events-none uppercase whitespace-nowrap leading-none mix-blend-overlay z-0">
+        DEIVOX
+      </div>
 
       {/* ── Main body ──────────────────────────────────────────────── */}
-      <div className="bg-primary py-16">
+      <div className="relative z-10 py-24 md:py-32 border-t border-white/5">
         <div className="w-full px-4 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 items-start">
 
             {/* Brand block */}
-            <div className="lg:col-span-4">
-              <div className="mb-8">
+            <div className="lg:col-span-4 flex flex-col justify-between h-full">
+              <div className="mb-12">
                 <img
                   src="/images/Logo.png"
                   alt="DEI VOX Logo"
                   width={140}
                   height={56}
-                  className="object-contain brightness-0 invert"
+                  className="object-contain brightness-0 invert opacity-80"
                 />
               </div>
-              <p className="text-xs text-white/60 leading-relaxed font-medium mb-8 max-w-xs">
+              <p className="text-sm md:text-base text-white/50 leading-relaxed font-medium mb-12 max-w-sm">
                 Pioneers of Boiler Circulation Pump (BCP) services in India.
-                Business Consultant, Service Support &amp; Spare Parts for all BCP makes.
+                Engineering reliability through precision overhauling and reverse engineering.
               </p>
 
               {/* Offices */}
-              <div className="space-y-5">
+              <div className="space-y-8">
                 {[
-                  { tag: "Sales Office", loc: "Gurugram, Haryana, India" },
-                  { tag: "Service Support", loc: "Bengaluru, Karnataka, India" },
+                  { tag: "Sales HQ", loc: "Gurugram, Haryana" },
+                  { tag: "Service Center", loc: "Bengaluru, Karnataka" },
                 ].map((o) => (
-                  <div key={o.tag} className="flex items-start gap-3">
-                    <div className="mt-0.5 text-accent">
-                      <MapPin size={15} />
+                  <div key={o.tag} className="flex items-start gap-4 grow group">
+                    <div className="mt-1 text-accent opacity-50 group-hover:opacity-100 transition-opacity">
+                      <MapPin size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black text-accent-light uppercase tracking-widest mb-0.5">{o.tag}</p>
-                      <p className="text-xs text-white/70 font-bold uppercase">{o.loc}</p>
+                      <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em] mb-1.5">{o.tag}</p>
+                      <p className="text-sm text-white/80 font-black uppercase tracking-tight">{o.loc}</p>
                     </div>
                   </div>
                 ))}
@@ -116,7 +120,7 @@ const Footer = () => {
       </div>
 
       {/* ── Bottom bar ─────────────────────────────────────────────── */}
-      <div className="bg-[#001f4d] py-6 border-t border-white/5">
+      <div className="relative z-10 bg-black/20 py-8 border-t border-white/10 backdrop-blur-xl">
         <div className="w-full px-4 lg:px-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
 
@@ -128,9 +132,9 @@ const Footer = () => {
               {[
                 { Icon: MessageSquare, onClick: () => window.location.href = "mailto:info@deivox.com" },
                 { Icon: Globe, onClick: () => window.open("https://maps.google.com", "_blank") },
-                { 
-                  Icon: Share2, 
-                  isFun: true, 
+                {
+                  Icon: Share2,
+                  isFun: true,
                   onClick: () => {
                     confetti({
                       particleCount: 150,
@@ -147,14 +151,13 @@ const Footer = () => {
                   type="button"
                   onClick={item.onClick}
                   title={item.isFun ? "Share some context!" : ""}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all cursor-pointer hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
-                    item.isFun 
-                      ? "bg-accent text-zinc-950 shadow-lg shadow-accent/30" 
-                      : "bg-white/10 text-white/70 hover:bg-accent hover:text-zinc-950"
-                  }`}
+                  className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50 ${item.isFun
+                    ? "bg-accent text-zinc-950 shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] hover:-translate-y-1"
+                    : "bg-white/5 text-white/70 hover:bg-white hover:text-primary hover:-translate-y-1"
+                    }`}
                   aria-label={item.isFun ? "Share some context" : "Social link"}
                 >
-                  <item.Icon size={18} />
+                  <item.Icon size={18} strokeWidth={2.5} />
                 </button>
               ))}
             </div>

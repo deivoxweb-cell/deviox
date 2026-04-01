@@ -171,6 +171,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} min-h-screen flex flex-col bg-white`}
         suppressHydrationWarning
       >
+        <div className="grain-overlay"></div>
         <Navbar />
         <main className="grow">
           {children}
