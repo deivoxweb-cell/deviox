@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, CheckCircle2, Phone } from "lucide-react";
@@ -9,13 +10,19 @@ const AboutSection = () => {
       <div className="w-full px-4 lg:px-10 relative z-10">
 
         {/* Section header — same pattern as WhyChooseUs / ServiceGrid */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Who We Are</p>
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-primary uppercase">
             About DEI VOX
           </h2>
           <div className="w-20 h-1.5 bg-accent mx-auto mt-5 rounded-full" />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 

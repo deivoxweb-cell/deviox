@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { Award, Download, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export default function ISOCertificatePage() {
@@ -51,12 +53,17 @@ export default function ISOCertificatePage() {
   ];
 
   return (
-    <div className="pt-24 bg-white">
+    <div className="pt-24 bg-white overflow-hidden">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-primary/80" />
-        <div className="w-full px-4 lg:px-10 relative z-10">
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6 }}
+           className="w-full px-4 lg:px-10 relative z-10"
+        >
           <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Commitment to Quality</p>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
             ISO<br />
@@ -65,7 +72,7 @@ export default function ISOCertificatePage() {
           <p className="text-white/60 max-w-2xl text-base leading-relaxed">
             The Significance of ISO Certification in Ensuring Quality and Global Competitiveness!
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* ── Certificates Gallery ────────────────────────── */}
@@ -79,7 +86,11 @@ export default function ISOCertificatePage() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
               >
                 {/* Image Block */}
-                <div
+                <motion.div
+                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
                   className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border group ${!isEven ? "lg:order-last" : ""
                     }`}
                   style={{ height: 480 }}
@@ -93,10 +104,16 @@ export default function ISOCertificatePage() {
                   <div className="absolute top-6 left-6 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-white/10">
                     {String(i + 1).padStart(2, "0")} — {cert.tagline}
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Text Block */}
-                <div className={!isEven ? "lg:order-first" : ""}>
+                <motion.div 
+                  initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className={!isEven ? "lg:order-first" : ""}
+                >
                   <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-accent/10 rounded-xl text-accent">
                       {cert.icon}
@@ -127,7 +144,7 @@ export default function ISOCertificatePage() {
                     <Download size={16} className="group-hover:translate-y-1 transition-transform" />
                     Download Certificate
                   </a>
-                </div>
+                </motion.div>
               </div>
             );
           })}

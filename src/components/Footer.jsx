@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import confetti from "canvas-confetti";
 import { MapPin, MessageSquare, Globe, Share2, Award, CheckCircle2 } from "lucide-react";
 
@@ -58,7 +59,7 @@ const Footer = () => {
                       <MapPin size={15} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-0.5">{o.tag}</p>
+                      <p className="text-[10px] font-black text-accent-light uppercase tracking-widest mb-0.5">{o.tag}</p>
                       <p className="text-xs text-white/70 font-bold uppercase">{o.loc}</p>
                     </div>
                   </div>
@@ -69,15 +70,15 @@ const Footer = () => {
             {/* Nav columns */}
             {Object.entries(NAV_LINKS).map(([section, links]) => (
               <div key={section} className="lg:col-span-2">
-                <h4 className="text-[11px] font-black uppercase tracking-[0.25em] text-accent mb-6 border-b border-white/10 pb-3">
+                <h4 className="text-[11px] font-black uppercase tracking-[0.25em] text-accent-light mb-6 border-b border-white/10 pb-3">
                   {section}
                 </h4>
                 <ul className="space-y-3">
                   {links.map((link) => (
                     <li key={link.label}>
                       <Link
-                        to={link.href}
-                        className="text-xs text-white/50 hover:text-white font-bold uppercase tracking-wide transition-colors"
+                        href={link.href}
+                        className="text-xs text-white/80 hover:text-white font-bold uppercase tracking-wide transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -89,7 +90,7 @@ const Footer = () => {
 
             {/* Quality assurance */}
             <div className="lg:col-span-2">
-              <h4 className="text-[11px] font-black uppercase tracking-[0.25em] text-accent mb-6 border-b border-white/10 pb-3">
+              <h4 className="text-[11px] font-black uppercase tracking-[0.25em] text-accent-light mb-6 border-b border-white/10 pb-3">
                 Quality
               </h4>
               <div className="space-y-4">
@@ -103,7 +104,7 @@ const Footer = () => {
                     </div>
                     <div>
                       <p className="text-[10px] font-black uppercase text-white tracking-wider">{q.title}</p>
-                      <p className="text-[9px] text-white/40 uppercase">{q.sub}</p>
+                      <p className="text-[9px] text-white/70 uppercase">{q.sub}</p>
                     </div>
                   </div>
                 ))}
@@ -119,7 +120,7 @@ const Footer = () => {
         <div className="w-full px-4 lg:px-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
 
-            <p className="text-[10px] font-black text-white/30 tracking-[0.25em] uppercase">
+            <p className="text-[10px] font-black text-white/70 tracking-[0.25em] uppercase">
               © 2026 DEI VOX INDIA PVT. LTD. — All Rights Reserved
             </p>
 
@@ -141,24 +142,26 @@ const Footer = () => {
                   }
                 }
               ].map((item, i) => (
-                <div
+                <button
                   key={i}
+                  type="button"
                   onClick={item.onClick}
                   title={item.isFun ? "Share some context!" : ""}
-                  className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all cursor-pointer hover:-translate-y-0.5 ${
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all cursor-pointer hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
                     item.isFun 
-                      ? "bg-accent text-white shadow-lg shadow-accent/30" 
-                      : "bg-white/5 text-white/30 hover:bg-accent hover:text-white"
+                      ? "bg-accent text-zinc-950 shadow-lg shadow-accent/30" 
+                      : "bg-white/10 text-white/70 hover:bg-accent hover:text-zinc-950"
                   }`}
+                  aria-label={item.isFun ? "Share some context" : "Social link"}
                 >
-                  <item.Icon size={16} />
-                </div>
+                  <item.Icon size={18} />
+                </button>
               ))}
             </div>
 
-            <div className="flex gap-4 text-[10px] font-black text-white/30 uppercase tracking-widest">
-              <Link to="/" className="hover:text-white transition-colors">Privacy</Link>
-              <Link to="/" className="hover:text-white transition-colors">Terms</Link>
+            <div className="flex gap-4 text-[10px] font-black text-white/70 uppercase tracking-widest">
+              <Link href="/" className="hover:text-white transition-colors">Privacy</Link>
+              <Link href="/" className="hover:text-white transition-colors">Terms</Link>
             </div>
 
           </div>

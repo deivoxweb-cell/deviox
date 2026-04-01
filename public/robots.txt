@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.deivox.co.in
+
+# Sitemaps
+Sitemap: https://www.deivox.co.in/sitemap.xml

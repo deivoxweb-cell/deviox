@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
         >
           {/* Primary navy tint */}
           <div className="absolute inset-0 bg-primary/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/70 to-transparent" />
         </div>
 
         <div className="w-full px-4 lg:px-10 relative z-20">
@@ -51,7 +52,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-sm sm:text-base text-white/70 font-medium mb-10 leading-relaxed max-w-xl"
+              className="text-sm sm:text-base text-white/90 font-medium mb-10 leading-relaxed max-w-xl"
             >
               Worried about BCW pump maintenance and repairs? With DEI VOX in the industry
               you never have to worry — we cover maintenance, repair, rewinding, spare parts,
@@ -65,12 +66,12 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
             >
-              <Link to="/services">
-                <button className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-accent hover:bg-accent/90 text-white font-black rounded-2xl transition-all shadow-xl shadow-accent/30 hover:-translate-y-0.5 uppercase tracking-widest text-sm active:scale-95">
+              <Link href="/services">
+                <button className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-accent hover:bg-accent/90 text-zinc-950 font-black rounded-2xl transition-all shadow-xl shadow-accent/30 hover:-translate-y-0.5 uppercase tracking-widest text-sm active:scale-95">
                   Explore Services
                 </button>
               </Link>
-              <Link to="/contact">
+              <Link href="/contact">
                 <button className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white/10 transition-all uppercase tracking-widest text-sm">
                   <Phone size={16} />
                   Get a Free Consultation
@@ -92,7 +93,7 @@ const Hero = () => {
               ].map((tag) => (
                 <div key={tag} className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  <span className="text-[10px] font-black text-white/50 uppercase tracking-widest">{tag}</span>
+                  <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">{tag}</span>
                 </div>
               ))}
             </motion.div>

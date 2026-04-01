@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Settings, Headset, Timer } from "lucide-react";
@@ -25,12 +26,18 @@ const WhyChooseUs = () => {
   return (
     <section className="py-24 bg-card border-y border-border">
       <div className="w-full px-4 lg:px-10">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-primary uppercase">
             WHY CHOOSE DEIVOX?
           </h2>
           <div className="w-20 h-1.5 bg-accent mx-auto mt-4" />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {features.map((feature, index) => (

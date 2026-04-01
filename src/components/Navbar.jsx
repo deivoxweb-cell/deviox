@@ -1,5 +1,6 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -35,7 +36,7 @@ const Navbar = () => {
           {/* Main Navbar Row */}
           <div className="flex justify-between items-center">
             <div className="shrink-0">
-              <Link to="/" className="flex items-center group">
+              <Link href="/" className="flex items-center group">
                 <div className="relative transition-transform duration-300 group-hover:scale-110">
                   <img
                     src="/images/Logo.png"
@@ -54,7 +55,7 @@ const Navbar = () => {
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative group">
                     <Link
-                      to={link.href}
+                      href={link.href}
                       className="text-sm font-black text-primary hover:text-accent transition-all uppercase tracking-tighter flex items-center gap-1.5"
                     >
                       {link.name}
@@ -108,7 +109,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className="block text-xl font-black text-primary hover:text-accent uppercase tracking-tighter border-b border-primary/5 pb-4 last:border-0"
                   onClick={() => setIsOpen(false)}
                 >

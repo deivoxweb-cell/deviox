@@ -1,6 +1,8 @@
+"use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -53,9 +55,9 @@ const SERVICES = [
 
 const CARD_STYLES = {
   mobile: [
-    { scale: 1, opacity: 1, width: 260, height: 420, xFactor: 0, zIndex: 30 },
-    { scale: 0.82, opacity: 1, width: 200, height: 340, xFactor: 120, zIndex: 20 },
-    { scale: 0.68, opacity: 1, width: 200, height: 360, xFactor: 240, zIndex: 10 },
+    { scale: 1, opacity: 1, width: 280, height: 440, xFactor: 0, zIndex: 30 },
+    { scale: 0.75, opacity: 1, width: 180, height: 380, xFactor: 140, zIndex: 20 },
+    { scale: 0.6, opacity: 1, width: 180, height: 340, xFactor: 260, zIndex: 10 },
   ],
   desktop: [
     { scale: 1, opacity: 1, width: 380, height: 560, xFactor: 0, zIndex: 30 },
@@ -104,7 +106,13 @@ export default function ServiceGrid() {
       onMouseLeave={() => { isPaused.current = false; }}
     >
       {/* Header */}
-      <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
         <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">
           What We Do
         </p>
@@ -112,13 +120,30 @@ export default function ServiceGrid() {
           OUR CORE SOLUTIONS
         </h2>
         <div className="w-20 h-1.5 bg-accent mx-auto mt-5 rounded-full" />
-      </div>
+      </motion.div>
 
-      {/* Carousel */}
       <div
         className="relative flex items-center justify-center"
-        style={{ height: isMobile ? 420 : 560, perspective: 1200 }}
+        style={{ height: isMobile ? 480 : 560, perspective: 1200 }}
       >
+        {/* Navigation Arrows */}
+        <div className="absolute inset-0 flex items-center justify-between px-2 md:px-8 pointer-events-none z-50">
+          <button
+            onClick={() => setActiveIndex((p) => (p - 1 + SERVICES.length) % SERVICES.length)}
+            className="pointer-events-auto p-3 rounded-full bg-white/10 hover:bg-accent hover:text-zinc-950 text-primary border border-white/5 backdrop-blur-md transition-all active:scale-90 shadow-xl group"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={isMobile ? 24 : 32} />
+          </button>
+          <button
+            onClick={() => setActiveIndex((p) => (p + 1) % SERVICES.length)}
+            className="pointer-events-auto p-3 rounded-full bg-white/10 hover:bg-accent hover:text-zinc-950 text-accent border border-white/5 backdrop-blur-md transition-all active:scale-90 shadow-xl group"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={isMobile ? 24 : 32} />
+          </button>
+        </div>
+
         {SERVICES.map((service, cardIndex) => {
           const offset = getOffset(cardIndex, activeIndex);
           const style = getCardStyle(offset, isMobile);
@@ -185,17 +210,19 @@ export default function ServiceGrid() {
 
                   {isFocused ? (
                     <>
-                      <p className="text-foreground/60 text-[13px] font-semibold leading-relaxed flex-1 mb-4">
-                        {service.description}
+                      <p className="text-foreground/80 text-[13px] font-semibold leading-relaxed flex-1 mb-4 line-clamp-3 md:line-clamp-none">
+                        {isMobile && service.description.length > 100
+                          ? service.description.substring(0, 100) + "..."
+                          : service.description}
                       </p>
-                      <Link to={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                        <button className="w-full py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white text-[10px] font-black uppercase tracking-widest transition-all active:scale-95 shadow-md shadow-accent/30">
+                      <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <button className="w-full py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-zinc-950 text-[10px] font-black uppercase tracking-widest transition-all active:scale-95 shadow-md shadow-accent/30">
                           Explore Solution
                         </button>
                       </Link>
                     </>
                   ) : (
-                    <p className="text-white/30 text-[10px] uppercase tracking-widest font-bold mt-auto">Tap to view →</p>
+                    <p className="text-white/70 text-[10px] uppercase tracking-widest font-bold mt-auto">Tap to view →</p>
                   )}
                 </div>
               </div>
@@ -210,9 +237,10 @@ export default function ServiceGrid() {
           <button
             key={i}
             onClick={() => setActiveIndex(i)}
-            className={`rounded-full transition-all ${i === activeIndex
-              ? "w-8 h-2.5 bg-accent"
-              : "w-2.5 h-2.5 bg-gray-300"
+            aria-label={`Go to slide ${i + 1}`}
+            className={`rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-accent/50 ${i === activeIndex
+              ? "w-10 h-3.5 bg-accent"
+              : "w-3.5 h-3.5 bg-gray-300 hover:bg-gray-400"
               }`}
           />
         ))}

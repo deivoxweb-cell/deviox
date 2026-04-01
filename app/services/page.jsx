@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { CheckCircle2, Wrench, Zap, Settings, Package, Cog, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const services = [
   {
@@ -81,12 +83,17 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24 bg-white">
+    <div className="pt-24 bg-white overflow-hidden">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
-        <div className="w-full px-4 lg:px-10 relative z-10">
+        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6 }}
+           className="w-full px-4 lg:px-10 relative z-10"
+        >
           <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">What We Offer</p>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
             Our Core<br />
@@ -95,7 +102,7 @@ export default function ServicesPage() {
           <p className="text-white/60 max-w-2xl text-base leading-relaxed">
             From Insitu Machining to Reverse Engineering — comprehensive BCP solutions for Power Plants across India.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* ── Services List ────────────────────────────────── */}
@@ -103,6 +110,7 @@ export default function ServicesPage() {
         <div className="space-y-24">
           {services.map((service, i) => {
             const sectionId = service.title.toLowerCase().replace(/\s+/g, "-");
+            const isEven = i % 2 === 0;
             return (
               <div
                 key={service.title}
@@ -110,7 +118,12 @@ export default function ServicesPage() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
               >
                 {/* Image block — alternates left/right */}
-              <div className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 ${i % 2 !== 0 ? "lg:order-2" : ""}`}
+              <motion.div 
+                initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 ${!isEven ? "lg:order-2" : ""}`}
                 style={{ height: 360 }}
               >
                 <img
@@ -122,10 +135,16 @@ export default function ServicesPage() {
                 <div className="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm text-white text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
                   {String(i + 1).padStart(2, "0")} — {service.tagline}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Text block */}
-              <div className={i % 2 !== 0 ? "lg:order-1" : ""}>
+              <motion.div 
+                initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                viewport={{ once: true }}
+                className={!isEven ? "lg:order-1" : ""}
+              >
                 <div className="flex items-center gap-4 mb-5">
                   <div className="p-3 bg-accent/10 rounded-xl text-accent">{service.icon}</div>
                   <div>
@@ -143,7 +162,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
           );
         })}
@@ -152,19 +171,25 @@ export default function ServicesPage() {
 
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-20 bg-primary">
-        <div className="w-full px-4 lg:px-10 text-center">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full px-4 lg:px-10 text-center"
+        >
           <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter uppercase mb-4">
             Need a Custom Engineering Solution?
           </h2>
           <p className="text-white/60 mb-10 max-w-xl mx-auto">
             Our team of experts is ready to assist you with specialized BCP maintenance, overhauling, and consultancy requirements.
           </p>
-          <Link to="/contact">
-            <button className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-white font-black rounded-2xl tracking-widest uppercase shadow-xl shadow-accent/30 hover:-translate-y-0.5 transition-all active:scale-95">
+          <Link href="/contact">
+            <span className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-white font-black rounded-2xl tracking-widest uppercase shadow-xl shadow-accent/30 hover:-translate-y-0.5 transition-all active:scale-95 cursor-pointer">
               Get Technical Consultation <ArrowRight size={18} />
-            </button>
+            </span>
           </Link>
-        </div>
+        </motion.div>
       </section>
 
     </div>

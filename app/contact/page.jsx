@@ -1,5 +1,7 @@
+"use client";
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Paperclip } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Paperclip, ChevronDown } from "lucide-react";
 
 const SUBJECTS = [
   "General Inquiry",
@@ -34,12 +36,17 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24 pb-24 bg-white">
+    <div className="pt-24 pb-24 bg-white overflow-hidden">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
-        <div className="w-full px-4 lg:px-10 relative z-10">
+        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6 }}
+           className="w-full px-4 lg:px-10 relative z-10"
+        >
           <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Get In Touch</p>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
             Reach<br />
@@ -48,7 +55,7 @@ export default function ContactPage() {
           <p className="text-white/60 max-w-xl text-base leading-relaxed">
             Get the ultimate solution to your plant's circulating pump requirements.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* ── Contact Cards ─────────────────────────────────── */}
@@ -73,9 +80,13 @@ export default function ContactPage() {
               primary: "002/T S1, Vatika Town Square",
               secondary: "Sector 83, Gurugram, Haryana 122004",
             },
-          ].map((card) => (
-            <div
+          ].map((card, i) => (
+            <motion.div
               key={card.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
               className="bg-card border border-border rounded-3xl p-6 hover:border-accent/40 hover:shadow-lg transition-all group"
             >
               <div className="p-3 bg-accent/10 text-accent rounded-xl inline-block mb-4 group-hover:bg-accent group-hover:text-white transition-all">
@@ -84,7 +95,7 @@ export default function ContactPage() {
               <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-2">{card.label}</p>
               <p className="text-sm font-black text-primary uppercase">{card.primary}</p>
               {card.secondary && <p className="text-xs text-foreground/60 font-medium mt-1">{card.secondary}</p>}
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -92,7 +103,13 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           {/* Office locations */}
-          <div className="lg:col-span-4 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="lg:col-span-4 space-y-6"
+          >
             <div>
               <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-2">Our Locations</p>
               <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-4">Where To Find Us</h2>
@@ -122,13 +139,21 @@ export default function ContactPage() {
               <p className="text-xs text-white/70 leading-relaxed mb-3">
                 The right pick for any BCP maintenance, repairing, or rebuilding issues.
               </p>
-              <p className="text-xs text-white/80 font-bold">sales@deivox.co.in</p>
-              <p className="text-xs text-white/80 font-bold">+91-9886424770</p>
+              <div className="space-y-1">
+                <p className="text-xs text-white/80 font-bold">sales@deivox.co.in</p>
+                <p className="text-xs text-white/80 font-bold">+91-9886424770</p>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact form */}
-          <div className="lg:col-span-8">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="lg:col-span-8"
+          >
             <div className="bg-[#f8f9fb] rounded-3xl p-8 md:p-10 border border-border industrial-grid">
               <h3 className="text-2xl font-black text-primary uppercase tracking-tighter mb-8">Send Us A Message</h3>
               <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -148,7 +173,7 @@ export default function ContactPage() {
                       value={form[field.id]}
                       onChange={handleChange}
                       placeholder={field.placeholder}
-                      className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
+                      className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all font-medium"
                     />
                   </div>
                 ))}
@@ -156,17 +181,22 @@ export default function ContactPage() {
                 {/* Subject dropdown */}
                 <div className="md:col-span-2">
                   <label className="block text-[10px] font-black text-foreground/60 uppercase tracking-widest mb-2">Subject</label>
-                  <select
-                    name="subject"
-                    value={form.subject}
-                    onChange={handleChange}
-                    className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all appearance-none cursor-pointer"
-                  >
-                    <option value="">Select a subject…</option>
-                    {SUBJECTS.map((s) => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="subject"
+                      value={form.subject}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all appearance-none cursor-pointer font-medium"
+                    >
+                      <option value="">Select a subject…</option>
+                      {SUBJECTS.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-foreground/30">
+                      <ChevronDown size={16} />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="md:col-span-2">
@@ -177,7 +207,7 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Describe your requirement or query..."
-                    className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all resize-none"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all resize-none font-medium"
                   />
                 </div>
 
@@ -188,7 +218,7 @@ export default function ContactPage() {
                     <div className="p-2 bg-accent/10 rounded-lg text-accent group-hover:bg-accent group-hover:text-white transition-all">
                       <Paperclip size={16} />
                     </div>
-                    <span className="text-sm text-foreground/50 group-hover:text-foreground transition-colors truncate">
+                    <span className="text-sm text-foreground/50 group-hover:text-foreground transition-colors truncate font-medium">
                       {fileName || "Click to upload an image or document…"}
                     </span>
                     <input
@@ -210,8 +240,7 @@ export default function ContactPage() {
                 </div>
               </form>
             </div>
-          </div>
-
+          </motion.div>
         </div>
       </section>
 

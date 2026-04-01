@@ -1,15 +1,22 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { CheckCircle2, Settings, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function PowerGenerationPage() {
   return (
-    <div className="pt-24 bg-white">
+    <div className="pt-24 bg-white overflow-hidden">
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section className="bg-primary py-20 industrial-grid relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80" />
-        <div className="w-full px-4 lg:px-10 relative z-10">
+        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/80" />
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6 }}
+           className="w-full px-4 lg:px-10 relative z-10"
+        >
           <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Industries</p>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-tight mb-6">
             Power<br />
@@ -18,13 +25,18 @@ export default function PowerGenerationPage() {
           <p className="text-white/60 max-w-2xl text-base leading-relaxed">
             India is powered mainly by Thermal plants! If you are not powered yet, then you are missing out on something big! Power Generation is the need of the hour and with our support in Boiler Water Circulating Pumps strictly, we are ensuring India is never left behind.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* ── Pump Rebuilds and Maintenance ───────────────── */}
       <section className="py-20 w-full px-4 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
             <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Specialized Service</p>
             <h2 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase mb-6">
               Pump Rebuilds &amp; Maintenance
@@ -53,9 +65,15 @@ export default function PowerGenerationPage() {
                 <span className="text-sm font-bold text-primary uppercase">Specialized Stator Design</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 h-[500px]">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 h-[500px]"
+          >
             <img
               src="/images/pump_rebuild.png"
               alt="Pump Rebuild and Maintenance"
@@ -70,14 +88,20 @@ export default function PowerGenerationPage() {
                 Our wet stators are the best possible ones present in the market, developed using specific designs and specifications as required by our clients.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ── Total Restoration Capabilities ──────────────── */}
       <section className="py-20 bg-[#f8f9fb] industrial-grid">
         <div className="w-full px-4 lg:px-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <div className="p-3 bg-accent/10 rounded-xl text-accent inline-block mb-6"><Settings size={28} /></div>
             <h2 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase mb-6">Total Restoration At Our Facility</h2>
             <p className="text-foreground/70 leading-relaxed text-base mb-10 max-w-3xl mx-auto">
@@ -85,18 +109,18 @@ export default function PowerGenerationPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact">
-                <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-2xl uppercase tracking-widest text-xs shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 active:scale-95">
+              <Link href="/contact">
+                <span className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-black rounded-2xl uppercase tracking-widest text-xs shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer">
                   Request an Inspection
-                </button>
+                </span>
               </Link>
-              <Link to="/services">
-                <button className="px-8 py-4 border-2 border-primary/20 text-primary font-black rounded-2xl hover:bg-primary/5 uppercase tracking-widest text-xs transition-all">
+              <Link href="/services">
+                <span className="px-8 py-4 border-2 border-primary/20 text-primary font-black rounded-2xl hover:bg-primary/5 uppercase tracking-widest text-xs transition-all cursor-pointer">
                   Browse Services
-                </button>
+                </span>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
