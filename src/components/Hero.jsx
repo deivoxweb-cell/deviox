@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -8,11 +9,16 @@ const Hero = () => {
   return (
     <div className="bg-white">
       <section className="relative h-screen mt-24 flex items-center overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero_industrial.png')" }}
-        >
+        {/* Background image optimized for LCP */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero_industrial.png"
+            alt="Industrial Boiler Circulation Pump Background"
+            fill
+            priority
+            fetchPriority="high"
+            className="object-cover object-center"
+          />
           {/* Primary navy tint */}
           <div className="absolute inset-0 bg-primary/80" />
           <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/70 to-transparent" />
