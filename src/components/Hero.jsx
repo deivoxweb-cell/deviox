@@ -17,24 +17,40 @@ const Hero = () => {
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacityText = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
+
   return (
     <div className="bg-primary" ref={container}>
       <section className="relative h-screen flex flex-col justify-center overflow-hidden">
         {/* Parallax Background */}
         <motion.div
-          className="absolute inset-0 z-0 h-[120%]"
-          style={{ y: yBackground, top: "-10%" }}
+          className="absolute inset-0 z-0 h-[110%] w-full"
+          style={{ y: yBackground, top: "-5%" }}
         >
+          {/* Static Background Image Fallback (LCP) */}
           <Image
             src="/images/hero_industrial.png"
             alt="Industrial Boiler Circulation Pump Background"
             fill
             priority
             fetchPriority="high"
-            className="object-cover object-center"
+            className={`object-cover object-center transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           />
-          <motion.div className="absolute inset-0 bg-primary/80" />
-          <motion.div className="absolute inset-0 bg-linear-to-b from-primary/30 via-primary/80 to-primary" />
+
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            onCanPlayThrough={() => setVideoLoaded(true)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          >
+            <source src="/video/deivox_banner.mp4" type="video/mp4" />
+          </video>
+          {/* 
+          <motion.div className="absolute inset-0 bg-primary/5" />
+          <motion.div className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/10 to-primary" /> */}
         </motion.div>
 
         <motion.div
@@ -104,7 +120,7 @@ const Hero = () => {
 
               <Magnetic intensity={0.3}>
                 <Link href="/contact">
-                  <button className="flex items-center gap-4 px-10 h-16 text-white/90 hover:text-white font-black rounded-full transition-all uppercase tracking-[0.2em] text-[11px] hover:bg-white/5 border border-white/5 hover:border-white/20">
+                  <button className="flex items-center gap-4 px-10 h-16 text-white/90 hover:text-white font-black rounded-full transition-all uppercase tracking-[0.2em] text-[11px] hover:bg-white/5 border border-accent hover:border-primary">
                     <Phone size={16} className="text-accent" />
                     Free Consultation
                   </button>
@@ -119,7 +135,7 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.8 }}
               className="absolute bottom-4 md:bottom-8 left-0 right-0 w-full px-4 lg:px-10 flex justify-center md:justify-between items-end pointer-events-none"
             >
-              <div className="hidden md:flex flex-col gap-2 font-black text-[9px] uppercase tracking-[0.2em] text-white/30">
+              <div className="hidden md:flex flex-col gap-2 font-black text-[9px] uppercase tracking-[0.2em] text-white/70">
                 <p>ISO 9001:2015</p>
                 <p>24/7 SUPPORT</p>
               </div>
@@ -135,7 +151,7 @@ const Hero = () => {
                 </motion.div>
               </div> */}
 
-              <div className="hidden md:block text-right font-black text-[9px] uppercase tracking-[0.2em] text-white/30">
+              <div className="hidden md:block text-right font-black text-[9px] uppercase tracking-[0.2em] text-white/70">
                 <p>INDIA'S #1</p>
                 <p>BCP PIONEERS</p>
               </div>
