@@ -195,12 +195,12 @@ const Navbar = () => {
                 >
                   <button
                     onClick={() => setPumpOpen((p) => !p)}
-                    className="flex items-center gap-2 text-[9px] font-black text-accent/70 uppercase tracking-[0.3em] mb-3 w-full text-left"
+                    className="flex items-center gap-3 text-4xl sm:text-5xl font-black text-white hover:text-accent uppercase tracking-tighter w-full text-left mb-3 transition-colors"
                   >
                     Pump Expertise
                     <ChevronDown
-                      size={12}
-                      className={`transition-transform duration-300 text-accent ${pumpOpen ? "rotate-180" : ""}`}
+                      size={22}
+                      className={`transition-transform duration-300 text-accent shrink-0 ${pumpOpen ? "rotate-180" : ""}`}
                     />
                   </button>
                   <AnimatePresence>
