@@ -17,9 +17,11 @@ const NAV_LINKS = {
     { label: "Spare Parts Selling", href: "/services#spare-parts-selling" },
     { label: "Reverse Engineering", href: "/services#reverse-engineering" },
   ],
-  Industries: [
-    { label: "Power Generation", href: "/power-generation" },
-    { label: "Composite Material", href: "/composite-material" },
+  "Pump Solutions": [
+    { label: "Boiler Circulation Pump", href: "/boiler-circulation-pump" },
+    { label: "Boiler Water Circulation Pump", href: "/boiler-water-circulation-pump" },
+    { label: "BCP Pump", href: "/bcp-pump" },
+    { label: "Submersible Pump Repair", href: "/submersible-pump-repair" },
   ],
 };
 

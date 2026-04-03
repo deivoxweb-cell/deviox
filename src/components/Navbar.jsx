@@ -7,16 +7,23 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Power Generation", href: "/power-generation" },
-  { name: "Composite Material", href: "/composite-material" },
   { name: "Services", href: "/services" },
   { name: "ISO Certificate", href: "/iso-certificate" },
   { name: "Reach Us", href: "/contact" },
 ];
 
+// SEO-priority pump expertise pages — linked from navbar for indexing signal
+const pumpLinks = [
+  { name: "Boiler Circulation Pump", href: "/boiler-circulation-pump" },
+  { name: "Boiler Water Circulation Pump", href: "/boiler-water-circulation-pump" },
+  { name: "BCP Pump", href: "/bcp-pump" },
+  { name: "Submersible Pump Repair", href: "/submersible-pump-repair" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [pumpOpen, setPumpOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +61,45 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-12">
               <div className="flex items-center gap-8">
-                {navLinks.map((link) => (
+                {navLinks.slice(0, 2).map((link) => (
+                  <div key={link.name} className="relative group">
+                    <Link
+                      href={link.href}
+                      className={`text-[11px] font-black transition-all duration-500 uppercase tracking-widest flex items-center gap-1.5 ${scrolled ? "text-primary hover:text-accent" : "text-white/80 hover:text-white"
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                    <div className="absolute -bottom-1.5 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full ease-out" />
+                  </div>
+                ))}
+
+                {/* Pump Expertise Dropdown - Placed after 'About Us' for SEO focus */}
+                <div className="relative group">
+                  <button
+                    className={`text-[11px] font-black transition-all duration-500 uppercase tracking-widest flex items-center gap-1.5 ${scrolled ? "text-primary hover:text-accent" : "text-white/80 hover:text-white"}`}
+                    aria-haspopup="true"
+                    aria-label="Pump Expertise pages"
+                  >
+                    Pump Expertise
+                    <ChevronDown size={10} className="transition-transform group-hover:rotate-180" />
+                  </button>
+                  <div className="absolute -bottom-1.5 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full ease-out" />
+                  {/* Dropdown panel */}
+                  <div className="absolute top-full left-0 mt-3 w-64 bg-white shadow-2xl rounded-xl border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    {pumpLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block px-4 py-3 text-[10px] font-black uppercase tracking-widest text-primary hover:bg-accent hover:text-zinc-950 transition-colors border-b border-gray-50 last:border-b-0"
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {navLinks.slice(2).map((link) => (
                   <div key={link.name} className="relative group">
                     <Link
                       href={link.href}
@@ -86,7 +131,7 @@ const Navbar = () => {
             {/* Mobile menu button */}
             <div className="lg:hidden flex items-center">
               <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => { setIsOpen(!isOpen); if (isOpen) setPumpOpen(false); }}
                 className={`relative z-60 transition-colors p-2 ${scrolled ? "text-primary" : "text-white"}`}
                 aria-label="Toggle menu"
               >
@@ -121,7 +166,70 @@ const Navbar = () => {
                 }}
                 className="flex flex-col gap-6 pt-10"
               >
-                {navLinks.map((link, i) => (
+                {navLinks.slice(0, 2).map((link, i) => (
+                  <motion.div
+                    key={link.name}
+                    variants={{
+                      hidden: { y: 40, opacity: 0 },
+                      visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="inline-block text-4xl sm:text-5xl font-black text-white hover:text-accent uppercase tracking-tighter"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+
+                {/* Pump expertise links — collapsible */}
+                <motion.div
+                  variants={{
+                    hidden: { y: 20, opacity: 0 },
+                    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 } }
+                  }}
+                  className="overflow-hidden pt-2 border-t border-white/10"
+                >
+                  <button
+                    onClick={() => setPumpOpen((p) => !p)}
+                    className="flex items-center gap-2 text-[9px] font-black text-accent/70 uppercase tracking-[0.3em] mb-3 w-full text-left"
+                  >
+                    Pump Expertise
+                    <ChevronDown
+                      size={12}
+                      className={`transition-transform duration-300 text-accent ${pumpOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {pumpOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="flex flex-col gap-2 pb-2">
+                          {pumpLinks.map((link) => (
+                            <Link
+                              key={link.href}
+                              href={link.href}
+                              onClick={() => { setIsOpen(false); setPumpOpen(false); }}
+                              className="inline-block text-base font-bold text-white/60 hover:text-accent uppercase tracking-widest transition-colors"
+                            >
+                              {link.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {navLinks.slice(2).map((link, i) => (
                   <motion.div
                     key={link.name}
                     variants={{

@@ -74,6 +74,21 @@ body {
     mix-blend-mode: overlay;
     animation: grain 8s steps(10) infinite;
   }
+
+  /* SEO article prose — used by SeoPageLayout */
+  .seo-prose h1,
+  .seo-prose h2,
+  .seo-prose h3 {
+    color: var(--primary);
+  }
+  .seo-prose p,
+  .seo-prose li {
+    color: rgba(15, 23, 42, 0.75);
+  }
+  .seo-prose strong {
+    color: var(--primary);
+    font-weight: 700;
+  }
 }
 
 @keyframes grain {

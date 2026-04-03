@@ -3,6 +3,7 @@ import "@/src/index.css";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import Script from "next/script";
+import PageLoader from "@/src/components/PageLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -172,6 +173,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <div className="grain-overlay"></div>
+        <PageLoader />
         <Navbar />
         <main className="grow">
           {children}
