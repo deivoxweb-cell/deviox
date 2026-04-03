@@ -99,33 +99,54 @@ const Hero = () => {
               From rewinding to reverse engineering — <strong className="text-white">DEI VOX powers the core.</strong>
             </motion.p>
 
-            {/* Magnetic CTAs */}
+            {/* Unconventional Tactical CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+              className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mt-8 relative max-w-2xl mx-auto"
             >
-              <Magnetic intensity={0.4}>
-                <Link href="/services">
-                  <button className="relative overflow-hidden group w-64 h-16 bg-accent text-zinc-950 font-black rounded-full transition-all shadow-xl hover:shadow-2xl uppercase tracking-[0.2em] text-[11px] active:scale-95">
-                    <div className="absolute inset-0 flex items-center justify-center z-10">
-                      <span className="absolute transition-transform duration-500 group-hover:-translate-y-16">Explore Solutions</span>
-                      <span className="absolute translate-y-16 transition-transform duration-500 group-hover:translate-y-0">Discover More</span>
-                    </div>
-                    <div className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-bottom scale-y-0 group-hover:scale-y-100 opacity-20 z-0" />
-                  </button>
-                </Link>
-              </Magnetic>
+              {/* Deco elements pointing to buttons */}
+              <div className="absolute -left-12 top-1/2 w-8 h-px bg-white/20 hidden md:block" />
+              <div className="absolute -right-12 top-1/2 w-8 h-px bg-white/20 hidden md:block" />
 
-              <Magnetic intensity={0.3}>
-                <Link href="/contact">
-                  <button className="flex items-center gap-4 px-10 h-16 text-white/90 hover:text-white font-black rounded-full transition-all uppercase tracking-[0.2em] text-[11px] hover:bg-white/5 border border-accent hover:border-primary">
-                    <Phone size={16} className="text-accent" />
-                    Free Consultation
-                  </button>
-                </Link>
-              </Magnetic>
+              <Link href="/services" className="w-full sm:w-auto">
+                <div
+                  className="relative overflow-hidden group w-full sm:w-64 h-16 bg-accent text-zinc-950 flex items-center justify-center font-black transition-all duration-300 shadow-[0_0_30px_rgba(249,115,22,0.3)] hover:shadow-[0_0_50px_rgba(249,115,22,0.6)] cursor-pointer rounded-4xl"
+
+                >
+                  <div className="absolute top-0 left-0 w-2 h-2 border-b-[2px] border-r-[2px] border-black/30" />
+
+                  <div className="absolute inset-0 flex items-center justify-center z-10 uppercase tracking-[0.2em] text-[11px]">
+                    <span className="absolute transition-transform duration-500 group-hover:-translate-y-16">Explore Solutions</span>
+                    <span className="absolute translate-y-16 transition-transform duration-500 text-white group-hover:translate-y-0">services</span>
+                  </div>
+
+                  {/* Internal scanning laser on hover */}
+                  <motion.div
+                    initial={{ left: "-20%" }}
+                    whileHover={{ left: "120%" }}
+                    transition={{ duration: 0.8, ease: "easeInOut", repeat: Infinity }}
+                    className="absolute top-0 bottom-0 w-8 bg-white/40 skew-x-12 z-0"
+                  />
+                </div>
+              </Link>
+
+              <Link href="/contact" className="w-full sm:w-auto">
+                <div
+                  className="flex items-center gap-4 w-full sm:w-64 h-16 text-white font-black transition-all uppercase tracking-[0.2em] text-[11px] bg-zinc-950/80 backdrop-blur-xl border-l-[3px] border-accent cursor-pointer justify-center relative group rounded-4xl"
+
+                >
+                  {/* Tactical corner accent inner */}
+                  <div className="absolute top-0 right-0 w-3 h-3 bg-white/5 group-hover:bg-accent/20 transition-colors" />
+
+                  <Phone size={14} className="text-accent group-hover:animate-pulse" />
+                  <span className="group-hover:text-accent transition-colors">Consultation</span>
+
+                  {/* Subtle data label hovering on edge */}
+                  <span className="absolute -bottom-1 right-2 text-[7px] text-white/30 font-mono tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">CHNL.OPEN</span>
+                </div>
+              </Link>
             </motion.div>
 
             {/* Sub-data bottom strip */}

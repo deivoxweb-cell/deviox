@@ -1,13 +1,24 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = "force-dynamic";
+
+
 
 const RECIPIENT = "developer@initialace.com";
 const FROM = "Deivox Contact Form <onboarding@resend.dev>";
 
 export async function POST(request) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("[Contact API] Missing RESEND_API_KEY environment variable.");
+      return NextResponse.json(
+        { error: "Internal server error: API key not configured." },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
     const { name, email, phone, company, subject, message } = body;
 
