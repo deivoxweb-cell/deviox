@@ -46,8 +46,12 @@ const Hero = () => {
             onCanPlayThrough={() => setVideoLoaded(true)}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
           >
-            <source src="/video/deivox_banner.mp4" type="video/mp4" />
+            <source src="/video/industrial_stock.mp4" type="video/mp4" />
           </video>
+          
+          {/* Dark Overlay for Text Legibility */}
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+          
           {/* 
           <motion.div className="absolute inset-0 bg-primary/5" />
           <motion.div className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/10 to-primary" /> */}

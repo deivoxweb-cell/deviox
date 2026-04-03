@@ -122,10 +122,11 @@ const Footer = () => {
       {/* ── Bottom bar ─────────────────────────────────────────────── */}
       <div className="relative z-10 bg-black/20 py-8 border-t border-white/10 backdrop-blur-xl">
         <div className="w-full px-4 lg:px-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-5">
 
             <p className="text-[10px] font-black text-white/70 tracking-[0.25em] uppercase">
-              © 2026 DEI VOX INDIA PVT. LTD. — All Rights Reserved
+              © 2026 DEI VOX INDIA PVT.
+              <br /> LTD. — All Rights Reserved
             </p>
 
             <div className="flex gap-3">
