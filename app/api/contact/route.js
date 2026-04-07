@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 
 
-const RECIPIENT = "developer@initialace.com";
+const RECIPIENT = "deivoxweb@gmail.com";
 const FROM = "Deivox Contact Form <onboarding@resend.dev>";
 
 export async function POST(request) {
