@@ -43,6 +43,11 @@ export const metadata = {
   authors: [{ name: "DEI VOX India Pvt. Ltd.", url: SITE_URL }],
   creator: "DEI VOX India Pvt. Ltd.",
   publisher: "DEI VOX India Pvt. Ltd.",
+  icons: {
+    icon: "/Logo1.png",
+    apple: "/Logo1.png",
+    shortcut: "/Logo1.png",
+  },
   robots: {
     index: true,
     follow: true,
