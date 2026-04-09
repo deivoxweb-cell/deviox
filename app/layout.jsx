@@ -8,7 +8,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const SITE_URL = "https://www.deivox.co.in";
+const SITE_URL = "https://deivoxbcp.com";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -60,7 +60,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: SITE_URL,
   },
   openGraph: {
     type: "website",
@@ -87,7 +87,7 @@ export const metadata = {
     images: ["/images/hero_industrial.png"],
   },
   verification: {
-    google: "",   // Add Google Search Console verification token here
+    google: "google9da641003b5f6c70",
   },
 };
 
@@ -121,7 +121,10 @@ const jsonLd = {
         },
       ],
       email: "sales@deivox.co.in",
-      sameAs: [],
+      sameAs: [
+        "https://deivoxbcp.com",
+        "https://www.deivox.co.in",
+      ],
     },
     {
       "@type": "LocalBusiness",
