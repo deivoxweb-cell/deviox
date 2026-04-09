@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.deivox.co.in
+Host: https://deivoxbcp.com
 
 # Sitemaps
-Sitemap: https://www.deivox.co.in/sitemap.xml
+Sitemap: https://deivoxbcp.com/sitemap.xml
