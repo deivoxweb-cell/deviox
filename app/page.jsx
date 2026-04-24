@@ -18,9 +18,73 @@ export const metadata = {
   },
 };
 
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Boiler Circulation Pump (BCP) Repair & Overhauling",
+  "provider": {
+    "@type": "Organization",
+    "name": "DEI VOX India Pvt. Ltd.",
+    "url": "https://deivoxbcp.com"
+  },
+  "areaServed": "India",
+  "description": "Specialized engineering services for BCP, BWCP, and industrial pumps including rewinding, overhauling, and in-situ machining.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Pump Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "BCP Overhauling"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Motor Rewinding"
+        }
+      }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Boiler Circulation Pump (BCP)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Boiler Circulation Pump (BCP) is a high-pressure, high-temperature pump used in thermal power plants to circulate water through boiler tubes to ensure uniform heat transfer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does DEI VOX provide on-site pump repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, DEI VOX specializes in in-situ machining and on-site BCP maintenance to reduce downtime for power plants."
+      }
+    }
+  ]
+};
+
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-primary selection:bg-accent selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Hero />
       <AboutSection />
       <ServiceGrid />
