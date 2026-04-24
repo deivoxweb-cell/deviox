@@ -3,8 +3,9 @@ const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' blob: data: https://www.googletagmanager.com https://www.google-analytics.com;
+    img-src 'self' blob: data: https://www.googletagmanager.com https://www.google-analytics.com https://stats.g.doubleclick.net https://grainy-gradients.vercel.app;
     font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

@@ -87,11 +87,7 @@ export default function Home() {
     <div className="flex flex-col bg-primary selection:bg-accent selection:text-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([homepageSchema, faqSchema]) }}
       />
       <Hero />
       <AboutSection />
