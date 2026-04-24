@@ -15,6 +15,14 @@ export const metadata = {
     description:
       "India's leading company for Boiler Circulation Pump (BCP) & Boiler Water Circulation Pump maintenance, repair, overhauling and spare parts. ISO certified.",
     url: "https://deivoxbcp.com",
+    images: [
+      {
+        url: "https://deivoxbcp.com/images/hero_industrial.png",
+        width: 1200,
+        height: 630,
+        alt: "DEI VOX India — Boiler Circulation Pump Specialists",
+      },
+    ],
   },
 };
 

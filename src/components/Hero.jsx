@@ -18,6 +18,15 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const [videoLoaded, setVideoLoaded] = React.useState(false);
+  const [videoSrc, setVideoSrc] = React.useState(null);
+
+  React.useEffect(() => {
+    // Delay video loading to prioritize LCP image and critical scripts
+    const timer = setTimeout(() => {
+      setVideoSrc("/video/industrial_stock.mp4");
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="bg-primary" ref={container}>
@@ -43,10 +52,11 @@ const Hero = () => {
             muted
             loop
             playsInline
+            preload="none"
             onCanPlayThrough={() => setVideoLoaded(true)}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
           >
-            <source src="/video/industrial_stock.mp4" type="video/mp4" />
+            {videoSrc && <source src={videoSrc} type="video/mp4" />}
           </video>
           
           {/* Dark Overlay for Text Legibility */}

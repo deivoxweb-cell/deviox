@@ -61,6 +61,10 @@ export const metadata = {
   },
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      "en-IN": SITE_URL,
+      "x-default": SITE_URL,
+    },
   },
   openGraph: {
     type: "website",
@@ -154,6 +158,12 @@ const jsonLd = {
           closes: "18:00",
         },
       ],
+      openingHours: "Mo-Sa 09:00-18:00",
+      geo: {
+        "@type": "GeoCoordinates",
+        "latitude": "28.3973",
+        "longitude": "76.9691"
+      },
       priceRange: "₹₹",
       currenciesAccepted: "INR",
       paymentAccepted: "Cash, Bank Transfer, Cheque",
@@ -166,6 +176,15 @@ const jsonLd = {
       description: "India's BCP & Boiler Water Circulation Pump specialists",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en-IN",
+      potentialAction: {
+        "@type": "SearchAction",
+        "target": `${SITE_URL}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      },
+      sameAs: [
+        "https://www.facebook.com/deivoxbcp",
+        "https://www.linkedin.com/company/deivoxbcp"
+      ]
     },
   ],
 };
@@ -174,6 +193,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script
           id="json-ld-schema"
           type="application/ld+json"

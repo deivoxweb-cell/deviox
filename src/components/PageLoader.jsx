@@ -57,109 +57,40 @@ export default function PageLoader() {
 
   return (
     <div
+      className="loader-overlay"
       style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 9999,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        background: "var(--color-primary, #0d2340)",
         opacity: progress >= 100 ? 0 : 1,
-        transition: "opacity 0.4s ease",
         pointerEvents: progress >= 100 ? "none" : "all",
       }}
     >
       {/* Watermark text */}
-      <span
-        style={{
-          position: "absolute",
-          fontSize: "clamp(80px, 18vw, 200px)",
-          fontWeight: 900,
-          letterSpacing: "-0.06em",
-          color: "rgba(255,255,255,0.03)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-          pointerEvents: "none",
-          textTransform: "uppercase",
-        }}
-      >
+      <span className="loader-watermark">
         DEIVOX
       </span>
-
       {/* Logo + spinner */}
-      <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+      <div className="loader-logo-container">
         {/* Spinning ring */}
-        <div
-          style={{
-            width: 72,
-            height: 72,
-            borderRadius: "50%",
-            border: "3px solid rgba(255,255,255,0.08)",
-            borderTop: "3px solid #f97316",
-            animation: "deivox-spin 0.8s linear infinite",
-            margin: "0 auto",
-          }}
-        />
-
+        <div className="loader-ring" />
         {/* Logo centered */}
         <Image
           src="/images/Logo.png"
           alt="DEI VOX"
           width={44}
           height={44}
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            objectFit: "contain",
-            filter: "brightness(0) invert(1)",
-          }}
+          className="loader-logo"
         />
       </div>
-
       {/* Brand label */}
-      <p
-        style={{
-          position: "relative",
-          zIndex: 1,
-          marginTop: 20,
-          fontSize: "10px",
-          fontWeight: 900,
-          letterSpacing: "0.35em",
-          textTransform: "uppercase",
-          color: "rgba(255,255,255,0.4)",
-        }}
-      >
+      <p className="loader-label">
         DEI VOX INDIA
       </p>
-
       {/* Progress bar (bottom) */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 3,
-          background: "rgba(255,255,255,0.06)",
-        }}
-      >
+      <div className="loader-progress-bg">
         <div
-          style={{
-            height: "100%",
-            background: "linear-gradient(90deg, #f97316, #fb923c)",
-            width: `${progress}%`,
-            transition: "width 0.15s ease",
-            boxShadow: "0 0 12px rgba(249,115,22,0.6)",
-          }}
+          className="loader-progress-fill"
+          style={{ width: `${progress}%` }}
         />
       </div>
-
-      {/* Spin keyframe injected inline */}
-      <style>{`@keyframes deivox-spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );
 }

@@ -18,6 +18,14 @@ export const metadata = {
     description:
       "India's most trusted Boiler Circulation Pump specialists. Overhauling, repair, in-situ machining & spare parts. ISO certified. 24/7 support.",
     url: "https://deivoxbcp.com/boiler-circulation-pump",
+    images: [
+      {
+        url: "https://deivoxbcp.com/images/bcp_overhauling.png",
+        width: 1200,
+        height: 630,
+        alt: "Boiler Circulation Pump (BCP) Specialists — DEI VOX India",
+      },
+    ],
   },
 };
 
