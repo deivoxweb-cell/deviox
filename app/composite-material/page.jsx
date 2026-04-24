@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle2, ChevronRight, Settings } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
 
 const thermoplasticsUse = [
@@ -123,9 +124,11 @@ export default function CompositeMaterialPage() {
             className="flex flex-col gap-8"
           >
             <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] mb-12">
-              <img
+              <Image
                 src="/images/compositon.jpeg"
                 alt="Composite Material Layering"
+                width={800}
+                height={500}
                 className="w-full h-[400px] object-cover grayscale-[0.3]"
               />
               <div className="absolute inset-0 bg-primary/40 mix-blend-multiply" />
@@ -201,9 +204,11 @@ export default function CompositeMaterialPage() {
             className="lg:col-span-7 relative"
           >
             <div className="relative rounded-[3rem] overflow-hidden border border-black/10 shadow-xl group flex flex-col lg:block bg-gray-50">
-              <img
+              <Image
                 src="/images/product_motor.png"
                 alt="Industrial Bearings"
+                width={800}
+                height={600}
                 className="w-full h-80 lg:h-[600px] object-cover grayscale-[0.3] group-hover:grayscale-0 lg:group-hover:scale-105 transition-all duration-1000"
               />
 

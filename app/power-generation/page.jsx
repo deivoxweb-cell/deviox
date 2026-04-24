@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle2, ShieldCheck, Settings } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
 
 export default function PowerGenerationPage() {
@@ -76,9 +77,11 @@ export default function PowerGenerationPage() {
             className="lg:order-2 relative"
           >
             <div className="relative rounded-[3rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.8)] border border-white/10 h-[600px] group">
-              <img
+              <Image
                 src="/images/pump_rebuild.png"
                 alt="Pump Rebuild"
+                width={700}
+                height={600}
                 className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent pointer-events-none" />

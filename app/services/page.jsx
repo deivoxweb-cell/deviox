@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Wrench, Zap, Settings, Package, Cog, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
 
 const services = [
@@ -110,9 +111,11 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
           >
-            <img
+            <Image
               src={service.image}
               alt={service.title}
+              width={600}
+              height={600}
               className="w-full h-full object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
             />
             <div className={`absolute inset-0 bg-accent/10 transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-40"}`} />

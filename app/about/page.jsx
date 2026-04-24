@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { CheckCircle2, Award, Users, Lightbulb } from "lucide-react";
+import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
 
 // Awwwards Style Sticky Word Reveal for long paragraphs
@@ -108,7 +109,13 @@ export default function AboutPage() {
             className="lg:col-span-4 relative lg:sticky lg:top-32"
           >
             <div className="bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-16 flex items-center justify-center border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)]">
-              <img src="/images/Logo.png" alt="DEI VOX Logo" className="object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-700" />
+              <Image 
+                src="/images/Logo.png" 
+                alt="DEI VOX Logo" 
+                width={200}
+                height={100}
+                className="object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-700" 
+              />
             </div>
           </motion.div>
 

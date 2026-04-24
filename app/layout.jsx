@@ -72,7 +72,7 @@ export const metadata = {
       "India's leading BCP & Boiler Water Circulation Pump experts. Repair, overhauling, motor rewinding, insitu machining & spare parts. ISO certified. Available 24/7.",
     images: [
       {
-        url: "/images/hero_industrial.png",
+        url: `${SITE_URL}/images/hero_industrial.png`,
         width: 1200,
         height: 630,
         alt: "DEI VOX India — Boiler Circulation Pump Specialists",
@@ -84,7 +84,7 @@ export const metadata = {
     title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
     description:
       "Boiler Circulation Pump repair, overhauling, motor rewinding & more. ISO certified. 24/7 support across India.",
-    images: ["/images/hero_industrial.png"],
+    images: [`${SITE_URL}/images/hero_industrial.png`],
   },
   verification: {
     google: "google9da641003b5f6c70",
@@ -120,10 +120,8 @@ const jsonLd = {
           areaServed: "IN",
         },
       ],
-      email: "sales@deivox.co.in",
-      sameAs: [
-        "https://deivoxbcp.com",
-      ],
+      email: "sales@deivoxbcp.com",
+      sameAs: ["https://deivoxbcp.com"],
     },
     {
       "@type": "LocalBusiness",
@@ -132,7 +130,7 @@ const jsonLd = {
       image: `${SITE_URL}/images/hero_industrial.png`,
       url: SITE_URL,
       telephone: "+91-9886424770",
-      email: "sales@deivox.co.in",
+      email: "sales@deivoxbcp.com",
       address: {
         "@type": "PostalAddress",
         streetAddress: "002/T S1, Vatika Town Square, Sector 83",
@@ -144,7 +142,14 @@ const jsonLd = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
           opens: "09:00",
           closes: "18:00",
         },
@@ -169,11 +174,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
+        <script
           id="json-ld-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          strategy="beforeInteractive"
         />
       </head>
       <body 

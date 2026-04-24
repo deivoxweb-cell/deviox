@@ -1,3 +1,4 @@
+import Image from "next/image";
 /**
  * loading.jsx — Next.js App Router streaming UI.
  * Shown automatically by the framework while a page segment is loading.
@@ -47,16 +48,16 @@ export default function Loading() {
             margin: "0 auto",
           }}
         />
-        <img
+        <Image
           src="/images/Logo.png"
           alt="DEI VOX"
+          width={44}
+          height={44}
           style={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 44,
-            height: 44,
             objectFit: "contain",
             filter: "brightness(0) invert(1)",
           }}
