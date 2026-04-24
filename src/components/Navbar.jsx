@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -47,12 +48,13 @@ const Navbar = () => {
             <div className="shrink-0">
               <Link href="/" className="flex items-center group">
                 <div className={`relative transition-all duration-500 group-hover:scale-105 ${!scrolled ? "brightness-0 invert" : ""}`}>
-                  <img
+                  <Image
                     src="/images/Logo.png"
                     alt="Deivox Logo"
                     width={110}
                     height={120}
                     className="object-contain"
+                    priority
                   />
                 </div>
               </Link>

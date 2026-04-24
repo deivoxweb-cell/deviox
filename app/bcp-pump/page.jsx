@@ -19,7 +19,7 @@ export const metadata = {
     title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX India",
     description:
       "India's leading BCP pump specialists. Expert overhauling, repair, rewinding, reverse engineering and 24/7 emergency service. ISO 9001:2015 certified.",
-    url: "https://www.deivox.co.in/bcp-pump",
+    url: "https://deivoxbcp.com/bcp-pump",
   },
 };
 
@@ -45,13 +45,13 @@ const jsonLd = {
       provider: {
         "@type": "Organization",
         name: "DEI VOX India Pvt. Ltd.",
-        url: "https://www.deivox.co.in",
+        url: "https://deivoxbcp.com",
       },
       serviceType: "BCP Boiler Circulation Pump Service",
       areaServed: "India",
       description:
         "Comprehensive BCP (Boiler Circulation Pump) overhauling, repair, motor rewinding, in-situ machining, reverse engineering and spare parts. ISO 9001:2015 certified. Pan-India service coverage.",
-      url: "https://www.deivox.co.in/bcp-pump",
+      url: "https://deivoxbcp.com/bcp-pump",
     },
     {
       "@type": "FAQPage",

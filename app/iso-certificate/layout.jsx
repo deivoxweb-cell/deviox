@@ -15,7 +15,7 @@ export const metadata = {
     title: "ISO Certified | DEI VOX India BCP Specialists",
     description:
       "DEI VOX India is ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified — India's quality-assured Boiler Circulation Pump company.",
-    url: "https://www.deivox.co.in/iso-certificate",
+    url: "https://deivoxbcp.com/iso-certificate",
   },
 };
 

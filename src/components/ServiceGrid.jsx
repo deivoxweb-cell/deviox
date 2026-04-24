@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TiltActiveCard = ({ children, isActive }) => {
@@ -220,10 +221,13 @@ export default function ServiceGrid() {
                 >
                   {/* Top: image (55% height) */}
                   <div className="relative" style={{ height: "55%" }}>
-                    <img
+                    <Image
                       src={service.image}
                       alt={service.title}
+                      width={400}
+                      height={300}
                       className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100 grayscale-[0.3]"}`}
+                      loading="lazy"
                     />
                     {/* Dark tint on side cards to create focus for the center card */}
                     {!isFocused && (

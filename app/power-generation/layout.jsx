@@ -14,7 +14,7 @@ export const metadata = {
     title: "Power Generation BCP Solutions | DEI VOX India",
     description:
       "Specialized Boiler Circulation Pump (BCP) maintenance and repair for power generation plants. DEI VOX India — trusted BCP experts.",
-    url: "https://www.deivox.co.in/power-generation",
+    url: "https://deivoxbcp.com/power-generation",
   },
 };
 

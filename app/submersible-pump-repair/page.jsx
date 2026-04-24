@@ -17,7 +17,7 @@ export const metadata = {
     title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX India",
     description:
       "Specialist repair, upgrading and motor rewinding of industrial submersible pumping motor units by DEI VOX India. ISO certified. 24/7 emergency response.",
-    url: "https://www.deivox.co.in/submersible-pump-repair",
+    url: "https://deivoxbcp.com/submersible-pump-repair",
   },
 };
 
@@ -43,13 +43,13 @@ const jsonLd = {
       provider: {
         "@type": "Organization",
         name: "DEI VOX India Pvt. Ltd.",
-        url: "https://www.deivox.co.in",
+        url: "https://deivoxbcp.com",
       },
       serviceType: "Submersible Pump Motor Service",
       areaServed: "India",
       description:
         "Complete repair, upgrading, and motor rewinding services for industrial submersible pumping motor units. ISO 9001:2015 certified. Pan-India service coverage.",
-      url: "https://www.deivox.co.in/submersible-pump-repair",
+      url: "https://deivoxbcp.com/submersible-pump-repair",
     },
     {
       "@type": "FAQPage",

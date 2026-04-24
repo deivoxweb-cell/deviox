@@ -362,7 +362,7 @@ export default function ContactPage() {
 
             {/* Unconventional Tactical Map Block */}
             <div className="hidden lg:flex flex-1 relative group items-stretch min-h-[350px] p-4 mt-4 lg:mt-0">
-              
+
               {/* Tactical Corner Reticles */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-l-[3px] border-accent/20 transition-all duration-700 ease-out group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:border-accent" />
               <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-r-[3px] border-accent/20 transition-all duration-700 ease-out group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:border-accent" />
@@ -374,7 +374,7 @@ export default function ContactPage() {
               <div className="absolute -bottom-3 left-8 bg-primary px-3 text-[10px] font-black tracking-[0.4em] text-white/30 font-mono z-20">LIVE_TRACK_ON</div>
 
               {/* The Mechanical Chamfered Map Frame */}
-              <div 
+              <div
                 className="relative w-full h-full overflow-hidden bg-zinc-900 transition-all duration-700 ease-out group-hover:shadow-[0_0_40px_rgba(249,115,22,0.15)] flex-1"
                 style={{ clipPath: "polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%)" }}
               >
@@ -388,21 +388,21 @@ export default function ContactPage() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                   {/* Framer Motion Scan Line */}
-                  <motion.div 
+                  <motion.div
                     initial={{ top: "0%" }}
                     animate={{ top: ["0%", "100%", "0%"], opacity: [0, 0.4, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    className="absolute left-0 w-full h-[2px] bg-accent shadow-[0_0_30px_rgba(249,115,22,1)] z-10 pointer-events-none mix-blend-overlay" 
+                    className="absolute left-0 w-full h-[2px] bg-accent shadow-[0_0_30px_rgba(249,115,22,1)] z-10 pointer-events-none mix-blend-overlay"
                   />
                 </div>
-                
+
                 {/* Inner Border emphasizing the sliced geometry */}
                 <div className="absolute inset-0 pointer-events-none border border-white/10 z-20 mix-blend-overlay" />
               </div>
 
               {/* Hover Center Dash Reticle */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none flex flex-col items-center">
-                <motion.div 
+                <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                   className="w-20 h-20 border-[3px] border-accent/80 border-dashed rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.3)]"

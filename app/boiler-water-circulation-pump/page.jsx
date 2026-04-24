@@ -17,7 +17,7 @@ export const metadata = {
     title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX India",
     description:
       "India's trusted Boiler Water Circulation Pump specialists. Expert repair, overhauling, rewinding and spare parts. ISO certified. 24/7 support across India.",
-    url: "https://www.deivox.co.in/boiler-water-circulation-pump",
+    url: "https://deivoxbcp.com/boiler-water-circulation-pump",
   },
 };
 
@@ -43,13 +43,13 @@ const jsonLd = {
       provider: {
         "@type": "Organization",
         name: "DEI VOX India Pvt. Ltd.",
-        url: "https://www.deivox.co.in",
+        url: "https://deivoxbcp.com",
       },
       serviceType: "Boiler Water Circulation Pump Maintenance",
       areaServed: "India",
       description:
         "Complete Boiler Water Circulation Pump (BWCP) repair, overhauling, motor rewinding, hydraulic balancing and spare parts supply. ISO 9001:2015 certified.",
-      url: "https://www.deivox.co.in/boiler-water-circulation-pump",
+      url: "https://deivoxbcp.com/boiler-water-circulation-pump",
     },
     {
       "@type": "FAQPage",

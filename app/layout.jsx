@@ -17,7 +17,7 @@ export const metadata = {
     template: "%s | DEI VOX India",
   },
   description:
-    "DEI VOX India Pvt. Ltd. — India's leading specialists in Boiler Circulation Pump (BCP) & Boiler Water Circulation Pump repair, maintenance, overhauling, motor rewinding, insitu machining, and spare parts supply. ISO 9001:2015, 14001:2015 & 45001:2018 certified.",
+    "DEI VOX India: Leading specialists in Boiler Circulation Pump (BCP) repair, maintenance & overhauling. ISO certified experts for BCP & Boiler Water pumps.",
   keywords: [
     "DEI VOX",
     "DEI VOX Company",
@@ -123,7 +123,6 @@ const jsonLd = {
       email: "sales@deivox.co.in",
       sameAs: [
         "https://deivoxbcp.com",
-        "https://www.deivox.co.in",
       ],
     },
     {

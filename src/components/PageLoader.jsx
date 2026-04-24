@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 /**
  * PageLoader — shows a full-screen branded overlay during client-side
@@ -103,16 +104,16 @@ export default function PageLoader() {
         />
 
         {/* Logo centered */}
-        <img
+        <Image
           src="/images/Logo.png"
           alt="DEI VOX"
+          width={44}
+          height={44}
           style={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 44,
-            height: 44,
             objectFit: "contain",
             filter: "brightness(0) invert(1)",
           }}

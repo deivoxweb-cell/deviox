@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import Image from "next/image";
 import { MapPin, CheckCircle2, Phone } from "lucide-react";
 
 const TiltCard = ({ children, className }) => {
@@ -77,12 +78,13 @@ const AboutSection = () => {
           >
             {/* Logo box with 3D Tilt */}
             <TiltCard className="w-full bg-primary rounded-[2rem] p-12 flex items-center justify-center shadow-2xl shadow-primary/20 cursor-crosshair">
-              <img
+              <Image
                 src="/images/Logo.png"
                 alt="DEI VOX Logo"
                 width={220}
                 height={220}
                 className="object-contain brightness-0 invert drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
+                loading="lazy"
               />
             </TiltCard>
 

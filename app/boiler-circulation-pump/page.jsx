@@ -17,7 +17,7 @@ export const metadata = {
     title: "Boiler Circulation Pump (BCP) Specialists — DEI VOX India",
     description:
       "India's most trusted Boiler Circulation Pump specialists. Overhauling, repair, in-situ machining & spare parts. ISO certified. 24/7 support.",
-    url: "https://www.deivox.co.in/boiler-circulation-pump",
+    url: "https://deivoxbcp.com/boiler-circulation-pump",
   },
 };
 
@@ -43,13 +43,13 @@ const jsonLd = {
       provider: {
         "@type": "Organization",
         name: "DEI VOX India Pvt. Ltd.",
-        url: "https://www.deivox.co.in",
+        url: "https://deivoxbcp.com",
       },
       serviceType: "Boiler Circulation Pump Maintenance",
       areaServed: "India",
       description:
         "Complete Boiler Circulation Pump (BCP) overhauling, repair, motor rewinding, in-situ casing machining, spare parts supply and reverse engineering. ISO 9001:2015 certified.",
-      url: "https://www.deivox.co.in/boiler-circulation-pump",
+      url: "https://deivoxbcp.com/boiler-circulation-pump",
     },
     {
       "@type": "FAQPage",

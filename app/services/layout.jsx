@@ -17,7 +17,7 @@ export const metadata = {
     title: "Services | DEI VOX BCP Boiler Circulation Pump Specialists",
     description:
       "Complete Boiler Circulation Pump services: overhauling, motor rewinding, insitu machining, spare parts & reverse engineering by DEI VOX India.",
-    url: "https://www.deivox.co.in/services",
+    url: "https://deivoxbcp.com/services",
   },
 };
 

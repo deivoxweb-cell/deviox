@@ -15,7 +15,7 @@ export const metadata = {
     title: "About DEI VOX | BCP Boiler Circulation Pump Company India",
     description:
       "DEI VOX India Pvt. Ltd. — India's leading Boiler Circulation Pump (BCP) specialists. Trusted experts in BCP maintenance, repair and consultancy.",
-    url: "https://www.deivox.co.in/about",
+    url: "https://deivoxbcp.com/about",
   },
 };
 

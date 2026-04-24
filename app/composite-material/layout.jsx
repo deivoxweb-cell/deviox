@@ -16,7 +16,7 @@ export const metadata = {
     title: "Composite Material & Bearings | DEI VOX India",
     description:
       "Thermoplastic composites and all types of industrial bearings by DEI VOX India. Serving aviation, automotive, healthcare and construction sectors.",
-    url: "https://www.deivox.co.in/composite-material",
+    url: "https://deivoxbcp.com/composite-material",
   },
 };
 

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import confetti from "canvas-confetti";
 import { MapPin, MessageSquare, Globe, Share2, Award, CheckCircle2 } from "lucide-react";
 
@@ -41,12 +42,13 @@ const Footer = () => {
             {/* Brand block */}
             <div className="lg:col-span-4 flex flex-col justify-between h-full">
               <div className="mb-12">
-                <img
+                <Image
                   src="/images/Logo.png"
                   alt="DEI VOX Logo"
                   width={140}
                   height={56}
                   className="object-contain brightness-0 invert opacity-80"
+                  loading="lazy"
                 />
               </div>
               <p className="text-sm md:text-base text-white/50 leading-relaxed font-medium mb-12 max-w-sm">
