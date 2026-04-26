@@ -92,7 +92,7 @@ const AboutSection = () => {
             <div className="w-full space-y-4">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
-                { label: "Solution Provider", location: "Bengaluru, Karnataka, India" },
+                { label: "Solution Provider", location: "Bommasandra Industrial Area, Bangalore" },
               ].map((office) => (
                 <div
                   key={office.label}
@@ -123,7 +123,7 @@ const AboutSection = () => {
               <span className="text-accent">Circulation Systems!</span>
             </h3>
 
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
@@ -135,15 +135,13 @@ const AboutSection = () => {
               <div className="overflow-hidden">
                 <motion.p variants={{ hidden: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>
                   <span className="font-black text-primary">DEI VOX INDIA PVT. LTD.</span> is not just another company
-                  that provides repair and maintenance services — we are the pioneers of this field. When it comes
-                  to submersible pumping motor units we are the best in <span className="font-black text-primary">designing, upgrading, repairing, and servicing</span> them.
+                  providing repair and maintenance services — we are India's pioneers in <strong>Boiler Circulation Pumps (BCP)</strong>. When it comes
+                  to comprehensive BCP maintenance services and submersible pumping motor units, we are the industry leaders in <span className="font-black text-primary">designing, upgrading, repairing, and servicing</span> them to exact specifications.
                 </motion.p>
               </div>
               <div className="overflow-hidden">
                 <motion.p variants={{ hidden: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>
-                  We are emerging as the sole player to function at such depth in India. Our boiler circulation
-                  pumps are not just cost-effective — they beat the performance standards set by industry
-                  leaders all over the world.
+                  As the premier solution provider in India, we deliver <strong>OEM-quality</strong> spare parts and overhauling without the exorbitant costs. Our Boiler Circulation Pump solutions guarantee uncompromising performance and extreme reliability at highly <strong>affordable pricing</strong>, matching or exceeding global industry standards.
                 </motion.p>
               </div>
             </motion.div>
@@ -163,8 +161,8 @@ const AboutSection = () => {
                   body: "Round-the-clock service support, spare parts supply, and expert consultation for all BCP systems wherever you are.",
                 },
               ].map((item) => (
-                <motion.div 
-                  key={item.title} 
+                <motion.div
+                  key={item.title}
                   whileHover={{ y: -5 }}
                   className="bg-white/50 backdrop-blur-lg border border-white/60 rounded-[1.5rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,51,102,0.08)] transition-all"
                 >

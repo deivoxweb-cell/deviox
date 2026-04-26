@@ -126,10 +126,10 @@ export default function AboutPage() {
             </h2>
             <div className="w-full h-px bg-white/10" />
             <p className="text-xl md:text-2xl font-bold text-white/60 leading-relaxed max-w-3xl">
-              If you are looking for a BCP service provider, do not look far ahead — you will find no one else in this space except <strong className="text-white">DEI VOX PVT. LTD.</strong> We are functioning at full capacity and are ably supported by BCP OEMs. We provide all types of BCW Pumps, their services, and re-engineering works.
+              If you are seeking a premier service provider for <strong>Boiler Circulation Pumps (BCP)</strong>, look no further than <strong className="text-white">DEI VOX PVT. LTD.</strong> Functioning at full capacity, we specialize in comprehensive <strong>BCP maintenance services</strong>, repairs, and advanced reverse engineering works.
             </p>
             <p className="text-lg md:text-xl font-medium text-white/50 leading-relaxed max-w-3xl">
-              Our service facility is open for potential customers to visit and know that we have the ability to not only manufacture but also repair many types of BCP, motors, and MAG drives for sewage treatment requirements, electric utility, and all other general pumps and motor users.
+              Our state-of-the-art facility is open for clients to witness our capabilities firsthand. We guarantee <strong>OEM quality</strong> spare parts and overhauling for all types of BCW Pumps, motors, and MAG drives. By choosing DEI VOX, you ensure extreme reliability and performance at highly <strong>affordable pricing</strong>, beating global industry standards without compromising on excellence.
             </p>
           </div>
         </div>
