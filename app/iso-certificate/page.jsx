@@ -105,12 +105,12 @@ const TiltCertCard = ({ cert, index }) => {
 
         {/* Certificate Image Mockup with extreme shadow */}
         <div className="flex-1 w-full bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.5)] mb-8 relative">
-          <Image 
-            src={cert.image} 
-            alt={cert.title} 
+          <Image
+            src={cert.image}
+            alt={cert.title}
             width={500}
             height={700}
-            className="w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-80 group-hover:mix-blend-normal transition-all duration-700" 
+            className="w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-80 group-hover:mix-blend-normal transition-all duration-700"
           />
           <div className="absolute inset-0 bg-linear-to-tr from-primary/80 via-transparent to-transparent opacity-80" />
         </div>
@@ -179,7 +179,7 @@ export default function ISOCertificatePage() {
               className="text-5xl sm:text-7xl md:text-[8.5rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8"
             >
               Certified<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Excellence</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">Excellence</span>
             </motion.h1>
           </div>
 

@@ -140,7 +140,7 @@ export default function ContactPage() {
               className="text-6xl sm:text-8xl md:text-[9rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8"
             >
               Reach<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">DEI VOX</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">DEI VOX</span>
             </motion.h1>
           </div>
 

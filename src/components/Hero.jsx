@@ -58,10 +58,10 @@ const Hero = () => {
           >
             {videoSrc && <source src={videoSrc} type="video/mp4" />}
           </video>
-          
+
           {/* Dark Overlay for Text Legibility */}
           <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-          
+
           {/* 
           <motion.div className="absolute inset-0 bg-primary/5" />
           <motion.div className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/10 to-primary" /> */}
@@ -96,7 +96,7 @@ const Hero = () => {
                 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-black tracking-[-0.04em] text-white leading-[0.9] uppercase mix-blend-plus-lighter"
               >
                 Beyond<br />
-                <span className="text-transparent bg-clip-text bg-linear-to-br from-accent-light via-accent to-orange-800 tracking-[-0.05em]">
+                <span className="text-transparent bg-clip-text bg-linear-to-br from-accent-light via-accent to-white tracking-[-0.05em]">
                   Maintenance
                 </span>
               </motion.h1>

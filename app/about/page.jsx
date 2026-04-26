@@ -94,7 +94,7 @@ export default function AboutPage() {
               className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-6"
             >
               We<br />Are the<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Core</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">Core</span>
             </motion.h1>
           </div>
         </motion.div>

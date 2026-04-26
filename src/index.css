@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-/* #175CAD  #68A53A */
-
-:root {
+/* #175CAD  Update website color combination (UI refresh) sugguest some :root { 
   --background: #ffffff;
   --foreground: #0f172a;
   --primary: #003366;
@@ -11,7 +9,25 @@
   --accent-light: #ff8533;
   --card: #f8fafc;
   --border: #f0e2e2;
+}  accprding to this website https://www.torishima.co.jp/en/ https://haywardtyler.com/ #68A53A */
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+
+  --primary: #1f2937;
+  --secondary: #9ca3af;
+
+  --accent: #2563eb;
+
+  --accent-light: #60a5fa;
+
+  --card: #f9fafb;
+  --border: #e5e7eb;
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -25,7 +41,8 @@
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -81,26 +98,59 @@ body {
   .seo-prose h3 {
     color: var(--primary);
   }
+
   .seo-prose p,
   .seo-prose li {
     color: rgba(15, 23, 42, 0.75);
   }
+
   .seo-prose strong {
     color: var(--primary);
     font-weight: 700;
   }
 
   @keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    20% { transform: translate(-15%, 5%); }
-    30% { transform: translate(7%, -25%); }
-    40% { transform: translate(-5%, 25%); }
-    50% { transform: translate(-15%, 10%); }
-    60% { transform: translate(15%, 0%); }
-    70% { transform: translate(0%, 15%); }
-    80% { transform: translate(3%, 35%); }
-    90% { transform: translate(-10%, 10%); }
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    10% {
+      transform: translate(-5%, -10%);
+    }
+
+    20% {
+      transform: translate(-15%, 5%);
+    }
+
+    30% {
+      transform: translate(7%, -25%);
+    }
+
+    40% {
+      transform: translate(-5%, 25%);
+    }
+
+    50% {
+      transform: translate(-15%, 10%);
+    }
+
+    60% {
+      transform: translate(15%, 0%);
+    }
+
+    70% {
+      transform: translate(0%, 15%);
+    }
+
+    80% {
+      transform: translate(3%, 35%);
+    }
+
+    90% {
+      transform: translate(-10%, 10%);
+    }
   }
 
   /* Page Loader Styles */
@@ -181,6 +231,8 @@ body {
   }
 
   @keyframes deivox-spin {
-    to { transform: rotate(360deg); }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }

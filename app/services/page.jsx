@@ -196,7 +196,7 @@ export default function ServicesPage() {
               className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8"
             >
               Precision<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-orange-600">Engineering</span>.
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">Engineering</span>.
             </motion.h1>
           </div>
         </motion.div>
