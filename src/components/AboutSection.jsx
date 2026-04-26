@@ -92,7 +92,7 @@ const AboutSection = () => {
             <div className="w-full space-y-4">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
-                { label: "Service Support", location: "Bengaluru, Karnataka, India" },
+                { label: "Solution Provider", location: "Bengaluru, Karnataka, India" },
               ].map((office) => (
                 <div
                   key={office.label}

@@ -12,7 +12,7 @@ const SUBJECTS = [
   "Motor Rewinding",
   "Spare Parts Request",
   "Reverse Engineering",
-  "On-Site Service Support",
+  "Solution Provider",
   "Technical Troubleshooting",
   "Quotation Request",
 ];

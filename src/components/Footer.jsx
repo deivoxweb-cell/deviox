@@ -139,32 +139,6 @@ const Footer = () => {
 
           </div>
         </div>
-
-        {/* Location Map Section */}
-        <div className="w-full px-4 lg:px-10 pb-24 md:pb-32">
-          <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 h-64 md:h-96 transition-all duration-500 hover:border-accent/30">
-            <div className="absolute top-6 left-6 z-20">
-              <div className="bg-primary/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-white">Service Center: Bommasandra Industrial Area</span>
-              </div>
-            </div>
-            
-            <iframe
-              title="DEI VOX INDIA Bommasandra"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3159981880464!2d77.683!3d12.813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c0000000000%3A0x0!2zMTLCsDQ4JzQ2LjgiTiA3N8KwNDAnNTguOCJF!5e0!3m2!1sen!2sin!4v1714115000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 grayscale contrast-125 opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
-            />
-            
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60" />
-          </div>
-        </div>
       </div>
 
       {/* ── Bottom bar ─────────────────────────────────────────────── */}

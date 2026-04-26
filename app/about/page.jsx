@@ -35,7 +35,7 @@ const WordReveal = ({ children }) => {
 const capabilities = [
   "BCP Consultancy (Sales & Mktg)", "Direct Customer Support", "Sales Support",
   "In Situ Machining", "Spare Parts Selling",
-  "On Site Service", "Motor Rewinding", "Reverse Engineering"
+  "Solution Provider", "Motor Rewinding", "Reverse Engineering"
 ];
 
 const team = [
