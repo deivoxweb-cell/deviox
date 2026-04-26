@@ -331,7 +331,7 @@ export default function ContactPage() {
                   <div className="mt-1 text-white/20 group-hover/item:text-accent transition-colors"><MapPin size={28} /></div>
                   <div>
                     <p className="text-xs font-black text-white/40 uppercase tracking-widest mb-2">Service Hub</p>
-                    <p className="text-xl font-bold text-white leading-snug">Bengaluru, Karnataka, India.</p>
+                    <p className="text-xl font-bold text-white leading-snug">Bommasandra Industrial Area, Bangalore</p>
                     <p className="text-sm font-medium text-white/50 mt-2">Providing motor winding and testing.</p>
                   </div>
                 </div>

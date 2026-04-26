@@ -146,10 +146,15 @@ const Footer = () => {
         <div className="w-full px-4 lg:px-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-5">
 
-            <p className="text-[10px] font-black text-white/70 tracking-[0.25em] uppercase">
-              © 2026 DEI VOX INDIA PVT.
-              <br /> LTD. — All Rights Reserved
-            </p>
+            <div className="flex flex-col gap-1">
+              <p className="text-[10px] font-black text-white/70 tracking-[0.25em] uppercase">
+                © 2026 DEI VOX INDIA PVT.
+                <br className="md:hidden" /> LTD. — All Rights Reserved
+              </p>
+              <p className="text-[9px] font-black text-white/40 tracking-[0.2em] uppercase font-mono mt-1">
+                GSTIN: 29AAKCD5641B1Z9
+              </p>
+            </div>
 
             <div className="flex gap-3">
               {[
