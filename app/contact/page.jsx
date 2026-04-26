@@ -380,7 +380,7 @@ export default function ContactPage() {
               >
                 <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 origin-center">
                   <iframe
-                    src="https://maps.google.com/maps?q=9XQ9%2BGP%20Gurugram%2C%20Haryana&t=m&z=15&output=embed&iwloc=near"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Vatika%20Town%20Sq,%20Sector%2083,%20Gurugram+(DEI%20VOX%20INDIA)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     className="absolute inset-0 w-full h-full z-0 contrast-[1.05] saturate-[1.2] transition-all duration-500"
                     style={{ border: 0 }}
                     allowFullScreen=""

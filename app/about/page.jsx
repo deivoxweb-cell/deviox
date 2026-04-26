@@ -39,14 +39,16 @@ const capabilities = [
 ];
 
 const team = [
-  { name: "Mr. Kunal", role: "CEO & MD", qualification: "PMP, PMI USA, MBA, B.E. Mechanical", tag: "Founder" },
+  { name: "Mr. Kunal", role: "CEO & MD", qualification: "PMP, PMI USA, MBA, B.E. Mechanical", tag: "Founder", email: "sales@deivox.co.in", phone: "+917428200229" },
   { name: "Mr. Ravi", role: "Head Technical", qualification: "M.Tech. Thermal, B.E. Mechanical", tag: "Founder" },
-  { name: "Ankit Sharma", role: "Manager – Dispatch", qualification: "", tag: "" },
+  { name: "Satya Narayan Sharma", role: "Head – Sales", qualification: "", tag: "" },
   { name: "Vijay Nehra", role: "Manager – Service", qualification: "", tag: "" },
   { name: "Pankaj Kumar", role: "Manager – Dispatch", qualification: "", tag: "" },
   { name: "Ramesh Yadav", role: "Manager Procurement", qualification: "", tag: "" },
   { name: "Abhishek Singh", role: "Executive Engineer", qualification: "", tag: "" },
   { name: "Namita Singh", role: "Manager – Sales", qualification: "", tag: "" },
+  { name: "Ritesh", role: "Manager (HR)", qualification: "", tag: "" },
+  { name: "Rama", role: "Manager (Accounts)", qualification: "", tag: "" },
 ];
 
 export default function AboutPage() {
@@ -109,12 +111,12 @@ export default function AboutPage() {
             className="lg:col-span-4 relative lg:sticky lg:top-32"
           >
             <div className="bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-16 flex items-center justify-center border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)]">
-              <Image 
-                src="/images/Logo.png" 
-                alt="DEI VOX Logo" 
+              <Image
+                src="/images/Logo.png"
+                alt="DEI VOX Logo"
                 width={200}
                 height={100}
-                className="object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-700" 
+                className="object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-700"
               />
             </div>
           </motion.div>
@@ -215,9 +217,17 @@ export default function AboutPage() {
                   <h3 className="font-black text-2xl text-primary uppercase tracking-tight mb-2 relative z-10">{member.name}</h3>
                   <p className="text-xs font-bold text-accent uppercase tracking-widest mb-4 relative z-10">{member.role}</p>
 
-                  {member.qualification && (
-                    <div className="mt-auto pt-6 border-t border-black/5 w-full relative z-10">
-                      <p className="text-[10px] text-primary/30 font-black uppercase tracking-widest">{member.qualification}</p>
+                  {(member.qualification || member.email || member.phone) && (
+                    <div className="mt-auto pt-6 border-t border-black/5 w-full relative z-10 flex flex-col gap-3">
+                      {member.qualification && (
+                        <p className="text-[10px] text-primary/30 font-black uppercase tracking-widest">{member.qualification}</p>
+                      )}
+                      {(member.email || member.phone) && (
+                        <div className="flex flex-col gap-1">
+                          {member.email && <a href={`mailto:${member.email}`} className="text-[11px] font-bold text-accent hover:text-primary transition-colors block">{member.email}</a>}
+                          {member.phone && <a href={`tel:${member.phone}`} className="text-[11px] font-bold text-primary/50 hover:text-primary transition-colors block">{member.phone}</a>}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
