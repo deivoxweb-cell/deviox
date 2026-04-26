@@ -15,10 +15,10 @@ const navLinks = [
 
 // SEO-priority pump expertise pages — linked from navbar for indexing signal
 const pumpLinks = [
-  { name: "Boiler Circulation Pump", href: "/boiler-circulation-pump" },
-  { name: "Boiler Water Circulation Pump", href: "/boiler-water-circulation-pump" },
-  { name: "BCP Pump", href: "/bcp-pump" },
-  { name: "Submersible Pump Repair", href: "/submersible-pump-repair" },
+  { name: "Boiler Feed Pump", href: "/boiler-circulation-pump" },
+  { name: "CW Pump", href: "/boiler-water-circulation-pump" },
+  { name: "CEP Pump", href: "/bcp-pump" },
+  { name: "Submersible Pump", href: "/submersible-pump-repair" },
 ];
 
 const Navbar = () => {
@@ -83,7 +83,7 @@ const Navbar = () => {
                     aria-haspopup="true"
                     aria-label="Pump Expertise pages"
                   >
-                    Pump Expertise
+                    Products
                     <ChevronDown size={10} className="transition-transform group-hover:rotate-180" />
                   </button>
                   <div className="absolute -bottom-1.5 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full ease-out" />

@@ -18,11 +18,11 @@ const NAV_LINKS = {
     { label: "Spare Parts Selling", href: "/services#spare-parts-selling" },
     { label: "Reverse Engineering", href: "/services#reverse-engineering" },
   ],
-  "Pump Solutions": [
-    { label: "Boiler Circulation Pump", href: "/boiler-circulation-pump" },
-    { label: "Boiler Water Circulation Pump", href: "/boiler-water-circulation-pump" },
-    { label: "BCP Pump", href: "/bcp-pump" },
-    { label: "Submersible Pump Repair", href: "/submersible-pump-repair" },
+  "Products": [
+    { label: "Boiler Feed Pump", href: "/boiler-circulation-pump" },
+    { label: "CW Pump", href: "/boiler-water-circulation-pump" },
+    { label: "CEP Pump", href: "/bcp-pump" },
+    { label: "Submersible Pump", href: "/submersible-pump-repair" },
   ],
 };
 
