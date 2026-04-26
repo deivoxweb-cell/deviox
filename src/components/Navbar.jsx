@@ -120,11 +120,12 @@ const Navbar = () => {
                 <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/20 transition-all duration-300" />
                 <div className="flex flex-col items-end">
-                  <span className={`text-[8px] font-black text-accent uppercase tracking-[0.4em] mb-1 font-mono ${scrolled ? "text-primary hover:text-accent" : "text-primary hover:text-white"}`}>
+                  <span className={`text-[8px] font-black text-accent uppercase tracking-[0.4em] mb-1 font-mono ${scrolled ? "text-primary hover:text-accent" : "text-white/80 hover:text-white"}`}
+                  >
                     SYS.COMMS
                   </span>
                   <p className={`text-[12px] font-black tracking-widest text-green-500 font-mono leading-none ${scrolled ? "text-primary hover:text-accent" : "text-white hover:text-accent"}`}>
-                    +91-9886424770
+                    +917428200229
                   </p>
                 </div>
               </div>

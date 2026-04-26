@@ -4,6 +4,7 @@ import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import Script from "next/script";
 import PageLoader from "@/src/components/PageLoader";
+import WhatsAppChat from "@/src/components/WhatsAppChat";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -214,6 +215,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <WhatsAppChat />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script

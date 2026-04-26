@@ -117,6 +117,24 @@ const Footer = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Make in India - Right Bottom of Upper Footer */}
+              <div className="mt-12 pt-8 border-t border-white/5 group cursor-default">
+                <div className="flex items-center gap-3">
+                  <div className="relative w-24 h-24 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                    <Image
+                      src="/images/make_India.png"
+                      alt="Make in India"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[8px] font-black text-accent uppercase tracking-[0.3em] leading-none mb-1">Make In</p>
+                    <p className="text-[10px] font-black text-white uppercase tracking-widest leading-none">India</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
