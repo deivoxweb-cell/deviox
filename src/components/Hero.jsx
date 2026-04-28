@@ -57,7 +57,7 @@ const Hero = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section className="relative min-h-screen bg-card overflow-hidden pt-32 pb-20">
+    <section className="relative min-h-screen bg-card overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-20">
 
       {/* ── Background Elements ── */}
       <div className="absolute top-0 right-0 w-[60%] h-full pointer-events-none">
@@ -71,7 +71,7 @@ const Hero = () => {
         {/* rounded-tl-[15rem] rounded-bl-[15rem]" */}
 
         {/* Subtle grid pattern over lime */}
-        <div className="absolute bottom-0 right-0 w-full h-[70%] opacity-20 industrial-grid" />
+        <div className="absolute bottom-0 right-0 w-full h-[50%] lg:h-[70%] opacity-20 industrial-grid" />
       </div>
 
       <div className="w-full px-6 lg:px-16 max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -94,22 +94,25 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] text-black leading-[0.88] uppercase mb-10"
+            className="text-[2.2rem] sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] text-black leading-[0.9] sm:leading-[0.88] uppercase mb-10"
           >
             Precision Engineered<br />
             <span className="text-black/20">Reliability for Critical</span><br />
             Pump Systems
           </motion.h1>
 
-          <div className="flex items-start gap-12 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-start gap-8 sm:gap-12 mb-12">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
+              className="flex items-center sm:block gap-6"
             >
-              <p className="text-4xl font-black text-black">10K+</p>
-              <p className="text-[9px] font-bold text-black/40 uppercase tracking-widest mt-1">Global Clients<br />Trusted Us</p>
-              <div className="flex -space-x-3 mt-4">
+              <div>
+                <p className="text-4xl font-black text-black">10K+</p>
+                <p className="text-[9px] font-bold text-black/40 uppercase tracking-widest mt-1">Global Clients<br />Trusted Us</p>
+              </div>
+              <div className="flex -space-x-3 mt-0 sm:mt-4">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-card bg-zinc-200 overflow-hidden relative">
                     <img src={`/images/user_${i}.png`} alt="user" className="w-full h-full object-cover" />
@@ -123,9 +126,9 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <Link href="/contact" className="group flex items-center gap-4 bg-black text-white px-8 py-5 rounded-full hover:bg-zinc-800 transition-all duration-300">
-                <span className="text-[11px] font-black uppercase tracking-widest">Schedule Technical Inspection</span>
-                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+              <Link href="/contact" className="group flex items-center justify-between sm:justify-start gap-4 bg-black text-white px-6 sm:px-8 py-4 sm:py-5 rounded-full hover:bg-zinc-800 transition-all duration-300 w-full sm:w-auto">
+                <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest">Schedule Technical Inspection</span>
+                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500 shrink-0">
                   <ArrowRight size={16} className="text-black" />
                 </div>
               </Link>
@@ -151,7 +154,7 @@ const Hero = () => {
         </div>
 
         {/* ── Right Content (Image & Floating Cards) ── */}
-        <div className="lg:col-span-6 relative h-full min-h-[700px] flex items-center justify-end pr-4 lg:pr-12">
+        <div className="lg:col-span-6 relative h-full min-h-0 lg:min-h-[700px] flex flex-col lg:flex-row items-center justify-center lg:justify-end pr-0 lg:pr-12 mt-12 lg:mt-0 gap-8 lg:gap-0">
 
           {/* Main Visual Image */}
           <motion.div
@@ -164,7 +167,7 @@ const Hero = () => {
             }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             onClick={() => setIsFocused(!isFocused)}
-            className="relative z-20 w-full max-w-[500px] aspect-[4/5] rounded-[4rem] overflow-hidden bg-white border-2 border-black/5 shadow-2xl mr-12 flex items-center justify-center p-8 cursor-pointer group"
+            className="relative z-20 w-full max-w-[500px] aspect-[4/5] rounded-[3rem] sm:rounded-[4rem] overflow-hidden bg-white border-2 border-black/5 shadow-2xl flex items-center justify-center p-6 sm:p-8 cursor-pointer group"
           >
             <Image
               src="/images/hero_industrial.png"
@@ -189,7 +192,7 @@ const Hero = () => {
               scale: isFocused ? 0.95 : 1
             }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-10 right-0 bg-white shadow-2xl rounded-[3.5rem] p-10 w-full max-w-[420px] z-30 border border-black/5 pointer-events-none lg:pointer-events-auto"
+            className="relative lg:absolute lg:top-10 lg:right-0 bg-white shadow-2xl rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-10 w-full max-w-[340px] sm:max-w-[420px] z-30 border border-black/5 pointer-events-auto"
           >
             <div className="flex flex-col gap-6">
               <div className="flex justify-between items-center pb-4 border-b border-black/5">
@@ -273,7 +276,7 @@ const Hero = () => {
               y: isFocused ? 20 : 0
             }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-10 right-4 bg-white shadow-2xl rounded-[3rem] p-8 z-30 border border-black/5 flex items-center gap-6 max-w-[340px]"
+            className="relative lg:absolute lg:bottom-10 lg:right-4 bg-white shadow-2xl rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-8 z-40 border border-black/5 flex items-center gap-4 sm:gap-6 max-w-[280px] sm:max-w-[340px]"
           >
             <div className="w-16 h-16 rounded-full bg-zinc-100 overflow-hidden border-2 border-card flex-shrink-0 relative">
               <img src="/images/user_1.png" alt="reviewer" className="w-full h-full object-cover" />

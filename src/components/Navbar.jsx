@@ -44,7 +44,7 @@ const Navbar = () => {
         className="w-full max-w-7xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-full px-6 py-2 flex items-center justify-between"
       >
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 overflow-hidden p-3">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 overflow-hidden p-2.5 sm:p-3">
             <Image
               src="/Logo1.png"
               alt="Logo"
