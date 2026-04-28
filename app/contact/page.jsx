@@ -106,9 +106,9 @@ export default function ContactPage() {
     <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
 
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-center py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
+      <section className="relative min-h-screen flex flex-col justify-center py-24 sm:py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/10 sm:bg-accent/20 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.div
@@ -118,7 +118,7 @@ export default function ContactPage() {
             className="flex items-center gap-4 mb-10"
           >
             <div className="h-px w-12 bg-accent" />
-            <p className="text-accent text-[11px] font-black uppercase tracking-[0.5em]">
+            <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em]">
               COMMUNICATION HUB
             </p>
           </motion.div>
@@ -127,15 +127,15 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
+            className="text-4xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] uppercase leading-[0.88] mb-12"
           >
             Connect<br />
             <span className="text-white/20">Deivox.</span>
           </motion.h1>
 
-          <div className="flex items-center gap-8 mt-12">
-             <div className="h-px w-24 bg-white/10" />
-             <p className="text-white/40 text-lg max-w-sm font-medium leading-relaxed">
+          <div className="flex items-center gap-6 sm:gap-8 mt-12">
+             <div className="h-px w-16 sm:w-24 bg-white/10" />
+             <p className="text-white/40 text-base sm:text-lg max-w-sm font-medium leading-relaxed">
                24/7 technical support and expert consultation for mission-critical power systems.
              </p>
           </div>
@@ -151,9 +151,9 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 bg-white rounded-[4rem] p-10 md:p-20 border border-black/5 shadow-2xl relative overflow-hidden"
+            className="lg:col-span-7 bg-white rounded-[2.5rem] sm:rounded-[4rem] p-8 sm:p-20 border border-black/5 shadow-2xl relative overflow-hidden"
           >
-            <h3 className="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-20 leading-[0.9]">
+            <h3 className="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
               Strategic <br /><span className="text-black/20">Enquiry.</span>
             </h3>
 
@@ -197,10 +197,10 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-8 bg-black text-white rounded-[2rem] font-black uppercase tracking-widest text-sm hover:bg-zinc-800 transition-all flex items-center justify-center gap-6 shadow-2xl disabled:opacity-50"
+                  className="w-full py-6 sm:py-8 bg-black text-white rounded-[1.5rem] sm:rounded-[2rem] font-black uppercase tracking-widest text-xs sm:text-sm hover:bg-zinc-800 transition-all flex items-center justify-center gap-4 sm:gap-6 shadow-2xl disabled:opacity-50"
                 >
                   {isSubmitting ? "Transmitting..." : "Send Request"}
-                  <ArrowUpRight size={24} />
+                  <ArrowUpRight size={20} />
                 </button>
               </div>
             </form>
@@ -213,22 +213,22 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 flex flex-col gap-10"
           >
-            <div className="bg-black text-white rounded-[4rem] p-14 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent opacity-10 blur-[100px] pointer-events-none" />
-              <p className="text-[11px] font-black uppercase tracking-[0.4em] text-accent mb-16">COMMAND CENTERS</p>
+            <div className="bg-black text-white rounded-[2.5rem] sm:rounded-[4rem] p-10 sm:p-14 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-accent opacity-10 blur-[100px] pointer-events-none" />
+              <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.4em] text-accent mb-12 sm:mb-16">COMMAND CENTERS</p>
 
               <div className="flex flex-col gap-16 relative z-10">
                 <div className="group/item">
-                  <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-4">Regd. Office</p>
-                  <p className="text-2xl font-black uppercase tracking-tighter leading-tight mb-4">Vatika Town Sq, Sector 83, Gurugram, Haryana.</p>
-                  <a href="#" className="text-accent text-[11px] font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
-                    Navigate Hub <ArrowUpRight size={16} />
+                  <p className="text-[9px] sm:text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-4">Regd. Office</p>
+                  <p className="text-xl sm:text-2xl font-black uppercase tracking-tighter leading-tight mb-4">Vatika Town Sq, Sector 83, Gurugram, Haryana.</p>
+                  <a href="#" className="text-accent text-[10px] sm:text-[11px] font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                    Navigate Hub <ArrowUpRight size={14} />
                   </a>
                 </div>
 
                 <div className="group/item">
-                  <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-4">Service Hub</p>
-                  <p className="text-2xl font-black uppercase tracking-tighter leading-tight">Bommasandra Industrial Area, Bangalore</p>
+                  <p className="text-[9px] sm:text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-4">Service Hub</p>
+                  <p className="text-xl sm:text-2xl font-black uppercase tracking-tighter leading-tight">Bommasandra Industrial Area, Bangalore</p>
                 </div>
 
                 <div className="h-px w-full bg-white/10" />
@@ -248,7 +248,7 @@ export default function ContactPage() {
             </div>
 
             {/* Tactical Map */}
-            <div className="flex-1 rounded-[4rem] overflow-hidden border-2 border-black/5 relative group min-h-[400px]">
+            <div className="flex-1 rounded-[2.5rem] sm:rounded-[4rem] overflow-hidden border-2 border-black/5 relative group min-h-[300px] sm:min-h-[400px]">
                 <iframe
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Vatika%20Town%20Sq,%20Sector%2083,%20Gurugram+(DEI%20VOX%20INDIA)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     className="absolute inset-0 w-full h-full grayscale-[1] invert contrast-[1.2] opacity-80 group-hover:grayscale-0 group-hover:invert-0 group-hover:opacity-100 transition-all duration-1000"

@@ -112,7 +112,7 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isActive ? { opacity: 1, scale: 1 } : { opacity: 0.3, scale: 0.95 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative aspect-[4/5] rounded-[3.5rem] overflow-hidden border border-black/5 shadow-2xl"
+            className="relative aspect-[4/5] rounded-[2rem] sm:rounded-[3.5rem] overflow-hidden border border-black/5 shadow-2xl"
           >
             <Image
               src={service.image}
@@ -121,10 +121,10 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
               height={750}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
-            <div className="absolute bottom-10 left-10">
-               <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-2">{service.tagline}</p>
-               <p className="text-white text-2xl font-black uppercase tracking-tighter">{service.title}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10">
+               <p className="text-accent text-[9px] sm:text-[11px] font-black uppercase tracking-[0.4em] mb-2">{service.tagline}</p>
+               <p className="text-white text-xl sm:text-2xl font-black uppercase tracking-tighter">{service.title}</p>
             </div>
           </motion.div>
         </div>
@@ -176,15 +176,16 @@ export default function ServicesPage() {
     <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
 
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-center py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
+      <section className="relative min-h-screen flex flex-col justify-center py-24 sm:py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/10 sm:bg-accent/20 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
         
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-10"
+            className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-8 sm:mb-10"
           >
             ENGINEERING SOLUTIONS
           </motion.p>
@@ -193,15 +194,15 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
+            className="text-4xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] uppercase leading-[0.88] mb-12"
           >
             Mission<br />
             <span className="text-white/20">Critical.</span>
           </motion.h1>
 
-          <div className="flex items-center gap-8 mt-12">
-             <div className="h-px w-24 bg-white/10" />
-             <p className="text-white/40 text-lg max-w-sm font-medium leading-relaxed">
+          <div className="flex items-center gap-6 sm:gap-8 mt-12">
+             <div className="h-px w-16 sm:w-24 bg-white/10" />
+             <p className="text-white/40 text-base sm:text-lg max-w-sm font-medium leading-relaxed">
                Advanced technical services for critical power systems and boiler infrastructure.
              </p>
           </div>
@@ -213,10 +214,10 @@ export default function ServicesPage() {
         <div className="flex flex-col gap-12 relative items-start">
 
           {/* Sticky Nav */}
-          <div className="sticky top-0 lg:top-24 z-40 bg-[#F5F5F5]/80 backdrop-blur-xl py-10 border-b border-black/5 w-full flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="sticky top-0 lg:top-24 z-40 bg-[#F5F5F5]/80 backdrop-blur-xl py-6 sm:py-10 border-b border-black/5 w-full flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-px bg-black" />
-              <h2 className="text-black text-[11px] font-black uppercase tracking-[0.5em]">DOMAINS OF EXPERTISE</h2>
+              <div className="w-8 sm:w-12 h-px bg-black" />
+              <h2 className="text-black text-[9px] sm:text-[11px] font-black uppercase tracking-[0.5em]">DOMAINS OF EXPERTISE</h2>
             </div>
             <div className="hidden md:flex items-center gap-10">
               {services.map((item, i) => (
@@ -228,6 +229,18 @@ export default function ServicesPage() {
                   {item.title.split(' ')[0]}
                 </button>
               ))}
+            </div>
+            {/* Mobile Domain Indicator */}
+            <div className="md:hidden flex overflow-x-auto w-full scrollbar-hide gap-6 pb-2 px-2">
+                {services.map((item, i) => (
+                    <button
+                        key={item.title}
+                        onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                        className={`whitespace-nowrap text-[9px] font-black uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20"}`}
+                    >
+                        {item.title.split(' ')[0]}
+                    </button>
+                ))}
             </div>
           </div>
 
@@ -250,18 +263,18 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-20 leading-[0.9]">
+          <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
             Industrial <br /><span className="text-white/20">Capabilities.</span>
           </h2>
-          <p className="text-white/40 text-xl font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/40 text-lg sm:text-xl font-medium mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
             Partner with our specialized engineering team for rapid reverse engineering and mission-critical BCP maintenance.
           </p>
 
           <Link href="/contact" className="inline-block">
-            <button className="flex items-center gap-6 bg-accent text-black px-12 py-5 rounded-full font-black uppercase tracking-[0.3em] text-sm hover:scale-105 transition-all shadow-2xl">
+            <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black uppercase tracking-[0.3em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl">
                Talk to an Expert
-               <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white">
-                 <ArrowUpRight size={20} />
+               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-white">
+                 <ArrowUpRight size={16} />
                </div>
             </button>
           </Link>

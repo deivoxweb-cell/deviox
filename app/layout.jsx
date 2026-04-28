@@ -205,7 +205,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body 
-        className={`${inter.className} min-h-screen flex flex-col bg-white`}
+        className="min-h-screen flex flex-col bg-white"
         suppressHydrationWarning
       >
         <div className="grain-overlay"></div>
