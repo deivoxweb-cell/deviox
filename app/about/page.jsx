@@ -1,41 +1,52 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
-import { CheckCircle2, Award, Users, Lightbulb } from "lucide-react";
+import { CheckCircle2, Award, Users, Lightbulb, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
 
-// Awwwards Style Sticky Word Reveal for long paragraphs
 const WordReveal = ({ children }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 85%", "start 25%"],
+    offset: ["start 90%", "end 20%"],
   });
 
   const words = children.split(" ");
   return (
-    <p ref={container} className="flex flex-wrap text-3xl sm:text-5xl md:text-6xl lg:text-[5rem] font-black uppercase tracking-tighter leading-[0.9] text-primary/10">
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + 1 / words.length;
-        const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
-        return (
-          <span key={i} className="relative mr-2 md:mr-3 mb-2 md:mb-4">
-            <span className="absolute text-primary/10">{word}</span>
-            <motion.span style={{ opacity }} className="text-primary relative z-10">{word}</motion.span>
-          </span>
-        );
-      })}
-    </p>
+    <div ref={container} className="relative py-20">
+      <p className="flex flex-wrap text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-black/5">
+        {words.map((word, i) => {
+          const start = i / words.length;
+          const end = start + (1.5 / words.length);
+          const opacity = useTransform(scrollYProgress, [start, end], [0.05, 1]);
+          const y = useTransform(scrollYProgress, [start, end], [20, 0]);
+
+          return (
+            <span key={i} className="relative mr-4 md:mr-8 mb-6 md:mb-10">
+              <span className="absolute text-black/5 select-none">{word}</span>
+              <motion.span
+                style={{ opacity, y }}
+                className="text-black relative z-10 inline-block"
+              >
+                {word}
+              </motion.span>
+            </span>
+          );
+        })}
+      </p>
+    </div>
   );
 };
 
-// Data Arrays
 const capabilities = [
-  "BCP Consultancy (Sales & Mktg)", "Direct Customer Support", "Sales Support",
-  "In Situ Machining", "Spare Parts Selling",
-  "Solution Provider", "Motor Rewinding", "Reverse Engineering"
+  "Boiler Circulation Pump Overhauling",
+  "Boiler Water Circulation Pump Repair",
+  "BCP (BCP Pump) Maintenance",
+  "Submersible Pump Repair & Upgrading",
+  "In-Situ Machining",
+  "Motor Rewinding",
+  "Reverse Engineering & Spare Parts"
 ];
 
 const team = [
@@ -58,180 +69,227 @@ export default function AboutPage() {
     offset: ["start start", "end start"],
   });
 
-  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div className="bg-primary text-white selection:bg-accent selection:text-white" ref={container}>
+    <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
 
-      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
-      <section className="relative md:min-h-[95vh] min-h-[60vh] flex flex-col justify-center py-20 overflow-hidden px-4 lg:px-10 perspective-1000">
-        {/* Massive Background Typography Mask with Parallax */}
-        <motion.div
-          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
-          className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
-        >
-          ABOUT US
-        </motion.div>
-
-        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/80 to-transparent z-10" />
+      {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
+      <section className="relative min-h-screen flex flex-col justify-center py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
+        {/* Background Accents */}
+        <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] industrial-grid pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex items-center gap-4 mb-10"
           >
-            India's Leading Specialists
-          </motion.p>
+            <div className="h-px w-12 bg-accent" />
+            <p className="text-accent text-[11px] font-black uppercase tracking-[0.5em]">
+              THE GENESIS OF DEI VOX
+            </p>
+          </motion.div>
 
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ opacity: 0, rotateX: 20, y: 40 }}
-              animate={{ opacity: 1, rotateX: 0, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-6"
-            >
-              We<br />Are the<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">Core</span>
-            </motion.h1>
-          </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
+          >
+            Pioneering<br />
+            <span className="text-white/20">Industrial.</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-12 sm:items-center mt-12"
+          >
+             <div className="max-w-xs">
+                <p className="text-white/40 text-sm font-medium leading-relaxed">
+                  Pioneering industrial reliability through specialized engineering and BCP expertise.
+                </p>
+             </div>
+             <div className="h-px w-24 bg-white/10 hidden sm:block" />
+             <div>
+                <p className="text-4xl font-black text-accent tracking-tighter">ESTD. 2014</p>
+             </div>
+          </motion.div>
         </motion.div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-12 right-12 flex items-center gap-6">
+           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">Scroll Down</span>
+           <div className="w-12 h-px bg-white/20" />
+        </div>
       </section>
 
-      {/* ── 2. Who We Are (Glassmorphism & Contrast) ──────────────── */}
-      <section className="py-32 w-full px-4 lg:px-10 relative z-30 bg-primary border-t border-white/5">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      {/* ── 2. The Mission ──────────────── */}
+      <section className="py-40 w-full px-6 lg:px-16 relative z-30">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="lg:col-span-4 relative lg:sticky lg:top-32"
+            transition={{ duration: 1 }}
+            className="lg:col-span-5 relative"
           >
-            <div className="bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-16 flex items-center justify-center border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)]">
+            <div className="bg-black rounded-[4rem] p-20 flex items-center justify-center border border-black/5 shadow-2xl">
               <Image
                 src="/images/Logo.png"
                 alt="DEI VOX Logo"
-                width={200}
-                height={100}
-                className="object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-700"
+                width={220}
+                height={110}
+                className="object-contain brightness-0 invert"
               />
+            </div>
+            {/* Absolute Stat */}
+            <div className="absolute -bottom-10 -right-10 bg-accent p-10 rounded-[3rem] shadow-2xl">
+               <p className="text-5xl font-black text-black tracking-tighter">10+</p>
+               <p className="text-[10px] font-black uppercase tracking-widest text-black/60 mt-1">Years Experience</p>
             </div>
           </motion.div>
 
-          <div className="lg:col-span-8 flex flex-col gap-16">
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9]">
-              Not just a service provider.<br />
-              <span className="text-white/30">Your Business Consultant.</span>
+          <div className="lg:col-span-7 flex flex-col gap-12 pt-10">
+            <h2 className="text-4xl md:text-6xl font-black text-black uppercase tracking-tighter mb-12 leading-[0.9]">
+              Decades of <br /><span className="text-black/20">Expertise.</span>
             </h2>
-            <div className="w-full h-px bg-white/10" />
-            <p className="text-xl md:text-2xl font-bold text-white/60 leading-relaxed max-w-3xl">
-              If you are seeking a premier service provider for <strong>Boiler Circulation Pumps (BCP)</strong>, look no further than <strong className="text-white">DEI VOX PVT. LTD.</strong> Functioning at full capacity, we specialize in comprehensive <strong>BCP maintenance services</strong>, repairs, and advanced reverse engineering works.
+            <p className="text-xl md:text-2xl font-medium text-black/50 leading-relaxed max-w-3xl">
+              As India's premier specialists for <strong>Boiler Circulation Pumps (BCP)</strong>, we go beyond simple maintenance. We architect reliability.
             </p>
-            <p className="text-lg md:text-xl font-medium text-white/50 leading-relaxed max-w-3xl">
-              Our state-of-the-art facility is open for clients to witness our capabilities firsthand. We guarantee <strong>OEM quality</strong> spare parts and overhauling for all types of BCW Pumps, motors, and MAG drives. By choosing DEI VOX, you ensure extreme reliability and performance at highly <strong>affordable pricing</strong>, beating global industry standards without compromising on excellence.
-            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4">
+               <div className="p-10 bg-white rounded-[2.5rem] border border-black/5">
+                  <CheckCircle2 className="text-accent mb-6" size={32} />
+                  <p className="text-sm font-medium text-black/60 leading-relaxed">
+                    OEM-quality spare parts and advanced reverse engineering that meets global standards.
+                  </p>
+               </div>
+               <div className="p-10 bg-white rounded-[2.5rem] border border-black/5">
+                  <Award className="text-accent mb-6" size={32} />
+                  <p className="text-sm font-medium text-black/60 leading-relaxed">
+                    Uncompromising performance at domestic pricing, ensuring maximum ROI for your facility.
+                  </p>
+               </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. Origin Story (Cinematic Sticky Reveal) ─────────────── */}
-      <section className="py-32 md:py-48 w-full px-4 lg:px-10 bg-[#fafafa] min-h-screen flex items-center border-y border-black/5">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-12">The Origin Story</p>
+      {/* ── 3. Origin Story ─────────────── */}
+      <section className="py-40 w-full px-6 lg:px-16 bg-white relative overflow-hidden">
+        <div className="max-w-[90rem] mx-auto">
+          <div className="flex items-center gap-6 mb-20">
+            <div className="h-px w-16 bg-black" />
+            <p className="text-black text-[11px] font-black uppercase tracking-[0.5em]">THE ORIGIN STORY</p>
+          </div>
+
           <WordReveal>
-            IT BEGAN OVER A CUP OF COFFEE WITH VISIONARY TALKS ABOUT CHALLENGES IN THE SECTOR THE VISION WAS TO EMPOWER INDIA WITH PROPER BCP SUPPLY AND MAINTENANCE DEI VOX WAS FORMED TO NEVER LOOK BACK
+            BORN FROM A VISION TO EMPOWER INDIA'S POWER SECTOR THROUGH DOMESTIC ENGINEERING EXCELLENCE. WE ARCHITECT THE FUTURE OF FLUID RELIABILITY.
           </WordReveal>
         </div>
       </section>
 
-      {/* ── 4. Capabilities (Dark Brutalist Grid) ─────────────────── */}
-      <section className="py-32 bg-primary relative overflow-hidden">
-        {/* Massive background numbers */}
-        <div className="absolute top-0 right-0 text-[400px] font-black leading-none text-white/2 pointer-events-none select-none -translate-y-1/4 translate-x-1/4">
-          X
-        </div>
+      {/* ── 4. Capabilities (Industrial Grid) ─────────────────── */}
+      <section className="py-40 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        
+        <div className="w-full px-6 lg:px-16 relative z-10">
+          <div className="max-w-4xl mb-24">
+             <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-12 bg-accent" />
+                <p className="text-accent text-[11px] font-black uppercase tracking-[0.5em]">TECHNICAL DOMAIN</p>
+             </div>
+             <h2 className="text-6xl md:text-8xl font-black tracking-[-0.05em] uppercase leading-[0.88]">
+               Core<br />Engineering.
+             </h2>
+          </div>
 
-        <div className="w-full px-4 lg:px-10 relative z-10">
-          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase mb-20 max-w-4xl leading-[0.9]">
-            Our Engineering <br /><span className="text-accent">Capabilities.</span>
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {capabilities.map((cap, i) => (
               <motion.div
                 key={cap}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: (i % 4) * 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group p-8 bg-white/5 border border-white/5 rounded-3xl hover:bg-accent hover:border-accent transition-all duration-500 cursor-default"
+                className="group p-10 bg-white/[0.03] border border-white/5 rounded-[2.5rem] hover:bg-accent hover:border-accent transition-all duration-500 cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                  <CheckCircle2 size={20} className="text-accent group-hover:text-zinc-950 transition-colors" />
+                <div className="flex flex-col justify-between h-full">
+                   <h3 className="text-2xl font-black uppercase tracking-tighter text-white group-hover:text-black leading-tight mb-8">
+                     {cap}
+                   </h3>
+                   <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:border-black group-hover:text-black transition-all">
+                      <ArrowUpRight size={20} />
+                   </div>
                 </div>
-                <h3 className="text-lg font-black text-white group-hover:text-zinc-950 uppercase tracking-tight leading-snug">
-                  {cap}
-                </h3>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. Meet The Team (Light Profiles) ─────────────────────── */}
-      <section className="py-32 bg-[#fafafa] relative min-h-screen border-t border-black/5">
-        <div className="w-full px-4 lg:px-10 max-w-[1400px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-            <div>
-              <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-4">The Brains</p>
-              <h2 className="text-5xl md:text-7xl font-black text-primary tracking-tighter uppercase leading-[0.9]">
+      {/* ── 5. Meet The Team ─────────────────────── */}
+      <section className="py-40 bg-[#F5F5F5]">
+        <div className="w-full px-6 lg:px-16">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-12">
+            <div className="max-w-2xl">
+              <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-6">THE HUMAN ENGINE</p>
+              <h2 className="text-6xl md:text-8xl font-black text-black tracking-[-0.05em] uppercase leading-[0.85]">
                 Meet the<br />Team.
               </h2>
             </div>
-            <p className="text-primary/60 max-w-md text-sm md:text-base font-medium">
-              India is a land of great talent. We dream to bring changes to the BCP sector utilizing the creativity and hard work of our finest technicians and engineers.
+            <p className="text-black/40 text-lg max-w-md font-medium leading-relaxed">
+              Bringing together India's finest technical minds to redefine boiler circulation expertise.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, i) => (
-              <Magnetic intensity={0.1} key={member.name}>
-                <div className="bg-white border border-black/5 shadow-sm rounded-3xl p-8 hover:shadow-xl hover:border-accent/10 transition-all duration-500 flex flex-col items-start h-full group cursor-pointer relative overflow-hidden">
-
-                  {/* Subtle hover gradient background */}
-                  <div className="absolute inset-0 bg-linear-to-b from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-8 border border-black/5 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                    <Users size={24} />
-                  </div>
-
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white border border-black/5 rounded-[3rem] p-10 hover:shadow-2xl transition-all duration-700 flex flex-col group cursor-pointer"
+              >
+                <div className="flex-1">
                   {member.tag && (
-                    <span className="text-[9px] font-black bg-accent/10 text-accent uppercase tracking-[0.2em] px-3 py-1 rounded-full mb-4 relative z-10">
+                    <span className="inline-block text-[10px] font-black bg-black text-accent uppercase tracking-widest px-6 py-2 rounded-full mb-8">
                       {member.tag}
                     </span>
                   )}
-
-                  <h3 className="font-black text-2xl text-primary uppercase tracking-tight mb-2 relative z-10">{member.name}</h3>
-                  <p className="text-xs font-bold text-accent uppercase tracking-widest mb-4 relative z-10">{member.role}</p>
-
-                  {(member.qualification || member.email || member.phone) && (
-                    <div className="mt-auto pt-6 border-t border-black/5 w-full relative z-10 flex flex-col gap-3">
-                      {member.qualification && (
-                        <p className="text-[10px] text-primary/30 font-black uppercase tracking-widest">{member.qualification}</p>
-                      )}
-                      {(member.email || member.phone) && (
-                        <div className="flex flex-col gap-1">
-                          {member.email && <a href={`mailto:${member.email}`} className="text-[11px] font-bold text-accent hover:text-primary transition-colors block">{member.email}</a>}
-                          {member.phone && <a href={`tel:${member.phone}`} className="text-[11px] font-bold text-primary/50 hover:text-primary transition-colors block">{member.phone}</a>}
-                        </div>
-                      )}
-                    </div>
+                  <h3 className="font-black text-3xl text-black uppercase tracking-tighter mb-2 group-hover:text-accent transition-colors">{member.name}</h3>
+                  <p className="text-[11px] font-black text-black/30 uppercase tracking-widest mb-8">{member.role}</p>
+                  
+                  {member.qualification && (
+                    <p className="text-sm text-black/60 font-semibold leading-relaxed mb-8 border-l-4 border-black/5 pl-6">
+                      {member.qualification}
+                    </p>
                   )}
                 </div>
-              </Magnetic>
+
+                {(member.email || member.phone) && (
+                  <div className="mt-10 pt-10 border-t border-black/5 flex flex-col gap-6">
+                    {member.email && (
+                      <a href={`mailto:${member.email}`} className="flex flex-col group/link">
+                        <span className="text-[9px] font-black text-black/20 uppercase tracking-[0.3em] mb-2">Email</span>
+                        <span className="text-sm font-bold text-black group-hover/link:text-accent transition-colors">{member.email}</span>
+                      </a>
+                    )}
+                    {member.phone && (
+                      <div className="flex flex-col">
+                        <span className="text-[9px] font-black text-black/20 uppercase tracking-[0.3em] mb-2">Direct Line</span>
+                        <span className="text-sm font-bold text-black">{member.phone}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </motion.div>
             ))}
           </div>
         </div>

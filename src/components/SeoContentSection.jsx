@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { ArrowUpRight, Settings } from "lucide-react";
 
 /**
  * SeoContentSection — Homepage SEO content injection.
@@ -12,107 +13,109 @@ const SeoContentSection = () => {
     <section
       id="about-deivox-bcp"
       aria-label="About DEI VOX India — Boiler Circulation Pump Specialists"
-      className="bg-white border-t border-gray-100 py-20 px-4 lg:px-10"
+      className="bg-[#F5F5F5] py-32 px-6 lg:px-16 relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto">
+      {/* Background ambient glow */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
-        {/* Section label */}
-        <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-4">
-          Company Overview
-        </p>
+      <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Primary H2 (H1 is in page metadata / Hero h1) */}
-        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary uppercase mb-6 leading-tight">
-          DEI VOX India — Pioneers in Boiler Circulation Pump (BCP) Engineering
-        </h2>
-        <div className="w-16 h-1 bg-accent mb-10 rounded-full" />
+        {/* Section label (Eyebrow) */}
+        <div className="flex items-center gap-3 mb-10">
+          <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
+            <Settings className="text-accent" size={18} />
+          </div>
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40">Company Overview</span>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
           {/* Main content block */}
-          <div className="lg:col-span-2 space-y-5 text-foreground/80 text-sm md:text-base leading-relaxed font-medium">
-            <p>
-              <strong className="text-primary">DEI VOX India Pvt. Ltd.</strong> is one of India's foremost
-              engineering companies specialising exclusively in{" "}
-              <strong>Boiler Circulation Pump (BCP)</strong> and{" "}
-              <strong>Boiler Water Circulation Pump (BWCP)</strong> services. With operations spanning
-              thermal power plants, co-generation facilities, and process industries across the country,
-              DEI VOX brings OEM-level technical capability to every service engagement.
-            </p>
-            <p>
-              BCPs are critical assets in high-pressure boiler systems. Operating at extreme temperatures
-              and differential pressures, these pumps circulate water through boiler circuits to maintain
-              uniform heat transfer and prevent tube damage. Any failure in a boiler circulation pump
-              results in immediate plant shutdown, making reliable maintenance and timely overhauling
-              essential for plant availability.
-            </p>
-            <p>
-              DEI VOX engineers are credentialed specialists trained to work on sealed, canned-motor
-              pump configurations typical of high-pressure boilers. Our in-situ machining capability
-              allows casing repairs without dismantling boiler piping — a technically demanding procedure
-              that very few companies in India can execute safely and to specification.
-            </p>
-            <p>
-              We also specialise in the <strong>repair and upgrading of submersible pumping motor units</strong>,
-              reverse engineering of obsolete spare parts, motor rewinding, hydraulic balancing, and
-              complete BCP overhauling under ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018
-              certified processes.
-            </p>
-            <p>
-              Headquartered in Gurugram, Haryana, with a service centre in Bengaluru, Karnataka, DEI VOX
-              maintains pan-India service coverage and 24/7 emergency response capability for power
-              sector clients.
-            </p>
+          <div className="lg:col-span-7">
+            <h2 className="text-4xl md:text-5xl font-black tracking-[-0.05em] text-black uppercase mb-10 leading-[0.9]">
+              Pioneers in Boiler<br />
+              <span className="text-black/20">Circulation Pump</span><br />
+              Engineering
+            </h2>
+            
+            <div className="space-y-6 text-black/60 text-base md:text-lg leading-relaxed font-medium">
+              <p>
+                <strong className="text-black font-black uppercase tracking-tight">DEI VOX India Pvt. Ltd.</strong> is one of India's foremost
+                engineering companies specialising exclusively in{" "}
+                <strong className="text-black">Boiler Circulation Pump (BCP)</strong> and{" "}
+                <strong className="text-black">Boiler Water Circulation Pump (BWCP)</strong> services.
+              </p>
+              <p>
+                Operating at extreme temperatures and differential pressures, these pumps circulate water through boiler circuits to maintain
+                uniform heat transfer and prevent tube damage. Reliable maintenance and timely overhauling are essential for plant availability.
+              </p>
+              <p>
+                Our in-situ machining capability allows casing repairs without dismantling boiler piping — a technically demanding procedure
+                that very few companies in India can execute safely and to specification.
+              </p>
+              <p>
+                We also specialise in the repair and upgrading of submersible pumping motor units,
+                reverse engineering of obsolete spare parts, and motor rewinding, all under ISO certified processes.
+              </p>
+            </div>
           </div>
 
-          {/* Service keyword list */}
-          <aside className="lg:col-span-1">
-            <div className="bg-[#f8f9fb] border border-gray-100 rounded-2xl p-6">
-              <p className="text-[11px] font-black text-accent uppercase tracking-[0.25em] mb-5">
-                Core Services
-              </p>
-              <ul className="space-y-3 text-sm font-bold text-primary/80">
-                {[
-                  { label: "Boiler Circulation Pump Overhauling", href: "/boiler-circulation-pump" },
-                  { label: "Boiler Water Circulation Pump Repair", href: "/boiler-water-circulation-pump" },
-                  { label: "BCP (BCP Pump) Maintenance", href: "/bcp-pump" },
-                  { label: "Submersible Pump Repair & Upgrading", href: "/submersible-pump-repair" },
-                  { label: "In-Situ Machining", href: "/services#insitu-machining" },
-                  { label: "Motor Rewinding", href: "/services#motor-rewinding" },
-                  { label: "Reverse Engineering & Spare Parts", href: "/services#reverse-engineering" },
-                ].map((item) => (
-                  <li key={item.label} className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5 shrink-0">▸</span>
-                    <Link
-                      href={item.href}
-                      className="hover:text-accent transition-colors leading-snug"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <p className="text-[10px] font-black text-primary/40 uppercase tracking-widest mb-3">
-                  Certifications
+          {/* Service keyword list sidebar */}
+          <aside className="lg:col-span-5 flex flex-col gap-8">
+            <div className="bg-black text-white p-10 rounded-[3.5rem] relative overflow-hidden group shadow-2xl shadow-black/20 transition-all hover:bg-zinc-950">
+              {/* Inner Glow */}
+              <div className="absolute bottom-[-20%] right-[-10%] w-32 h-32 bg-accent rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity" />
+              
+              <div className="relative z-10">
+                <p className="text-[11px] font-black text-accent uppercase tracking-[0.4em] mb-10 border-b border-white/5 pb-4">
+                  Core Services
                 </p>
-                <ul className="space-y-1 text-[11px] font-bold text-primary/60 uppercase tracking-wide">
-                  <li>ISO 9001:2015</li>
-                  <li>ISO 14001:2015</li>
-                  <li>ISO 45001:2018</li>
+                <ul className="space-y-4 text-xs font-black uppercase tracking-widest text-accent">
+                  {[
+                    { label: "BCP Overhauling", href: "/boiler-circulation-pump" },
+                    { label: "BWCP Repair", href: "/boiler-water-circulation-pump" },
+                    { label: "Pump Maintenance", href: "/bcp-pump" },
+                    { label: "Submersible Repair", href: "/submersible-pump-repair" },
+                    { label: "In-Situ Machining", href: "/services#insitu-machining" },
+                    { label: "Motor Rewinding", href: "/services#motor-rewinding" },
+                    { label: "Reverse Engineering", href: "/services#reverse-engineering" },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="flex items-center gap-3 hover:text-white transition-all group/item"
+                      >
+                        <span className="text-white/20 group-hover/item:text-accent transition-colors">▸</span>
+                        <span className="group-hover/item:translate-x-1 transition-transform">{item.label}</span>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
+
+                <div className="mt-12 pt-8 border-t border-white/5">
+                  <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] mb-4">
+                    Industrial Certifications
+                  </p>
+                  <ul className="flex flex-wrap gap-4 text-[9px] font-black text-accent/60 uppercase tracking-widest">
+                    <li>ISO 9001:2015</li>
+                    <li className="text-white/10">•</li>
+                    <li>ISO 14001:2015</li>
+                    <li className="text-white/10">•</li>
+                    <li>ISO 45001:2018</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="mt-4">
-              <Link
-                href="/contact"
-                className="block w-full py-4 bg-accent text-zinc-950 text-center font-black text-[11px] uppercase tracking-widest rounded-xl hover:bg-[#a78bfa] transition-colors shadow-[0_0_20px_rgba(167,139,250,0.2)] hover:shadow-[0_0_40px_rgba(167,139,250,0.4)]"
-              >
-                Request a Service Quote
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="group flex items-center justify-between bg-black text-white px-8 py-5 rounded-full hover:bg-zinc-800 transition-all duration-300 shadow-xl shadow-black/10"
+            >
+              <span className="text-[11px] font-black uppercase tracking-widest">Request Quote</span>
+              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform duration-500">
+                <ArrowUpRight size={20} />
+              </div>
+            </Link>
           </aside>
 
         </div>

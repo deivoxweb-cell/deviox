@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ScrollReveal } from "@/src/components/ScrollReveal";
+import Link from "next/link";
 
 const TiltActiveCard = ({ children, isActive }) => {
   const x = useMotionValue(0);
@@ -40,8 +42,6 @@ const TiltActiveCard = ({ children, isActive }) => {
   );
 };
 
-import Link from "next/link";
-
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -56,46 +56,36 @@ function useIsMobile(breakpoint = 768) {
 const SERVICES = [
   {
     title: "Insitu Machining",
-    description:
-      "Today, this type of special machining is the only solution to arrest the leakage (on-site) as the casing is intact with Boiler Pipes and only skilled and experienced credential holders for doing this critical machining job are allowed on casing….",
+    description: "Precision on-site leakage arrest solutions using skilled technicians on live casing boiler pipes.",
     image: "/images/insitu_machining.png",
-    bg: "from-[#111111] to-[#2a2a2a]",
   },
   {
     title: "BCP Overhauling",
-    description:
-      "Our pumps usually run for a longer duration of time as compared to many other companies in this industry between the repairs and maintenance works…",
+    description: "Industry-leading pump maintenance ensuring maximum uptime between service cycles.",
     image: "/images/bcp_overhauling.png",
-    bg: "from-[#111111] to-[#2a2a2a]",
   },
   {
     title: "Motor Rewinding",
-    description:
-      "An armature winding process will allow you to gain function of an older motor. While this might not be the most efficient solution, sometimes you may find this restores most of the motor's efficiency…",
+    description: "Expert armature winding process restoring efficiency to older critical power systems.",
     image: "/images/motor_rewinding.png",
-    bg: "from-[#111111] to-[#2a2a2a]",
   },
   {
     title: "Spare Parts Selling",
-    description:
-      "The inventory cost of maintaining is becoming an increasing factor in budgeting. Inventory costs are forcing companies to either increase their pricing or reduce their inventory to compensate for this…",
+    description: "Strategic inventory of high-quality industrial components to reduce plant downtime.",
     image: "/images/spare_parts_selling.png",
-    bg: "from-[#111111] to-[#2a2a2a]",
   },
   {
     title: "Reverse Engineering",
-    description:
-      "We as DEI VOX INDIA PVT. LTD. company assured our customers by pump rebuilds all the spare parts by doing re-engineering or reverse engineering on the existing OEM parts…",
+    description: "OEM-standard pump rebuilds through advanced re-engineering of existing components.",
     image: "/images/reverse_engineering.png",
-    bg: "from-[#111111] to-[#2a2a2a]",
   },
 ];
 
 const CARD_STYLES = {
   mobile: [
-    { scale: 1, opacity: 1, width: 280, height: 440, xFactor: 0, zIndex: 30 },
-    { scale: 0.75, opacity: 1, width: 180, height: 380, xFactor: 140, zIndex: 20 },
-    { scale: 0.6, opacity: 1, width: 180, height: 340, xFactor: 260, zIndex: 10 },
+    { scale: 1, opacity: 1, width: 260, height: 440, xFactor: 0, zIndex: 30 },
+    { scale: 0.8, opacity: 1, width: 180, height: 380, xFactor: 100, zIndex: 20 },
+    { scale: 0.65, opacity: 1, width: 140, height: 320, xFactor: 180, zIndex: 10 },
   ],
   desktop: [
     { scale: 1, opacity: 1, width: 380, height: 560, xFactor: 0, zIndex: 30 },
@@ -127,58 +117,75 @@ export default function ServiceGrid() {
   const isPaused = useRef(false);
   const prevOffsets = useRef({});
   const isMobile = useIsMobile();
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["30px", "-30px"]);
 
   const advance = useCallback(() => {
     if (!isPaused.current) setActiveIndex((p) => (p + 1) % SERVICES.length);
   }, []);
 
   useEffect(() => {
-    const id = setInterval(advance, 3000);
+    const id = setInterval(advance, 4000);
     return () => clearInterval(id);
   }, [advance]);
 
   return (
     <section
-      className="py-16 bg-[#f8f9fb] overflow-x-hidden"
+      ref={sectionRef}
+      className="py-24 bg-[#F5F5F5] overflow-x-hidden relative"
       onMouseEnter={() => { isPaused.current = true; }}
       onMouseLeave={() => { isPaused.current = false; }}
     >
-      {/* Header */}
+      {/* Decorative accent */}
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[100px] pointer-events-none"
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="px-6 lg:px-16 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-12"
       >
-        <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">
-          What We Do
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px w-12 bg-black/20" />
+            <p className="text-black/40 text-[11px] font-black uppercase tracking-[0.4em]">Our Core Expertise</p>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black tracking-[-0.05em] text-black uppercase leading-[0.88]">
+            Precision<br />
+            <span className="text-black/20">Solutions</span>
+          </h2>
+        </div>
+        <p className="text-black/40 text-lg max-w-sm leading-relaxed font-medium">
+          Advancing industrial reliability through specialized engineering for critical boiler systems.
         </p>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-primary uppercase">
-          OUR CORE SOLUTIONS
-        </h2>
-        <div className="w-20 h-1.5 bg-accent mx-auto mt-5 rounded-full" />
       </motion.div>
 
       <div
         className="relative flex items-center justify-center"
-        style={{ height: isMobile ? 480 : 560, perspective: 1200 }}
+        style={{ height: isMobile ? 460 : 580, perspective: 1200 }}
       >
         {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex items-center justify-between px-2 md:px-8 pointer-events-none z-50">
+        <div className={`absolute inset-0 flex items-center justify-between pointer-events-none z-50 ${isMobile ? "px-4" : "px-16"}`}>
           <button
             onClick={() => setActiveIndex((p) => (p - 1 + SERVICES.length) % SERVICES.length)}
-            className="pointer-events-auto p-3 rounded-full bg-white/10 hover:bg-accent hover:text-zinc-950 text-primary border border-white/5 backdrop-blur-md transition-all active:scale-90 shadow-xl group"
-            aria-label="Previous slide"
+            className={`pointer-events-auto rounded-full bg-black text-white hover:bg-accent hover:text-black transition-all active:scale-90 shadow-2xl ${isMobile ? "p-3 translate-y-10" : "p-4"}`}
           >
-            <ChevronLeft size={isMobile ? 24 : 32} />
+            <ChevronLeft size={isMobile ? 20 : 32} />
           </button>
           <button
             onClick={() => setActiveIndex((p) => (p + 1) % SERVICES.length)}
-            className="pointer-events-auto p-3 rounded-full bg-white/10 hover:bg-accent hover:text-zinc-950 text-accent border border-white/5 backdrop-blur-md transition-all active:scale-90 shadow-xl group"
-            aria-label="Next slide"
+            className={`pointer-events-auto rounded-full bg-black text-white hover:bg-accent hover:text-black transition-all active:scale-90 shadow-2xl ${isMobile ? "p-3 translate-y-10" : "p-4"}`}
           >
-            <ChevronRight size={isMobile ? 24 : 32} />
+            <ChevronRight size={isMobile ? 20 : 32} />
           </button>
         </div>
 
@@ -189,19 +196,14 @@ export default function ServiceGrid() {
 
           const isFocused = offset === 0;
           const prevOffset = prevOffsets.current[service.title];
-          const isTeleport =
-            prevOffset !== undefined && Math.abs(offset - prevOffset) > 2;
+          const isTeleport = prevOffset !== undefined && Math.abs(offset - prevOffset) > 2;
           prevOffsets.current[service.title] = offset;
 
           return (
             <motion.div
               key={service.title}
               animate={{ x: style.x, scale: style.scale, opacity: style.opacity }}
-              transition={
-                isTeleport
-                  ? { duration: 0 }
-                  : { duration: 0.45, ease: "easeInOut" }
-              }
+              transition={isTeleport ? { duration: 0 } : { duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               onClick={() => !isFocused && setActiveIndex(cardIndex)}
               className="absolute cursor-pointer"
               style={{
@@ -210,62 +212,50 @@ export default function ServiceGrid() {
                 zIndex: style.zIndex,
               }}
             >
-              {/* Card shell */}
               <TiltActiveCard isActive={isFocused}>
                 <div
-                  className={`relative w-full h-full rounded-3xl overflow-hidden flex flex-col transition-all duration-500
+                  className={`relative w-full h-full rounded-[3rem] overflow-hidden flex flex-col transition-all duration-700
                     ${isFocused
-                      ? "shadow-[0_40px_100px_-10px_rgba(0,0,0,0.6)] ring-2 ring-accent/60"
-                      : "shadow-xl ring-1 ring-white/10"
+                      ? "shadow-[0_40px_100px_-10px_rgba(0,0,0,0.25)] ring-1 ring-black/5"
+                      : "shadow-xl grayscale"
                     }`}
                 >
-                  {/* Top: image (55% height) */}
-                  <div className="relative" style={{ height: "55%" }}>
+                  <div className="relative" style={{ height: "50%" }}>
                     <Image
                       src={service.image}
                       alt={service.title}
                       width={400}
                       height={300}
-                      className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100 grayscale-[0.3]"}`}
+                      className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? "scale-105" : "scale-100"}`}
                       loading="lazy"
                     />
-                    {/* Dark tint on side cards to create focus for the center card */}
-                    {!isFocused && (
-                      <div className="absolute inset-0 bg-primary/40" />
-                    )}
                   </div>
 
-                  {/* Bottom: text panel */}
                   <div
-                    className={`flex flex-col flex-1 px-5 py-4 transition-colors duration-500
-                      ${isFocused ? "bg-white" : "bg-primary"}`}
+                    className={`flex flex-col flex-1 transition-colors duration-700
+                      ${isFocused ? "bg-white text-black" : "bg-black text-white"}
+                      ${isMobile ? "p-6" : "p-8"}`}
                   >
-                    <h3
-                      className={`font-black tracking-tight uppercase leading-tight mb-2 transition-colors
-                        ${isMobile ? "text-base" : "text-lg"}
-                        ${isFocused ? "text-primary" : "text-white/60"}`}
-                    >
-                      {service.title}
-                    </h3>
-
-                    <div className={`w-8 h-0.5 mb-3 rounded-full ${isFocused ? "bg-accent" : "bg-white/10"}`} />
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className={`font-black uppercase leading-none tracking-tighter ${isMobile ? "text-xl" : "text-3xl"}`}>
+                        {service.title}
+                      </h3>
+                      {isFocused && <ArrowUpRight className="text-accent" size={24} />}
+                    </div>
 
                     {isFocused ? (
                       <>
-                        <p className="text-foreground/80 text-[13px] font-semibold leading-relaxed flex-1 mb-4 line-clamp-3 md:line-clamp-none">
-                          {isMobile && service.description.length > 100
-                            ? service.description.substring(0, 100) + "..."
-                            : service.description}
+                        <p className={`text-black/60 text-sm font-medium leading-relaxed flex-1 mb-6 ${isMobile ? "line-clamp-2" : ""}`}>
+                          {service.description}
                         </p>
                         <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                          <button className="w-full overflow-hidden group relative py-3 rounded-xl bg-accent text-zinc-950 text-[10px] font-black uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(167,139,250,0.3)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)]">
-                            <span className="relative z-10">Explore Solution</span>
-                            <div className="absolute bottom-0 left-0 w-full h-0 bg-white transition-all duration-300 ease-out group-hover:h-full z-0 opacity-20" />
+                          <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-black uppercase tracking-widest transition-all hover:bg-zinc-800">
+                            Explore Service
                           </button>
                         </Link>
                       </>
                     ) : (
-                      <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold mt-auto blur-[1px]">Tap to view →</p>
+                      <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.3em] mt-auto">View Focus Area →</p>
                     )}
                   </div>
                 </div>
@@ -275,17 +265,16 @@ export default function ServiceGrid() {
         })}
       </div>
 
-      {/* Premium Progress Bar */}
-      <div className="flex flex-col items-center justify-center gap-4 mt-16 max-w-[200px] mx-auto">
-        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden relative">
+      <div className="flex flex-col items-center justify-center gap-6 mt-16 max-w-[240px] mx-auto">
+        <div className="w-full h-1 bg-black/5 rounded-full overflow-hidden relative">
           <motion.div
             className="absolute top-0 left-0 h-full bg-accent"
             animate={{ width: `${((activeIndex + 1) / SERVICES.length) * 100}%` }}
-            transition={{ duration: 0.5, ease: "anticipate" }}
+            transition={{ duration: 0.6, ease: "anticipate" }}
           />
         </div>
-        <div className="text-[10px] font-black tracking-[0.3em] uppercase text-primary/50">
-          {activeIndex + 1} / {SERVICES.length}
+        <div className="text-[11px] font-black tracking-[0.4em] uppercase text-black/20">
+          SEC {activeIndex + 1} // 0{SERVICES.length}
         </div>
       </div>
     </section>

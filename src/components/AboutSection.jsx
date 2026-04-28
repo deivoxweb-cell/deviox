@@ -2,7 +2,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
-import { MapPin, CheckCircle2, Phone } from "lucide-react";
+import { MapPin, CheckCircle2, Phone, Award, Zap } from "lucide-react";
+import { ScrollReveal, ScrollRevealItem } from "@/src/components/ScrollReveal";
 
 const TiltCard = ({ children, className }) => {
   const x = useMotionValue(0);
@@ -11,19 +12,10 @@ const TiltCard = ({ children, className }) => {
   const mouseYSpring = useSpring(y);
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct * 20); // max rotation
-    y.set(yPct * -20);
+    x.set(((e.clientX - rect.left) / rect.width - 0.5) * 18);
+    y.set(((e.clientY - rect.top) / rect.height - 0.5) * -18);
   };
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
+  const handleMouseLeave = () => { x.set(0); y.set(0); };
   return (
     <motion.div
       onMouseMove={handleMouseMove}
@@ -31,150 +23,158 @@ const TiltCard = ({ children, className }) => {
       style={{ rotateX: mouseYSpring, rotateY: mouseXSpring, transformStyle: "preserve-3d" }}
       className={className}
     >
-      <div style={{ transform: "translateZ(50px)" }} className="w-full h-full">
-        {children}
-      </div>
+      <div style={{ transform: "translateZ(40px)" }} className="w-full h-full">{children}</div>
     </motion.div>
   );
 };
 
+const BIG_STATS = [
+  { value: "10+", label: "Years of BCP Expertise", icon: <Award size={16} /> },
+  { value: "500+", label: "Pumps Overhauled", icon: <Zap size={16} /> },
+];
+
 const AboutSection = () => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({ target: container, offset: ["start end", "end start"] });
-  const yMove = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const sectionRef = useRef(null);
+
+  /* ── Parallax transforms ── */
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const blobY = useTransform(scrollYProgress, [0, 1], ["-60px", "60px"]);
+  const blobX = useTransform(scrollYProgress, [0, 1], ["0px", "-30px"]);
+  const logoCardY = useTransform(scrollYProgress, [0, 1], ["20px", "-20px"]);
 
   return (
-    <section ref={container} className="py-24 bg-[#fafafa] industrial-grid relative overflow-hidden">
-      {/* Decorative Glow */}
-      <div className="absolute top-0 left-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+    <section ref={sectionRef} className="py-28 bg-[#F5F5F5] relative overflow-hidden">
 
-      <div className="w-full px-4 lg:px-10 relative z-10">
+      {/* ── Parallax ambient blob ── */}
+      <motion.div
+        style={{ y: blobY, x: blobX }}
+        className="absolute top-0 right-0 w-[650px] h-[650px] bg-accent/10 rounded-full blur-[130px] pointer-events-none opacity-55"
+      />
 
-        {/* Section header — same pattern as WhyChooseUs / ServiceGrid */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-accent text-xs font-black uppercase tracking-[0.3em] mb-3">Who We Are</p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-primary uppercase">
-            About DEI VOX
-          </h2>
-          <div className="w-20 h-1.5 bg-accent mx-auto mt-5 rounded-full" />
-        </motion.div>
+      <div className="w-full px-4 lg:px-16 relative z-10">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* ── Eyebrow ── */}
+        <ScrollReveal variant="fade-right" className="flex items-center gap-4 mb-12">
+          <div className="h-px w-12 bg-black/20" />
+          <p className="text-black/40 text-[10px] font-black uppercase tracking-[0.35em]">Who We Are</p>
+        </ScrollReveal>
 
-          {/* Left — Logo + tagline card */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          {/* ── Left bento column ── */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="lg:col-span-4 flex flex-col items-center lg:items-start gap-8"
+            style={{ y: logoCardY }}
+            className="lg:col-span-5 flex flex-col gap-5"
           >
-            {/* Logo box with 3D Tilt */}
-            <TiltCard className="w-full bg-primary rounded-[2rem] p-12 flex items-center justify-center shadow-2xl shadow-primary/20 cursor-crosshair">
-              <Image
-                src="/images/Logo.png"
-                alt="DEI VOX Logo"
-                width={220}
-                height={220}
-                className="object-contain brightness-0 invert drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
-                loading="lazy"
-              />
-            </TiltCard>
+            <ScrollReveal variant="scale-up" delay={0.05}>
+              <TiltCard className="w-full bg-black rounded-[3rem] p-10 flex items-center justify-center shadow-2xl shadow-black/10 cursor-crosshair min-h-[200px]">
+                <Image
+                  src="/images/Logo.png"
+                  alt="DEI VOX Logo"
+                  width={180}
+                  height={180}
+                  className="object-contain brightness-0 invert"
+                  loading="lazy"
+                />
+              </TiltCard>
+            </ScrollReveal>
+
+            {/* Stat bento cards */}
+            <ScrollReveal stagger className="grid grid-cols-2 gap-4">
+              {BIG_STATS.map((s, i) => (
+                <ScrollRevealItem key={s.value} variant="scale-up">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="bg-white border border-black/5 rounded-[2rem] p-8 flex flex-col justify-between text-black min-h-[160px] group transition-all cursor-default"
+                  >
+                    <div className="text-accent group-hover:scale-110 transition-transform">{s.icon}</div>
+                    <div>
+                      <p className="text-4xl font-black text-black leading-none tracking-tighter">{s.value}</p>
+                      <p className="text-[10px] text-black/40 uppercase tracking-widest font-bold mt-2">{s.label}</p>
+                    </div>
+                  </motion.div>
+                </ScrollRevealItem>
+              ))}
+            </ScrollReveal>
 
             {/* Office cards */}
-            <div className="w-full space-y-4">
+            <ScrollReveal stagger className="space-y-3">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
                 { label: "Solution Provider", location: "Bommasandra Industrial Area, Bangalore" },
               ].map((office) => (
-                <div
-                  key={office.label}
-                  className="flex items-start gap-4 bg-white/40 backdrop-blur-xl border border-white/60 rounded-2xl p-5 hover:bg-white/60 hover:shadow-xl transition-all group"
-                >
-                  <div className="p-2 bg-white rounded-xl text-accent shadow-sm group-hover:scale-110 transition-transform mt-0.5">
-                    <MapPin size={16} />
+                <ScrollRevealItem key={office.label} variant="fade-left">
+                  <div className="flex items-center gap-4 bg-white border border-black/5 rounded-[2rem] px-6 py-5 hover:border-accent transition-all group">
+                    <div className="p-3 bg-black/5 rounded-full text-black group-hover:bg-accent transition-all shrink-0">
+                      <MapPin size={14} />
+                    </div>
+                    <div>
+                      <p className="text-[9px] font-black text-black/30 uppercase tracking-widest">{office.label}</p>
+                      <p className="text-sm font-bold text-black mt-0.5">{office.location}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-0.5">{office.label}</p>
-                    <p className="text-sm font-black text-primary uppercase">{office.location}</p>
-                  </div>
-                </div>
+                </ScrollRevealItem>
               ))}
-            </div>
+            </ScrollReveal>
           </motion.div>
 
-          {/* Right — content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            viewport={{ once: true }}
-            className="lg:col-span-8"
-          >
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-primary tracking-tighter leading-tight mb-6 uppercase">
-              Empowering The Boiler<br />
-              <span className="text-accent">Circulation Systems!</span>
-            </h3>
+          {/* ── Right content ── */}
+          <div className="lg:col-span-7 pl-0 lg:pl-10">
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-10%" }}
-              variants={{
-                visible: { transition: { staggerChildren: 0.15 } }
-              }}
-              className="space-y-6 mb-12 text-foreground/70 leading-relaxed text-base md:text-lg"
-            >
-              <div className="overflow-hidden">
-                <motion.p variants={{ hidden: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>
-                  <span className="font-black text-primary">DEI VOX INDIA PVT. LTD.</span> is not just another company
-                  providing repair and maintenance services — we are India's pioneers in <strong>Boiler Circulation Pumps (BCP)</strong>. When it comes
-                  to comprehensive BCP maintenance services and submersible pumping motor units, we are the industry leaders in <span className="font-black text-primary">designing, upgrading, repairing, and servicing</span> them to exact specifications.
-                </motion.p>
-              </div>
-              <div className="overflow-hidden">
-                <motion.p variants={{ hidden: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>
-                  As the premier solution provider in India, we deliver <strong>OEM-quality</strong> spare parts and overhauling without the exorbitant costs. Our Boiler Circulation Pump solutions guarantee uncompromising performance and extreme reliability at highly <strong>affordable pricing</strong>, matching or exceeding global industry standards.
-                </motion.p>
-              </div>
-            </motion.div>
+            <ScrollReveal variant="fade-up" duration={0.9} className="mb-6">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-black tracking-[-0.05em] leading-[0.88] uppercase">
+                Empowering Boiler<br />
+                <span className="text-black/20">
+                  Circulation Systems
+                </span>
+              </h2>
+            </ScrollReveal>
 
+            <ScrollReveal stagger className="space-y-6 text-black/60 leading-relaxed text-lg mb-12 font-medium">
+              {[
+                <><span className="font-black text-black">DEI VOX INDIA PVT. LTD.</span> is not just another company providing repair and maintenance services — we are India's pioneers in <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.</>,
+                <>As the premier solution provider in India, we deliver <strong className="text-black uppercase">OEM-quality</strong> overhauling without exorbitant costs. Our BCP solutions guarantee uncompromising performance and extreme reliability at highly <strong className="text-black">affordable pricing</strong>.</>,
+              ].map((text, i) => (
+                <ScrollRevealItem key={i} variant="fade-up">
+                  <p>{text}</p>
+                </ScrollRevealItem>
+              ))}
+            </ScrollReveal>
 
-            {/* 2-col stat grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            {/* Feature cards */}
+            <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 {
-                  icon: <CheckCircle2 size={20} />,
+                  icon: <CheckCircle2 size={18} />,
                   title: "BCP Business Consultant",
-                  body: "Business Consultant of Boiler Circulation Pump (BCP) in India and abroad, with Sales & Spare parts support for all makes.",
+                  body: "Strategic consultation for BCP in India and abroad, with comprehensive spare parts support.",
                 },
                 {
-                  icon: <Phone size={20} />,
+                  icon: <Phone size={18} />,
                   title: "24/7 Service Support",
-                  body: "Round-the-clock service support, spare parts supply, and expert consultation for all BCP systems wherever you are.",
+                  body: "Round-the-clock technical assistance and expert consultation anywhere in the industrial sector.",
                 },
               ].map((item) => (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ y: -5 }}
-                  className="bg-white/50 backdrop-blur-lg border border-white/60 rounded-[1.5rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,51,102,0.08)] transition-all"
-                >
-                  <div className="flex items-center gap-3 mb-4 text-accent">
-                    <div className="p-2 bg-white rounded-xl shadow-sm">{item.icon}</div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">{item.title}</span>
-                  </div>
-                  <p className="text-sm text-foreground/60 font-medium leading-relaxed">{item.body}</p>
-                </motion.div>
+                <ScrollRevealItem key={item.title} variant="fade-up">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="bg-white border border-black/5 rounded-[2.5rem] p-8 transition-all group cursor-default"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-accent rounded-full text-black transition-all duration-300">
+                        {item.icon}
+                      </div>
+                      <span className="text-[11px] font-black uppercase tracking-widest text-black">{item.title}</span>
+                    </div>
+                    <p className="text-sm text-black/50 font-medium leading-relaxed">{item.body}</p>
+                  </motion.div>
+                </ScrollRevealItem>
               ))}
-            </div>
-          </motion.div>
+            </ScrollReveal>
+          </div>
 
         </div>
       </div>

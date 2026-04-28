@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Wrench, Zap, Settings, Package, Cog, ArrowRight } from "lucide-react";
+import { CheckCircle2, Wrench, Zap, Settings, Package, Cog, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
@@ -12,7 +12,7 @@ const services = [
     title: "Insitu Machining",
     tagline: "On-Site Precision",
     image: "/images/insitu_machining.png",
-    description: "Insitu Machining is the only solution to arrest leakage on-site when the casing is intact with Boiler Pipes. Only skilled credential holders perform this critical machining job on the casing. We bring the machine shop to your plant, eliminating costly downtime.",
+    description: "Insitu Machining is the ultimate solution to arrest leakage on-site. We bring the machine shop to your plant, eliminating costly downtime with surgical precision.",
     points: ["On-site bore machining", "Flange facing repairs", "No pull-out downtime", "Certified specialists"],
   },
   {
@@ -20,7 +20,7 @@ const services = [
     title: "BCP Overhauling",
     tagline: "Total Rehabilitation",
     image: "/images/bcp_overhauling.png",
-    description: "Our pumps run for a longer duration compared to many others between maintenance works. We offer comprehensive overhauling that restores a Boiler Circulation Pump to its original OEM specifications or better, covering inspection, replacement, balancing, and commissioning.",
+    description: "Our comprehensive overhauling restores Boiler Circulation Pumps to OEM specifications. Covering inspection, dynamic balancing, and expert commissioning.",
     points: ["Full strip-down assessment", "Shaft restoration", "Dynamic balancing", "On-site commissioning"],
   },
   {
@@ -28,7 +28,7 @@ const services = [
     title: "Motor Rewinding",
     tagline: "Restore Efficiency",
     image: "/images/motor_rewinding.png",
-    description: "An armature winding process restores function to older motors. While not always the most efficient solution, it restores most of the motor's performance at a fraction of the replacement cost. We have over 20 years of experience rewinding HT/LT motors.",
+    description: "Restore function to older motors at a fraction of the replacement cost. We provide specialized HT/LT motor diagnostics and precision rewinding.",
     points: ["HT & LT motor rewinding", "Insulation testing", "Winding upgrades", "Full diagnostics"],
   },
   {
@@ -36,15 +36,15 @@ const services = [
     title: "Spare Parts Selling",
     tagline: "OEM & Compatible",
     image: "/images/spare_parts_selling.png",
-    description: "Inventory costs of maintaining BCP spare parts are becoming a severe factor in plant budgeting. DEI VOX bridges this gap by providing genuine OEM parts and compatible equivalents sourced from our extensive vendor network, covering all BCP makes in the market.",
+    description: "Reducing budgeting pressure through strategic sourcing of genuine OEM parts and high-quality compatible equivalents for all BCP makes.",
     points: ["All BCP makes covered", "OEM part options", "Bearings, seals, impellers", "Fast stock dispatch"],
   },
   {
     icon: <Settings size={32} />,
     title: "Reverse Engineering",
-    tagline: "Replicate Legacy Parts",
+    tagline: "Legacy Restoration",
     image: "/images/reverse_engineering.png",
-    description: "DEI VOX assures customers by rebuilding all spare parts through re-engineering or reverse engineering of existing OEM parts. When original parts are obsolete, our engineering team recreates them from scratch maintaining strict metallurgical standards.",
+    description: "Rebuilding obsolete components through advanced CAD modeling and metallurgical replication, maintaining the strictest engineering standards.",
     points: ["Dimensional CAD modeling", "3D scanning", "Metallurgical replication", "Legacy part revival"],
   },
 ];
@@ -53,73 +53,79 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
   return (
     <div
       ref={itemRef}
-      className={`min-h-[70vh] md:min-h flex flex-col justify-center py-20 transition-all duration-1000 ${isActive ? "opacity-100" : "opacity-30 blur-[2px]"}`}
+      className={`min-h-[80vh] flex flex-col justify-center py-24 transition-all duration-700 ${isActive ? "opacity-100" : "opacity-20 grayscale"}`}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         {/* Text Content */}
         <div className="lg:col-span-7">
-          <div className="flex items-center gap-6 mb-12">
-            <span className="text-6xl md:text-8xl font-black text-white/5 tracking-tighter">
+          <div className="flex items-center gap-8 mb-16">
+            <span className="text-7xl md:text-9xl font-black text-black/5 tracking-tighter">
               0{index + 1}
             </span>
-            <div className="w-20 h-px bg-white/20" />
+            <div className="w-24 h-px bg-black/10" />
           </div>
 
-          <div className="flex items-center gap-4 mb-8">
-            <div className="p-4 bg-white/5 border border-white/10 rounded-2xl text-accent backdrop-blur-md">
+          <div className="flex items-center gap-6 mb-10">
+            <div className="w-16 h-16 bg-black rounded-[1.5rem] flex items-center justify-center text-accent">
               {service.icon}
             </div>
             <div>
-              <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em] mb-1">
+              <p className="text-[11px] font-black text-black/30 uppercase tracking-[0.4em] mb-1">
                 {service.tagline}
               </p>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-6xl font-black text-black tracking-[-0.05em] uppercase leading-none">
                 {service.title}
               </h2>
             </div>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isActive ? { opacity: 0.6, y: 0 } : { opacity: 0.2, y: 10 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-lg md:text-xl font-medium text-white leading-relaxed mb-10 max-w-xl"
-          >
+          <p className="text-xl font-medium text-black/50 leading-relaxed mb-12 max-w-xl">
             {service.description}
-          </motion.p>
+          </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
             {service.points.map((pt) => (
-              <li key={pt} className="flex items-start gap-4">
-                <CheckCircle2
-                  size={18}
-                  className="text-accent mt-1 shrink-0 bg-accent/10 rounded-full"
-                />
-                <span className="text-[11px] md:text-xs font-black text-white/70 uppercase tracking-[0.2em]">
+              <div key={pt} className="flex items-center gap-4 group">
+                <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-accent transition-transform group-hover:scale-110">
+                   <CheckCircle2 size={16} />
+                </div>
+                <span className="text-[11px] font-black text-black uppercase tracking-widest">
                   {pt}
                 </span>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
+
+          <Link href="/contact" className="inline-block">
+             <button className="flex items-center gap-4 bg-black text-white px-10 py-4 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
+                <span className="text-[11px] font-black uppercase tracking-widest">Consult on Service</span>
+                <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
+                  <ArrowUpRight size={18} />
+                </div>
+             </button>
+          </Link>
         </div>
 
-        {/* Image Content (Inlined) */}
+        {/* Image Content */}
         <div className="lg:col-span-5">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            animate={isActive ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0.3, scale: 0.95, x: 10 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isActive ? { opacity: 1, scale: 1 } : { opacity: 0.3, scale: 0.95 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+            className="relative aspect-[4/5] rounded-[3.5rem] overflow-hidden border border-black/5 shadow-2xl"
           >
             <Image
               src={service.image}
               alt={service.title}
               width={600}
-              height={600}
-              className="w-full h-full object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
+              height={750}
+              className="w-full h-full object-cover"
             />
-            <div className={`absolute inset-0 bg-accent/10 transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-40"}`} />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
+            <div className="absolute bottom-10 left-10">
+               <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-2">{service.tagline}</p>
+               <p className="text-white text-2xl font-black uppercase tracking-tighter">{service.title}</p>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -137,7 +143,7 @@ export default function ServicesPage() {
     offset: ["start start", "end start"],
   });
 
-  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   useEffect(() => {
@@ -167,56 +173,57 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32" ref={container}>
+    <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
 
-      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
-      <section className="relative md:min-h-[95vh] min-h-[60vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
-        <motion.div
-          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
-          className="absolute top-1/2 left-0 -translate-y-1/2 text-[180px] sm:text-[300px] md:text-[400px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
-        >
-          SERVICES
-        </motion.div>
-
+      {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
+      <section className="relative min-h-screen flex flex-col justify-center py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
+        <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+            transition={{ duration: 0.8 }}
+            className="text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-10"
           >
-            Core Solutions
+            ENGINEERING SOLUTIONS
           </motion.p>
 
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ opacity: 0, rotateX: 20, y: 40 }}
-              animate={{ opacity: 1, rotateX: 0, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.04em] uppercase leading-[0.9] mb-8"
-            >
-              Precision<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">Engineering</span>.
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
+          >
+            Mission<br />
+            <span className="text-white/20">Critical.</span>
+          </motion.h1>
+
+          <div className="flex items-center gap-8 mt-12">
+             <div className="h-px w-24 bg-white/10" />
+             <p className="text-white/40 text-lg max-w-sm font-medium leading-relaxed">
+               Advanced technical services for critical power systems and boiler infrastructure.
+             </p>
           </div>
         </motion.div>
       </section>
 
       {/* ── 2. Services Section ───────────────────────────────────── */}
-      <section className="relative w-full px-4 lg:px-10 max-w-[1600px] mx-auto pt-24">
+      <section className="relative w-full px-6 lg:px-16 max-w-[1600px] mx-auto py-32">
         <div className="flex flex-col gap-12 relative items-start">
 
-          <div className="sticky top-0 lg:top-16 z-40 bg-primary/90 backdrop-blur-xl py-8 border-b border-white/5 w-full flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Sticky Nav */}
+          <div className="sticky top-0 lg:top-24 z-40 bg-[#F5F5F5]/80 backdrop-blur-xl py-10 border-b border-black/5 w-full flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-px bg-accent" />
-              <h2 className="text-accent text-[11px] font-black uppercase tracking-[0.5em]">Our Expert Services</h2>
+              <div className="w-12 h-px bg-black" />
+              <h2 className="text-black text-[11px] font-black uppercase tracking-[0.5em]">DOMAINS OF EXPERTISE</h2>
             </div>
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-10">
               {services.map((item, i) => (
                 <button
                   key={item.title}
                   onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                  className={`text-[9px] font-black uppercase tracking-widest transition-all ${activeIndex === i ? "text-white" : "text-white/20 hover:text-white/50"}`}
+                  className={`text-[10px] font-black uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20 hover:text-black/50"}`}
                 >
                   {item.title.split(' ')[0]}
                 </button>
@@ -224,7 +231,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="w-full relative z-20 space-y-12">
+          <div className="w-full relative z-20">
             {services.map((service, i) => (
               <ServiceScrollItem
                 key={service.title}
@@ -239,28 +246,25 @@ export default function ServicesPage() {
       </section>
 
       {/* ── 3. Massive CTA ───────────────────────────────── */}
-      <section className="py-32 w-full px-4 lg:px-10 mt-32 relative overflow-hidden bg-black/50 border-y border-white/5">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 leading-[0.9]">
-            Require a Custom<br />
-            <span className="text-accent">Solution?</span>
+      <section className="py-40 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-20 leading-[0.9]">
+            Industrial <br /><span className="text-white/20">Capabilities.</span>
           </h2>
-          <p className="text-white/40 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto">
-            Our team of experts is ready to assist you with specialized BCP maintenance, overhauling, and rapid reverse engineering.
+          <p className="text-white/40 text-xl font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
+            Partner with our specialized engineering team for rapid reverse engineering and mission-critical BCP maintenance.
           </p>
 
-          <Magnetic intensity={0.4}>
-            <Link href="/contact" className="inline-block">
-              <button className="relative overflow-hidden group w-72 h-20 bg-accent text-zinc-950 font-black rounded-full transition-all shadow-[0_0_40px_-10px_rgba(249,115,22,0.4)] hover:shadow-[0_0_80px_-10px_rgba(249,115,22,0.5)] uppercase tracking-[0.2em] text-[12px] active:scale-95">
-                <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                  <span className="absolute transition-transform duration-500 group-hover:-translate-y-16">Talk to an Expert</span>
-                  <span className="absolute translate-y-16 transition-transform duration-500 group-hover:translate-y-0">Request Consult</span>
-                </div>
-                <div className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-bottom scale-y-0 group-hover:scale-y-100 opacity-20 z-0" />
-              </button>
-            </Link>
-          </Magnetic>
-
+          <Link href="/contact" className="inline-block">
+            <button className="flex items-center gap-6 bg-accent text-black px-12 py-5 rounded-full font-black uppercase tracking-[0.3em] text-sm hover:scale-105 transition-all shadow-2xl">
+               Talk to an Expert
+               <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white">
+                 <ArrowUpRight size={20} />
+               </div>
+            </button>
+          </Link>
         </div>
       </section>
 

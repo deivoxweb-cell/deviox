@@ -98,21 +98,19 @@ export default function BcpPumpPage() {
         relatedLinks={relatedLinks}
         heroImage="/images/pump_rebuild.png"
       >
-        <h1 className="text-3xl md:text-4xl font-black tracking-tight text-primary uppercase mb-4 leading-tight">
-          BCP Pump: Boiler Circulation Pump Services by DEI VOX India
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+          BCP Pump: Industrial Circulation Expertise
         </h1>
-        <div className="w-12 h-1 bg-accent mb-8 rounded-full" />
+        <div className="w-20 h-2 bg-accent mb-12" />
 
-        <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
+        <p className="text-black/60 text-lg font-medium leading-relaxed mb-10">
           The acronym <strong>BCP</strong> — Boiler Circulation Pump — represents one of the most
           demanding engineering challenges in the power generation industry. DEI VOX India Pvt. Ltd.
-          has built its entire engineering identity around BCP expertise: from precision overhauling
-          to emergency field repairs, reverse engineering of obsolete spare parts, and motor rewinding
-          for canned motor units.
+          has built its entire engineering identity around BCP expertise.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
-          What is a BCP Pump?
+        <h2 className="text-2xl md:text-3xl font-black text-black uppercase tracking-tighter mt-16 mb-6">
+          Technical Specification: BCP
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           A <strong>BCP pump</strong> (Boiler Circulation Pump) is a specialised centrifugal pump

@@ -15,7 +15,7 @@ export default function Loading() {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        background: "var(--color-primary, #0d2340)",
+        background: "#000000",
       }}
     >
       {/* Watermark */}
@@ -43,7 +43,7 @@ export default function Loading() {
             height: 72,
             borderRadius: "50%",
             border: "3px solid rgba(255,255,255,0.08)",
-            borderTop: "3px solid #f97316",
+            borderTop: "3px solid #C6F023",
             animation: "deivox-spin 0.8s linear infinite",
             margin: "0 auto",
           }}
@@ -96,8 +96,8 @@ export default function Loading() {
           style={{
             height: "100%",
             width: "40%",
-            background: "linear-gradient(90deg, transparent, #f97316, transparent)",
-            boxShadow: "0 0 12px rgba(249,115,22,0.6)",
+            background: "linear-gradient(90deg, transparent, #C6F023, transparent)",
+            boxShadow: "0 0 12px rgba(198,240,35,0.6)",
             animation: "deivox-shimmer 1.4s ease-in-out infinite",
           }}
         />

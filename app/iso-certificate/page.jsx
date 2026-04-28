@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
-import { Award, Download, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Award, Download, ShieldCheck, CheckCircle2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Magnetic from "@/src/components/Magnetic";
@@ -10,41 +10,39 @@ const certificates = [
   {
     id: "iso-9001",
     title: "ISO 9001:2015",
-    tagline: "Quality Management System",
+    tagline: "Quality Management",
     image: "/images/cert1.png",
     pdf: "/images/cert-1.pdf",
     icon: <Award size={32} />,
-    description: "The primary standard for quality management systems (QMS), ensuring we consistently provide products and services that exceed customer and regulatory requirements.",
+    description: "Standard for quality management systems (QMS), ensuring consistency and exceeding customer expectations.",
     points: ["Repair Excellence", "Mechanical Spares", "Motor Services", "Rotating Equipment Support"],
   },
   {
     id: "iso-14001",
     title: "ISO 14001:2015",
-    tagline: "Environmental Management",
+    tagline: "Environmental",
     image: "/images/cert2.png",
     pdf: "/images/cert-2.pdf",
     icon: <ShieldCheck size={32} />,
-    description: "Outlines the requirements for an effective environmental management system (EMS), emphasizing our aggressive commitment to reducing our environmental footprint.",
+    description: "Outlines requirements for effective EMS, emphasizing our commitment to reducing industrial footprint.",
     points: ["Sustainable Practices", "Resource Efficiency", "Compliance Assurance", "Reduced Impact"],
   },
   {
     id: "iso-45001",
     title: "ISO 45001:2018",
-    tagline: "Occupational Health",
+    tagline: "Health & Safety",
     image: "/images/cert3.png",
     pdf: "/images/cert-3.pdf",
     icon: <CheckCircle2 size={32} />,
-    description: "The international standard for occupational health and safety (OH&S), designed to protect workers and visitors from work-related accidents and diseases.",
+    description: "International standard for OH&S, protecting workers and ensuring a zero-accident industrial environment.",
     points: ["Zero-Accident Protocol", "Worker Wellbeing", "Risk Mitigation", "Certified Safety"],
   },
 ];
 
-// Interactive 3D Physics Card
 const TiltCertCard = ({ cert, index }) => {
   const ref = useRef(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
   const mouseXSpring = useSpring(x, { stiffness: 100, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 100, damping: 20 });
 
@@ -54,19 +52,12 @@ const TiltCertCard = ({ cert, index }) => {
   const handleMouseMove = (e) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
+    x.set(e.clientX - rect.left / rect.width - 0.5);
+    y.set(e.clientY - rect.top / rect.height - 0.5);
   };
 
   const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
+    x.set(0); y.set(0);
   };
 
   return (
@@ -75,62 +66,40 @@ const TiltCertCard = ({ cert, index }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="relative w-full h-[600px] rounded-[3rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between group cursor-pointer shadow-[0_0_60px_rgba(0,0,0,0.5)] lg:h-[700px]"
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="relative w-full h-[650px] rounded-[3.5rem] bg-white border border-black/5 p-12 flex flex-col justify-between group cursor-pointer shadow-2xl"
     >
-      {/* Dynamic Glow Layer */}
-      <div className="absolute inset-0 bg-linear-to-b from-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[3rem]" />
-
-      {/* Content Wrapper physically separated for 3D effect */}
-      <div style={{ transform: "translateZ(50px)" }} className="relative z-10 flex flex-col h-full pointer-events-none">
-
-        {/* Top Header */}
-        <div className="flex justify-between items-start mb-12">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/20 flex flex-col items-center justify-center text-accent">
-              {cert.icon}
-            </div>
-            <div>
-              <p className="text-[9px] font-black text-white/50 uppercase tracking-[0.3em] mb-1">Standard</p>
-              <h3 className="text-xl lg:text-3xl font-black text-white uppercase tracking-tighter">{cert.title}</h3>
-            </div>
+      <div style={{ transform: "translateZ(40px)" }} className="relative z-10 h-full flex flex-col">
+        <div className="flex justify-between items-start mb-16">
+          <div className="w-20 h-20 bg-black rounded-[2rem] flex items-center justify-center text-accent">
+            {cert.icon}
           </div>
-          <div className="text-5xl lg:text-7xl font-black text-white-[0.05] tracking-tighter mix-blend-overlay">
-            0{index + 1}
-          </div>
+          <span className="text-6xl font-black text-black/5 tracking-tighter">0{index + 1}</span>
         </div>
 
-        {/* Certificate Image Mockup with extreme shadow */}
-        <div className="flex-1 w-full bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.5)] mb-8 relative">
+        <div className="flex-1 w-full bg-black/[0.03] rounded-[2.5rem] overflow-hidden border border-black/5 mb-10 relative">
           <Image
             src={cert.image}
             alt={cert.title}
             width={500}
             height={700}
-            className="w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-80 group-hover:mix-blend-normal transition-all duration-700"
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-linear-to-tr from-primary/80 via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-linear-to-t from-white/80 via-transparent to-transparent" />
         </div>
 
-        {/* Badge & Points */}
-        <div className="space-y-4">
-          <p className="text-xs font-black text-accent uppercase tracking-[0.2em]">{cert.tagline}</p>
-          <p className="text-sm font-medium text-white/60 line-clamp-2 md:line-clamp-3 leading-relaxed">{cert.description}</p>
+        <div>
+          <p className="text-[11px] font-black text-accent uppercase tracking-[0.4em] mb-4">{cert.tagline}</p>
+          <h3 className="text-3xl font-black text-black uppercase tracking-tighter mb-4">{cert.title}</h3>
+          <p className="text-sm font-medium text-black/40 leading-relaxed">{cert.description}</p>
         </div>
-
       </div>
 
-      {/* Interactive Download Action physically floating higher */}
-      <div className="mt-8 flex justify-end" style={{ transform: "translateZ(80px)" }}>
-        <a
-          href={cert.pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-16 h-16 rounded-full bg-white text-primary flex items-center justify-center hover:bg-accent hover:text-white transition-colors duration-300 pointer-events-auto"
-        >
+      <div style={{ transform: "translateZ(60px)" }} className="flex justify-end mt-8">
+        <a href={cert.pdf} target="_blank" rel="noopener noreferrer" className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:bg-accent hover:text-black transition-all">
           <Download size={24} />
         </a>
       </div>
@@ -145,80 +114,76 @@ export default function ISOCertificatePage() {
     offset: ["start start", "end start"],
   });
 
-  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div className="bg-primary text-white selection:bg-accent selection:text-white pb-32 min-h-screen" ref={container}>
+    <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
 
-      {/* ── 1. Brutalist Hero with 3D Entrance ────────────────────── */}
-      <section className="relative md:min-h-[95vh] min-h-[60vh] flex flex-col justify-center pt-24 pb-24 overflow-hidden px-4 lg:px-10 border-b border-white/5 perspective-1000">
-        {/* Massive Background Typography Mask with Parallax */}
-        <motion.div
-          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "40%"]), opacity: useTransform(scrollYProgress, [0, 0.5], [0.1, 0]) }}
-          className="absolute top-1/2 left-0 -translate-y-1/2 text-[150px] sm:text-[250px] md:text-[350px] font-black tracking-tighter text-white select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0 translate-x-1/4 opacity-10 blur-sm"
-        >
-          ISO CERT
-        </motion.div>
-
+      {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
+      <section className="relative min-h-screen flex flex-col justify-center py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
+        <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4"
+            transition={{ duration: 0.8 }}
+            className="text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-10"
           >
-            Verified Compliance
+            TRUSTED COMPLIANCE
           </motion.p>
 
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ opacity: 0, rotateX: 20, y: 40 }}
-              animate={{ opacity: 1, rotateX: 0, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-7xl md:text-[8.5rem] font-black tracking-[-0.04em] uppercase leading-[0.8] mb-8"
-            >
-              Certified<br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-accent to-white">Excellence</span>
-            </motion.h1>
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white/50 max-w-2xl text-lg md:text-xl font-medium leading-relaxed"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
           >
-            DEI VOX India maintains the highest international standards in quality, environment, and industrial safety. Lead with trust.
-          </motion.p>
+            Certified<br />
+            <span className="text-white/20">Excellence.</span>
+          </motion.h1>
+
+          <div className="flex items-center gap-8 mt-12">
+             <div className="h-px w-24 bg-white/10" />
+             <p className="text-white/40 text-lg max-w-sm font-medium leading-relaxed">
+               International benchmarks in quality, safety, and environmental stewardship.
+             </p>
+          </div>
         </motion.div>
       </section>
 
-      {/* ── 2. 3D Tilt Certificates Gallery ──────────────── */}
-      <section className="py-32 w-full px-4 lg:px-10 relative z-30" style={{ perspective: "2000px" }}>
-        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
+      {/* ── 2. Certificates ──────────────── */}
+      <section className="py-40 w-full px-6 lg:px-16">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {certificates.map((cert, i) => (
             <TiltCertCard key={cert.id} cert={cert} index={i} />
           ))}
         </div>
       </section>
 
-      {/* ── 3. Brutalist Footer Divider ──────────────────── */}
-      <div className="w-full px-4 lg:px-10 max-w-[1600px] mx-auto mt-20">
-        <div className="w-full h-px bg-white/10" />
-        <div className="pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <h2 className="text-3xl md:text-5xl font-black text-white/30 uppercase tracking-tighter">
-            Verified Compliance
-          </h2>
-          <Magnetic intensity={0.4}>
-            <Link href="/contact" className="inline-block">
-              <button className="px-12 h-20 min-w-[260px] bg-white text-primary font-black rounded-full transition-all hover:bg-accent hover:text-white uppercase tracking-[0.2em] text-[12px] active:scale-95 shadow-xl">
-                Request Audit Report
+      {/* ── 3. Footer Section ──────────────────── */}
+      <section className="py-40 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        <div className="w-full px-6 lg:px-16 relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+           <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.85] mb-6">
+                Verified<br /><span className="text-accent">Standards.</span>
+              </h2>
+              <p className="text-white/30 text-lg font-medium leading-relaxed">
+                DEI VOX India maintains the highest international standards in Quality Management and Safety.
+              </p>
+           </div>
+           <Link href="/contact" className="inline-block">
+              <button className="flex items-center gap-6 bg-accent text-black px-10 py-4 rounded-full group hover:scale-105 transition-all shadow-2xl">
+                <span className="text-[11px] font-black uppercase tracking-[0.3em] ml-2">Request Audit Report</span>
+                <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform">
+                  <ArrowUpRight size={18} />
+                </div>
               </button>
-            </Link>
-          </Magnetic>
+           </Link>
         </div>
-      </div>
+      </section>
 
     </div>
   );

@@ -96,10 +96,10 @@ export default function BoilerWaterCirculationPumpPage() {
         relatedLinks={relatedLinks}
         heroImage="/images/insitu_machining.png"
       >
-        <h1 className="text-3xl md:text-4xl font-black tracking-tight text-primary uppercase mb-4 leading-tight">
-          Boiler Water Circulation Pump: Repair, Overhauling &amp; Maintenance
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+          BWCP: Boiler Water Circulation Experts
         </h1>
-        <div className="w-12 h-1 bg-accent mb-8 rounded-full" />
+        <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
           DEI VOX India Pvt. Ltd. provides specialist repair, overhauling, and maintenance services for{" "}

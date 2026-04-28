@@ -105,10 +105,10 @@ export default function BoilerCirculationPumpPage() {
         heroImage="/images/bcp_overhauling.png"
       >
         {/* H1 */}
-        <h1 className="text-3xl md:text-4xl font-black tracking-tight text-primary uppercase mb-4 leading-tight">
-          Boiler Circulation Pump (BCP): Engineering, Maintenance &amp; Repair in India
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+          BCP: Boiler Circulation Pump Engineering
         </h1>
-        <div className="w-12 h-1 bg-accent mb-8 rounded-full" />
+        <div className="w-20 h-2 bg-accent mb-12" />
 
         {/* Intro */}
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">

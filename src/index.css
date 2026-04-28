@@ -1,32 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-/* #175CAD  Update website color combination (UI refresh) sugguest some :root { 
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #003366;
-  --secondary: #64748b;
-  --accent: #f97316;
-  --accent-light: #ff8533;
-  --card: #f8fafc;
-  --border: #f0e2e2;
-}  accprding to this website https://www.torishima.co.jp/en/ https://haywardtyler.com/ #68A53A */
-
-
-
+/* ── Design Tokens ───────────────────────────────────────────── */
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #111111;
 
-  --primary: #51139A;
-  --secondary: #475569;
+  --primary: #111111;
+  --secondary: #949698;
 
-  --accent: #7548B2;
-  --accent-light: #a78bfa;
+  --accent: #C6F023;
+  --accent-light: #D4FF00;
 
-  --card: #f8fafc;
+  --card: #F5F5F5;
   --border: #e2e8f0;
 }
-
 
 @theme inline {
   --color-background: var(--background);
@@ -37,7 +25,11 @@
   --color-accent-light: var(--accent-light);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -53,12 +45,22 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Inter", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   overflow-x: hidden;
   width: 100%;
 }
 
 @layer utilities {
+  /* ── Hide scrollbar ── */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ── Glassmorphism ── */
   .glass {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
@@ -66,17 +68,66 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.05);
   }
 
+  /* ── Industrial grid background ── */
   .industrial-grid {
     background-size: 60px 60px;
     background-image:
-      linear-gradient(to right, rgba(81, 19, 154, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(81, 19, 154, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(18, 93, 163, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(18, 93, 163, 0.04) 1px, transparent 1px);
   }
 
+  /* ── Text shadow ── */
   .text-shadow-sm {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
+  /* ── Section ambient glow (reusable) ── */
+  .section-glow-tl {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, rgba(114, 175, 68, 0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+  }
+
+  .section-glow-br {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(158, 212, 116, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+  }
+
+  /* ── Gradient border card ── */
+  .gradient-border {
+    position: relative;
+    border-radius: 1.5rem;
+    background: white;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(114, 175, 68, 0.25), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ── Noise grain overlay ── */
   .grain-overlay {
     position: fixed;
     top: -50%;
@@ -86,12 +137,12 @@ body {
     pointer-events: none;
     z-index: 9999;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.04;
+    opacity: 0.03;
     mix-blend-mode: overlay;
     animation: grain 8s steps(10) infinite;
   }
 
-  /* SEO article prose — used by SeoPageLayout */
+  /* ── SEO article prose — used by SeoPageLayout ── */
   .seo-prose h1,
   .seo-prose h2,
   .seo-prose h3 {
@@ -108,51 +159,30 @@ body {
     font-weight: 700;
   }
 
+  /* ── Animations ── */
   @keyframes grain {
-
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-
-    10% {
-      transform: translate(-5%, -10%);
-    }
-
-    20% {
-      transform: translate(-15%, 5%);
-    }
-
-    30% {
-      transform: translate(7%, -25%);
-    }
-
-    40% {
-      transform: translate(-5%, 25%);
-    }
-
-    50% {
-      transform: translate(-15%, 10%);
-    }
-
-    60% {
-      transform: translate(15%, 0%);
-    }
-
-    70% {
-      transform: translate(0%, 15%);
-    }
-
-    80% {
-      transform: translate(3%, 35%);
-    }
-
-    90% {
-      transform: translate(-10%, 10%);
-    }
+    0%, 100% { transform: translate(0, 0); }
+    10%  { transform: translate(-5%, -10%); }
+    20%  { transform: translate(-15%, 5%); }
+    30%  { transform: translate(7%, -25%); }
+    40%  { transform: translate(-5%, 25%); }
+    50%  { transform: translate(-15%, 10%); }
+    60%  { transform: translate(15%, 0%); }
+    70%  { transform: translate(0%, 15%); }
+    80%  { transform: translate(3%, 35%); }
+    90%  { transform: translate(-10%, 10%); }
   }
 
-  /* Page Loader Styles */
+  @keyframes deivox-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  /* ── Page Loader Styles ── */
   .loader-overlay {
     position: fixed;
     inset: 0;
@@ -182,7 +212,7 @@ body {
     height: 72px;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid var(--accent);
+    border-top: 3px solid var(--accent-light);
     animation: deivox-spin 0.8s linear infinite;
     margin: 0 auto;
   }
@@ -226,12 +256,6 @@ body {
     height: 100%;
     background: linear-gradient(90deg, var(--accent), var(--accent-light));
     transition: width 0.15s ease;
-    box-shadow: 0 0 12px rgba(117, 72, 178, 0.6);
-  }
-
-  @keyframes deivox-spin {
-    to {
-      transform: rotate(360deg);
-    }
+    box-shadow: 0 0 12px rgba(158, 212, 116, 0.6);
   }
 }
