@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' blob: data: https://www.googletagmanager.com https://www.google-analytics.com https://stats.g.doubleclick.net https://grainy-gradients.vercel.app;
+    img-src 'self' blob: data: https://www.googletagmanager.com https://www.google-analytics.com https://stats.g.doubleclick.net https://grainy-gradients.vercel.app https://maps.gstatic.com https://*.googleapis.com https://*.ggpht.com;
     font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net;
+    connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.googleapis.com;
+    frame-src 'self' https://www.google.com https://maps.google.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
