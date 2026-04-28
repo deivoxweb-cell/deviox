@@ -32,7 +32,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
           className="absolute bottom-0 right-0 w-1/2 h-full pointer-events-none"
           style={{
             background:
-              "linear-gradient(135deg, transparent 60%, rgba(249,115,22,0.06) 100%)",
+              "linear-gradient(135deg, transparent 60%, rgba(167,139,250,0.06) 100%)",
           }}
         />
 
@@ -123,7 +123,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
               </p>
               <Link
                 href="/contact"
-                className="block w-full py-3 bg-accent text-zinc-950 text-center font-black text-[11px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-opacity shadow-[0_4px_20px_rgba(249,115,22,0.35)]"
+                className="block w-full py-3 bg-accent text-zinc-950 text-center font-black text-[11px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-opacity shadow-[0_4px_20px_rgba(167,139,250,0.35)]"
               >
                 Get in Touch →
               </Link>
@@ -240,7 +240,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
           <div className="flex gap-4 flex-wrap">
             <Link
               href="/contact"
-              className="px-8 py-3.5 bg-accent text-zinc-950 font-black text-[11px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(249,115,22,0.3)]"
+              className="px-8 py-3.5 bg-accent text-zinc-950 font-black text-[11px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(167,139,250,0.3)]"
             >
               Contact Us →
             </Link>

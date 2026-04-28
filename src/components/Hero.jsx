@@ -126,7 +126,7 @@ const Hero = () => {
 
               <Link href="/services" className="w-full sm:w-auto">
                 <div
-                  className="relative overflow-hidden group w-full sm:w-64 h-16 bg-accent text-zinc-950 flex items-center justify-center font-black transition-all duration-300 shadow-[0_0_30px_rgba(249,115,22,0.3)] hover:shadow-[0_0_50px_rgba(249,115,22,0.6)] cursor-pointer rounded-4xl"
+                  className="relative overflow-hidden group w-full sm:w-64 h-16 bg-accent text-zinc-950 flex items-center justify-center font-black transition-all duration-300 shadow-[0_0_30px_rgba(167,139,250,0.3)] hover:shadow-[0_0_50px_rgba(167,139,250,0.6)] cursor-pointer rounded-4xl"
 
                 >
                   <div className="absolute top-0 left-0 w-2 h-2 border-b-[2px] border-r-[2px] border-black/30" />

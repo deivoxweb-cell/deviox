@@ -258,7 +258,7 @@ export default function ServiceGrid() {
                             : service.description}
                         </p>
                         <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                          <button className="w-full overflow-hidden group relative py-3 rounded-xl bg-accent text-zinc-950 text-[10px] font-black uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)]">
+                          <button className="w-full overflow-hidden group relative py-3 rounded-xl bg-accent text-zinc-950 text-[10px] font-black uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(167,139,250,0.3)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)]">
                             <span className="relative z-10">Explore Solution</span>
                             <div className="absolute bottom-0 left-0 w-full h-0 bg-white transition-all duration-300 ease-out group-hover:h-full z-0 opacity-20" />
                           </button>

@@ -108,7 +108,7 @@ const SeoContentSection = () => {
             <div className="mt-4">
               <Link
                 href="/contact"
-                className="block w-full py-4 bg-accent text-zinc-950 text-center font-black text-[11px] uppercase tracking-widest rounded-xl hover:bg-orange-500 transition-colors shadow-[0_0_20px_rgba(249,115,22,0.2)] hover:shadow-[0_0_40px_rgba(249,115,22,0.4)]"
+                className="block w-full py-4 bg-accent text-zinc-950 text-center font-black text-[11px] uppercase tracking-widest rounded-xl hover:bg-[#a78bfa] transition-colors shadow-[0_0_20px_rgba(167,139,250,0.2)] hover:shadow-[0_0_40px_rgba(167,139,250,0.4)]"
               >
                 Request a Service Quote
               </Link>

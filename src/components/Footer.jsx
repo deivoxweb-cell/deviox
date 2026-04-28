@@ -180,7 +180,7 @@ const Footer = () => {
                   onClick={item.onClick}
                   title={item.isFun ? "Share some context!" : ""}
                   className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50 ${item.isFun
-                    ? "bg-accent text-zinc-950 shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] hover:-translate-y-1"
+                    ? "bg-accent text-zinc-950 shadow-[0_0_20px_rgba(167,139,250,0.3)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)] hover:-translate-y-1"
                     : "bg-white/5 text-white/70 hover:bg-white hover:text-primary hover:-translate-y-1"
                     }`}
                   aria-label={item.isFun ? "Share some context" : "Social link"}
