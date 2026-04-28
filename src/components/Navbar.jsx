@@ -21,11 +21,12 @@ const pumpLinks = [
 const otherLinks = [
   { name: "Services", href: "/services" },
   { name: "ISO Certificate", href: "/iso-certificate" },
-  { name: "Reach Us", href: "/contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -138,7 +139,59 @@ const Navbar = () => {
             className="absolute top-20 left-4 right-4 bg-white shadow-2xl rounded-[2.5rem] p-8 border border-black/5 lg:hidden z-40"
           >
             <div className="flex flex-col gap-4">
-              {[...navLinks, { name: "Products", href: "#" }, ...otherLinks].map((link) => (
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-black text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5"
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              {/* Products Accordion for Mobile */}
+              <div className="border-b border-black/5">
+                <button 
+                  onClick={() => setProductsOpen(!productsOpen)}
+                  className="w-full flex items-center justify-between text-2xl font-black text-black uppercase tracking-tighter py-2"
+                >
+                  Products
+                  <motion.span 
+                    animate={{ rotate: productsOpen ? 45 : 0 }}
+                    className="text-accent"
+                  >
+                    +
+                  </motion.span>
+                </button>
+                
+                <AnimatePresence>
+                  {productsOpen && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden flex flex-col gap-2 pb-4 pl-4"
+                    >
+                      {pumpLinks.map((link) => (
+                        <Link
+                          key={link.name}
+                          href={link.href}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setProductsOpen(false);
+                          }}
+                          className="text-lg font-bold text-black/60 hover:text-black uppercase tracking-tighter"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {otherLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}

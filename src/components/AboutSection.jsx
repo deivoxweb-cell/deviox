@@ -59,7 +59,7 @@ const AboutSection = () => {
         {/* ── Eyebrow ── */}
         <ScrollReveal variant="fade-right" className="flex items-center gap-4 mb-12">
           <div className="h-px w-12 bg-black/20" />
-          <p className="text-black/40 text-[10px] font-black uppercase tracking-[0.35em]">Who We Are</p>
+          <p className="text-black/40 text-[10px] font-black uppercase tracking-[0.35em]">Corporate Profile</p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -126,17 +126,17 @@ const AboutSection = () => {
 
             <ScrollReveal variant="fade-up" duration={0.9} className="mb-6">
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-black tracking-[-0.05em] leading-[0.88] uppercase">
-                Empowering Boiler<br />
+                The Trusted<br />
                 <span className="text-black/20">
-                  Circulation Systems
+                  BCP Doctors
                 </span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal stagger className="space-y-6 text-black/60 leading-relaxed text-lg mb-12 font-medium">
               {[
-                <><span className="font-black text-black">DEI VOX INDIA PVT. LTD.</span> is not just another company providing repair and maintenance services — we are India's pioneers in <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.</>,
-                <>As the premier solution provider in India, we deliver <strong className="text-black uppercase">OEM-quality</strong> overhauling without exorbitant costs. Our BCP solutions guarantee uncompromising performance and extreme reliability at highly <strong className="text-black">affordable pricing</strong>.</>,
+                <><span className="font-black text-black uppercase tracking-tighter">DEI VOX INDIA</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.</>,
+                <>We deliver <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing. Our specialized workflows guarantee system reliability and maximum uptime for global power utilities.</>,
               ].map((text, i) => (
                 <ScrollRevealItem key={i} variant="fade-up">
                   <p>{text}</p>
@@ -149,8 +149,8 @@ const AboutSection = () => {
               {[
                 {
                   icon: <CheckCircle2 size={18} />,
-                  title: "BCP Business Consultant",
-                  body: "Strategic consultation for BCP in India and abroad, with comprehensive spare parts support.",
+                  title: "Strategic BCP Advisory",
+                  body: "Technical consultation for BCP systems globally, supported by comprehensive component management.",
                 },
                 {
                   icon: <Phone size={18} />,

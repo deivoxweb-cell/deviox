@@ -70,8 +70,8 @@ const SERVICES = [
     image: "/images/motor_rewinding.png",
   },
   {
-    title: "Spare Parts Selling",
-    description: "Strategic inventory of high-quality industrial components to reduce plant downtime.",
+    title: "Components Procurement",
+    description: "Strategic inventory management of OEM-standard industrial components to minimize operational downtime.",
     image: "/images/spare_parts_selling.png",
   },
   {
@@ -157,7 +157,7 @@ export default function ServiceGrid() {
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-black/20" />
-            <p className="text-black/40 text-[11px] font-black uppercase tracking-[0.4em]">Our Core Expertise</p>
+            <p className="text-black/40 text-[11px] font-black uppercase tracking-[0.4em]">Operational Competencies</p>
           </div>
           <h2 className="text-4xl md:text-6xl font-black tracking-[-0.05em] text-black uppercase leading-[0.88]">
             Precision<br />
@@ -250,12 +250,12 @@ export default function ServiceGrid() {
                         </p>
                         <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
                           <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-black uppercase tracking-widest transition-all hover:bg-zinc-800">
-                            Explore Service
+                            Technical Analysis
                           </button>
                         </Link>
                       </>
                     ) : (
-                      <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.3em] mt-auto">View Focus Area →</p>
+                      <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.3em] mt-auto">Technical Scope →</p>
                     )}
                   </div>
                 </div>

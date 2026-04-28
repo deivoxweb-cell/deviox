@@ -12,7 +12,8 @@ import {
   Play, 
   ArrowUpRight, 
   Mail, 
-  MapPin 
+  MapPin,
+  Phone 
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,8 +30,8 @@ const SPEC_DATA = {
     title: "Direct Engineering Consultation",
     desc: "Connect with our specialists for rapid mobilization and technical diagnostics.",
     stats: [
-      { label: "Email", value: "sales@deivox.co.in", icon: Mail },
-      { label: "Location", value: "Gurugram, IN", icon: MapPin }
+      { label: "Technical", value: "+91-9886424770", icon: Phone },
+      { label: "Email", value: "support@deivox.co.in", icon: Mail }
     ]
   },
   Materials: {
@@ -94,9 +95,9 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] text-black leading-[0.88] uppercase mb-10"
           >
-            The Greatest<br />
-            <span className="text-black/20">Pump Reliability</span><br />
-            Ever Created
+            Precision Engineered<br />
+            <span className="text-black/20">Reliability for Critical</span><br />
+            Pump Systems
           </motion.h1>
 
           <div className="flex items-start gap-12 mb-12">
@@ -122,7 +123,7 @@ const Hero = () => {
               transition={{ delay: 0.7 }}
             >
               <Link href="/contact" className="group flex items-center gap-4 bg-black text-white px-8 py-5 rounded-full hover:bg-zinc-800 transition-all duration-300">
-                <span className="text-[11px] font-black uppercase tracking-widest">Book Inspection</span>
+                <span className="text-[11px] font-black uppercase tracking-widest">Schedule Technical Inspection</span>
                 <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
                   <ArrowRight size={16} className="text-black" />
                 </div>
@@ -138,10 +139,10 @@ const Hero = () => {
             className="bg-black/5 backdrop-blur-xl border border-black/5 p-8 rounded-[3rem] max-w-sm relative overflow-hidden group hover:bg-black/10 transition-colors"
           >
             <div className="relative z-10">
-              <h4 className="text-[10px] font-black text-black/40 uppercase tracking-[0.3em] mb-4">Evolution of BCP</h4>
-              <p className="text-xl font-bold text-black leading-tight mb-6">Efficiency Redefined<br />for Critical Systems</p>
+              <h4 className="text-[10px] font-black text-black/40 uppercase tracking-[0.3em] mb-4">Operational Evolution</h4>
+              <p className="text-xl font-bold text-black leading-tight mb-6">Efficiency Optimized<br />for Critical Systems</p>
               <Link href="/about" className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
-                Learn More <ArrowRight size={12} />
+                Operational Details <ArrowRight size={12} />
               </Link>
             </div>
             <div className="absolute bottom-[-20%] right-[-10%] w-32 h-32 bg-accent rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity" />

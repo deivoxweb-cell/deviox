@@ -81,9 +81,19 @@ const Footer = () => {
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
                     <Mail size={18} />
                   </div>
-                  <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Digital Hub</p>
+                  <div className="flex flex-col">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Business & Support</p>
                     <p className="text-sm font-bold">sales@deivox.co.in</p>
+                    <p className="text-sm font-bold opacity-40 hover:opacity-100 transition-opacity">support@deivox.co.in</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
+                    <Phone size={18} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Technical Support</p>
+                    <p className="text-sm font-bold">+91-9886424770</p>
                   </div>
                 </div>
               </div>

@@ -10,42 +10,42 @@ const services = [
   {
     icon: <Wrench size={32} />,
     title: "Insitu Machining",
-    tagline: "On-Site Precision",
+    tagline: "Direct Operational Support",
     image: "/images/insitu_machining.png",
-    description: "Insitu Machining is the ultimate solution to arrest leakage on-site. We bring the machine shop to your plant, eliminating costly downtime with surgical precision.",
-    points: ["On-site bore machining", "Flange facing repairs", "No pull-out downtime", "Certified specialists"],
+    description: "Insitu Machining is the definitive solution for on-site leakage containment. We deploy specialized mobile machining units to your facility, eliminating critical downtime with surgical engineering precision.",
+    points: ["On-site bore machining", "Flange facing restoration", "Minimized pull-out downtime", "Certified technical specialists"],
   },
   {
     icon: <Cog size={32} />,
     title: "BCP Overhauling",
-    tagline: "Total Rehabilitation",
+    tagline: "System Rehabilitation",
     image: "/images/bcp_overhauling.png",
-    description: "Our comprehensive overhauling restores Boiler Circulation Pumps to OEM specifications. Covering inspection, dynamic balancing, and expert commissioning.",
-    points: ["Full strip-down assessment", "Shaft restoration", "Dynamic balancing", "On-site commissioning"],
+    description: "Our comprehensive overhauling protocols restore Boiler Circulation Pumps to precise OEM specifications. We manage the entire lifecycle from diagnostic inspection to dynamic balancing and commissioning.",
+    points: ["Full strip-down assessment", "Precision shaft restoration", "Advanced dynamic balancing", "Operational commissioning"],
   },
   {
     icon: <Zap size={32} />,
     title: "Motor Rewinding",
-    tagline: "Restore Efficiency",
+    tagline: "Efficiency Optimization",
     image: "/images/motor_rewinding.png",
-    description: "Restore function to older motors at a fraction of the replacement cost. We provide specialized HT/LT motor diagnostics and precision rewinding.",
-    points: ["HT & LT motor rewinding", "Insulation testing", "Winding upgrades", "Full diagnostics"],
+    description: "Restore operational efficiency to legacy motor systems at a fraction of capital expenditure. We provide specialized HT/LT motor diagnostics and precision rewinding services.",
+    points: ["HT & LT motor rewinding", "Dielectric insulation testing", "Winding architecture upgrades", "Comprehensive diagnostics"],
   },
   {
     icon: <Package size={32} />,
-    title: "Spare Parts Selling",
-    tagline: "OEM & Compatible",
+    title: "Components Procurement",
+    tagline: "OEM & Compatible Solutions",
     image: "/images/spare_parts_selling.png",
-    description: "Reducing budgeting pressure through strategic sourcing of genuine OEM parts and high-quality compatible equivalents for all BCP makes.",
-    points: ["All BCP makes covered", "OEM part options", "Bearings, seals, impellers", "Fast stock dispatch"],
+    description: "Reducing budgetary pressure through strategic sourcing of genuine OEM components and high-quality compatible alternatives for all BCP configurations.",
+    points: ["All BCP makes supported", "OEM procurement options", "Precision seals & impellers", "Optimized lead times"],
   },
   {
     icon: <Settings size={32} />,
     title: "Reverse Engineering",
-    tagline: "Legacy Restoration",
+    tagline: "Legacy Asset Restoration",
     image: "/images/reverse_engineering.png",
-    description: "Rebuilding obsolete components through advanced CAD modeling and metallurgical replication, maintaining the strictest engineering standards.",
-    points: ["Dimensional CAD modeling", "3D scanning", "Metallurgical replication", "Legacy part revival"],
+    description: "Rehabilitating obsolete components through advanced CAD modeling and metallurgical replication, adhering to the most stringent engineering standards.",
+    points: ["Dimensional CAD modeling", "3D laser scanning", "Metallurgical replication", "Legacy component revival"],
   },
 ];
 
@@ -98,7 +98,7 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
 
           <Link href="/contact" className="inline-block">
              <button className="flex items-center gap-4 bg-black text-white px-10 py-4 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
-                <span className="text-[11px] font-black uppercase tracking-widest">Consult on Service</span>
+                <span className="text-[11px] font-black uppercase tracking-widest">Technical Consultation</span>
                 <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
                   <ArrowUpRight size={18} />
                 </div>
@@ -272,7 +272,7 @@ export default function ServicesPage() {
 
           <Link href="/contact" className="inline-block">
             <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black uppercase tracking-[0.3em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl">
-               Talk to an Expert
+               Initiate Technical Engagement
                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-white">
                  <ArrowUpRight size={16} />
                </div>

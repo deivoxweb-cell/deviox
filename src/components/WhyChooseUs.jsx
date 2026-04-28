@@ -6,8 +6,8 @@ import { ScrollReveal, ScrollRevealItem } from "@/src/components/ScrollReveal";
 
 const features = [
   {
-    title: "Certified Experts",
-    desc: "ISO 9001:2015 certified engineers with decades of BCP field experience.",
+    title: "Technical Certification",
+    desc: "ISO 9001:2015 certified engineering workflows with extensive BCP field experience.",
     icon: ShieldCheck,
     number: "01",
   },
@@ -24,8 +24,8 @@ const features = [
     number: "03",
   },
   {
-    title: "Fast Turnaround",
-    desc: "Minimise plant downtime with rapid in-situ machining and overhauling.",
+    title: "Optimized Lead Times",
+    desc: "Minimizing plant downtime through rapid mobilization and specialized in-situ machining.",
     icon: Timer,
     number: "04",
   },
@@ -64,9 +64,9 @@ const WhyChooseUs = () => {
 
             <ScrollReveal variant="fade-up" duration={0.9}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-[-0.05em] uppercase leading-[0.88]">
-                Why Choose<br />
+                Value<br />
                 <span className="text-white/20">
-                  DEIVOX?
+                  Propositions
                 </span>
               </h2>
             </ScrollReveal>

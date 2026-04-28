@@ -10,11 +10,11 @@ const capabilities = [
   "In-Situ Machining",
   "BCP Overhauling",
   "Motor Rewinding",
-  "Spare Parts Selling",
+  "Components Procurement",
   "Retrofit & Reverse Engineering",
   "On-Site Troubleshooting",
-  "BCP Consultancy (Sales & Marketing)",
-  "Direct Customer Support"
+  "Strategic BCP Advisory",
+  "Operational Support"
 ];
 
 const team = [
@@ -26,7 +26,7 @@ const team = [
   { name: "Ramesh Yadav", role: "Manager Procurement", qualification: "", tag: "" },
   { name: "Abhishek Singh", role: "Executive Engineer", qualification: "", tag: "" },
   { name: "Namita Singh", role: "Manager – Sales", qualification: "", tag: "" },
-  { name: "Ritesh", role: "Manager (HR)", qualification: "", tag: "" },
+  { name: "Ritika", role: "Manager (HR)", qualification: "", tag: "" },
   { name: "Rama", role: "Manager (Accounts)", qualification: "", tag: "" },
 ];
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
           >
             <div className="h-px w-12 bg-accent" />
             <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em]">
-              THE GENESIS OF DEI VOX
+              CORPORATE ESTABLISHMENT
             </p>
           </motion.div>
 
@@ -124,14 +124,14 @@ export default function AboutPage() {
 
           <div className="lg:col-span-7 flex flex-col gap-8 sm:gap-12 pt-10">
             <h2 className="text-4xl md:text-6xl font-black text-black uppercase tracking-tighter mb-4 sm:mb-12 leading-[0.9]">
-              The Trusted<br /><span className="text-black/20">Industrial Partner.</span>
+              The Trusted<br /><span className="text-black/20">BCP Doctors.</span>
             </h2>
             <div className="flex flex-col gap-8">
               <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                If you are searching for a specialized BCP partner, the search ends here. <strong className="text-black">DEI VOX INDIA</strong> operates at full capacity with direct support from BCP OEMs, delivering specialized BCW Pump services and high-precision re-engineering.
+                Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.
               </p>
               <p className="text-lg font-medium text-black/40 leading-relaxed max-w-3xl">
-                As the trusted technical consultants for India's BCW Pump sector, we bridge the gap between complex engineering and field reliability. Our facility is open for technical audits, showcasing our expertise in manufacturing and repairing BCPs, critical motors, and MAG drives for utilities and heavy industry. With over 20 years of specialized experience in rotating equipment, we don't just repair—we optimize.
+                We bridge the gap between complex engineering and field reliability by providing specialized BCW Pump services and high-precision re-engineering. Our mission is to deliver uncompromising <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing, ensuring maximum operational uptime for global utilities and heavy industry.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4">
@@ -157,7 +157,7 @@ export default function AboutPage() {
         <div className="max-w-[90rem] mx-auto">
           <div className="flex items-center gap-6 mb-12 sm:mb-20">
             <div className="h-px w-12 sm:w-16 bg-black" />
-            <p className="text-black text-[10px] font-black uppercase tracking-[0.4em]">THE ORIGIN STORY</p>
+            <p className="text-black text-[10px] font-black uppercase tracking-[0.4em]">CORPORATE ESTABLISHMENT</p>
           </div>
 
           <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-black uppercase tracking-tighter leading-[1.1] max-w-6xl">
@@ -210,9 +210,9 @@ export default function AboutPage() {
         <div className="w-full px-6 lg:px-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-24 gap-12 border-b-4 border-black pb-12">
             <div className="max-w-2xl">
-              <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-6">THE HUMAN ENGINE</p>
+              <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-6">TECHNICAL LEADERSHIP</p>
               <h2 className="text-5xl sm:text-7xl md:text-8xl font-black text-black tracking-[-0.05em] uppercase leading-[0.85]">
-                Meet the<br />Team.
+                Executive<br />Leadership.
               </h2>
             </div>
             <p className="text-black/40 text-lg max-w-md font-medium leading-relaxed">
