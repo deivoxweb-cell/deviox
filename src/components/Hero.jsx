@@ -2,18 +2,18 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { 
-  ArrowRight, 
-  Settings, 
-  Activity, 
-  Zap, 
-  ShieldCheck, 
-  ChevronRight, 
-  Play, 
-  ArrowUpRight, 
-  Mail, 
+import {
+  ArrowRight,
+  Settings,
+  Activity,
+  Zap,
+  ShieldCheck,
+  ChevronRight,
+  Play,
+  ArrowUpRight,
+  Mail,
   MapPin,
-  Phone 
+  Phone
 } from "lucide-react";
 import Link from "next/link";
 
@@ -57,7 +57,7 @@ const Hero = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section className="relative min-h-screen bg-[#F5F5F5] overflow-hidden pt-32 pb-20">
+    <section className="relative min-h-screen bg-card overflow-hidden pt-32 pb-20">
 
       {/* ── Background Elements ── */}
       <div className="absolute top-0 right-0 w-[60%] h-full pointer-events-none">
@@ -66,8 +66,9 @@ const Hero = () => {
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-0 right-0 w-full h-[70%] bg-accent rounded-tl-[10rem]"
+          className="absolute bottom-0 right-0 w-full h-[70%] bg-accent rounded-tl-[10rem] rounded-br-[10rem]"
         />
+        {/* rounded-tl-[15rem] rounded-bl-[15rem]" */}
 
         {/* Subtle grid pattern over lime */}
         <div className="absolute bottom-0 right-0 w-full h-[70%] opacity-20 industrial-grid" />
@@ -110,7 +111,7 @@ const Hero = () => {
               <p className="text-[9px] font-bold text-black/40 uppercase tracking-widest mt-1">Global Clients<br />Trusted Us</p>
               <div className="flex -space-x-3 mt-4">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#F5F5F5] bg-zinc-200 overflow-hidden relative">
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-card bg-zinc-200 overflow-hidden relative">
                     <img src={`/images/user_${i}.png`} alt="user" className="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -181,9 +182,9 @@ const Hero = () => {
           {/* Floating Spec Card (Overlapping Top) */}
           <motion.div
             initial={{ opacity: 0, x: 50, y: -50 }}
-            animate={{ 
-              opacity: 1, 
-              x: isFocused ? 120 : 0, 
+            animate={{
+              opacity: 1,
+              x: isFocused ? 120 : 0,
               y: isFocused ? -20 : 0,
               scale: isFocused ? 0.95 : 1
             }}
@@ -194,7 +195,7 @@ const Hero = () => {
               <div className="flex justify-between items-center pb-4 border-b border-black/5">
                 <span className="text-[10px] font-black text-black/30 uppercase tracking-widest">Technical Specifications</span>
                 <div className="flex gap-2">
-                  <div 
+                  <div
                     onClick={(e) => {
                       e.stopPropagation();
                       const container = document.getElementById('spec-tabs-container');
@@ -204,7 +205,7 @@ const Hero = () => {
                   >
                     <ChevronRight size={14} className="rotate-180" />
                   </div>
-                  <div 
+                  <div
                     onClick={(e) => {
                       e.stopPropagation();
                       const container = document.getElementById('spec-tabs-container');
@@ -218,7 +219,7 @@ const Hero = () => {
               </div>
 
               {/* Tabs */}
-              <div 
+              <div
                 id="spec-tabs-container"
                 className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth"
               >
@@ -229,9 +230,8 @@ const Hero = () => {
                       e.stopPropagation();
                       setActiveTab(tab);
                     }}
-                    className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
-                      activeTab === tab ? "bg-accent text-black shadow-lg shadow-accent/20" : "bg-black/5 text-black/40 hover:bg-black/10"
-                    }`}
+                    className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${activeTab === tab ? "bg-accent text-black shadow-lg shadow-accent/20" : "bg-black/5 text-black/40 hover:bg-black/10"
+                      }`}
                   >
                     {tab}
                   </button>
@@ -255,7 +255,7 @@ const Hero = () => {
                       <div key={idx} className="p-5 bg-black/5 rounded-3xl">
                         <stat.icon className="text-accent mb-2" size={20} />
                         <p className="text-[9px] font-black text-black/30 uppercase mb-1">{stat.label}</p>
-                        <p className="text-base font-black text-black tracking-tight">{stat.value}</p>
+                        <p className={`font-black text-black tracking-tight ${stat.value.includes('@') ? 'text-[11px]' : 'text-base'}`}>{stat.value}</p>
                       </div>
                     ))}
                   </div>
@@ -275,7 +275,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="absolute bottom-10 right-4 bg-white shadow-2xl rounded-[3rem] p-8 z-30 border border-black/5 flex items-center gap-6 max-w-[340px]"
           >
-            <div className="w-16 h-16 rounded-full bg-zinc-100 overflow-hidden border-2 border-[#F5F5F5] flex-shrink-0 relative">
+            <div className="w-16 h-16 rounded-full bg-zinc-100 overflow-hidden border-2 border-card flex-shrink-0 relative">
               <img src="/images/user_1.png" alt="reviewer" className="w-full h-full object-cover" />
             </div>
             <div>

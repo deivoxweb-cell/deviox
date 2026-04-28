@@ -46,7 +46,7 @@ const AboutSection = () => {
   const logoCardY = useTransform(scrollYProgress, [0, 1], ["20px", "-20px"]);
 
   return (
-    <section ref={sectionRef} className="py-28 bg-[#F5F5F5] relative overflow-hidden">
+    <section ref={sectionRef} className="py-28 bg-card relative overflow-hidden">
 
       {/* ── Parallax ambient blob ── */}
       <motion.div
@@ -70,7 +70,7 @@ const AboutSection = () => {
             className="lg:col-span-5 flex flex-col gap-5"
           >
             <ScrollReveal variant="scale-up" delay={0.05}>
-              <TiltCard className="w-full bg-black rounded-[3rem] p-10 flex items-center justify-center shadow-2xl shadow-black/10 cursor-crosshair min-h-[200px]">
+              <TiltCard className="w-full bg-black rounded-[3rem] p-10 flex flex-col sm:flex-row items-center justify-center gap-10 shadow-2xl shadow-black/10 cursor-crosshair min-h-[240px]">
                 <Image
                   src="/images/Logo.png"
                   alt="DEI VOX Logo"
@@ -79,6 +79,11 @@ const AboutSection = () => {
                   className="object-contain brightness-0 invert"
                   loading="lazy"
                 />
+                <div className="h-20 w-px bg-white/20 hidden sm:block" />
+                <div className="flex flex-col gap-2 text-center sm:text-left">
+                  <p className="text-white text-xs font-black uppercase tracking-[0.4em]">BCP Specialists</p>
+                  <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.3em]">100% Make in India</p>
+                </div>
               </TiltCard>
             </ScrollReveal>
 

@@ -41,7 +41,7 @@ export default function AboutPage() {
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
+    <div className="bg-card text-black selection:bg-accent selection:text-black" ref={container}>
 
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">

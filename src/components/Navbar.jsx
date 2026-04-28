@@ -43,18 +43,17 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         className="w-full max-w-7xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-full px-6 py-2 flex items-center justify-between"
       >
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 overflow-hidden p-2">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 overflow-hidden p-3">
             <Image
               src="/images/Logo.png"
               alt="Logo"
-              width={30}
-              height={30}
+              width={45}
+              height={45}
               className="brightness-0 invert object-contain"
             />
           </div>
-          <span className="font-black text-black uppercase tracking-tighter text-xl hidden sm:block">DEI VOX</span>
+          <span className="font-black text-black uppercase tracking-tighter text-2xl hidden sm:block">DEI VOX</span>
         </Link>
 
         {/* Desktop Links */}

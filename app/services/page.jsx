@@ -173,7 +173,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
+    <div className="bg-card text-black selection:bg-accent selection:text-black" ref={container}>
 
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center py-24 sm:py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
@@ -214,7 +214,7 @@ export default function ServicesPage() {
         <div className="flex flex-col gap-12 relative items-start">
 
           {/* Sticky Nav */}
-          <div className="sticky top-0 lg:top-24 z-40 bg-[#F5F5F5]/80 backdrop-blur-xl py-6 sm:py-10 border-b border-black/5 w-full flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+          <div className="sticky top-0 lg:top-24 z-40 bg-card/80 backdrop-blur-xl py-6 sm:py-10 border-b border-black/5 w-full flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="flex items-center gap-4">
               <div className="w-8 sm:w-12 h-px bg-black" />
               <h2 className="text-black text-[9px] sm:text-[11px] font-black uppercase tracking-[0.5em]">DOMAINS OF EXPERTISE</h2>

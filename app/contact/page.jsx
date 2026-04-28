@@ -37,7 +37,7 @@ const InputField = ({ id, label, type, form, handleChange }) => {
           animate={{
             y: isActive ? -12 : 0,
             scale: isActive ? 0.75 : 1,
-            color: isActive ? "#C6F023" : "rgba(0,0,0,0.4)"
+            color: isActive ? "var(--accent)" : "rgba(0,0,0,0.4)"
           }}
           className="absolute left-6 top-6 text-[10px] font-black uppercase tracking-[0.2em] origin-left pointer-events-none z-20"
         >
@@ -117,7 +117,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black" ref={container}>
+    <div className="bg-card text-black selection:bg-accent selection:text-black" ref={container}>
 
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center py-24 sm:py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">

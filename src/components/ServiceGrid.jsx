@@ -137,7 +137,7 @@ export default function ServiceGrid() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-[#F5F5F5] overflow-x-hidden relative"
+      className="py-24 bg-card overflow-x-hidden relative"
       onMouseEnter={() => { isPaused.current = true; }}
       onMouseLeave={() => { isPaused.current = false; }}
     >
