@@ -23,9 +23,9 @@ const InputField = ({ id, label, type, form, handleChange }) => {
 
   return (
     <div className="relative w-full group">
-      <motion.div 
+      <motion.div
         initial={false}
-        animate={{ 
+        animate={{
           backgroundColor: isFocused ? "rgba(198, 240, 35, 0.05)" : "rgba(0,0,0,0.02)",
           borderColor: isFocused ? "#C6F023" : "rgba(0,0,0,0.05)"
         }}
@@ -98,7 +98,7 @@ export default function ContactPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
       });
-      
+
       const result = await res.json();
 
       if (!res.ok) {
@@ -173,12 +173,12 @@ export default function ContactPage() {
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <InputField id="name" label="Full Name" type="text" form={form} handleChange={handleChange} />
-                  <InputField id="company" label="Organization" type="text" form={form} handleChange={handleChange} />
+                  <InputField id="name" label="Full Name" type="text" form={form} className="text-black" handleChange={handleChange} />
+                  <InputField id="company" label="Organization" type="text" form={form} className="text-black" handleChange={handleChange} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <InputField id="email" label="Professional Email" type="email" form={form} handleChange={handleChange} />
-                  <InputField id="phone" label="Contact Number" type="tel" form={form} handleChange={handleChange} />
+                  <InputField id="email" label="Professional Email" type="email" form={form} className="text-black" handleChange={handleChange} />
+                  <InputField id="phone" label="Contact Number" type="tel" form={form} className="text-black" handleChange={handleChange} />
                 </div>
 
                 <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">

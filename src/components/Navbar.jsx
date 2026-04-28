@@ -46,14 +46,14 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 overflow-hidden p-3">
             <Image
-              src="/images/Logo.png"
+              src="/Logo1.png"
               alt="Logo"
               width={45}
               height={45}
-              className="brightness-0 invert object-contain"
+            // className="brightness-0 invert object-contain"
             />
           </div>
-          <span className="font-black text-black uppercase tracking-tighter text-2xl hidden sm:block">DEI VOX</span>
+          <span className="font-black text-accent uppercase tracking-tighter text-2xl hidden sm:block">DEI <span className="text-primary">VOX</span></span>
         </Link>
 
         {/* Desktop Links */}
@@ -151,22 +151,22 @@ const Navbar = () => {
 
               {/* Products Accordion for Mobile */}
               <div className="border-b border-black/5">
-                <button 
+                <button
                   onClick={() => setProductsOpen(!productsOpen)}
                   className="w-full flex items-center justify-between text-2xl font-black text-black uppercase tracking-tighter py-2"
                 >
                   Products
-                  <motion.span 
+                  <motion.span
                     animate={{ rotate: productsOpen ? 45 : 0 }}
                     className="text-accent"
                   >
                     +
                   </motion.span>
                 </button>
-                
+
                 <AnimatePresence>
                   {productsOpen && (
-                    <motion.div 
+                    <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

@@ -6,11 +6,14 @@
   --background: #ffffff;
   --foreground: #111111;
 
-  --primary: #111111;
-  --secondary: #949698;
+  --primary: #005696;
+  /* Logo Blue */
+  --secondary: #7D7D7D;
+  /* Logo Gear Gray */
 
-  --accent: #C6F023;
-  --accent-light: #D4FF00;
+  --accent: #67AC43;
+  /* Logo Green */
+  --accent-light: #8BC34A;
 
   --card: #F5F5F5;
   --border: #e2e8f0;
@@ -51,10 +54,12 @@ body {
 }
 
 @layer utilities {
+
   /* ── Hide scrollbar ── */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -161,25 +166,63 @@ body {
 
   /* ── Animations ── */
   @keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10%  { transform: translate(-5%, -10%); }
-    20%  { transform: translate(-15%, 5%); }
-    30%  { transform: translate(7%, -25%); }
-    40%  { transform: translate(-5%, 25%); }
-    50%  { transform: translate(-15%, 10%); }
-    60%  { transform: translate(15%, 0%); }
-    70%  { transform: translate(0%, 15%); }
-    80%  { transform: translate(3%, 35%); }
-    90%  { transform: translate(-10%, 10%); }
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    10% {
+      transform: translate(-5%, -10%);
+    }
+
+    20% {
+      transform: translate(-15%, 5%);
+    }
+
+    30% {
+      transform: translate(7%, -25%);
+    }
+
+    40% {
+      transform: translate(-5%, 25%);
+    }
+
+    50% {
+      transform: translate(-15%, 10%);
+    }
+
+    60% {
+      transform: translate(15%, 0%);
+    }
+
+    70% {
+      transform: translate(0%, 15%);
+    }
+
+    80% {
+      transform: translate(3%, 35%);
+    }
+
+    90% {
+      transform: translate(-10%, 10%);
+    }
   }
 
   @keyframes deivox-spin {
-    to { transform: rotate(360deg); }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes shimmer {
-    0%   { background-position: -200% center; }
-    100% { background-position: 200% center; }
+    0% {
+      background-position: -200% center;
+    }
+
+    100% {
+      background-position: 200% center;
+    }
   }
 
   /* ── Page Loader Styles ── */
