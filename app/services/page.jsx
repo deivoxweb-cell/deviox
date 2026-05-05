@@ -122,6 +122,8 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            {/* Green shimmer bottom accent */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
             <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10">
                <p className="text-accent text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.3em] mb-2">{service.tagline}</p>
                <p className="text-white text-xl sm:text-2xl font-bold uppercase tracking-tighter">{service.title}</p>
@@ -178,7 +180,24 @@ export default function ServicesPage() {
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center py-24 sm:py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
-        <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/10 sm:bg-accent/20 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/15 sm:bg-accent/25 rounded-full blur-[80px] sm:blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] bg-primary/20 rounded-full blur-[80px] pointer-events-none" />
+        {/* Floating dot particles */}
+        {[
+          { top: "18%", left: "7%", size: 5, delay: 0, dur: 4.2 },
+          { top: "45%", left: "2%", size: 3, delay: 1.2, dur: 5.1 },
+          { top: "72%", left: "10%", size: 4, delay: 0.6, dur: 6.3 },
+          { top: "30%", left: "50%", size: 3, delay: 1.8, dur: 4.8 },
+          { top: "78%", left: "58%", size: 4, delay: 0.4, dur: 5.6 },
+        ].map((dot, i) => (
+          <motion.div
+            key={i}
+            animate={{ y: [0, -12, 0], opacity: [0.1, 0.4, 0.1] }}
+            transition={{ duration: dot.dur, delay: dot.delay, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute rounded-full bg-accent pointer-events-none"
+            style={{ top: dot.top, left: dot.left, width: dot.size, height: dot.size }}
+          />
+        ))}
         
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.p
@@ -261,6 +280,8 @@ export default function ServicesPage() {
       {/* ── 3. Massive CTA ───────────────────────────────── */}
       <section className="py-40 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-accent/12 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[350px] h-[350px] bg-primary/15 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
           <h2 className="text-3xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
@@ -271,9 +292,9 @@ export default function ServicesPage() {
           </p>
 
           <Link href="/contact" className="inline-block">
-            <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-bold uppercase tracking-[0.25em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl">
+            <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-bold uppercase tracking-[0.25em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl shadow-accent/20 group">
                Initiate Technical Engagement
-               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-white">
+               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-accent group-hover:rotate-45 transition-transform duration-500">
                  <ArrowUpRight size={16} />
                </div>
             </button>

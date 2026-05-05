@@ -65,6 +65,37 @@ body {
     scrollbar-width: none;
   }
 
+  /* ── Slow spin (Hero icon) ── */
+  .animate-spin-slow {
+    animation: deivox-spin 8s linear infinite;
+  }
+
+  /* ── Gentle float (particle dots) ── */
+  @keyframes float-up-down {
+    0%, 100% { transform: translateY(0); opacity: 0.15; }
+    50% { transform: translateY(-12px); opacity: 0.45; }
+  }
+  .animate-float {
+    animation: float-up-down 5s ease-in-out infinite;
+  }
+
+  /* ── Card shine sweep on hover ── */
+  .card-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .card-shine:hover::after {
+    opacity: 1;
+    animation: shimmer 0.8s ease forwards;
+  }
+
   /* ── Glassmorphism ── */
   .glass {
     background: rgba(255, 255, 255, 0.8);

@@ -46,8 +46,9 @@ const WhyChooseUs = () => {
       {/* ── Background Grid ── */}
       <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
       
-      {/* ── Decorative Circle ── */}
+      {/* ── Decorative Circles ── */}
       <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="w-full px-6 lg:px-16 relative z-10">
 
@@ -89,15 +90,17 @@ const WhyChooseUs = () => {
               <ScrollRevealItem key={feature.title} variant="fade-up">
                 <motion.div
                   whileHover={{ y: -10 }}
-                  className="relative group bg-white rounded-[2.5rem] p-10 h-full flex flex-col justify-between transition-all duration-500 overflow-hidden cursor-default"
+                  className="relative group bg-white rounded-[2.5rem] p-10 h-full flex flex-col justify-between transition-all duration-500 overflow-hidden cursor-default hover:shadow-2xl hover:shadow-black/10"
                 >
                   {/* Background Number */}
                   <div className="absolute top-[-10%] right-[-10%] text-[140px] font-extrabold text-black/[0.03] pointer-events-none leading-none tracking-tighter">
                     {feature.number}
                   </div>
+                  {/* Shimmer top on hover */}
+                  <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center text-accent mb-10 group-hover:scale-110 transition-transform duration-500">
+                    <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center text-accent mb-10 group-hover:scale-110 group-hover:bg-black group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
                       <Icon size={28} strokeWidth={2} />
                     </div>
 

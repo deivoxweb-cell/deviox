@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
-import { MapPin, CheckCircle2, Phone, Award, Zap } from "lucide-react";
+import { MapPin, CheckCircle2, Phone, Award, Zap, ArrowUpRight } from "lucide-react";
 import { ScrollReveal, ScrollRevealItem } from "@/src/components/ScrollReveal";
 
 const TiltCard = ({ children, className }) => {
@@ -70,19 +70,75 @@ const AboutSection = () => {
             className="lg:col-span-5 flex flex-col gap-5"
           >
             <ScrollReveal variant="scale-up" delay={0.05}>
-              <TiltCard className="w-full bg-black rounded-[3rem] p-10 flex flex-col sm:flex-row items-center justify-center gap-10 shadow-2xl shadow-black/10 cursor-crosshair min-h-[240px]">
-                <Image
-                  src="/images/Logo.png"
-                  alt="DEI VOX Logo"
-                  width={180}
-                  height={180}
-                  className="object-contain brightness-0 invert"
-                  loading="lazy"
-                />
-                <div className="h-20 w-px bg-white/20 hidden sm:block" />
-                <div className="flex flex-col gap-2 text-center sm:text-left">
-                  <p className="text-white text-xs font-bold uppercase tracking-[0.35em]">BCP Specialists</p>
-                  <p className="text-white/40 text-[9px] font-bold uppercase tracking-[0.25em]">100% Make in India</p>
+              <TiltCard className="w-full rounded-[3rem] cursor-crosshair shadow-2xl shadow-black/25 overflow-hidden group">
+                <div className="relative bg-[#0a0a0a] rounded-[3rem] p-10 flex flex-col gap-8 min-h-[300px] overflow-hidden">
+
+                  {/* Green glow orb top-right */}
+                  <div className="absolute -top-10 -right-10 w-52 h-52 bg-accent/20 rounded-full blur-[70px] pointer-events-none group-hover:bg-accent/35 transition-all duration-700" />
+                  {/* Blue glow orb bottom-left */}
+                  <div className="absolute -bottom-10 -left-10 w-36 h-36 bg-primary/15 rounded-full blur-[60px] pointer-events-none" />
+
+                  {/* Circuit dot grid */}
+                  <div className="absolute top-7 right-7 grid grid-cols-4 gap-1.5 opacity-25">
+                    {[...Array(16)].map((_, i) => (
+                      <div key={i} className={`w-1 h-1 rounded-full ${i % 3 === 0 ? "bg-accent" : "bg-white/30"}`} />
+                    ))}
+                  </div>
+
+                  {/* Thin green shimmer top line */}
+                  <div className="absolute top-0 left-[8%] right-[8%] h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+
+                  {/* Logo + divider + text */}
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                    <div className="relative flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full bg-accent/10 blur-xl scale-150" />
+                      <Image
+                        src="/images/Logo.png"
+                        alt="DEI VOX Logo"
+                        width={155}
+                        height={155}
+                        className="object-contain brightness-0 invert relative z-10 drop-shadow-[0_0_18px_rgba(103,172,67,0.28)]"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div className="h-16 w-px bg-white/10 hidden sm:block" />
+
+                    <div className="flex flex-col gap-3 text-center sm:text-left">
+                      <div>
+                        <p className="text-white text-sm font-bold uppercase tracking-[0.35em] leading-tight">BCP Specialists</p>
+                        <p className="text-white/30 text-[9px] font-bold uppercase tracking-[0.25em] mt-1">100% Make in India</p>
+                      </div>
+                      {/* ISO badge chip */}
+                      <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 self-center sm:self-start backdrop-blur-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                        <span className="text-[8px] font-bold text-accent/80 uppercase tracking-widest">ISO 9001:2015</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom metrics strip */}
+                  <div className="relative z-10 flex items-center gap-5 pt-5 border-t border-white/[0.06]">
+                    <div>
+                      <p className="text-2xl font-extrabold text-white tracking-tighter leading-none">10+</p>
+                      <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Yrs Expert</p>
+                    </div>
+                    <div className="w-px h-8 bg-white/10" />
+                    <div>
+                      <p className="text-2xl font-extrabold text-white tracking-tighter leading-none">500+</p>
+                      <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Pumps Done</p>
+                    </div>
+                    <div className="w-px h-8 bg-white/10" />
+                    <div>
+                      <p className="text-2xl font-extrabold text-accent tracking-tighter leading-none">24/7</p>
+                      <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Support</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 group-hover:border-accent group-hover:text-accent transition-all duration-300">
+                        <ArrowUpRight size={16} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </TiltCard>
             </ScrollReveal>

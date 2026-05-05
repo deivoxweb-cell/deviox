@@ -122,7 +122,24 @@ export default function ContactPage() {
       {/* ── 1. Neo-Brutalist Hero ────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center py-24 sm:py-32 overflow-hidden px-6 lg:px-16 bg-black text-white">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
-        <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/10 sm:bg-accent/20 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/15 sm:bg-accent/25 rounded-full blur-[80px] sm:blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] bg-primary/20 rounded-full blur-[80px] pointer-events-none" />
+        {/* Floating dot particles */}
+        {[
+          { top: "15%", left: "5%", size: 5, delay: 0, dur: 4.5 },
+          { top: "42%", left: "2%", size: 3, delay: 1.3, dur: 5.2 },
+          { top: "75%", left: "8%", size: 4, delay: 0.7, dur: 6 },
+          { top: "28%", left: "48%", size: 4, delay: 1.9, dur: 4.8 },
+          { top: "82%", left: "55%", size: 3, delay: 0.5, dur: 5.4 },
+        ].map((dot, i) => (
+          <motion.div
+            key={i}
+            animate={{ y: [0, -12, 0], opacity: [0.1, 0.4, 0.1] }}
+            transition={{ duration: dot.dur, delay: dot.delay, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute rounded-full bg-accent pointer-events-none"
+            style={{ top: dot.top, left: dot.left, width: dot.size, height: dot.size }}
+          />
+        ))}
 
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.div
@@ -161,8 +178,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
 
           {/* Form Column */}
-          <div className="p-10 lg:p-24 border-r border-black/10
-          bg-card">
+          <div className="p-10 lg:p-24 border-r border-black/10 bg-card relative overflow-hidden">
+            {/* Subtle ambient glow */}
+            <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-accent/4 rounded-full blur-[100px] pointer-events-none" />
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -248,6 +266,10 @@ export default function ContactPage() {
                   <p className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-16 flex items-center gap-6">
                     <span className="w-12 h-px bg-accent" />
                     OFFICE LOCATIONS
+                    <span className="ml-auto flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                      <span className="text-[8px] font-bold text-accent/60">ONLINE</span>
+                    </span>
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-20">
@@ -288,7 +310,9 @@ export default function ContactPage() {
               </div>
 
               {/* Location Map */}
-              <div className="h-[400px] lg:h-[500px] border-t border-black/10 relative overflow-hidden bg-white">
+              <div className="h-[400px] lg:h-[500px] border-t border-white/5 relative overflow-hidden bg-white">
+                {/* Accent border top */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent z-10" />
                 <iframe
                   src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=Vatika%20Town%20Sq,%20Sector%2083,%20Gurugram+(DEI%20VOX%20INDIA)&t=&z=15&ie=UTF8&iwloc=B&output=embed"
                   className="absolute inset-0 w-full h-full"

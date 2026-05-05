@@ -68,10 +68,28 @@ const Hero = () => {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="absolute bottom-0 right-0 w-full h-[70%] bg-accent rounded-tl-[10rem] rounded-br-[10rem]"
         />
-        {/* rounded-tl-[15rem] rounded-bl-[15rem]" */}
 
         {/* Subtle grid pattern over lime */}
         <div className="absolute bottom-0 right-0 w-full h-[50%] lg:h-[70%] opacity-20 industrial-grid" />
+      </div>
+
+      {/* ── Floating background dot particles ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[
+          { top: "12%", left: "8%", size: 6, delay: 0, dur: 4 },
+          { top: "35%", left: "3%", size: 3, delay: 1.5, dur: 5 },
+          { top: "68%", left: "14%", size: 5, delay: 0.8, dur: 6 },
+          { top: "20%", left: "48%", size: 4, delay: 2, dur: 4.5 },
+          { top: "80%", left: "42%", size: 3, delay: 0.3, dur: 5.5 },
+        ].map((dot, i) => (
+          <motion.div
+            key={i}
+            animate={{ y: [0, -12, 0], opacity: [0.15, 0.45, 0.15] }}
+            transition={{ duration: dot.dur, delay: dot.delay, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute rounded-full bg-accent"
+            style={{ top: dot.top, left: dot.left, width: dot.size, height: dot.size }}
+          />
+        ))}
       </div>
 
       <div className="w-full px-6 lg:px-16 max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -140,16 +158,18 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="bg-black/5 backdrop-blur-xl border border-black/5 p-8 rounded-[3rem] max-w-sm relative overflow-hidden group hover:bg-black/10 transition-colors"
+            className="bg-white/70 backdrop-blur-xl border border-black/5 p-8 rounded-[3rem] max-w-sm relative overflow-hidden group hover:bg-white/90 hover:shadow-xl hover:shadow-black/5 transition-all duration-500"
           >
+            {/* Shimmer top accent */}
+            <div className="absolute top-0 left-[15%] right-[15%] h-[1px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
             <div className="relative z-10">
               <h4 className="text-[10px] font-bold text-black/40 uppercase tracking-[0.25em] mb-4">Operational Evolution</h4>
               <p className="text-xl font-semibold text-black leading-tight mb-6">Efficiency Optimized<br />for Critical Systems</p>
-              <Link href="/about" className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
+              <Link href="/about" className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300 text-black/60 hover:text-black">
                 Operational Details <ArrowRight size={12} />
               </Link>
             </div>
-            <div className="absolute bottom-[-20%] right-[-10%] w-32 h-32 bg-accent rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity" />
+            <div className="absolute bottom-[-20%] right-[-10%] w-36 h-36 bg-accent rounded-full blur-3xl opacity-15 group-hover:opacity-35 transition-opacity duration-500" />
           </motion.div>
         </div>
 
@@ -276,18 +296,23 @@ const Hero = () => {
               y: isFocused ? 20 : 0
             }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative lg:absolute lg:bottom-10 lg:right-4 bg-white shadow-2xl rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-8 z-40 border border-black/5 flex items-center gap-4 sm:gap-6 max-w-[280px] sm:max-w-[340px]"
+            className="relative lg:absolute lg:bottom-10 lg:right-4 bg-white shadow-2xl shadow-black/10 rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-8 z-40 border border-black/5 flex items-center gap-4 sm:gap-6 max-w-[280px] sm:max-w-[340px] overflow-hidden group"
           >
-            <div className="w-16 h-16 rounded-full bg-zinc-100 overflow-hidden border-2 border-card flex-shrink-0 relative">
+            {/* Subtle shimmer top */}
+            <div className="absolute top-0 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+            <div className="w-16 h-16 rounded-full bg-zinc-100 overflow-hidden border-2 border-card flex-shrink-0 relative ring-2 ring-accent/20">
               <img src="/images/user_1.png" alt="reviewer" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-sm font-bold text-black uppercase tracking-tighter">Kunal Joshi</p>
               <p className="text-[10px] font-medium text-black/50 leading-snug mt-1 italic">Excellent service for critical boiler circulation systems.</p>
-              <div className="flex gap-1 mt-3">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Zap key={s} size={12} className="fill-accent text-accent" />
-                ))}
+              <div className="flex items-center gap-1.5 mt-3">
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Zap key={s} size={11} className="fill-accent text-accent" />
+                  ))}
+                </div>
+                <span className="text-[9px] font-bold text-accent ml-1">5.0</span>
               </div>
             </div>
           </motion.div>

@@ -41,6 +41,10 @@ const Footer = () => {
     <footer ref={footerRef} className="bg-black text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.02] industrial-grid pointer-events-none" />
       
+      {/* Ambient glow orbs */}
+      <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-5%] w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+      
       {/* Massive watermark */}
       <motion.div
         style={{ y: watermarkY }}
@@ -69,16 +73,16 @@ const Footer = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent group-hover:bg-accent/15 group-hover:ring-1 group-hover:ring-accent/30 transition-all duration-300">
                     <MapPin size={18} />
                   </div>
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Headquarters</p>
-                    <p className="text-sm font-bold uppercase">Gurugram, Haryana</p>
+                    <p className="text-sm font-bold uppercase group-hover:text-accent/80 transition-colors">Gurugram, Haryana</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent group-hover:bg-accent/15 group-hover:ring-1 group-hover:ring-accent/30 transition-all duration-300">
                     <Mail size={18} />
                   </div>
                   <div className="flex flex-col">
@@ -88,12 +92,12 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent group-hover:bg-accent/15 group-hover:ring-1 group-hover:ring-accent/30 transition-all duration-300">
                     <Phone size={18} />
                   </div>
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Technical Support</p>
-                    <p className="text-sm font-bold">+91-9886424770</p>
+                    <p className="text-sm font-bold group-hover:text-accent/80 transition-colors">+91-9886424770</p>
                   </div>
                 </div>
               </div>
