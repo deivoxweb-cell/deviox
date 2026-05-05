@@ -44,7 +44,7 @@ const Footer = () => {
       {/* Massive watermark */}
       <motion.div
         style={{ y: watermarkY }}
-        className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 text-[15vw] font-black tracking-[-0.08em] text-white/[0.03] select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0"
+        className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 text-[15vw] font-extrabold tracking-[-0.08em] text-white/[0.03] select-none pointer-events-none uppercase whitespace-nowrap leading-none z-0"
       >
         INDUSTRIAL
       </motion.div>
@@ -62,7 +62,7 @@ const Footer = () => {
                 height={48}
                 className="brightness-0 invert mb-12 opacity-80"
               />
-              <h3 className="text-3xl font-black uppercase tracking-tighter mb-10 leading-tight">
+              <h3 className="text-3xl font-extrabold uppercase tracking-tighter mb-10 leading-tight">
                 Engineering Reliability<br />
                 <span className="text-white/20">For Power Infrastructure.</span>
               </h3>
@@ -73,7 +73,7 @@ const Footer = () => {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Headquarters</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Headquarters</p>
                     <p className="text-sm font-bold uppercase">Gurugram, Haryana</p>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ const Footer = () => {
                     <Mail size={18} />
                   </div>
                   <div className="flex flex-col">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Business & Support</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Business & Support</p>
                     <p className="text-sm font-bold">sales@deivox.co.in</p>
                     <p className="text-sm font-bold opacity-40 hover:opacity-100 transition-opacity">support@deivox.co.in</p>
                   </div>
@@ -92,7 +92,7 @@ const Footer = () => {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Technical Support</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Technical Support</p>
                     <p className="text-sm font-bold">+91-9886424770</p>
                   </div>
                 </div>
@@ -103,11 +103,11 @@ const Footer = () => {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-12">
               {Object.entries(NAV_LINKS).map(([title, links]) => (
                 <div key={title}>
-                  <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-accent mb-10">{title}</h4>
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-10">{title}</h4>
                   <ul className="space-y-4">
                     {links.map((link) => (
                       <li key={link.label}>
-                        <Link href={link.href} className="text-xs font-black uppercase tracking-widest text-white/40 hover:text-white transition-all flex items-center gap-2 group">
+                        <Link href={link.href} className="text-xs font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all flex items-center gap-2 group">
                           {link.label}
                           <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                         </Link>
@@ -122,14 +122,14 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex flex-col gap-2">
-              <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em]">
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">
                 © 2026 DEI VOX INDIA PVT. LTD. ALL RIGHTS RESERVED.
               </p>
               <div className="flex items-center gap-6">
-                 <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-accent">
+                 <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-accent">
                    <ShieldCheck size={14} /> ISO 9001:2015
                  </div>
-                 <div className="text-[10px] font-black uppercase tracking-widest text-white/20">
+                 <div className="text-[10px] font-bold uppercase tracking-widest text-white/20">
                    GSTIN: 29AAKCD5641B1Z9
                  </div>
               </div>
@@ -140,7 +140,7 @@ const Footer = () => {
                   <Image src="/images/make_India.png" alt="Make in India" width={80} height={40} className="object-contain" />
                </div>
                <div className="h-8 w-px bg-white/10" />
-               <div className="flex gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-white/20">
+               <div className="flex gap-6 text-[10px] font-bold uppercase tracking-[0.15em] text-white/20">
                  <Link href="/" className="hover:text-white transition-all">Privacy</Link>
                  <Link href="/" className="hover:text-white transition-all">Legal</Link>
                </div>

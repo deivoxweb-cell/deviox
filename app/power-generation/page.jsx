@@ -29,7 +29,7 @@ export default function PowerGenerationPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-10"
+            className="text-accent text-[11px] font-bold uppercase tracking-[0.5em] mb-10"
           >
             INDUSTRIAL SECTORS
           </motion.p>
@@ -38,7 +38,7 @@ export default function PowerGenerationPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
+            className="text-5xl sm:text-7xl md:text-[8rem] font-bold tracking-[-0.05em] uppercase leading-[0.85] mb-12"
           >
             Power<br />
             <span className="text-white/20">Generation.</span>
@@ -63,7 +63,7 @@ export default function PowerGenerationPage() {
               <div className="absolute bottom-10 left-10 right-10 bg-white/5 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/10">
                 <div className="flex items-center gap-4 mb-4 text-accent">
                   <ShieldCheck size={24} />
-                  <h3 className="font-black text-white uppercase tracking-widest text-sm">Best-in-Class Stators</h3>
+                  <h3 className="font-bold text-white uppercase tracking-widest text-sm">Best-in-Class Stators</h3>
                 </div>
                 <p className="text-sm text-white/50 font-medium leading-relaxed">
                   Developed using high-tolerance specifications required by supercritical thermal plants.
@@ -73,8 +73,8 @@ export default function PowerGenerationPage() {
           </div>
 
           <div className="lg:order-1">
-            <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-6">SPECIALIZED SERVICES</p>
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-12">
+            <p className="text-accent text-[11px] font-bold uppercase tracking-[0.4em] mb-6">SPECIALIZED SERVICES</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter uppercase leading-[0.9] mb-12">
               Pump<br />
               <span className="text-white/20">Rebuilds & Ops</span>
             </h2>
@@ -90,7 +90,7 @@ export default function PowerGenerationPage() {
               {["Documentation", "Stator Design", "Dynamic Balance", "Performance Test"].map((item) => (
                 <div key={item} className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/5">
                   <CheckCircle2 size={18} className="text-accent" />
-                  <span className="text-[10px] font-black text-white tracking-widest uppercase">{item}</span>
+                  <span className="text-[10px] font-bold text-white tracking-widest uppercase">{item}</span>
                 </div>
               ))}
             </div>
@@ -104,7 +104,7 @@ export default function PowerGenerationPage() {
           <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-accent mx-auto mb-10">
             <Settings size={28} />
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-[0.9] mb-8">
+          <h2 className="text-4xl md:text-6xl font-bold text-black tracking-tighter uppercase leading-[0.9] mb-8">
             Total Restoration<br />
             <span className="text-black/20">Facility.</span>
           </h2>
@@ -113,12 +113,12 @@ export default function PowerGenerationPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
              <Link href="/contact">
-                <button className="px-16 py-8 bg-black text-white font-black rounded-full transition-all hover:bg-accent hover:text-black uppercase tracking-widest text-sm shadow-2xl">
+                <button className="px-16 py-8 bg-black text-white font-bold rounded-full transition-all hover:bg-accent hover:text-black uppercase tracking-widest text-sm shadow-2xl">
                   Request Inspection
                 </button>
              </Link>
              <Link href="/services">
-                <button className="px-16 py-8 border-2 border-black text-black font-black rounded-full transition-all hover:bg-black hover:text-white uppercase tracking-widest text-sm">
+                <button className="px-16 py-8 border-2 border-black text-black font-bold rounded-full transition-all hover:bg-black hover:text-white uppercase tracking-widest text-sm">
                   View Services
                 </button>
              </Link>

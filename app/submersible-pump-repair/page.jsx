@@ -96,7 +96,7 @@ export default function SubmersiblePumpRepairPage() {
         relatedLinks={relatedLinks}
         heroImage="/images/motor_rewinding.png"
       >
-        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
           Submersible Pump: Repair &amp; Rewinding
         </h1>
         <div className="w-20 h-2 bg-accent mb-12" />
@@ -109,7 +109,7 @@ export default function SubmersiblePumpRepairPage() {
           cannot afford unplanned pump downtime.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           What is a Submersible Pumping Motor Unit?
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -133,7 +133,7 @@ export default function SubmersiblePumpRepairPage() {
           all major manufacturers.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           How Submersible Pumps Work
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -151,7 +151,7 @@ export default function SubmersiblePumpRepairPage() {
           stacked on a common shaft, capable of generating heads of several hundred metres.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Applications of Industrial Submersible Pumps
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
@@ -164,11 +164,11 @@ export default function SubmersiblePumpRepairPage() {
           <li>Emergency flood water removal from basements and industrial pits</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Common Failure Modes in Submersible Pumps
         </h2>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Mechanical Seal Failure
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -179,7 +179,7 @@ export default function SubmersiblePumpRepairPage() {
           carbide, carbon) to match the specific fluid and duty conditions.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Winding Insulation Failure
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -189,7 +189,7 @@ export default function SubmersiblePumpRepairPage() {
           resistance, hi-pot, and surge comparison testing.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Bearing Failure
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -200,7 +200,7 @@ export default function SubmersiblePumpRepairPage() {
           increase hydraulic radial loads.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Impeller Wear and Cavitation Damage
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -211,11 +211,11 @@ export default function SubmersiblePumpRepairPage() {
           damage is beyond economic repair.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           DEI VOX Submersible Pump Services
         </h2>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Complete Overhaul
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -224,7 +224,7 @@ export default function SubmersiblePumpRepairPage() {
           assessment with component replacement as required.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Pump Upgrading
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -234,7 +234,7 @@ export default function SubmersiblePumpRepairPage() {
           modified design, motor power upgrade, or conversion to improved seal technology.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Motor Rewinding
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -243,7 +243,7 @@ export default function SubmersiblePumpRepairPage() {
           with final testing to IEC 60034 standards.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Spare Parts &amp; Reverse Engineering
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -252,7 +252,7 @@ export default function SubmersiblePumpRepairPage() {
           from impellers and wear rings to bearing housings and seal carriers.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Maintenance Best Practices for Submersible Pumps
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
@@ -264,7 +264,7 @@ export default function SubmersiblePumpRepairPage() {
           <li>Plant water quality control to reduce abrasive and scale-forming tendencies</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Why Choose DEI VOX for Submersible Pump Repair
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">

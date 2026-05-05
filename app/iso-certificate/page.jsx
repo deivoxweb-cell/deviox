@@ -54,7 +54,7 @@ const TiltCertCard = ({ cert, index }) => {
           <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-accent group-hover:bg-white group-hover:text-black transition-colors">
             {cert.icon}
           </div>
-          <span className="text-4xl font-black text-black/5 group-hover:text-black/10 transition-colors">0{index + 1}</span>
+          <span className="text-4xl font-bold text-black/5 group-hover:text-black/10 transition-colors">0{index + 1}</span>
         </div>
 
         {/* Certificate Image Frame */}
@@ -70,8 +70,8 @@ const TiltCertCard = ({ cert, index }) => {
 
         {/* Text Content */}
         <div className="flex-1">
-          <p className="text-[10px] font-black text-black/30 uppercase tracking-[0.4em] mb-2 group-hover:text-black/50 transition-colors">{cert.tagline}</p>
-          <h3 className="text-2xl sm:text-3xl font-black text-black uppercase tracking-tighter transition-colors">
+          <p className="text-[10px] font-bold text-black/30 uppercase tracking-[0.4em] mb-2 group-hover:text-black/50 transition-colors">{cert.tagline}</p>
+          <h3 className="text-2xl sm:text-3xl font-semibold text-black uppercase tracking-tighter transition-colors">
             {cert.title}
           </h3>
         </div>
@@ -84,7 +84,7 @@ const TiltCertCard = ({ cert, index }) => {
              rel="noopener noreferrer" 
              className="flex items-center gap-4 bg-black text-white px-8 py-3 rounded-full hover:scale-105 transition-all group-hover:bg-white group-hover:text-black"
            >
-             <span className="text-[10px] font-black uppercase tracking-widest">View PDF</span>
+             <span className="text-[10px] font-bold uppercase tracking-widest">View PDF</span>
              <Download size={18} />
            </a>
         </div>
@@ -116,7 +116,7 @@ export default function ISOCertificatePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-10"
+            className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-10"
           >
             TRUSTED COMPLIANCE
           </motion.p>
@@ -125,7 +125,7 @@ export default function ISOCertificatePage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] uppercase leading-[0.88] mb-12"
+            className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.05em] uppercase leading-[0.88] mb-12"
           >
             Certified<br />
             <span className="text-white/20">Excellence.</span>
@@ -156,7 +156,7 @@ export default function ISOCertificatePage() {
         
         <div className="w-full px-6 lg:px-16 relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
            <div className="max-w-2xl text-center md:text-left">
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.85] mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase leading-[0.85] mb-6">
                 Verified<br /><span className="text-accent">Standards.</span>
               </h2>
               <p className="text-white/30 text-base sm:text-lg font-medium leading-relaxed">
@@ -165,7 +165,7 @@ export default function ISOCertificatePage() {
            </div>
            <Link href="/contact" className="inline-block">
               <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-10 py-4 rounded-full group hover:scale-105 transition-all shadow-2xl">
-                <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.3em] ml-2">Request Audit Report</span>
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] ml-2">Request Audit Report</span>
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform">
                    <ArrowUpRight size={16} />
                 </div>

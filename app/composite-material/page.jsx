@@ -45,7 +45,7 @@ export default function CompositeMaterialPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-10"
+            className="text-accent text-[11px] font-bold uppercase tracking-[0.5em] mb-10"
           >
             MATERIAL ENGINEERING
           </motion.p>
@@ -54,7 +54,7 @@ export default function CompositeMaterialPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl sm:text-7xl md:text-[8rem] font-black tracking-[-0.05em] uppercase leading-[0.85] mb-12"
+            className="text-5xl sm:text-7xl md:text-[8rem] font-bold tracking-[-0.05em] uppercase leading-[0.85] mb-12"
           >
             Composite<br />
             <span className="text-white/20">Solutions.</span>
@@ -73,8 +73,8 @@ export default function CompositeMaterialPage() {
       <section className="py-40 w-full px-6 lg:px-16 bg-black text-white">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div className="lg:sticky lg:top-32">
-            <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-6">INNOVATION</p>
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-12">
+            <p className="text-accent text-[11px] font-bold uppercase tracking-[0.4em] mb-6">INNOVATION</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter uppercase leading-[0.9] mb-12">
               Thermoplastic<br />
               <span className="text-white/20">Composites</span>
             </h2>
@@ -85,7 +85,7 @@ export default function CompositeMaterialPage() {
               {characteristics.map((char, i) => (
                 <div key={i} className="bg-white/5 p-6 rounded-[2rem] border border-white/5">
                   <CheckCircle2 size={20} className="text-accent mb-4" />
-                  <p className="text-xs font-black text-white uppercase tracking-widest">{char.title}</p>
+                  <p className="text-xs font-bold text-white uppercase tracking-widest">{char.title}</p>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ export default function CompositeMaterialPage() {
               {thermoplasticsUse.map((use, i) => (
                 <div key={i} className="p-8 bg-white/5 border border-white/5 rounded-[2rem] hover:bg-accent hover:text-black transition-all group">
                   <div className="flex justify-between items-center mb-4">
-                    <h4 className="text-xs font-black uppercase tracking-widest">{use.industry}</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-widest">{use.industry}</h4>
                     <ArrowUpRight size={18} />
                   </div>
                   <p className="text-sm font-medium opacity-50 group-hover:opacity-100">{use.desc}</p>
@@ -117,7 +117,7 @@ export default function CompositeMaterialPage() {
             <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-accent mb-10">
               <Settings size={28} />
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-[0.9] mb-10">
+            <h2 className="text-4xl md:text-6xl font-bold text-black tracking-tighter uppercase leading-[0.9] mb-10">
               High-Precision<br />
               <span className="text-black/20">Bearings.</span>
             </h2>
@@ -125,7 +125,7 @@ export default function CompositeMaterialPage() {
               Supplying high-tolerance mechanical components for aviation and industrial load endurance.
             </p>
             <Link href="/contact">
-              <button className="px-12 py-8 bg-black text-white font-black rounded-full transition-all hover:bg-accent hover:text-black uppercase tracking-widest text-sm shadow-2xl">
+              <button className="px-12 py-8 bg-black text-white font-bold rounded-full transition-all hover:bg-accent hover:text-black uppercase tracking-widest text-sm shadow-2xl">
                 Request Specifications
               </button>
             </Link>

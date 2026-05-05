@@ -105,7 +105,7 @@ export default function BoilerCirculationPumpPage() {
         heroImage="/images/bcp_overhauling.png"
       >
         {/* H1 */}
-        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
           BCP: Boiler Circulation Pump Engineering
         </h1>
         <div className="w-20 h-2 bg-accent mb-12" />
@@ -120,7 +120,7 @@ export default function BoilerCirculationPumpPage() {
         </p>
 
         {/* Section 1 */}
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           What is a Boiler Circulation Pump?
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -143,7 +143,7 @@ export default function BoilerCirculationPumpPage() {
         </p>
 
         {/* Section 2 */}
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           How Does a BCP Work?
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -161,7 +161,7 @@ export default function BoilerCirculationPumpPage() {
         </p>
 
         {/* Section 3 */}
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Applications of Boiler Circulation Pumps
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
@@ -173,7 +173,7 @@ export default function BoilerCirculationPumpPage() {
         </ul>
 
         {/* Section 4 */}
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           DEI VOX India: BCP Specialist Capabilities
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -183,7 +183,7 @@ export default function BoilerCirculationPumpPage() {
           restoration.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           BCP Overhauling
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -192,7 +192,7 @@ export default function BoilerCirculationPumpPage() {
           inspection, and full-load performance testing before return to service.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           In-Situ Casing Machining
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -202,7 +202,7 @@ export default function BoilerCirculationPumpPage() {
           boiler piping, minimising plant outage time and risk.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           Motor Rewinding
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -211,7 +211,7 @@ export default function BoilerCirculationPumpPage() {
           insulation resistance, hi-pot, and surge comparison testing.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           Spare Parts &amp; Reverse Engineering
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -222,7 +222,7 @@ export default function BoilerCirculationPumpPage() {
         </p>
 
         {/* Section 5 */}
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           BCP Maintenance Best Practices
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -257,7 +257,7 @@ export default function BoilerCirculationPumpPage() {
         </p>
 
         {/* Summary */}
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Why Choose DEI VOX for Boiler Circulation Pump Services?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">

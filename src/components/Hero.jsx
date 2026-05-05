@@ -87,14 +87,14 @@ const Hero = () => {
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
               <Settings className="text-accent animate-spin-slow" size={20} />
             </div>
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40">Industrial Excellence</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">Industrial Excellence</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[2.2rem] sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] text-black leading-[0.9] sm:leading-[0.88] uppercase mb-10"
+            className="text-[2.2rem] sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] text-black leading-[0.9] sm:leading-[0.88] uppercase mb-10"
           >
             Precision Engineered<br />
             <span className="text-black/20">Reliability for Critical</span><br />
@@ -109,8 +109,8 @@ const Hero = () => {
               className="flex items-center sm:block gap-6"
             >
               <div>
-                <p className="text-4xl font-black text-black">10K+</p>
-                <p className="text-[9px] font-bold text-black/40 uppercase tracking-widest mt-1">Global Clients<br />Trusted Us</p>
+                <p className="text-4xl font-bold text-black tracking-tighter">10K+</p>
+                <p className="text-[9px] font-semibold text-black/40 uppercase tracking-widest mt-1">Global Clients<br />Trusted Us</p>
               </div>
               <div className="flex -space-x-3 mt-0 sm:mt-4">
                 {[1, 2, 3, 4].map((i) => (
@@ -127,7 +127,7 @@ const Hero = () => {
               transition={{ delay: 0.7 }}
             >
               <Link href="/contact" className="group flex items-center justify-between sm:justify-start gap-4 bg-black text-white px-6 sm:px-8 py-4 sm:py-5 rounded-full hover:bg-zinc-800 transition-all duration-300 w-full sm:w-auto">
-                <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest">Schedule Technical Inspection</span>
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest">Schedule Technical Inspection</span>
                 <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500 shrink-0">
                   <ArrowRight size={16} className="text-black" />
                 </div>
@@ -143,9 +143,9 @@ const Hero = () => {
             className="bg-black/5 backdrop-blur-xl border border-black/5 p-8 rounded-[3rem] max-w-sm relative overflow-hidden group hover:bg-black/10 transition-colors"
           >
             <div className="relative z-10">
-              <h4 className="text-[10px] font-black text-black/40 uppercase tracking-[0.3em] mb-4">Operational Evolution</h4>
-              <p className="text-xl font-bold text-black leading-tight mb-6">Efficiency Optimized<br />for Critical Systems</p>
-              <Link href="/about" className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
+              <h4 className="text-[10px] font-bold text-black/40 uppercase tracking-[0.25em] mb-4">Operational Evolution</h4>
+              <p className="text-xl font-semibold text-black leading-tight mb-6">Efficiency Optimized<br />for Critical Systems</p>
+              <Link href="/about" className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
                 Operational Details <ArrowRight size={12} />
               </Link>
             </div>
@@ -196,7 +196,7 @@ const Hero = () => {
           >
             <div className="flex flex-col gap-6">
               <div className="flex justify-between items-center pb-4 border-b border-black/5">
-                <span className="text-[10px] font-black text-black/30 uppercase tracking-widest">Technical Specifications</span>
+                <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest">Technical Specifications</span>
                 <div className="flex gap-2">
                   <div
                     onClick={(e) => {
@@ -233,7 +233,7 @@ const Hero = () => {
                       e.stopPropagation();
                       setActiveTab(tab);
                     }}
-                    className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${activeTab === tab ? "bg-accent text-black shadow-lg shadow-accent/20" : "bg-black/5 text-black/40 hover:bg-black/10"
+                    className={`px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${activeTab === tab ? "bg-accent text-black shadow-lg shadow-accent/20" : "bg-black/5 text-black/40 hover:bg-black/10"
                       }`}
                   >
                     {tab}
@@ -250,15 +250,15 @@ const Hero = () => {
                   transition={{ duration: 0.3 }}
                   className="space-y-4"
                 >
-                  <h5 className="text-2xl font-black text-black tracking-tighter leading-none">{SPEC_DATA[activeTab].title}</h5>
+                  <h5 className="text-2xl font-extrabold text-black tracking-tighter leading-none">{SPEC_DATA[activeTab].title}</h5>
                   <p className="text-[12px] font-medium text-black/40 leading-relaxed">{SPEC_DATA[activeTab].desc}</p>
 
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     {SPEC_DATA[activeTab].stats.map((stat, idx) => (
                       <div key={idx} className="p-5 bg-black/5 rounded-3xl">
                         <stat.icon className="text-accent mb-2" size={20} />
-                        <p className="text-[9px] font-black text-black/30 uppercase mb-1">{stat.label}</p>
-                        <p className={`font-black text-black tracking-tight ${stat.value.includes('@') ? 'text-[11px]' : 'text-base'}`}>{stat.value}</p>
+                        <p className="text-[9px] font-bold text-black/30 uppercase mb-1">{stat.label}</p>
+                        <p className={`font-bold text-black tracking-tight ${stat.value.includes('@') ? 'text-[11px]' : 'text-base'}`}>{stat.value}</p>
                       </div>
                     ))}
                   </div>
@@ -282,7 +282,7 @@ const Hero = () => {
               <img src="/images/user_1.png" alt="reviewer" className="w-full h-full object-cover" />
             </div>
             <div>
-              <p className="text-sm font-black text-black uppercase tracking-tighter">Kunal Joshi</p>
+              <p className="text-sm font-bold text-black uppercase tracking-tighter">Kunal Joshi</p>
               <p className="text-[10px] font-medium text-black/50 leading-snug mt-1 italic">Excellent service for critical boiler circulation systems.</p>
               <div className="flex gap-1 mt-3">
                 {[1, 2, 3, 4, 5].map((s) => (

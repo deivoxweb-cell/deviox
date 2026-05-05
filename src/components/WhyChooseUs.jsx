@@ -59,17 +59,19 @@ const WhyChooseUs = () => {
           <div className="max-w-2xl">
             <ScrollReveal variant="fade-right" className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-accent" />
-              <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em]">The Standard of Excellence</p>
+              <p className="text-accent text-[11px] font-bold uppercase tracking-[0.3em]">The Standard of Excellence</p>
             </ScrollReveal>
 
-            <ScrollReveal variant="fade-up" duration={0.9}>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-[-0.05em] uppercase leading-[0.88]">
-                Value<br />
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.04em] uppercase leading-[0.88]"
+            >    Value<br />
                 <span className="text-white/20">
                   Propositions
                 </span>
-              </h2>
-            </ScrollReveal>
+              </motion.h2>
           </div>
 
           <ScrollReveal variant="fade-left" delay={0.2} className="lg:mb-4">
@@ -90,7 +92,7 @@ const WhyChooseUs = () => {
                   className="relative group bg-white rounded-[2.5rem] p-10 h-full flex flex-col justify-between transition-all duration-500 overflow-hidden cursor-default"
                 >
                   {/* Background Number */}
-                  <div className="absolute top-[-10%] right-[-10%] text-[140px] font-black text-black/[0.03] pointer-events-none leading-none tracking-tighter">
+                  <div className="absolute top-[-10%] right-[-10%] text-[140px] font-extrabold text-black/[0.03] pointer-events-none leading-none tracking-tighter">
                     {feature.number}
                   </div>
 
@@ -99,7 +101,7 @@ const WhyChooseUs = () => {
                       <Icon size={28} strokeWidth={2} />
                     </div>
 
-                    <h3 className="text-2xl font-black uppercase tracking-tighter text-black leading-tight mb-4">
+                    <h3 className="text-2xl font-bold uppercase tracking-tighter text-black leading-tight mb-4">
                       {feature.title}
                     </h3>
                     <p className="text-black/50 text-sm font-medium leading-relaxed">

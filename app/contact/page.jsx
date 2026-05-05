@@ -39,7 +39,7 @@ const InputField = ({ id, label, type, form, handleChange }) => {
             scale: isActive ? 0.75 : 1,
             color: isActive ? "var(--accent)" : "rgba(0,0,0,0.4)"
           }}
-          className="absolute left-6 top-6 text-[10px] font-black uppercase tracking-[0.2em] origin-left pointer-events-none z-20"
+          className="absolute left-6 top-6 text-[10px] font-bold uppercase tracking-[0.2em] origin-left pointer-events-none z-20"
         >
           {label}
         </motion.label>
@@ -132,7 +132,7 @@ export default function ContactPage() {
             className="flex items-center gap-4 mb-10"
           >
             <div className="h-px w-12 bg-accent" />
-            <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em]">
+            <p className="text-accent text-[10px] font-bold uppercase tracking-[0.3em]">
               COMMUNICATION HUB
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] uppercase leading-[0.88] mb-12"
+            className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12"
           >
             Connect<br />
             <span className="text-white/20">Deivox.</span>
@@ -161,14 +161,15 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
 
           {/* Form Column */}
-          <div className="p-10 lg:p-24 border-r border-black/10">
+          <div className="p-10 lg:p-24 border-r border-black/10
+          bg-card">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-6xl sm:text-6xl font-black uppercase tracking-tighter leading-[0.8] mb-24">
-                Business<br /><span className="text-black/10">Inquiry.</span>
+              <h2 className="text-6xl sm:text-6xl font-extrabold uppercase tracking-tighter leading-[0.8] mb-24">
+                Business<br /><span className="text-black/30">Inquiry.</span>
               </h2>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-8">
@@ -182,13 +183,13 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Consultation</label>
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Consultation</label>
                   <div className="relative">
                     <select
                       name="subject"
                       value={form.subject}
                       onChange={handleChange}
-                      className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-black appearance-none cursor-pointer rounded-none relative z-10"
+                      className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-bold appearance-none cursor-pointer rounded-none relative z-10"
                     >
                       <option value="">Select Domain...</option>
                       {SUBJECTS.map((s) => (
@@ -200,13 +201,13 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Technical Details</label>
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Technical Details</label>
                   <textarea
                     name="message"
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
-                    className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-black resize-none rounded-none relative z-10"
+                    className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-bold resize-none rounded-none relative z-10"
                     placeholder="Elaborate on requirements..."
                   />
                 </div>
@@ -217,7 +218,7 @@ export default function ContactPage() {
                     disabled={isSubmitting}
                     className="w-fit flex items-center gap-12 bg-black text-white px-12 py-6 rounded-full hover:bg-accent hover:text-black transition-all duration-500 shadow-2xl group"
                   >
-                    <span className="text-xl font-black uppercase tracking-widest">
+                    <span className="text-xl font-bold uppercase tracking-widest">
                       {isSubmitting ? "Sending..." : "Send Request"}
                     </span>
                     <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-black/10 flex items-center justify-center transition-colors">
@@ -244,41 +245,41 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <p className="text-accent text-[10px] font-black uppercase tracking-[0.5em] mb-16 flex items-center gap-6">
+                  <p className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-16 flex items-center gap-6">
                     <span className="w-12 h-px bg-accent" />
                     OFFICE LOCATIONS
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-20">
                     <div className="border-l border-white/10 pl-8">
-                      <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Regd. Office</p>
-                      <p className="text-2xl font-black uppercase tracking-tighter leading-none mb-8">
+                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Regd. Office</p>
+                      <p className="text-2xl font-bold uppercase tracking-tighter leading-none mb-8">
                         Vatika Town Sq,<br />Sector 83, Gurugram.
                       </p>
-                      <a href="#" className="inline-flex items-center gap-3 text-accent text-[10px] font-black uppercase tracking-widest hover:gap-6 transition-all">
+                      <a href="#" className="inline-flex items-center gap-3 text-accent text-[10px] font-bold uppercase tracking-widest hover:gap-6 transition-all">
                         Navigate <ArrowUpRight size={14} />
                       </a>
                     </div>
 
                     <div className="border-l border-white/10 pl-8">
-                      <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Service Hub</p>
-                      <p className="text-2xl font-black uppercase tracking-tighter leading-none">
+                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Service Hub</p>
+                      <p className="text-2xl font-bold uppercase tracking-tighter leading-none">
                         Bommasandra Area,<br />Bangalore.
                       </p>
                     </div>
 
                     <div className="border-l border-white/10 pl-8 md:col-span-2">
-                      <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Direct Lines</p>
+                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Direct Lines</p>
                       <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-                        <a href="tel:+919886424770" className="text-2xl font-black tracking-tighter hover:text-accent transition-colors">+91 98864 24770</a>
+                        <a href="tel:+919886424770" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors">+91 98864 24770</a>
                         <div className="h-4 w-px bg-white/10 hidden sm:block" />
-                        <a href="tel:+917428200229" className="text-2xl font-black tracking-tighter text-white/30 hover:text-white transition-colors">+91 74282 00229</a>
+                        <a href="tel:+917428200229" className="text-2xl font-bold tracking-tighter text-white/30 hover:text-white transition-colors">+91 74282 00229</a>
                       </div>
                     </div>
 
                     <div className="border-l border-white/10 pl-8">
-                      <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.3em] mb-6">Digital</p>
-                      <a href="mailto:sales@deivox.co.in" className="text-2xl font-black tracking-tighter hover:text-accent transition-colors break-all underline decoration-accent decoration-2 underline-offset-8">
+                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Digital</p>
+                      <a href="mailto:sales@deivox.co.in" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors break-all underline decoration-accent decoration-2 underline-offset-8">
                         sales@deivox.co.in
                       </a>
                     </div>

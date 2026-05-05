@@ -4,13 +4,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ScrollReveal } from "@/src/components/ScrollReveal";
 
 const LOGOS = [
-  { name: "DEI VOX", color: "#51139A", style: "font-black tracking-tighter text-2xl" },
-  { name: "SIEMENS", color: "#009999", style: "font-black italic text-2xl" },
-  { name: "ABB", color: "#ff000f", style: "font-black text-2xl" },
+  { name: "DEI VOX", color: "#51139A", style: "font-bold tracking-tighter text-2xl" },
+  { name: "SIEMENS", color: "#009999", style: "font-bold italic text-2xl" },
+  { name: "ABB", color: "#ff000f", style: "font-bold text-2xl" },
   { name: "GE", color: "#005eb8", style: "font-serif italic text-3xl" },
-  { name: "BHEL", color: "#1a1a2e", style: "font-black tracking-widest text-2xl" },
-  { name: "KSB", color: "#51139A", style: "font-black tracking-wider text-2xl" },
-  { name: "SULZER", color: "#333333", style: "font-black tracking-wide text-xl" },
+  { name: "BHEL", color: "#1a1a2e", style: "font-bold tracking-widest text-2xl" },
+  { name: "KSB", color: "#51139A", style: "font-bold tracking-wider text-2xl" },
+  { name: "SULZER", color: "#333333", style: "font-bold tracking-wide text-xl" },
 ];
 
 const ClientSeries = () => {
@@ -51,7 +51,7 @@ const ClientSeries = () => {
         >
           <div className="flex items-center gap-4">
             <div className="h-px w-10 bg-linear-to-r from-transparent to-accent/40" />
-            <p className="text-[10px] font-black text-primary/35 tracking-[0.45em] uppercase">Trusted By Industry Leaders</p>
+            <p className="text-[10px] font-bold text-primary/35 tracking-[0.35em] uppercase">Trusted By Industry Leaders</p>
             <div className="h-px w-10 bg-linear-to-l from-transparent to-accent/40" />
           </div>
           <div className="flex items-center gap-2">
@@ -89,7 +89,7 @@ const ClientSeries = () => {
         >
           <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-accent/20 bg-[#f8f6ff]">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-[9px] font-black text-accent uppercase tracking-widest">GST Compliant — GSTIN 29AAKCD5641B1Z9</span>
+            <span className="text-[9px] font-bold text-accent uppercase tracking-widest">GST Compliant — GSTIN 29AAKCD5641B1Z9</span>
           </div>
         </motion.div>
       </div>

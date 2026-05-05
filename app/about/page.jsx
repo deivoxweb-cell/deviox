@@ -57,7 +57,7 @@ export default function AboutPage() {
             className="flex items-center gap-4 mb-10"
           >
             <div className="h-px w-12 bg-accent" />
-            <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em]">
+            <p className="text-accent text-[10px] font-bold uppercase tracking-[0.3em]">
               CORPORATE ESTABLISHMENT
             </p>
           </motion.div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] uppercase leading-[0.88] mb-12"
+            className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12"
           >
             Pioneering<br />
             <span className="text-white/20">Industrial.</span>
@@ -85,14 +85,14 @@ export default function AboutPage() {
             </div>
             <div className="h-px w-24 bg-white/10 hidden sm:block" />
             <div>
-              <p className="text-4xl font-black text-accent tracking-tighter">ESTD. 2014</p>
+              <p className="text-4xl font-extrabold text-accent tracking-tighter">ESTD. 2014</p>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 right-12 flex items-center gap-6">
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">Scroll Down</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">Scroll Down</span>
           <div className="w-12 h-px bg-white/20" />
         </div>
       </section>
@@ -117,13 +117,13 @@ export default function AboutPage() {
             </div>
             {/* Absolute Stat */}
             <div className="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 bg-accent p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] shadow-2xl">
-              <p className="text-3xl sm:text-5xl font-black text-black tracking-tighter">10+</p>
-              <p className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-black/60 mt-1">Years Experience</p>
+              <p className="text-3xl sm:text-5xl font-extrabold text-black tracking-tighter">10+</p>
+              <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-black/60 mt-1">Years Experience</p>
             </div>
           </motion.div>
 
           <div className="lg:col-span-7 flex flex-col gap-8 sm:gap-12 pt-10">
-            <h2 className="text-4xl md:text-6xl font-black text-black uppercase tracking-tighter mb-4 sm:mb-12 leading-[0.9]">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-4 sm:mb-12 leading-[0.9]">
               The Trusted<br /><span className="text-black/20">BCP Doctors.</span>
             </h2>
             <div className="flex flex-col gap-8">
@@ -157,11 +157,11 @@ export default function AboutPage() {
         <div className="max-w-[90rem] mx-auto">
           <div className="flex items-center gap-6 mb-12 sm:mb-20">
             <div className="h-px w-12 sm:w-16 bg-black" />
-            <p className="text-black text-[10px] font-black uppercase tracking-[0.4em]">CORPORATE ESTABLISHMENT</p>
+            <p className="text-black text-[10px] font-bold uppercase tracking-[0.3em]">CORPORATE ESTABLISHMENT</p>
           </div>
 
-          <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-black uppercase tracking-tighter leading-[1.1] max-w-6xl">
-            Born from a vision to empower India's power sector through domestic engineering excellence. We <span className="text-accent">architect the future</span> of fluid reliability.
+          <h2 className="text-2xl md:text-5xl lg:text-6xl font-extrabold text-black uppercase tracking-tighter leading-[1.1] max-w-6xl">
+            Born from a vision to empower India's power sector through domestic engineering excellence. We <span className="text-accent font-extrabold">architect the future</span> of fluid reliability.
           </h2>
         </div>
       </section>
@@ -174,9 +174,9 @@ export default function AboutPage() {
           <div className="max-w-4xl mb-12 sm:mb-24">
             <div className="flex items-center gap-4 mb-6 sm:mb-8">
               <div className="h-px w-8 sm:w-12 bg-accent" />
-              <p className="text-accent text-[11px] font-black uppercase tracking-[0.5em]">TECHNICAL DOMAIN</p>
+              <p className="text-accent text-[11px] font-bold uppercase tracking-[0.4em]">TECHNICAL DOMAIN</p>
             </div>
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-[-0.05em] uppercase leading-[0.88]">
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-[-0.04em] uppercase leading-[0.88]">
               Core<br />Engineering.
             </h2>
           </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 className="group p-8 sm:p-10 bg-white/[0.03] border border-white/5 rounded-[2rem] sm:rounded-[2.5rem] hover:bg-accent hover:border-accent transition-all duration-500 cursor-pointer"
               >
                 <div className="flex flex-col justify-between h-full">
-                  <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tighter text-white group-hover:text-black leading-tight mb-8">
+                  <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tighter text-white group-hover:text-black leading-tight mb-8">
                     {cap}
                   </h3>
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:border-black group-hover:text-black transition-all">
@@ -210,8 +210,8 @@ export default function AboutPage() {
         <div className="w-full px-6 lg:px-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-24 gap-12 border-b-4 border-black pb-12">
             <div className="max-w-2xl">
-              <p className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-6">TECHNICAL LEADERSHIP</p>
-              <h2 className="text-5xl sm:text-7xl md:text-8xl font-black text-black tracking-[-0.05em] uppercase leading-[0.85]">
+              <p className="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-6">TECHNICAL LEADERSHIP</p>
+              <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-black tracking-[-0.04em] uppercase leading-[0.85]">
                 Executive<br />Leadership.
               </h2>
             </div>
@@ -234,19 +234,19 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-accent/20 group-hover:bg-accent transition-all duration-500" />
 
                 <div className="flex justify-between items-start mb-12">
-                  <span className="text-4xl font-black text-white/5 tracking-tighter">0{i + 1}</span>
+                  <span className="text-4xl font-extrabold text-white/5 tracking-tighter">0{i + 1}</span>
                   {member.tag && (
-                    <span className="text-[9px] font-black text-accent uppercase tracking-[0.3em] border border-accent/20 px-3 py-1">
+                    <span className="text-[9px] font-bold text-accent uppercase tracking-[0.25em] border border-accent/20 px-3 py-1">
                       {member.tag}
                     </span>
                   )}
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-none mb-3 group-hover:text-accent transition-colors">
+                  <h3 className="text-2xl font-bold text-white uppercase tracking-tighter leading-none mb-3 group-hover:text-accent transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] mb-8">
+                  <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.15em] mb-8">
                     {member.role}
                   </p>
 
@@ -259,12 +259,12 @@ export default function AboutPage() {
 
                 <div className="mt-auto flex flex-col gap-2 pt-8 border-t border-white/5">
                   {member.email && (
-                    <a href={`mailto:${member.email}`} className="text-[10px] font-black text-white/40 hover:text-accent transition-colors">
+                    <a href={`mailto:${member.email}`} className="text-[10px] font-bold text-white/40 hover:text-accent transition-colors">
                       {member.email}
                     </a>
                   )}
                   {member.phone && (
-                    <span className="text-[10px] font-black text-white/20">
+                    <span className="text-[10px] font-bold text-white/20">
                       {member.phone}
                     </span>
                   )}

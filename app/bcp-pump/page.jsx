@@ -98,7 +98,7 @@ export default function BcpPumpPage() {
         relatedLinks={relatedLinks}
         heroImage="/images/pump_rebuild.png"
       >
-        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
           BCP Pump: Industrial Circulation Expertise
         </h1>
         <div className="w-20 h-2 bg-accent mb-12" />
@@ -109,7 +109,7 @@ export default function BcpPumpPage() {
           has built its entire engineering identity around BCP expertise.
         </p>
 
-        <h2 className="text-2xl md:text-3xl font-black text-black uppercase tracking-tighter mt-16 mb-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-black uppercase tracking-tighter mt-16 mb-6">
           Technical Specification: BCP
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -132,7 +132,7 @@ export default function BcpPumpPage() {
           units — requires regular BCP maintenance by qualified specialists.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           How a BCP Pump Works
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -155,7 +155,7 @@ export default function BcpPumpPage() {
           but demands specialised overhaul expertise.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           BCP Applications in Indian Power &amp; Industry
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
@@ -167,11 +167,11 @@ export default function BcpPumpPage() {
           <li>Process steam generation in refineries and fertiliser plants</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           DEI VOX BCP Services
         </h2>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           BCP Overhauling
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -182,7 +182,7 @@ export default function BcpPumpPage() {
           test rig before despatch.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           In-Situ BCP Casing Repair
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -192,7 +192,7 @@ export default function BcpPumpPage() {
           This dramatically reduces outage time compared to full casing removal and return to workshop.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           Motor Rewinding for Canned BCPs
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -202,7 +202,7 @@ export default function BcpPumpPage() {
           insulation resistance, dielectric strength (hi-pot), and partial discharge measurement.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-6 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
           Reverse Engineering &amp; BCP Spare Parts
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -213,7 +213,7 @@ export default function BcpPumpPage() {
           materials to defined dimensional and material specifications.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           BCP Maintenance &amp; Reliability Engineering
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -228,7 +228,7 @@ export default function BcpPumpPage() {
           <li>Post-overhaul performance benchmarking to track hydraulic efficiency trends</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Why Clients Choose DEI VOX for BCP Work
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">

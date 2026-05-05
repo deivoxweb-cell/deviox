@@ -32,12 +32,12 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
                 {crumb.href ? (
                   <Link
                     href={crumb.href}
-                    className="text-[11px] font-black uppercase tracking-widest text-white/40 hover:text-accent transition-colors"
+                    className="text-[11px] font-semibold uppercase tracking-wider text-white/40 hover:text-accent transition-colors"
                   >
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-[11px] font-black uppercase tracking-widest text-accent">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-accent">
                     {crumb.label}
                   </span>
                 )}
@@ -49,8 +49,8 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             {stats.map((s) => (
               <div key={s.label} className="border-l-2 border-accent/20 pl-6 py-2">
-                <p className="text-3xl font-black text-white leading-none tracking-tighter">{s.value}</p>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mt-2">{s.label}</p>
+                <p className="text-3xl font-extrabold text-white leading-none tracking-tighter">{s.value}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/30 mt-2">{s.label}</p>
               </div>
             ))}
           </div>
@@ -86,15 +86,15 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
             {/* CTA card - Neo-Brutalist */}
             <div className="relative rounded-[3rem] bg-black text-white p-10 overflow-hidden shadow-2xl group">
               <div className="absolute top-0 right-0 w-40 h-40 bg-accent opacity-10 blur-3xl pointer-events-none" />
-              <p className="text-[11px] font-black uppercase tracking-[0.4em] text-accent mb-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6">
                 CONSULTATION
               </p>
-              <p className="text-xl font-bold text-white leading-tight mb-10">
+              <p className="text-xl font-semibold text-white leading-tight mb-10">
                 Technical assessment for mission-critical systems.
               </p>
               <Link
                 href="/contact"
-                className="flex items-center justify-between w-full p-4 bg-black text-white rounded-full font-black uppercase tracking-widest text-[11px] group hover:bg-zinc-900 transition-all shadow-xl shadow-black/20"
+                className="flex items-center justify-between w-full p-4 bg-black text-white rounded-full font-semibold uppercase tracking-wider text-[11px] group hover:bg-zinc-900 transition-all shadow-xl shadow-black/20"
               >
                 <span className="ml-4">Get Response</span>
                 <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
@@ -105,11 +105,11 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
               <div className="mt-10 space-y-4 pt-10 border-t border-white/10">
                 <div className="flex items-center gap-4">
                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent"><Phone size={14} /></div>
-                   <p className="text-sm font-bold">+91-9886424770</p>
+                   <p className="text-sm font-semibold">+91-9886424770</p>
                 </div>
                 <div className="flex items-center gap-4">
                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent"><Mail size={14} /></div>
-                   <p className="text-sm font-bold">sales@deivox.co.in</p>
+                   <p className="text-sm font-semibold">sales@deivox.co.in</p>
                 </div>
               </div>
             </div>
@@ -125,8 +125,8 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
                 <div key={b.label} className="bg-white rounded-3xl p-6 border border-black/5 flex flex-col gap-3">
                   <b.icon size={20} className="text-accent" />
                   <div>
-                    <p className="text-[11px] font-black text-black uppercase tracking-widest leading-tight">{b.label}</p>
-                    <p className="text-[10px] text-black/30 font-bold mt-1">{b.sub}</p>
+                    <p className="text-[11px] font-semibold text-black uppercase tracking-wider leading-tight">{b.label}</p>
+                    <p className="text-[10px] text-black/30 font-semibold mt-1">{b.sub}</p>
                   </div>
                 </div>
               ))}
@@ -135,7 +135,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
             {/* Related Services */}
             {relatedLinks && relatedLinks.length > 0 && (
               <div className="bg-black rounded-[3rem] p-10 text-white">
-                <p className="text-[11px] font-black uppercase tracking-[0.4em] text-accent mb-10">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-10">
                   Related Nodes
                 </p>
                 <ul className="space-y-6">
@@ -143,7 +143,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="flex items-center justify-between text-sm font-bold text-white/50 hover:text-white transition-all group"
+                        className="flex items-center justify-between text-sm font-semibold text-white/50 hover:text-white transition-all group"
                       >
                         {link.label}
                         <ChevronRight size={14} className="text-accent group-hover:translate-x-2 transition-transform" />
@@ -163,8 +163,8 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
              <div className="max-w-2xl">
-                <p className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-6">FIELD DATA</p>
-                <h2 className="text-4xl md:text-6xl font-black text-black uppercase tracking-tighter leading-[0.9]">
+                <p className="text-accent text-[11px] font-semibold uppercase tracking-[0.2em] mb-6">FIELD DATA</p>
+                <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter leading-[0.9]">
                   Engineering <br /><span className="text-black/20">In Action.</span>
                 </h2>
              </div>
@@ -186,7 +186,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
-                <p className="absolute bottom-6 left-6 text-[10px] font-black uppercase tracking-widest text-white">
+                <p className="absolute bottom-6 left-6 text-[10px] font-semibold uppercase tracking-wider text-white">
                   {img.label}
                 </p>
               </div>
@@ -200,7 +200,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="max-w-2xl">
-            <h3 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-8">
+            <h3 className="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tighter leading-[0.85] mb-8">
               Resolve your <br /><span className="text-accent">Industrial Challenge.</span>
             </h3>
             <p className="text-white/30 text-lg font-medium leading-relaxed">
@@ -212,7 +212,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
               href="/contact"
               className="flex items-center gap-6 bg-black border border-white/10 text-white px-10 py-4 rounded-full group hover:bg-zinc-900 transition-all shadow-2xl"
             >
-              <span className="text-[13px] font-black uppercase tracking-widest">Contact Specialist</span>
+              <span className="text-[13px] font-semibold uppercase tracking-wider">Contact Specialist</span>
               <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
                 <ArrowUpRight size={20} />
               </div>

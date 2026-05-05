@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* ── Design Tokens ───────────────────────────────────────────── */
@@ -28,7 +28,7 @@
   --color-accent-light: var(--accent-light);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 html {
@@ -48,7 +48,7 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
   width: 100%;
 }
@@ -161,7 +161,7 @@ body {
 
   .seo-prose strong {
     color: var(--primary);
-    font-weight: 700;
+    font-weight: 600;
   }
 
   /* ── Animations ── */
@@ -241,7 +241,7 @@ body {
   .loader-watermark {
     position: absolute;
     font-size: clamp(80px, 18vw, 200px);
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: -0.06em;
     color: rgba(255, 255, 255, 0.03);
     user-select: none;
@@ -280,8 +280,8 @@ body {
     z-index: 1;
     margin-top: 20px;
     font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 0.35em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.4);
   }

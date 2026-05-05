@@ -157,9 +157,9 @@ export default function ServiceGrid() {
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-black/20" />
-            <p className="text-black/40 text-[11px] font-black uppercase tracking-[0.4em]">Operational Competencies</p>
+            <p className="text-black/40 text-[11px] font-bold uppercase tracking-[0.3em]">Operational Competencies</p>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-[-0.05em] text-black uppercase leading-[0.88]">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-[-0.04em] text-black uppercase leading-[0.88]">
             Precision<br />
             <span className="text-black/20">Solutions</span>
           </h2>
@@ -237,7 +237,7 @@ export default function ServiceGrid() {
                       ${isMobile ? "p-6" : "p-8"}`}
                   >
                     <div className="flex justify-between items-start mb-4">
-                      <h3 className={`font-black uppercase leading-none tracking-tighter ${isMobile ? "text-xl" : "text-3xl"}`}>
+                      <h3 className={`font-bold uppercase leading-none tracking-tighter ${isMobile ? "text-xl" : "text-3xl"}`}>
                         {service.title}
                       </h3>
                       {isFocused && <ArrowUpRight className="text-accent" size={24} />}
@@ -249,13 +249,13 @@ export default function ServiceGrid() {
                           {service.description}
                         </p>
                         <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                          <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-black uppercase tracking-widest transition-all hover:bg-zinc-800">
+                          <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-bold uppercase tracking-widest transition-all hover:bg-zinc-800">
                             Technical Analysis
                           </button>
                         </Link>
                       </>
                     ) : (
-                      <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.3em] mt-auto">Technical Scope →</p>
+                      <p className="text-white/20 text-[10px] font-bold uppercase tracking-[0.2em] mt-auto">Technical Scope →</p>
                     )}
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export default function ServiceGrid() {
             transition={{ duration: 0.6, ease: "anticipate" }}
           />
         </div>
-        <div className="text-[11px] font-black tracking-[0.4em] uppercase text-black/20">
+        <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-black/20">
           SEC {activeIndex + 1} // 0{SERVICES.length}
         </div>
       </div>

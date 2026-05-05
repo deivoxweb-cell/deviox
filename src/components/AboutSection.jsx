@@ -59,7 +59,7 @@ const AboutSection = () => {
         {/* ── Eyebrow ── */}
         <ScrollReveal variant="fade-right" className="flex items-center gap-4 mb-12">
           <div className="h-px w-12 bg-black/20" />
-          <p className="text-black/40 text-[10px] font-black uppercase tracking-[0.35em]">Corporate Profile</p>
+          <p className="text-black/40 text-[10px] font-bold uppercase tracking-[0.3em]">Corporate Profile</p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -81,8 +81,8 @@ const AboutSection = () => {
                 />
                 <div className="h-20 w-px bg-white/20 hidden sm:block" />
                 <div className="flex flex-col gap-2 text-center sm:text-left">
-                  <p className="text-white text-xs font-black uppercase tracking-[0.4em]">BCP Specialists</p>
-                  <p className="text-white/40 text-[9px] font-black uppercase tracking-[0.3em]">100% Make in India</p>
+                  <p className="text-white text-xs font-bold uppercase tracking-[0.35em]">BCP Specialists</p>
+                  <p className="text-white/40 text-[9px] font-bold uppercase tracking-[0.25em]">100% Make in India</p>
                 </div>
               </TiltCard>
             </ScrollReveal>
@@ -97,8 +97,8 @@ const AboutSection = () => {
                   >
                     <div className="text-accent group-hover:scale-110 transition-transform">{s.icon}</div>
                     <div>
-                      <p className="text-4xl font-black text-black leading-none tracking-tighter">{s.value}</p>
-                      <p className="text-[10px] text-black/40 uppercase tracking-widest font-bold mt-2">{s.label}</p>
+                      <p className="text-4xl font-bold text-black leading-none tracking-tighter">{s.value}</p>
+                      <p className="text-[10px] text-black/40 uppercase tracking-widest font-semibold mt-2">{s.label}</p>
                     </div>
                   </motion.div>
                 </ScrollRevealItem>
@@ -117,8 +117,8 @@ const AboutSection = () => {
                       <MapPin size={14} />
                     </div>
                     <div>
-                      <p className="text-[9px] font-black text-black/30 uppercase tracking-widest">{office.label}</p>
-                      <p className="text-sm font-bold text-black mt-0.5">{office.location}</p>
+                      <p className="text-[9px] font-bold text-black/30 uppercase tracking-widest">{office.label}</p>
+                      <p className="text-sm font-semibold text-black mt-0.5">{office.location}</p>
                     </div>
                   </div>
                 </ScrollRevealItem>
@@ -130,7 +130,7 @@ const AboutSection = () => {
           <div className="lg:col-span-7 pl-0 lg:pl-10">
 
             <ScrollReveal variant="fade-up" duration={0.9} className="mb-6">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-black tracking-[-0.05em] leading-[0.88] uppercase">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-black tracking-[-0.04em] leading-[0.88] uppercase">
                 The Trusted<br />
                 <span className="text-black/20">
                   BCP Doctors
@@ -140,7 +140,7 @@ const AboutSection = () => {
 
             <ScrollReveal stagger className="space-y-6 text-black/60 leading-relaxed text-lg mb-12 font-medium">
               {[
-                <><span className="font-black text-black uppercase tracking-tighter">DEI VOX INDIA</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.</>,
+                <><span className="font-bold text-black uppercase tracking-tighter">DEI VOX INDIA</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.</>,
                 <>We deliver <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing. Our specialized workflows guarantee system reliability and maximum uptime for global power utilities.</>,
               ].map((text, i) => (
                 <ScrollRevealItem key={i} variant="fade-up">
@@ -172,7 +172,7 @@ const AboutSection = () => {
                       <div className="p-3 bg-accent rounded-full text-black transition-all duration-300">
                         {item.icon}
                       </div>
-                      <span className="text-[11px] font-black uppercase tracking-widest text-black">{item.title}</span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-black">{item.title}</span>
                     </div>
                     <p className="text-sm text-black/50 font-medium leading-relaxed">{item.body}</p>
                   </motion.div>

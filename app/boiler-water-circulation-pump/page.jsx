@@ -96,7 +96,7 @@ export default function BoilerWaterCirculationPumpPage() {
         relatedLinks={relatedLinks}
         heroImage="/images/insitu_machining.png"
       >
-        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
           BWCP: Boiler Water Circulation Experts
         </h1>
         <div className="w-20 h-2 bg-accent mb-12" />
@@ -108,7 +108,7 @@ export default function BoilerWaterCirculationPumpPage() {
           ISO-certified workshop processes to restore pump performance to OEM specification.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Understanding the Boiler Water Circulation Pump
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -126,7 +126,7 @@ export default function BoilerWaterCirculationPumpPage() {
           must all satisfy codes such as EN 733, ISO 5199, and applicable ASME requirements.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           How the Boiler Water Circulation Pump Works
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -149,7 +149,7 @@ export default function BoilerWaterCirculationPumpPage() {
           verify hydraulic performance after every overhaul using calibrated test instrumentation.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Applications
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
@@ -161,7 +161,7 @@ export default function BoilerWaterCirculationPumpPage() {
           <li>Marine boiler systems</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Common Failure Modes &amp; Consequences
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-3">
@@ -170,7 +170,7 @@ export default function BoilerWaterCirculationPumpPage() {
           maintenance strategies:
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Bearing Wear
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -179,7 +179,7 @@ export default function BoilerWaterCirculationPumpPage() {
           monitoring detects early-stage bearing degradation before shaft contact occurs.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Impeller Erosion
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -189,7 +189,7 @@ export default function BoilerWaterCirculationPumpPage() {
           original vane profiles.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Motor Winding Insulation Degradation
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -198,7 +198,7 @@ export default function BoilerWaterCirculationPumpPage() {
           for continuous immersion, restoring the motor to its original electrical performance.
         </p>
 
-        <h3 className="text-base font-black text-primary uppercase tracking-wide mt-5 mb-2">
+        <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
           Can Liner Perforation
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -208,7 +208,7 @@ export default function BoilerWaterCirculationPumpPage() {
           in-house using certified materials.
         </p>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           DEI VOX's Boiler Water Circulation Pump Services
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
@@ -221,7 +221,7 @@ export default function BoilerWaterCirculationPumpPage() {
           <li><strong>Hydraulic Performance Testing</strong> — post-overhaul pump curve verification</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Maintenance Schedule Recommendations
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
@@ -235,7 +235,7 @@ export default function BoilerWaterCirculationPumpPage() {
           <li>Electrical insulation resistance testing at each plant outage</li>
         </ul>
 
-        <h2 className="text-xl md:text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-3">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
           Why DEI VOX India
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">

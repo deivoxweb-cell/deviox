@@ -25,14 +25,14 @@ const SeoContentSection = () => {
           <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
             <Settings className="text-accent" size={18} />
           </div>
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40">Company Overview</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">Company Overview</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
           {/* Main content block */}
           <div className="lg:col-span-7">
-            <h2 className="text-4xl md:text-5xl font-black tracking-[-0.05em] text-black uppercase mb-10 leading-[0.9]">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-[-0.04em] text-black uppercase mb-10 leading-[0.9]">
               Pioneers in Boiler<br />
               <span className="text-black/20">Circulation Pump</span><br />
               Engineering
@@ -40,10 +40,10 @@ const SeoContentSection = () => {
             
             <div className="space-y-6 text-black/60 text-base md:text-lg leading-relaxed font-medium">
               <p>
-                <strong className="text-black font-black uppercase tracking-tight">DEI VOX India Pvt. Ltd.</strong> is one of India's foremost
+                <strong className="text-black font-bold uppercase tracking-tight">DEI VOX India Pvt. Ltd.</strong> is one of India's foremost
                 engineering companies specialising exclusively in{" "}
-                <strong className="text-black">Boiler Circulation Pump (BCP)</strong> and{" "}
-                <strong className="text-black">Boiler Water Circulation Pump (BWCP)</strong> services.
+                <strong className="text-black font-bold">Boiler Circulation Pump (BCP)</strong> and{" "}
+                <strong className="text-black font-bold">Boiler Water Circulation Pump (BWCP)</strong> services.
               </p>
               <p>
                 Operating at extreme temperatures and differential pressures, these pumps circulate water through boiler circuits to maintain
@@ -67,10 +67,10 @@ const SeoContentSection = () => {
               <div className="absolute bottom-[-20%] right-[-10%] w-32 h-32 bg-accent rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity" />
               
               <div className="relative z-10">
-                <p className="text-[11px] font-black text-accent uppercase tracking-[0.4em] mb-10 border-b border-white/5 pb-4">
+                <p className="text-[11px] font-bold text-accent uppercase tracking-[0.3em] mb-10 border-b border-white/5 pb-4">
                   Core Services
                 </p>
-                <ul className="space-y-4 text-xs font-black uppercase tracking-widest text-accent">
+                <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-accent">
                   {[
                     { label: "BCP Overhauling", href: "/boiler-circulation-pump" },
                     { label: "BWCP Repair", href: "/boiler-water-circulation-pump" },
@@ -93,10 +93,10 @@ const SeoContentSection = () => {
                 </ul>
 
                 <div className="mt-12 pt-8 border-t border-white/5">
-                  <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] mb-4">
+                  <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] mb-4">
                     Industrial Certifications
                   </p>
-                  <ul className="flex flex-wrap gap-4 text-[9px] font-black text-accent/60 uppercase tracking-widest">
+                  <ul className="flex flex-wrap gap-4 text-[9px] font-bold text-accent/60 uppercase tracking-widest">
                     <li>ISO 9001:2015</li>
                     <li className="text-white/10">•</li>
                     <li>ISO 14001:2015</li>
@@ -111,7 +111,7 @@ const SeoContentSection = () => {
               href="/contact"
               className="group flex items-center justify-between bg-black text-white px-8 py-5 rounded-full hover:bg-zinc-800 transition-all duration-300 shadow-xl shadow-black/10"
             >
-              <span className="text-[11px] font-black uppercase tracking-widest">Request Quote</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest">Request Quote</span>
               <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform duration-500">
                 <ArrowUpRight size={20} />
               </div>

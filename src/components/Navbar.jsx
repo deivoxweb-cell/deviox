@@ -53,7 +53,7 @@ const Navbar = () => {
             // className="brightness-0 invert object-contain"
             />
           </div>
-          <span className="font-black text-accent uppercase tracking-tighter text-2xl hidden sm:block">DEI <span className="text-primary">VOX</span></span>
+          <span className="font-bold text-accent uppercase tracking-tighter text-2xl hidden sm:block">DEI <span className="text-primary">VOX</span></span>
         </Link>
 
         {/* Desktop Links */}
@@ -64,7 +64,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${isActive
+                className={`px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
                   ? "bg-accent text-black shadow-lg shadow-accent/20"
                   : "text-black/60 hover:text-black hover:bg-black/5"
                   }`}
@@ -75,14 +75,14 @@ const Navbar = () => {
           })}
 
           {/* Products Dropdown */}
-          <div className="relative group px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-black/60 hover:text-black hover:bg-black/5 cursor-pointer transition-all">
+          <div className="relative group px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider text-black/60 hover:text-black hover:bg-black/5 cursor-pointer transition-all">
             Products
             <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl rounded-3xl border border-black/5 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2">
               {pumpLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block px-4 py-3 text-[10px] font-black uppercase tracking-widest text-black/60 hover:bg-accent hover:text-black transition-all rounded-2xl"
+                  className="block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider text-black/60 hover:bg-accent hover:text-black transition-all rounded-2xl"
                 >
                   {link.name}
                 </Link>
@@ -96,7 +96,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${isActive
+                className={`px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
                   ? "bg-accent text-black shadow-lg shadow-accent/20"
                   : "text-black/60 hover:text-black hover:bg-black/5"
                   }`}
@@ -111,7 +111,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <Link href="/contact">
             <button className="hidden sm:flex items-center gap-4 bg-black text-white px-8 py-3 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
-              <span className="text-[11px] font-black uppercase tracking-[0.2em]">Get Quote</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em]">Get Quote</span>
               <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
                 <ArrowUpRight size={16} />
               </div>
@@ -143,7 +143,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-black text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5"
+                  className="text-2xl font-bold text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5"
                 >
                   {link.name}
                 </Link>
@@ -153,7 +153,7 @@ const Navbar = () => {
               <div className="border-b border-black/5">
                 <button
                   onClick={() => setProductsOpen(!productsOpen)}
-                  className="w-full flex items-center justify-between text-2xl font-black text-black uppercase tracking-tighter py-2"
+                  className="w-full flex items-center justify-between text-2xl font-bold text-black uppercase tracking-tighter py-2"
                 >
                   Products
                   <motion.span
@@ -180,7 +180,7 @@ const Navbar = () => {
                             setIsOpen(false);
                             setProductsOpen(false);
                           }}
-                          className="text-lg font-bold text-black/60 hover:text-black uppercase tracking-tighter"
+                          className="text-lg font-semibold text-black/60 hover:text-black uppercase tracking-tighter"
                         >
                           {link.name}
                         </Link>
@@ -195,7 +195,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-black text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5 last:border-b-0"
+                  className="text-2xl font-bold text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5 last:border-b-0"
                 >
                   {link.name}
                 </Link>

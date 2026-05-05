@@ -59,7 +59,7 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
         {/* Text Content */}
         <div className="lg:col-span-7">
           <div className="flex items-center gap-8 mb-16">
-            <span className="text-7xl md:text-9xl font-black text-black/5 tracking-tighter">
+            <span className="text-7xl md:text-9xl font-extrabold text-black/5 tracking-tighter">
               0{index + 1}
             </span>
             <div className="w-24 h-px bg-black/10" />
@@ -70,10 +70,10 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
               {service.icon}
             </div>
             <div>
-              <p className="text-[11px] font-black text-black/30 uppercase tracking-[0.4em] mb-1">
+              <p className="text-[11px] font-bold text-black/30 uppercase tracking-[0.3em] mb-1">
                 {service.tagline}
               </p>
-              <h2 className="text-4xl md:text-6xl font-black text-black tracking-[-0.05em] uppercase leading-none">
+              <h2 className="text-4xl md:text-6xl font-extrabold text-black tracking-[-0.04em] uppercase leading-none">
                 {service.title}
               </h2>
             </div>
@@ -89,7 +89,7 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
                 <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-accent transition-transform group-hover:scale-110">
                    <CheckCircle2 size={16} />
                 </div>
-                <span className="text-[11px] font-black text-black uppercase tracking-widest">
+                <span className="text-[11px] font-semibold text-black uppercase tracking-widest">
                   {pt}
                 </span>
               </div>
@@ -98,7 +98,7 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
 
           <Link href="/contact" className="inline-block">
              <button className="flex items-center gap-4 bg-black text-white px-10 py-4 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
-                <span className="text-[11px] font-black uppercase tracking-widest">Technical Consultation</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest">Technical Consultation</span>
                 <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
                   <ArrowUpRight size={18} />
                 </div>
@@ -123,8 +123,8 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10">
-               <p className="text-accent text-[9px] sm:text-[11px] font-black uppercase tracking-[0.4em] mb-2">{service.tagline}</p>
-               <p className="text-white text-xl sm:text-2xl font-black uppercase tracking-tighter">{service.title}</p>
+               <p className="text-accent text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.3em] mb-2">{service.tagline}</p>
+               <p className="text-white text-xl sm:text-2xl font-bold uppercase tracking-tighter">{service.title}</p>
             </div>
           </motion.div>
         </div>
@@ -185,7 +185,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-8 sm:mb-10"
+            className="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-8 sm:mb-10"
           >
             ENGINEERING SOLUTIONS
           </motion.p>
@@ -194,7 +194,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-[72px] font-black tracking-[-0.05em] uppercase leading-[0.88] mb-12"
+            className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12"
           >
             Mission<br />
             <span className="text-white/20">Critical.</span>
@@ -217,14 +217,14 @@ export default function ServicesPage() {
           <div className="sticky top-0 lg:top-24 z-40 bg-card/80 backdrop-blur-xl py-6 sm:py-10 border-b border-black/5 w-full flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="flex items-center gap-4">
               <div className="w-8 sm:w-12 h-px bg-black" />
-              <h2 className="text-black text-[9px] sm:text-[11px] font-black uppercase tracking-[0.5em]">DOMAINS OF EXPERTISE</h2>
+              <h2 className="text-black text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.4em]">DOMAINS OF EXPERTISE</h2>
             </div>
             <div className="hidden md:flex items-center gap-10">
               {services.map((item, i) => (
                 <button
                   key={item.title}
                   onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                  className={`text-[10px] font-black uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20 hover:text-black/50"}`}
+                  className={`text-[10px] font-bold uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20 hover:text-black/50"}`}
                 >
                   {item.title.split(' ')[0]}
                 </button>
@@ -236,7 +236,7 @@ export default function ServicesPage() {
                     <button
                         key={item.title}
                         onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                        className={`whitespace-nowrap text-[9px] font-black uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20"}`}
+                        className={`whitespace-nowrap text-[9px] font-bold uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20"}`}
                     >
                         {item.title.split(' ')[0]}
                     </button>
@@ -263,7 +263,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
-          <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
+          <h2 className="text-3xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
             Industrial <br /><span className="text-white/20">Capabilities.</span>
           </h2>
           <p className="text-white/40 text-lg sm:text-xl font-medium mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
@@ -271,7 +271,7 @@ export default function ServicesPage() {
           </p>
 
           <Link href="/contact" className="inline-block">
-            <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black uppercase tracking-[0.3em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl">
+            <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-bold uppercase tracking-[0.25em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl">
                Initiate Technical Engagement
                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-white">
                  <ArrowUpRight size={16} />
