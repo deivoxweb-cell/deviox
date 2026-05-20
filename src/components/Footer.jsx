@@ -9,6 +9,7 @@ const NAV_LINKS = {
   Solutions: [
     { label: "About Deivox", href: "/about" },
     { label: "ISO Excellence", href: "/iso-certificate" },
+    { label: "Engineering Blog", href: "/blog" },
     { label: "Contact Hub", href: "/contact" },
   ],
   Core: [

@@ -10,6 +10,10 @@ export const metadata = {
     "ISO 14001 industrial",
     "ISO 45001 certified",
     "quality certified BCP",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   openGraph: {
     title: "ISO Certified | DEI VOX India BCP Specialists",

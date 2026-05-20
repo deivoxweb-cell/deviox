@@ -12,6 +12,10 @@ export const metadata = {
     "spare parts boiler pump",
     "reverse engineering pump",
     "DEI VOX services",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   openGraph: {
     title: "Services | DEI VOX BCP Boiler Circulation Pump Specialists",

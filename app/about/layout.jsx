@@ -10,6 +10,9 @@ export const metadata = {
     "BCP company India",
     "Boiler Circulation Pump company",
     "boiler water circulation pump specialist",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   openGraph: {
     title: "About DEI VOX | BCP Boiler Circulation Pump Company India",

@@ -11,6 +11,9 @@ export const metadata = {
     "boiler circulation pump overhauling",
     "BCP specialist India",
     "DEI VOX boiler pump",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler water circulation pump",
   ],
   alternates: { canonical: "/boiler-circulation-pump" },
   openGraph: {

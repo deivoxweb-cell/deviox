@@ -11,6 +11,10 @@ export const metadata = {
     "roller bearings",
     "DEI VOX composite",
     "bearing supplier India",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   openGraph: {
     title: "Composite Material & Bearings | DEI VOX India",

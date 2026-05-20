@@ -9,6 +9,10 @@ export const metadata = {
     "boiler water circulation pump power station",
     "thermal power plant pump",
     "DEI VOX power generation",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   openGraph: {
     title: "Power Generation BCP Solutions | DEI VOX India",

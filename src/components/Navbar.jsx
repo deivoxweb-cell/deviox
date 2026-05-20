@@ -21,6 +21,7 @@ const pumpLinks = [
 const otherLinks = [
   { name: "Services", href: "/services" },
   { name: "ISO Certificate", href: "/iso-certificate" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 

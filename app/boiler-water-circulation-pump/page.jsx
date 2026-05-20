@@ -11,6 +11,10 @@ export const metadata = {
     "boiler feed pump specialists",
     "boiler pump service India",
     "DEI VOX BWCP",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   alternates: { canonical: "/boiler-water-circulation-pump" },
   openGraph: {

@@ -25,6 +25,7 @@ export const metadata = {
     "DEI VOX India",
     "BCP",
     "Boiler Circulation Pump",
+    "Boiler water circulation pump",
     "Boiler Water Circulation Pump",
     "Boiler circulating pump repair",
     "BCP overhauling",

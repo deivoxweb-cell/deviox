@@ -11,6 +11,10 @@ export const metadata = {
     "submersible pump overhauling",
     "industrial submersible pump service",
     "DEI VOX submersible pump",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   alternates: { canonical: "/submersible-pump-repair" },
   openGraph: {

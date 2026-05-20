@@ -10,6 +10,10 @@ export const metadata = {
     "boiler circulation pump service contact",
     "DEI VOX Gurugram",
     "DEI VOX sales",
+    "DEI VOX Company",
+    "BCP",
+    "Boiler Circulation Pump",
+    "Boiler water circulation pump",
   ],
   openGraph: {
     title: "Contact DEI VOX India | BCP Boiler Pump Specialists",
