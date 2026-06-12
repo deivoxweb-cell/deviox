@@ -1,10 +1,11 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Boiler Circulation Pump (BCP) Specialists — DEI VOX India",
+  title: "Boiler Circulation Pump Repair India | DEI VOX",
   description:
-    "DEI VOX India is India's leading Boiler Circulation Pump (BCP) specialist. Expert overhauling, repair, motor rewinding, in-situ machining and spare parts for BCPs in thermal power plants. ISO 9001:2015 certified.",
+    "Boiler circulation pump repair in India for thermal power plants and industrial boilers. BCP overhauling, motor rewinding, in-situ machining and spare parts by DEI VOX.",
   keywords: [
+    "boiler circulation pump repair India",
     "Boiler Circulation Pump",
     "BCP pump India",
     "boiler circulation pump repair",
@@ -17,7 +18,7 @@ export const metadata = {
   ],
   alternates: { canonical: "/boiler-circulation-pump" },
   openGraph: {
-    title: "Boiler Circulation Pump (BCP) Specialists — DEI VOX India",
+    title: "Boiler Circulation Pump Repair India | DEI VOX",
     description:
       "India's most trusted Boiler Circulation Pump specialists. Overhauling, repair, in-situ machining & spare parts. ISO certified. 24/7 support.",
     url: "https://deivoxbcp.com/boiler-circulation-pump",
@@ -39,8 +40,6 @@ const breadcrumb = [
 ];
 
 const relatedLinks = [
-  { label: "Boiler Water Circulation Pump Repair", href: "/boiler-water-circulation-pump" },
-  { label: "BCP Pump Overhauling", href: "/bcp-pump" },
   { label: "Submersible Pump Repair", href: "/submersible-pump-repair" },
   { label: "All Services", href: "/services" },
 ];
@@ -50,13 +49,13 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Service",
-      name: "Boiler Circulation Pump Overhauling & Repair",
+      name: "Boiler Circulation Pump Repair India",
       provider: {
         "@type": "Organization",
         name: "DEI VOX India Pvt. Ltd.",
         url: "https://deivoxbcp.com",
       },
-      serviceType: "Boiler Circulation Pump Maintenance",
+      serviceType: "Boiler Circulation Pump Repair and Overhauling",
       areaServed: "India",
       description:
         "Complete Boiler Circulation Pump (BCP) overhauling, repair, motor rewinding, in-situ casing machining, spare parts supply and reverse engineering. ISO 9001:2015 certified.",
@@ -109,15 +108,15 @@ export default function BoilerCirculationPumpPage() {
       >
         {/* H1 */}
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
-          BCP: Boiler Circulation Pump Engineering
+          Boiler Circulation Pump Repair India
         </h1>
         <div className="w-20 h-2 bg-accent mb-12" />
 
         {/* Intro */}
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
           DEI VOX India Pvt. Ltd. is one of India's foremost specialists in{" "}
-          <strong>Boiler Circulation Pump (BCP)</strong> maintenance, overhauling, and repair. With a
-          dedicated engineering team and ISO-certified processes, we deliver solutions for thermal power
+          <strong>boiler circulation pump repair in India</strong>, including BCP maintenance and
+          overhauling. With a dedicated engineering team and ISO-certified processes, we deliver solutions for thermal power
           plants, co-generation facilities, process industries, and captive power installations across
           the country.
         </p>

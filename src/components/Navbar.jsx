@@ -12,9 +12,7 @@ const navLinks = [
 ];
 
 const pumpLinks = [
-  { name: "Boiler Feed Pump", href: "/boiler-circulation-pump" },
-  { name: "CW Pump", href: "/boiler-water-circulation-pump" },
-  { name: "CEP Pump", href: "/bcp-pump" },
+  { name: "BCP Repair India", href: "/boiler-circulation-pump" },
   { name: "Submersible Pump", href: "/submersible-pump-repair" },
 ];
 

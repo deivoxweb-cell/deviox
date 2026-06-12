@@ -73,8 +73,7 @@ const SeoContentSection = () => {
                 <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-accent">
                   {[
                     { label: "BCP Overhauling", href: "/boiler-circulation-pump" },
-                    { label: "BWCP Repair", href: "/boiler-water-circulation-pump" },
-                    { label: "Pump Maintenance", href: "/bcp-pump" },
+                    { label: "BCP Repair India", href: "/boiler-circulation-pump" },
                     { label: "Submersible Repair", href: "/submersible-pump-repair" },
                     { label: "In-Situ Machining", href: "/services#insitu-machining" },
                     { label: "Motor Rewinding", href: "/services#motor-rewinding" },

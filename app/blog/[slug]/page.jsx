@@ -25,6 +25,9 @@ export async function generateMetadata({ params }) {
       description: post.excerpt,
       url: `${SITE_URL}/blog/${post.slug}`,
       images: post.image ? [{ url: post.image }] : undefined,
+      publishedTime: post.date,
+      modifiedTime: post.updatedDate || post.date,
+      authors: [post.author],
     },
   };
 }
@@ -45,8 +48,6 @@ export default async function BlogPostPage({ params }) {
 
   const relatedLinks = [
     { label: "Boiler Circulation Pump Overhauling", href: "/boiler-circulation-pump" },
-    { label: "Boiler Water Circulation Pump Repair", href: "/boiler-water-circulation-pump" },
-    { label: "BCP Pump Services", href: "/bcp-pump" },
   ];
 
   return (
@@ -76,7 +77,11 @@ export default async function BlogPostPage({ params }) {
         {renderMarkdown(post.content)}
 
         <div className="mt-16 pt-8 border-t border-black/5 flex items-center justify-between text-xs text-black/40 font-semibold">
-          <span>Published by {post.author}</span>
+          <div>
+            <p>Published by {post.author}</p>
+            {post.authorCredentials && <p className="mt-1">{post.authorCredentials}</p>}
+            <p className="mt-1">Published: {post.date}{post.updatedDate ? ` | Updated: ${post.updatedDate}` : ""}</p>
+          </div>
         </div>
       </SeoPageLayout>
     </>

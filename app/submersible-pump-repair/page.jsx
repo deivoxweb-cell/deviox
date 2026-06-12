@@ -33,8 +33,6 @@ const breadcrumb = [
 
 const relatedLinks = [
   { label: "Boiler Circulation Pump Overhauling", href: "/boiler-circulation-pump" },
-  { label: "Boiler Water Circulation Pump Repair", href: "/boiler-water-circulation-pump" },
-  { label: "BCP Pump Services", href: "/bcp-pump" },
   { label: "All Services", href: "/services" },
 ];
 

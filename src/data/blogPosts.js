@@ -18,7 +18,7 @@ A typical BCP operates under severe mechanical and thermal conditions:
 
 ### Mechanical Design: The Wet Motor / Canned Motor Configuration
 
-Because of the extreme operating pressures, conventional mechanical shaft seals would fail rapidly or cause unacceptable leakage rates. To solve this, most modern BCP designers use a [Canned Motor Pump](/bcp-pump) or [Wet Motor Pump](/bcp-pump) design.
+Because of the extreme operating pressures, conventional mechanical shaft seals would fail rapidly or cause unacceptable leakage rates. To solve this, most modern BCP designers use a [Canned Motor Pump](/boiler-circulation-pump) or [Wet Motor Pump](/boiler-circulation-pump) design.
 
 In this layout, the pump casing and the electric motor housing are directly bolted together to form a single, hermetically sealed pressure vessel. 
 
@@ -179,5 +179,317 @@ DEI VOX India Pvt. Ltd. operates a dedicated, ISO-certified clean winding shop e
     readTime: "7 min read",
     image: "/images/motor_rewinding.png",
     category: "Electrical",
+  },
+  {
+    id: 4,
+    title: "Boiler Circulation Pump Vibration: Causes and Solutions",
+    slug: "boiler-circulation-pump-vibration-causes-solutions",
+    excerpt: "A practical guide to diagnosing BCP vibration, separating hydraulic, mechanical, and electrical causes, and selecting the right corrective action.",
+    content: `
+### Direct Answer
+
+Boiler circulation pump vibration is usually caused by bearing clearance, rotor imbalance, misalignment, hydraulic instability, cavitation, looseness, or motor electrical faults. The correct solution depends on vibration frequency, direction, operating condition, and trend. Do not replace bearings based on one overall vibration reading; collect a repeatable baseline and diagnose the vibration signature first.
+
+### Symptoms and Likely Causes
+
+- **Rising 1x running-speed vibration:** imbalance, eccentricity, bent shaft, or deposit buildup.
+- **High axial vibration:** thrust-bearing wear, coupling misalignment, or hydraulic thrust changes.
+- **Broadband vibration and noise:** cavitation, flashing, rubbing, or severe bearing distress.
+- **2x running-speed component:** misalignment, looseness, or distorted mounting.
+- **Vibration that changes with load:** hydraulic recirculation, unstable suction conditions, or flow outside the preferred operating region.
+
+### Inspection and Diagnostic Process
+
+Record vibration at the same locations and operating load using horizontal, vertical, and axial measurements. Capture overall velocity, acceleration, waveform, and FFT spectrum where possible. Compare pump differential pressure, flow, motor current, bearing temperature, and suction conditions with the vibration trend. Confirm instrument calibration and mounting before interpreting small changes.
+
+As a practical example, a steady increase at 1x speed accompanied by stable process pressure often points toward rotor balance or alignment. Random high-frequency energy with crackling noise and unstable suction pressure is more consistent with cavitation. Acceptance limits must come from the OEM, plant standard, and machine configuration rather than a single universal number.
+
+### Repair Options
+
+- Correct suction restrictions and return the pump to its intended operating range.
+- Measure sleeve and thrust-bearing clearances and replace worn components.
+- Inspect the rotor, impeller, and deposits before precision balancing.
+- Verify shaft straightness, concentricity, alignment, and casing fit.
+- Repair looseness, rubbing, damaged wear surfaces, or distorted supports.
+- Perform electrical tests when vibration is accompanied by current imbalance or winding-temperature changes.
+
+For inspection, overhauling, and corrective repair, see our [boiler circulation pump repair services in India](/boiler-circulation-pump).
+
+### FAQ
+
+#### Can vibration alone identify a failed BCP bearing?
+
+No. Vibration is an important indicator, but bearing diagnosis should also consider temperature, clearance measurements, lubricant or process-water condition, noise, and inspection findings.
+
+#### Should a vibrating pump be stopped immediately?
+
+Follow the plant trip limits and OEM guidance. A sudden step change, rubbing indication, rapid temperature rise, or unstable process condition requires immediate engineering assessment.
+`,
+    author: "DEI VOX Rotating Equipment Engineering Team",
+    authorCredentials: "BCP diagnostics, overhaul, alignment, and rotating-equipment inspection",
+    date: "June 12, 2026",
+    updatedDate: "June 12, 2026",
+    readTime: "7 min read",
+    image: "/images/bcp-vibration-inspection.png",
+    category: "Diagnostics",
+  },
+  {
+    id: 5,
+    title: "BCP Motor Winding Failure: Warning Signs",
+    slug: "bcp-motor-winding-failure-warning-signs",
+    excerpt: "Recognize insulation deterioration, current imbalance, moisture ingress, and thermal damage before a canned BCP motor suffers a major winding failure.",
+    content: `
+### Direct Answer
+
+The earliest warning signs of BCP motor winding failure include falling insulation resistance, increasing phase-current imbalance, abnormal winding temperature, repeated earth-fault alarms, changes in polarization index, and deterioration in surge-comparison results. A single test is not conclusive; trends taken at comparable temperature and moisture conditions are more useful.
+
+### Symptoms and Likely Causes
+
+- **Low or falling insulation resistance:** moisture ingress, contaminated insulation, can-liner leakage, or thermal ageing.
+- **Unequal phase resistance or current:** damaged joints, shorted turns, supply imbalance, or winding asymmetry.
+- **Hot spots or abnormal temperature rise:** cooling-flow restriction, overload, turn insulation damage, or poor coil connection.
+- **Intermittent earth fault:** insulation cracks, lead damage, conductive contamination, or water entering the stator space.
+- **Burnt odor or discolored end turns:** sustained overheating or localized connection failure.
+
+### Inspection and Diagnostic Process
+
+Record insulation resistance with winding temperature and correct readings to a common reference temperature where the applicable procedure requires it. Compare phase resistance, polarization index, motor current, protection-relay history, and temperature trends. Surge comparison can help identify turn-to-turn weakness, while dielectric testing should only be performed using an approved voltage and procedure because excessive test stress can damage aged insulation.
+
+Before condemning the winding, verify cable condition, terminal joints, supply voltage balance, instrument accuracy, and moisture conditions. For canned motors, inspect the liner and pressure boundary because a winding fault may be the consequence of liner damage rather than the original failure.
+
+### Repair Options
+
+- Dry and clean a winding only after identifying and stopping the ingress source.
+- Repair leads or joints when damage is localized and the remaining insulation is serviceable.
+- Rewind the stator when turn insulation, multiple coils, or the insulation system has deteriorated broadly.
+- Replace or repair the can liner and pressure-test it before final motor assembly.
+- Complete phase resistance, insulation, surge, and approved dielectric tests before commissioning.
+
+DEI VOX provides diagnosis and motor work as part of its [boiler circulation pump repair services in India](/boiler-circulation-pump).
+
+### FAQ
+
+#### Does a low megohm reading always mean the winding must be rewound?
+
+No. Temperature, moisture, contamination, cables, and test setup affect the reading. The cause and trend must be established before choosing repair or rewind.
+
+#### Can a damaged can liner cause winding failure?
+
+Yes. A pinhole or crack can allow process fluid into the stator area, rapidly reducing insulation integrity and causing an earth fault.
+`,
+    author: "DEI VOX Electrical Engineering Team",
+    authorCredentials: "Industrial motor diagnostics, stator rewinding, insulation testing, and wet-motor repair",
+    date: "June 12, 2026",
+    updatedDate: "June 12, 2026",
+    readTime: "7 min read",
+    image: "/images/bcp-motor-winding-inspection.png",
+    category: "Electrical",
+  },
+  {
+    id: 6,
+    title: "Boiler Circulation Pump Overhaul Checklist",
+    slug: "boiler-circulation-pump-overhaul-checklist",
+    excerpt: "A stage-by-stage BCP overhaul checklist covering incoming inspection, dimensional checks, electrical testing, assembly controls, and final documentation.",
+    content: `
+### Direct Answer
+
+A reliable boiler circulation pump overhaul needs controlled inspection before dismantling, traceable dimensional and electrical measurements, documented repair decisions, clean assembly, and final verification against OEM or approved plant criteria. The checklist below is a planning guide; the pump-specific manual and approved quality plan remain controlling documents.
+
+### Incoming and Pre-Dismantling Checks
+
+- Record nameplate, serial number, operating hours, failure history, and removal observations.
+- Photograph orientation, cable routing, fasteners, shims, and external condition.
+- Review vibration, motor current, temperature, flow, pressure, and protection-trip records.
+- Perform permitted insulation resistance, phase resistance, and continuity checks.
+- Check shaft freedom, axial movement, visible leakage, deposits, and transport damage.
+
+### Dismantling and Inspection
+
+- Mark component orientation and maintain traceability.
+- Measure running, sleeve-bearing, thrust, wear-ring, and rotor clearances.
+- Check shaft runout, journal condition, impeller erosion, and balance condition.
+- Inspect can liner using visual and suitable nondestructive examination methods.
+- Examine stator winding, leads, joints, insulation, core, and cooling passages.
+- Record all dimensions against OEM drawings or an approved engineering basis.
+
+### Repair and Assembly Controls
+
+Repair worn fits, renew bearings and seals as required, restore impeller and wear surfaces, and complete winding or liner work only to an approved procedure. Verify material certificates and component dimensions before assembly. Maintain cleanliness, use controlled tightening values, confirm rotor freedom at each assembly stage, and preserve measured final clearances.
+
+### Final Verification and Documentation
+
+- Electrical tests appropriate to the motor design and repair scope.
+- Pressure or leak testing of repaired pressure-boundary components.
+- Rotor runout, balance, free rotation, and final clearance records.
+- Functional or performance testing where the facility and approved scope permit it.
+- Inspection report, repair photographs, measurement sheets, test certificates, and recommended operating checks.
+
+For a scoped overhaul plan, contact our [boiler circulation pump repair team in India](/boiler-circulation-pump).
+
+### FAQ
+
+#### How often should a BCP be overhauled?
+
+Use the OEM interval, plant experience, operating hours, water chemistry, condition-monitoring trends, and outage strategy. Condition-based decisions are preferable to a generic interval.
+
+#### Which measurements should be retained after overhaul?
+
+Retain as-found and as-left dimensions, clearances, runout, electrical results, NDT reports, balance records, material traceability, and final test documentation.
+`,
+    author: "DEI VOX BCP Overhaul Engineering Team",
+    authorCredentials: "Boiler circulation pump strip inspection, dimensional restoration, assembly, and testing",
+    date: "June 12, 2026",
+    updatedDate: "June 12, 2026",
+    readTime: "8 min read",
+    image: "/images/bcp-vibration-inspection.png",
+    category: "Maintenance",
+  },
+  {
+    id: 7,
+    title: "BCP Can Liner Failure and Repair",
+    slug: "bcp-can-liner-failure-repair",
+    excerpt: "How BCP can liners fail, which tests reveal pinholes and cracks, and what must be controlled during liner repair or replacement.",
+    content: `
+### Direct Answer
+
+A BCP can liner can fail through corrosion, erosion, fatigue, rubbing, manufacturing defects, or damage during dismantling and assembly. Even a small pinhole can expose the stator insulation to process fluid. Repair begins with locating the defect, establishing its cause, checking surrounding material, and deciding whether an engineered local repair or complete liner replacement is appropriate.
+
+### Symptoms and Likely Causes
+
+- Falling insulation resistance or earth-fault trips after stable service.
+- Moisture or process-fluid evidence in the stator area.
+- Local rub marks caused by excessive bearing clearance or rotor contact.
+- Pinhole indications associated with corrosion, inclusions, or fatigue.
+- Distortion, cracked welds, or leakage after thermal cycling.
+
+### Inspection and Diagnostic Process
+
+Start with visual inspection under strong lighting and magnification. Use a suitable leak test and nondestructive examination method approved for the liner material and thickness. Dye penetrant can reveal surface-breaking flaws, while pressure-decay, vacuum, helium, or other sensitive leak methods may be selected by the repair specification. Measure liner geometry and check rotor-to-liner clearance because replacing the leak without correcting rubbing or bearing wear invites repeat failure.
+
+### Repair Options
+
+Localized repair may be possible when the material, defect position, remaining thickness, and approved welding procedure allow it. Extensive corrosion, multiple indications, distortion, or uncertain integrity generally favors replacement. A replacement liner requires controlled material selection, forming, welding, dimensional verification, surface finish, leak testing, and electrical verification after assembly.
+
+For liner inspection within a complete BCP repair scope, visit our [boiler circulation pump repair service page](/boiler-circulation-pump).
+
+### FAQ
+
+#### Can a can-liner pinhole be welded?
+
+Sometimes, but only after engineering review of material, thickness, defect cause, access, and an approved procedure. Replacement is often more reliable when damage is widespread.
+
+#### Why must bearings be checked after liner rubbing?
+
+Excessive bearing clearance or rotor displacement may have caused the contact. Repairing only the liner leaves the root cause unresolved.
+`,
+    author: "DEI VOX Mechanical and Electrical Inspection Team",
+    authorCredentials: "Canned-motor inspection, liner assessment, dimensional control, and leak testing",
+    date: "June 12, 2026",
+    updatedDate: "June 12, 2026",
+    readTime: "6 min read",
+    image: "/images/bcp-liner-bearing-inspection.png",
+    category: "Failure Analysis",
+  },
+  {
+    id: 8,
+    title: "Boiler Pump Repair Cost in India: What Determines the Price?",
+    slug: "boiler-pump-repair-cost-india",
+    excerpt: "Understand the inspection findings, parts, machining, winding work, testing, logistics, and outage constraints that determine boiler pump repair cost in India.",
+    content: `
+### Direct Answer
+
+Boiler pump repair cost in India cannot be quoted accurately from pump power or model alone. The price depends on the as-found condition, repair boundary, replacement parts, machining, winding or liner work, testing requirements, site mobilization, urgency, and documentation. A defensible quotation follows inspection and separates mandatory work from recommended reliability improvements.
+
+### Main Cost Drivers
+
+- Pump type, pressure class, motor design, size, and OEM configuration.
+- Bearing, impeller, shaft, wear-ring, liner, stator, and casing condition.
+- Availability of drawings and genuine or reverse-engineered replacement parts.
+- In-situ machining versus workshop removal and transport.
+- Electrical rewind, insulation system, cable, and test requirements.
+- NDT, balancing, pressure testing, performance testing, and third-party inspection.
+- Emergency mobilization, outage duration, crane access, and site permits.
+
+### Inspection and Quotation Process
+
+Provide the nameplate, drawings, operating history, failure symptoms, photographs, recent vibration and electrical readings, and required completion date. A preliminary budget can then define likely scenarios. The final repair scope should follow dismantling and a joint inspection report listing as-found measurements, rejected parts, repair methods, lead times, and exclusions.
+
+### Repair Options and Cost Control
+
+Compare repair with replacement using outage risk, remaining casing life, parts availability, energy performance, and future support. Cost can often be controlled by planning inspections before the outage, holding critical spares, approving material alternatives in advance, and separating immediate restoration from optional upgrades. The lowest initial quote is not necessarily the lowest lifecycle cost when testing, tolerances, or root-cause correction are omitted.
+
+Request a condition-based scope through our [boiler circulation pump repair services in India](/boiler-circulation-pump).
+
+### FAQ
+
+#### Can DEI VOX give a fixed price before dismantling?
+
+A budget range may be possible from good records, but concealed damage cannot be priced reliably until inspection. A staged quotation provides better technical and commercial control.
+
+#### What information produces a faster quotation?
+
+Send pump identification, drawings, operating data, failure history, photographs, required tests, delivery location, and outage deadline.
+`,
+    author: "DEI VOX Projects and Engineering Team",
+    authorCredentials: "Industrial pump inspection, repair scoping, project planning, and technical-commercial estimation",
+    date: "June 12, 2026",
+    updatedDate: "June 12, 2026",
+    readTime: "6 min read",
+    image: "/images/pump_rebuild.png",
+    category: "Planning",
+  },
+  {
+    id: 9,
+    title: "BCP Bearing Failure: Diagnosis and Prevention",
+    slug: "bcp-bearing-failure-diagnosis-prevention",
+    excerpt: "Diagnose BCP sleeve and thrust-bearing distress using vibration, temperature, clearance, surface condition, water quality, and rotor inspection.",
+    content: `
+### Direct Answer
+
+BCP bearing failure is commonly driven by contamination, inadequate cooling or lubrication flow, poor water chemistry, excessive thrust, misalignment, rotor imbalance, wrong clearance, or damage elsewhere in the rotating assembly. Prevention requires finding the cause of wear rather than simply installing a new bearing.
+
+### Symptoms and Likely Causes
+
+- Increasing vibration, especially with load or temperature.
+- Rising bearing or motor temperature.
+- Increased axial movement or unstable rotor position.
+- Scored, polished, cracked, chipped, or unevenly worn bearing surfaces.
+- Metallic or carbon debris in strainers and cooling passages.
+- Rotor-to-liner rub marks or changing motor current.
+
+### Inspection and Diagnostic Process
+
+Review vibration, temperature, current, flow, differential pressure, starts, trips, and water-chemistry history. During dismantling, measure sleeve-bearing clearance, thrust float, shaft journal size, roundness, runout, and surface finish using calibrated instruments. Map wear around the bearing rather than recording only one diameter. Inspect cooling passages, filters, deposits, impeller condition, rotor balance, and liner clearance.
+
+For example, uniform increased clearance may indicate normal wear or abrasive contamination, while localized wear can suggest misalignment, shaft runout, distortion, or hydraulic loading. The applicable OEM tolerances and material combination must govern acceptance.
+
+### Repair and Prevention Options
+
+- Replace damaged bearings with verified material and dimensions.
+- Restore or replace scored journals and thrust surfaces.
+- Clean cooling circuits and correct flow restrictions.
+- Control water chemistry and contamination sources.
+- Correct rotor balance, runout, alignment, and hydraulic operating conditions.
+- Establish repeatable vibration, temperature, and current baselines after commissioning.
+
+For root-cause inspection and overhaul, see our [boiler circulation pump repair services in India](/boiler-circulation-pump).
+
+### FAQ
+
+#### Can a worn BCP bearing be reused if vibration is acceptable?
+
+Only if measured condition meets the approved criteria. Acceptable overall vibration does not override excessive clearance, cracking, material loss, or poor surface condition.
+
+#### Why do replacement bearings sometimes fail quickly?
+
+Repeat failures usually indicate an unresolved cause such as contamination, blocked cooling flow, incorrect clearance, shaft damage, misalignment, or abnormal hydraulic thrust.
+`,
+    author: "DEI VOX Rotating Equipment Engineering Team",
+    authorCredentials: "BCP bearing inspection, dimensional metrology, rotor assessment, and failure analysis",
+    date: "June 12, 2026",
+    updatedDate: "June 12, 2026",
+    readTime: "7 min read",
+    image: "/images/bcp-liner-bearing-inspection.png",
+    category: "Reliability",
   }
 ];

@@ -15,16 +15,13 @@ const NAV_LINKS = {
   Core: [
     { label: "Insitu Machining", href: "/services#insitu-machining" },
     { label: "BCP Overhauling", href: "/boiler-circulation-pump" },
-    { label: "BWCP Repair", href: "/boiler-water-circulation-pump" },
-    { label: "BCP Maintenance", href: "/bcp-pump" },
+    { label: "BCP Repair India", href: "/boiler-circulation-pump" },
     { label: "Motor Rewinding", href: "/services#motor-rewinding" },
     { label: "Reverse Engineering", href: "/services#reverse-engineering" },
     { label: "Submersible Repair", href: "/submersible-pump-repair" },
   ],
   Infrastructure: [
     { label: "Boiler Feed Pump", href: "/boiler-circulation-pump" },
-    { label: "CW Pump", href: "/boiler-water-circulation-pump" },
-    { label: "CEP Pump", href: "/bcp-pump" },
     { label: "Submersible Pump", href: "/submersible-pump-repair" },
   ],
 };
