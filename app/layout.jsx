@@ -14,15 +14,15 @@ const SITE_URL = "https://deivoxbcp.com";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
-    template: "%s | DEI VOX India",
+    default: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    template: "%s | DEI VOX PVT. LTD.",
   },
   description:
-    "DEI VOX India: Leading specialists in Boiler Circulation Pump (BCP) repair, maintenance & overhauling. ISO certified experts for BCP & Boiler Water pumps.",
+    "DEI VOX PVT. LTD.: Leading specialists in Boiler Circulation Pump (BCP) repair, maintenance & overhauling. ISO certified experts for BCP & Boiler Water pumps.",
   keywords: [
     "DEI VOX",
     "DEI VOX Company",
-    "DEI VOX India",
+    "DEI VOX PVT. LTD.",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
@@ -42,9 +42,9 @@ export const metadata = {
     "Gurugram industrial services",
     "Bengaluru industrial services",
   ],
-  authors: [{ name: "DEI VOX India Pvt. Ltd.", url: SITE_URL }],
-  creator: "DEI VOX India Pvt. Ltd.",
-  publisher: "DEI VOX India Pvt. Ltd.",
+  authors: [{ name: "DEI VOX PVT. LTD.", url: SITE_URL }],
+  creator: "DEI VOX PVT. LTD.",
+  publisher: "DEI VOX PVT. LTD.",
   icons: {
     icon: "/Logo1.png",
     apple: "/Logo1.png",
@@ -72,8 +72,8 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    siteName: "DEI VOX India",
-    title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
+    siteName: "DEI VOX PVT. LTD.",
+    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
     description:
       "India's leading BCP & Boiler Water Circulation Pump experts. Repair, overhauling, motor rewinding, insitu machining & spare parts. ISO certified. Available 24/7.",
     images: [
@@ -81,13 +81,13 @@ export const metadata = {
         url: `${SITE_URL}/images/hero_industrial.png`,
         width: 1200,
         height: 630,
-        alt: "DEI VOX India — Boiler Circulation Pump Specialists",
+        alt: "DEI VOX PVT. LTD. — Boiler Circulation Pump Specialists",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
+    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
     description:
       "Boiler Circulation Pump repair, overhauling, motor rewinding & more. ISO certified. 24/7 support across India.",
     images: [`${SITE_URL}/images/hero_industrial.png`],
@@ -103,14 +103,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "DEI VOX India Pvt. Ltd.",
+      name: "DEI VOX PVT. LTD.",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/images/Logo.png`,
       },
       description:
-        "DEI VOX India Pvt. Ltd. is India's leading Boiler Circulation Pump (BCP) specialist providing repair, overhauling, motor rewinding, insitu machining, spare parts supply and BCP consultancy services.",
+        "DEI VOX PVT. LTD. is India's leading Boiler Circulation Pump (BCP) specialist providing repair, overhauling, motor rewinding, insitu machining, spare parts supply and BCP consultancy services.",
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -135,7 +135,7 @@ const jsonLd = {
     {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#localbusiness`,
-      name: "DEI VOX India Pvt. Ltd.",
+      name: "DEI VOX PVT. LTD.",
       image: `${SITE_URL}/images/hero_industrial.png`,
       url: SITE_URL,
       telephone: "+91-9886424770",
@@ -177,7 +177,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "DEI VOX India",
+      name: "DEI VOX PVT. LTD.",
       description: "India's BCP & Boiler Water Circulation Pump specialists",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en-IN",

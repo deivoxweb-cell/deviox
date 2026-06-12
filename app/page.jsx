@@ -6,12 +6,12 @@ import ClientSeries from "@/src/components/ClientSeries";
 import SeoContentSection from "@/src/components/SeoContentSection";
 
 export const metadata = {
-  title: "DEI VOX India | BCP & Boiler Circulation Pump Specialists",
+  title: "DEI VOX PVT. LTD. | Boiler Circulation Pump & BCP Repair Specialists",
   description:
     "India's leading specialists in Boiler Circulation Pump (BCP) & Boiler Water Circulation Pump repair, overhauling and spare parts. ISO certified experts.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "DEI VOX India | BCP & Boiler Circulation Pump Specialists",
+    title: "DEI VOX PVT. LTD. | Boiler Circulation Pump & BCP Repair Specialists",
     description:
       "India's leading company for Boiler Circulation Pump (BCP) & Boiler Water Circulation Pump maintenance, repair, overhauling and spare parts. ISO certified.",
     url: "https://deivoxbcp.com",
@@ -20,10 +20,40 @@ export const metadata = {
         url: "https://deivoxbcp.com/images/hero_industrial.png",
         width: 1200,
         height: 630,
-        alt: "DEI VOX India — Boiler Circulation Pump Specialists",
+        alt: "DEI VOX PVT. LTD. — Boiler Circulation Pump Specialists",
       },
     ],
   },
+};
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://deivoxbcp.com/#localbusiness",
+  name: "DEI VOX PVT. LTD.",
+  alternateName: [
+    "DEI VOX India",
+    "DEI VOX India Private Limited",
+    "DEI VOX Expert Services"
+  ],
+  url: "https://deivoxbcp.com",
+  logo: "https://deivoxbcp.com/logo.png",
+  image: "https://deivoxbcp.com/images/hero_industrial.png",
+  description:
+    "DEI VOX PVT. LTD. specializes in Boiler Circulation Pump repair, BCP overhauling, boiler water circulation pump maintenance, motor rewinding, and industrial pump services.",
+  telephone: "+91XXXXXXXXXX",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bommasandra Industrial Area",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560099",
+    addressCountry: "IN"
+  },
+  areaServed: "India",
+  sameAs: [
+    "https://www.indiamart.com/dei-vox-expert-services/"
+  ]
 };
 
 const homepageSchema = {
@@ -32,7 +62,7 @@ const homepageSchema = {
   "name": "Boiler Circulation Pump (BCP) Repair & Overhauling",
   "provider": {
     "@type": "Organization",
-    "name": "DEI VOX India Pvt. Ltd.",
+    "name": "DEI VOX PVT. LTD.",
     "url": "https://deivoxbcp.com"
   },
   "areaServed": "India",
@@ -87,7 +117,9 @@ export default function Home() {
     <div className="flex flex-col bg-primary selection:bg-accent selection:text-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([homepageSchema, faqSchema]) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([businessSchema, homepageSchema, faqSchema]),
+        }}
       />
       <Hero />
       <AboutSection />

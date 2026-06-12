@@ -160,7 +160,7 @@ export default function ISOCertificatePage() {
                 Verified<br /><span className="text-accent">Standards.</span>
               </h2>
               <p className="text-white/30 text-base sm:text-lg font-medium leading-relaxed">
-                DEI VOX India maintains the highest international standards in Quality Management and Safety.
+                DEI VOX PVT. LTD. maintains the highest international standards in Quality Management and Safety.
               </p>
            </div>
            <Link href="/contact" className="inline-block">
