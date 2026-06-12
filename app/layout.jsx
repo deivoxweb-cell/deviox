@@ -14,15 +14,15 @@ const SITE_URL = "https://deivoxbcp.com";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
-    template: "%s | DEI VOX PVT. LTD.",
+    default: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
+    template: "%s | DEI VOX India",
   },
   description:
-    "DEI VOX PVT. LTD.: Leading specialists in Boiler Circulation Pump (BCP) repair, maintenance & overhauling. ISO certified experts for BCP & Boiler Water pumps.",
+    "DEI VOX India: Leading specialists in Boiler Circulation Pump (BCP) repair, maintenance & overhauling. ISO certified experts for BCP & Boiler Water pumps.",
   keywords: [
     "DEI VOX",
     "DEI VOX Company",
-    "DEI VOX PVT. LTD.",
+    "DEI VOX India",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
@@ -72,8 +72,8 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    siteName: "DEI VOX PVT. LTD.",
-    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    siteName: "DEI VOX India",
+    title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
     description:
       "India's leading BCP & Boiler Water Circulation Pump experts. Repair, overhauling, motor rewinding, insitu machining & spare parts. ISO certified. Available 24/7.",
     images: [
@@ -81,13 +81,13 @@ export const metadata = {
         url: `${SITE_URL}/images/hero_industrial.png`,
         width: 1200,
         height: 630,
-        alt: "DEI VOX PVT. LTD. — Boiler Circulation Pump Specialists",
+        alt: "DEI VOX India — Boiler Circulation Pump Specialists",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
     description:
       "Boiler Circulation Pump repair, overhauling, motor rewinding & more. ISO certified. 24/7 support across India.",
     images: [`${SITE_URL}/images/hero_industrial.png`],

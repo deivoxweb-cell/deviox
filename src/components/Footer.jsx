@@ -125,7 +125,7 @@ const Footer = () => {
           <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex flex-col gap-2">
               <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">
-                © 2026 DEI VOX INDIA PVT. LTD. ALL RIGHTS RESERVED.
+                © 2026 DEI VOX PVT. LTD. ALL RIGHTS RESERVED.
               </p>
               <div className="flex items-center gap-6">
                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-accent">

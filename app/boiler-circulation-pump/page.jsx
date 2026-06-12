@@ -27,7 +27,7 @@ export const metadata = {
         url: "https://deivoxbcp.com/images/bcp_overhauling.png",
         width: 1200,
         height: 630,
-        alt: "Boiler Circulation Pump (BCP) Specialists — DEI VOX PVT. LTD.",
+        alt: "Boiler Circulation Pump (BCP) Specialists — DEI VOX India",
       },
     ],
   },
@@ -52,7 +52,7 @@ const jsonLd = {
       name: "Boiler Circulation Pump Repair India",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX PVT. LTD.",
+        name: "DEI VOX India",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Boiler Circulation Pump Repair and Overhauling",
@@ -85,7 +85,7 @@ const jsonLd = {
           name: "Can DEI VOX repair BCPs from all major manufacturers?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. DEI VOX PVT. LTD. has extensive experience overhauling BCPs from all major OEM manufacturers including KSB, Sulzer, Weir, BHEL, and imported units. Our reverse engineering capability also enables us to produce hard-to-source spare parts for legacy pump models.",
+            text: "Yes. DEI VOX India has extensive experience overhauling BCPs from all major OEM manufacturers including KSB, Sulzer, Weir, BHEL, and imported units. Our reverse engineering capability also enables us to produce hard-to-source spare parts for legacy pump models.",
           },
         },
       ],
@@ -114,7 +114,7 @@ export default function BoilerCirculationPumpPage() {
 
         {/* Intro */}
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEI VOX PVT. LTD. is one of India's foremost specialists in{" "}
+          DEI VOX India is one of India's foremost specialists in{" "}
           <strong>boiler circulation pump repair in India</strong>, including BCP maintenance and
           overhauling. With a dedicated engineering team and ISO-certified processes, we deliver solutions for thermal power
           plants, co-generation facilities, process industries, and captive power installations across
@@ -176,10 +176,10 @@ export default function BoilerCirculationPumpPage() {
 
         {/* Section 4 */}
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          DEI VOX PVT. LTD.: BCP Specialist Capabilities
+          DEI VOX India: BCP Specialist Capabilities
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
-          DEI VOX PVT. LTD. has developed a comprehensive suite of services around the Boiler Circulation
+          DEI VOX India has developed a comprehensive suite of services around the Boiler Circulation
           Pump lifecycle. Our capability is built on direct field experience across multiple plant
           types and pump configurations, combined with a precision engineering workshop for component
           restoration.

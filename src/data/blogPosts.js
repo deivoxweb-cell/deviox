@@ -50,7 +50,7 @@ To achieve the design lifetime of **18,000 to 25,000 operating hours** between m
 - **Water Quality Controls:** Maintaining oxygen scavenging, pH levels, and silica limits within strict boiler water limits to minimize magnetite formation.
 - **Scheduled Mid-Life Inspections:** Pulling the motor unit during planned unit outages to check bearing clearances, thrust disc wear, and can liner integrity.
 
-DEI VOX PVT. LTD. specializes in the diagnostic assessment, [motor rewinding](/services#motor-rewinding), can liner fabrication, and full-load testing of BCP units. Partnering with a dedicated service specialist ensures that your critical boiler assets achieve maximum reliability and zero unplanned downtime.
+DEI VOX India specializes in the diagnostic assessment, [motor rewinding](/services#motor-rewinding), can liner fabrication, and full-load testing of BCP units. Partnering with a dedicated service specialist ensures that your critical boiler assets achieve maximum reliability and zero unplanned downtime.
 `,
     author: "Engineering Team, DEI VOX",
     date: "May 15, 2026",
@@ -112,7 +112,7 @@ The principal benefit of on-site machining is **time compression**. By eliminati
 
 ### Conclusion
 
-At DEI VOX PVT. LTD., our dedicated in-situ machining division is equipped with state-of-the-art portable machine tools and highly trained machinists. We mobilize quickly to power plants across India, restoring pump casings and large industrial flanges to original tolerances directly on-site.
+At DEI VOX India, our dedicated in-situ machining division is equipped with state-of-the-art portable machine tools and highly trained machinists. We mobilize quickly to power plants across India, restoring pump casings and large industrial flanges to original tolerances directly on-site.
 `,
     author: "Machining Specialists, DEI VOX",
     date: "April 28, 2026",
@@ -172,7 +172,7 @@ To guarantee a reliable rewind, the motor must undergo rigorous electrical diagn
 
 Submersible motor rewinding is a highly skilled craft that cannot be cut-short. Using the wrong class of wire, low-grade slot materials, or failing to perform wet immersion tests invariably results in premature motor failure within weeks of installation.
 
-DEI VOX PVT. LTD. operates a dedicated, ISO-certified clean winding shop equipped with specialized tooling for high-power [submersible motor rewinding](/services#motor-rewinding). Each motor undergoes our strict 24-hour wet-submersion testing protocol before final assembly, giving plant operators complete confidence in the longevity of their repaired assets.
+DEI VOX India operates a dedicated, ISO-certified clean winding shop equipped with specialized tooling for high-power [submersible motor rewinding](/services#motor-rewinding). Each motor undergoes our strict 24-hour wet-submersion testing protocol before final assembly, giving plant operators complete confidence in the longevity of their repaired assets.
 `,
     author: "Electrical Engineering, DEI VOX",
     date: "March 12, 2026",

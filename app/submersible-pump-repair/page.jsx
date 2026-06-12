@@ -1,9 +1,9 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX PVT. LTD.",
+  title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX India",
   description:
-    "DEI VOX PVT. LTD. provides specialist repair, upgrading, motor rewinding, and maintenance services for industrial submersible pumping motor units. ISO 9001:2015 certified. Pan-India service.",
+    "DEI VOX India provides specialist repair, upgrading, motor rewinding, and maintenance services for industrial submersible pumping motor units. ISO 9001:2015 certified. Pan-India service.",
   keywords: [
     "submersible pump repair India",
     "submersible pumping motor unit",
@@ -18,9 +18,9 @@ export const metadata = {
   ],
   alternates: { canonical: "/submersible-pump-repair" },
   openGraph: {
-    title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX PVT. LTD.",
+    title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX India",
     description:
-      "Specialist repair, upgrading and motor rewinding of industrial submersible pumping motor units by DEI VOX PVT. LTD.. ISO certified. 24/7 emergency response.",
+      "Specialist repair, upgrading and motor rewinding of industrial submersible pumping motor units by DEI VOX India. ISO certified. 24/7 emergency response.",
     url: "https://deivoxbcp.com/submersible-pump-repair",
   },
 };
@@ -44,7 +44,7 @@ const jsonLd = {
       name: "Submersible Pump Repair, Upgrading & Motor Rewinding",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX PVT. LTD.",
+        name: "DEI VOX India",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Submersible Pump Motor Service",
@@ -61,7 +61,7 @@ const jsonLd = {
           name: "What types of submersible pumps does DEI VOX repair?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "DEI VOX PVT. LTD. repairs and overhauls industrial submersible pumping motor units used in dewatering, process water supply, cooling water intake, condensate extraction, and boiler/turbine auxiliary systems. We work on units from all major manufacturers and can reverse-engineer obsolete components.",
+            text: "DEI VOX India repairs and overhauls industrial submersible pumping motor units used in dewatering, process water supply, cooling water intake, condensate extraction, and boiler/turbine auxiliary systems. We work on units from all major manufacturers and can reverse-engineer obsolete components.",
           },
         },
         {
@@ -104,7 +104,7 @@ export default function SubmersiblePumpRepairPage() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEI VOX PVT. LTD. provides comprehensive repair, upgrading, and motor rewinding
+          DEI VOX India provides comprehensive repair, upgrading, and motor rewinding
           services for industrial <strong>submersible pumping motor units</strong> across India.
           Combining BCP-grade engineering discipline with a dedicated submersible pump service
           capability, DEI VOX delivers reliable, ISO-certified solutions for plant operators who

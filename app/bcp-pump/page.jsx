@@ -1,9 +1,9 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX PVT. LTD.",
+  title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX India",
   description:
-    "DEI VOX PVT. LTD. is a dedicated BCP (Boiler Circulation Pump) specialist. Overhauling, repair, motor rewinding, reverse engineering and spare parts for BCPs across India. ISO certified.",
+    "DEI VOX India is a dedicated BCP (Boiler Circulation Pump) specialist. Overhauling, repair, motor rewinding, reverse engineering and spare parts for BCPs across India. ISO certified.",
   keywords: [
     "BCP",
     "BCP pump",
@@ -19,7 +19,7 @@ export const metadata = {
   ],
   alternates: { canonical: "/bcp-pump" },
   openGraph: {
-    title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX PVT. LTD.",
+    title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX India",
     description:
       "India's leading BCP pump specialists. Expert overhauling, repair, rewinding, reverse engineering and 24/7 emergency service. ISO 9001:2015 certified.",
     url: "https://deivoxbcp.com/bcp-pump",
@@ -47,7 +47,7 @@ const jsonLd = {
       name: "BCP Pump Overhauling, Repair & Maintenance",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX PVT. LTD.",
+        name: "DEI VOX India",
         url: "https://deivoxbcp.com",
       },
       serviceType: "BCP Boiler Circulation Pump Service",
@@ -80,7 +80,7 @@ const jsonLd = {
           name: "Can DEI VOX supply BCP spare parts without doing a full overhaul?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. DEI VOX PVT. LTD. maintains a stock of common BCP spare parts and can also manufacture custom components through reverse engineering for obsolete or hard-to-source pump models. We supply impellers, wear rings, bearings, can liners, and mechanical seal components as stand-alone supply.",
+            text: "Yes. DEI VOX India maintains a stock of common BCP spare parts and can also manufacture custom components through reverse engineering for obsolete or hard-to-source pump models. We supply impellers, wear rings, bearings, can liners, and mechanical seal components as stand-alone supply.",
           },
         },
       ],
@@ -108,7 +108,7 @@ export default function BcpPumpPage() {
 
         <p className="text-black/60 text-lg font-medium leading-relaxed mb-10">
           The acronym <strong>BCP</strong> — Boiler Circulation Pump — represents one of the most
-          demanding engineering challenges in the power generation industry. DEI VOX PVT. LTD.
+          demanding engineering challenges in the power generation industry. DEI VOX India
           has built its entire engineering identity around BCP expertise.
         </p>
 

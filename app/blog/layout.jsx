@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Blog & Engineering Insights | DEI VOX PVT. LTD.",
+  title: "Blog & Engineering Insights | DEI VOX India",
   description:
-    "Explore the latest articles, guides, and engineering insights on Boiler Circulation Pumps (BCP), Boiler Water Circulation Pumps, on-site insitu machining, and industrial motor rewinding from DEI VOX PVT. LTD..",
+    "Explore the latest articles, guides, and engineering insights on Boiler Circulation Pumps (BCP), Boiler Water Circulation Pumps, on-site insitu machining, and industrial motor rewinding from DEI VOX India.",
   alternates: { canonical: "/blog" },
   keywords: [
     "DEI VOX Company",
@@ -15,9 +15,9 @@ export const metadata = {
     "submersible motor rewinding tech notes",
   ],
   openGraph: {
-    title: "Blog & Engineering Insights | DEI VOX PVT. LTD.",
+    title: "Blog & Engineering Insights | DEI VOX India",
     description:
-      "Guides, technical articles, and insights on Boiler Circulation Pumps, motor rewinding, and in-situ machining by the experts at DEI VOX PVT. LTD..",
+      "Guides, technical articles, and insights on Boiler Circulation Pumps, motor rewinding, and in-situ machining by the experts at DEI VOX India.",
     url: "https://deivoxbcp.com/blog",
   },
 };

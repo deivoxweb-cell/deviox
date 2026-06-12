@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }) {
   return (
     <>
       {/* React 19 Head Hoisting */}
-      <title>{`${post.title} — DEI VOX PVT. LTD.`}</title>
+      <title>{`${post.title} — DEI VOX India`}</title>
       <meta name="description" content={post.excerpt} />
 
       <SeoPageLayout

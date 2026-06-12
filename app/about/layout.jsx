@@ -1,7 +1,7 @@
 export const metadata = {
   title: "About DEI VOX | BCP & Boiler Circulation Pump Company India",
   description:
-    "Learn about DEI VOX PVT. LTD. — India's pioneering Boiler Circulation Pump (BCP) company. We specialize in boiler water circulation pump repair, overhauling, motor rewinding, and BCP consultancy. ISO 9001, 14001 & 45001 certified.",
+    "Learn about DEI VOX India — India's pioneering Boiler Circulation Pump (BCP) company. We specialize in boiler water circulation pump repair, overhauling, motor rewinding, and BCP consultancy. ISO 9001, 14001 & 45001 certified.",
   alternates: { canonical: "/about" },
   keywords: [
     "DEI VOX",
@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: "About DEI VOX | BCP Boiler Circulation Pump Company India",
     description:
-      "DEI VOX PVT. LTD. — India's leading Boiler Circulation Pump (BCP) specialists. Trusted experts in BCP maintenance, repair and consultancy.",
+      "DEI VOX India — India's leading Boiler Circulation Pump (BCP) specialists. Trusted experts in BCP maintenance, repair and consultancy.",
     url: "https://deivoxbcp.com/about",
   },
 };

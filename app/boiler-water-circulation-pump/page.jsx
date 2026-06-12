@@ -1,9 +1,9 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX PVT. LTD.",
+  title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX India",
   description:
-    "Specialised repair, overhauling, and maintenance of Boiler Water Circulation Pumps (BWCP) by DEI VOX PVT. LTD.. Serving thermal power plants and industrial boilers across India. ISO 9001:2015 certified.",
+    "Specialised repair, overhauling, and maintenance of Boiler Water Circulation Pumps (BWCP) by DEI VOX India. Serving thermal power plants and industrial boilers across India. ISO 9001:2015 certified.",
   keywords: [
     "Boiler Water Circulation Pump",
     "BWCP repair India",
@@ -18,7 +18,7 @@ export const metadata = {
   ],
   alternates: { canonical: "/boiler-water-circulation-pump" },
   openGraph: {
-    title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX PVT. LTD.",
+    title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX India",
     description:
       "India's trusted Boiler Water Circulation Pump specialists. Expert repair, overhauling, rewinding and spare parts. ISO certified. 24/7 support across India.",
     url: "https://deivoxbcp.com/boiler-water-circulation-pump",
@@ -46,7 +46,7 @@ const jsonLd = {
       name: "Boiler Water Circulation Pump Repair & Overhauling",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX PVT. LTD.",
+        name: "DEI VOX India",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Boiler Water Circulation Pump Maintenance",
@@ -79,7 +79,7 @@ const jsonLd = {
           name: "How quickly can DEI VOX respond to a BWCP emergency?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "DEI VOX PVT. LTD. maintains 24/7 emergency response capability. Our engineers can be mobilised and on-site within 24 to 48 hours for most locations in India. We maintain a stock of critical spare components for common BCP/BWCP configurations to minimise plant downtime.",
+            text: "DEI VOX India maintains 24/7 emergency response capability. Our engineers can be mobilised and on-site within 24 to 48 hours for most locations in India. We maintain a stock of critical spare components for common BCP/BWCP configurations to minimise plant downtime.",
           },
         },
       ],
@@ -106,7 +106,7 @@ export default function BoilerWaterCirculationPumpPage() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEI VOX PVT. LTD. provides specialist repair, overhauling, and maintenance services for{" "}
+          DEI VOX India provides specialist repair, overhauling, and maintenance services for{" "}
           <strong>Boiler Water Circulation Pumps (BWCP)</strong> across India's power generation
           and industrial sectors. Our engineering team combines deep field experience with
           ISO-certified workshop processes to restore pump performance to OEM specification.
@@ -240,7 +240,7 @@ export default function BoilerWaterCirculationPumpPage() {
         </ul>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why DEI VOX PVT. LTD.
+          Why DEI VOX India
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">
           <li>ISO 9001:2015, 14001:2015 &amp; 45001:2018 certified quality management</li>

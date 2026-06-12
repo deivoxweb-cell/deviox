@@ -6,21 +6,21 @@ import ClientSeries from "@/src/components/ClientSeries";
 import SeoContentSection from "@/src/components/SeoContentSection";
 
 export const metadata = {
-  title: "DEI VOX PVT. LTD. | Boiler Circulation Pump & BCP Repair Specialists",
+  title: "DEI VOX India | Boiler Circulation Pump Repair & BCP Specialists",
   description:
-    "India's leading specialists in Boiler Circulation Pump (BCP) & Boiler Water Circulation Pump repair, overhauling and spare parts. ISO certified experts.",
+    "DEI VOX India is a leading Boiler Circulation Pump (BCP) repair, overhauling, motor rewinding and industrial pump maintenance company serving power plants across India.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "DEI VOX PVT. LTD. | Boiler Circulation Pump & BCP Repair Specialists",
+    title: "DEI VOX India | Boiler Circulation Pump Repair & BCP Specialists",
     description:
-      "India's leading company for Boiler Circulation Pump (BCP) & Boiler Water Circulation Pump maintenance, repair, overhauling and spare parts. ISO certified.",
+      "DEI VOX India is a leading Boiler Circulation Pump (BCP) repair, overhauling, motor rewinding and industrial pump maintenance company serving power plants across India.",
     url: "https://deivoxbcp.com",
     images: [
       {
         url: "https://deivoxbcp.com/images/hero_industrial.png",
         width: 1200,
         height: 630,
-        alt: "DEI VOX PVT. LTD. — Boiler Circulation Pump Specialists",
+        alt: "DEI VOX India — Boiler Circulation Pump Specialists",
       },
     ],
   },
@@ -33,8 +33,8 @@ const businessSchema = {
   name: "DEI VOX PVT. LTD.",
   alternateName: [
     "DEI VOX India",
-    "DEI VOX India Private Limited",
-    "DEI VOX Expert Services"
+    "DEI VOX",
+    "DEI VOX India Private Limited"
   ],
   url: "https://deivoxbcp.com",
   logo: "https://deivoxbcp.com/logo.png",
