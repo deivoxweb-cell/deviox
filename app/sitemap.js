@@ -3,8 +3,8 @@ import { blogPosts } from "@/src/data/blogPosts";
 const SITE_URL = "https://deivoxbcp.com";
 
 const routes = [
-  "", "/about", "/bcp-pump", "/blog", "/boiler-circulation-pump",
-  "/boiler-water-circulation-pump", "/composite-material", "/contact",
+  "", "/about", "/blog", "/boiler-circulation-pump",
+  "/composite-material", "/contact",
   "/iso-certificate", "/power-generation", "/services",
   "/submersible-pump-repair",
 ];

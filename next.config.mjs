@@ -17,6 +17,20 @@ const cspHeader = `
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: "/bcp-pump",
+        destination: "/boiler-circulation-pump",
+        permanent: true,
+      },
+      {
+        source: "/boiler-water-circulation-pump",
+        destination: "/boiler-circulation-pump",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },
