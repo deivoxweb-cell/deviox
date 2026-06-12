@@ -127,7 +127,10 @@ const jsonLd = {
         },
       ],
       email: "sales@deivoxbcp.com",
-      sameAs: ["https://deivoxbcp.com"],
+      sameAs: [
+        "https://www.facebook.com/deivoxbcp",
+        "https://www.linkedin.com/company/deivoxbcp",
+      ],
     },
     {
       "@type": "LocalBusiness",
@@ -178,15 +181,6 @@ const jsonLd = {
       description: "India's BCP & Boiler Water Circulation Pump specialists",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en-IN",
-      potentialAction: {
-        "@type": "SearchAction",
-        "target": `${SITE_URL}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      },
-      sameAs: [
-        "https://www.facebook.com/deivoxbcp",
-        "https://www.linkedin.com/company/deivoxbcp"
-      ]
     },
   ],
 };

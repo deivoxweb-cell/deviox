@@ -1,43 +1,37 @@
-"use client";
-import React, { use, useState, useEffect } from "react";
+import React from "react";
 import { blogPosts } from "@/src/data/blogPosts";
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-export default function BlogPostPage({ params }) {
-  const { slug } = use(params);
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
+const SITE_URL = "https://deivoxbcp.com";
 
-  useEffect(() => {
-    // 1. Search in static blog posts
-    let foundPost = blogPosts.find((p) => p.slug === slug);
-    
-    // 2. Search in localStorage
-    if (!foundPost) {
-      try {
-        const localPostsRaw = localStorage.getItem("deivox_blog_posts");
-        if (localPostsRaw) {
-          const localPosts = JSON.parse(localPostsRaw);
-          foundPost = localPosts.find((p) => p.slug === slug);
-        }
-      } catch (e) {
-        console.error("Failed to read local storage posts", e);
-      }
-    }
-    
-    setPost(foundPost || null);
-    setLoading(false);
-  }, [slug]);
+export function generateStaticParams() {
+  return blogPosts.map(({ slug }) => ({ slug }));
+}
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#F5F5F5] flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-accent border-t-black rounded-full animate-spin" />
-      </div>
-    );
-  }
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((item) => item.slug === slug);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      images: post.image ? [{ url: post.image }] : undefined,
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((item) => item.slug === slug);
 
   if (!post) {
     notFound();
