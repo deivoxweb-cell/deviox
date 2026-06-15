@@ -6,7 +6,7 @@ import ClientSeries from "@/src/components/ClientSeries";
 import SeoContentSection from "@/src/components/SeoContentSection";
 
 export const metadata = {
-  title: "DEI VOX India | Boiler Circulation Pump Repair & BCP Specialists",
+  title: "DEI VOX PVT.LTD| Boiler Circulation Pump Repair & BCP Specialists",
   description:
     "DEI VOX India is a leading Boiler Circulation Pump (BCP) repair, overhauling, motor rewinding and industrial pump maintenance company serving power plants across India.",
   alternates: { canonical: "/" },
