@@ -41,7 +41,7 @@ const businessSchema = {
   image: "https://deivoxbcp.com/images/hero_industrial.png",
   description:
     "DEI VOX PVT. LTD. specializes in Boiler Circulation Pump repair, BCP overhauling, boiler water circulation pump maintenance, motor rewinding, and industrial pump services.",
-  telephone: "+91XXXXXXXXXX",
+  telephone: "+91 9886424770",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Bommasandra Industrial Area",
