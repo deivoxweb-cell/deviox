@@ -5,7 +5,6 @@ import Footer from "@/src/components/Footer";
 import Script from "next/script";
 import PageLoader from "@/src/components/PageLoader";
 import WhatsAppChat from "@/src/components/WhatsAppChat";
-import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,33 +13,27 @@ const SITE_URL = "https://deivoxbcp.com";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
-    template: "%s | DEI VOX India",
+    default: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    template: "%s | DEI VOX PVT. LTD.",
   },
   description:
-    "DEI VOX India: Leading specialists in Boiler Circulation Pump (BCP) repair, maintenance & overhauling. ISO certified experts for BCP & Boiler Water pumps.",
+    "DEI VOX PVT. LTD. is a leading Boiler Circulation Pump (BCP) repair, maintenance and overhauling company. Also known as DEI VOX India, we provide industrial pump services across India.",
   keywords: [
     "DEI VOX",
-    "DEI VOX Company",
+    "DEI VOX PVT. LTD.",
     "DEI VOX India",
     "BCP",
     "Boiler Circulation Pump",
-    "Boiler water circulation pump",
     "Boiler Water Circulation Pump",
-    "Boiler circulating pump repair",
+    "Boiler Circulation Pump Repair",
     "BCP overhauling",
     "BCP maintenance",
     "motor rewinding",
     "insitu machining",
+    "industrial pump repair",
     "boiler pump specialists India",
     "boiler pump service India",
-    "industrial pump repair",
-    "spare parts boiler pump",
-    "reverse engineering pump",
     "ISO certified pump service",
-    "submersible pump repair",
-    "Gurugram industrial services",
-    "Bengaluru industrial services",
   ],
   authors: [{ name: "DEI VOX PVT. LTD.", url: SITE_URL }],
   creator: "DEI VOX PVT. LTD.",
@@ -72,24 +65,24 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    siteName: "DEI VOX India",
-    title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
+    siteName: "DEI VOX PVT. LTD.",
+    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
     description:
-      "India's leading BCP & Boiler Water Circulation Pump experts. Repair, overhauling, motor rewinding, insitu machining & spare parts. ISO certified. Available 24/7.",
+      "DEI VOX PVT. LTD. provides BCP repair, Boiler Water Circulation Pump overhauling, motor rewinding, insitu machining and industrial pump services across India.",
     images: [
       {
         url: `${SITE_URL}/images/hero_industrial.png`,
         width: 1200,
         height: 630,
-        alt: "DEI VOX India — Boiler Circulation Pump Specialists",
+        alt: "DEI VOX PVT. LTD. — Boiler Circulation Pump Specialists",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DEI VOX India | BCP Boiler Circulation Pump Specialists",
+    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
     description:
-      "Boiler Circulation Pump repair, overhauling, motor rewinding & more. ISO certified. 24/7 support across India.",
+      "Boiler Circulation Pump repair, BCP overhauling, motor rewinding and industrial pump services across India.",
     images: [`${SITE_URL}/images/hero_industrial.png`],
   },
   verification: {
@@ -104,6 +97,7 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "DEI VOX PVT. LTD.",
+      alternateName: ["DEI VOX India", "DEI VOX", "DEI VOX BCP"],
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
@@ -119,12 +113,6 @@ const jsonLd = {
           areaServed: "IN",
           availableLanguage: ["English", "Hindi"],
         },
-        {
-          "@type": "ContactPoint",
-          telephone: "+91-7428200229",
-          contactType: "customer service",
-          areaServed: "IN",
-        },
       ],
       email: "sales@deivoxbcp.com",
       sameAs: [
@@ -136,6 +124,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#localbusiness`,
       name: "DEI VOX PVT. LTD.",
+      alternateName: ["DEI VOX India", "DEI VOX", "DEI VOX BCP"],
       image: `${SITE_URL}/images/hero_industrial.png`,
       url: SITE_URL,
       telephone: "+91-9886424770",
@@ -166,8 +155,8 @@ const jsonLd = {
       openingHours: "Mo-Sa 09:00-18:00",
       geo: {
         "@type": "GeoCoordinates",
-        "latitude": "28.3973",
-        "longitude": "76.9691"
+        latitude: "28.3973",
+        longitude: "76.9691",
       },
       priceRange: "₹₹",
       currenciesAccepted: "INR",
@@ -178,6 +167,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "DEI VOX PVT. LTD.",
+      alternateName: "DEI VOX India",
       description: "India's BCP & Boiler Water Circulation Pump specialists",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en-IN",
@@ -193,24 +183,27 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
         <script
           id="json-ld-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body 
-        className="min-h-screen flex flex-col bg-white"
+
+      <body
+        className={`${inter.className} min-h-screen flex flex-col bg-white`}
         suppressHydrationWarning
       >
         <div className="grain-overlay"></div>
         <PageLoader />
         <Navbar />
-        <main className="grow">
-          {children}
-        </main>
+
+        <main className="grow">{children}</main>
+
         <Footer />
         <WhatsAppChat />
+
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script
