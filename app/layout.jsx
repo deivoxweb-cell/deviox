@@ -131,10 +131,10 @@ const jsonLd = {
       email: "sales@deivoxbcp.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "002/T S1, Vatika Town Square, Sector 83",
-        addressLocality: "Gurugram",
-        addressRegion: "Haryana",
-        postalCode: "122004",
+        streetAddress: "Bommasandra Industrial Area",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        postalCode: "560099",
         addressCountry: "IN",
       },
       openingHoursSpecification: [
@@ -153,11 +153,6 @@ const jsonLd = {
         },
       ],
       openingHours: "Mo-Sa 09:00-18:00",
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: "28.3973",
-        longitude: "76.9691",
-      },
       priceRange: "₹₹",
       currenciesAccepted: "INR",
       paymentAccepted: "Cash, Bank Transfer, Cheque",
