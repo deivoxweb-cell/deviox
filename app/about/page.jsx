@@ -155,7 +155,14 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-4 sm:mb-12 leading-[0.9]">
               The Trusted<br /><span className="text-black/20">BCP Doctors.</span>
             </h2>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8"> 
+              <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
+  <strong className="text-black">Deivox</strong>, officially known as{" "}
+  <strong className="text-black">DEI VOX PVT. LTD.</strong>, is a trusted{" "}
+  <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
+  overhauling, and industrial pump solutions company serving power plants and
+  industries across India.
+</p>
               <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
                 Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.
               </p>
