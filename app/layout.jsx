@@ -10,22 +10,37 @@ const inter = Inter({ subsets: ["latin"] });
 
 const SITE_URL = "https://deivoxbcp.com";
 
+const BRAND_ALTERNATES = [
+  "Deivox",
+  "deivox",
+  "DEI VOX",
+  "DEI VOX India",
+  "DEI VOX BCP",
+  "DEI VOX Company",
+  "DEI VOX PVT. LTD.",
+];
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    default: "DEI VOX Company | BCP Boiler Circulation Pump Specialists",
     template: "%s | DEI VOX PVT. LTD.",
   },
   description:
-    "DEI VOX PVT. LTD. is a leading Boiler Circulation Pump (BCP) repair, maintenance and overhauling company. Also known as DEI VOX India, we provide industrial pump services across India.",
+    "Deivox, officially known as DEI VOX PVT. LTD., is a leading Boiler Circulation Pump (BCP) repair, maintenance and overhauling company providing Boiler Water Circulation Pump and industrial pump services across India.",
   keywords: [
+    "Deivox",
+    "deivox",
+    "Deivox Company",
     "DEI VOX",
+    "DEI VOX Company",
     "DEI VOX PVT. LTD.",
     "DEI VOX India",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler Water Circulation Pump",
     "Boiler Circulation Pump Repair",
+    "BCP repair",
     "BCP overhauling",
     "BCP maintenance",
     "motor rewinding",
@@ -66,9 +81,9 @@ export const metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: "DEI VOX PVT. LTD.",
-    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    title: "DEI VOX Company | BCP Boiler Circulation Pump Specialists",
     description:
-      "DEI VOX PVT. LTD. provides BCP repair, Boiler Water Circulation Pump overhauling, motor rewinding, insitu machining and industrial pump services across India.",
+      "Deivox, officially known as DEI VOX PVT. LTD., provides BCP repair, Boiler Water Circulation Pump overhauling, motor rewinding, insitu machining and industrial pump services across India.",
     images: [
       {
         url: `${SITE_URL}/images/hero_industrial.png`,
@@ -80,9 +95,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DEI VOX PVT. LTD. | BCP Boiler Circulation Pump Specialists",
+    title: "DEI VOX Company | BCP Boiler Circulation Pump Specialists",
     description:
-      "Boiler Circulation Pump repair, BCP overhauling, motor rewinding and industrial pump services across India.",
+      "Deivox provides Boiler Circulation Pump repair, BCP overhauling, motor rewinding and industrial pump services across India.",
     images: [`${SITE_URL}/images/hero_industrial.png`],
   },
   verification: {
@@ -97,14 +112,14 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "DEI VOX PVT. LTD.",
-      alternateName: ["DEI VOX India", "DEI VOX", "DEI VOX BCP"],
+      alternateName: BRAND_ALTERNATES,
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/images/Logo.png`,
       },
       description:
-        "DEI VOX PVT. LTD. is India's leading Boiler Circulation Pump (BCP) specialist providing repair, overhauling, motor rewinding, insitu machining, spare parts supply and BCP consultancy services.",
+        "Deivox, officially known as DEI VOX PVT. LTD., is India's leading Boiler Circulation Pump (BCP) specialist providing repair, overhauling, motor rewinding, insitu machining, spare parts supply and BCP consultancy services.",
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -124,7 +139,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#localbusiness`,
       name: "DEI VOX PVT. LTD.",
-      alternateName: ["DEI VOX India", "DEI VOX", "DEI VOX BCP"],
+      alternateName: BRAND_ALTERNATES,
       image: `${SITE_URL}/images/hero_industrial.png`,
       url: SITE_URL,
       telephone: "+91-9886424770",
@@ -162,8 +177,9 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "DEI VOX PVT. LTD.",
-      alternateName: "DEI VOX India",
-      description: "India's BCP & Boiler Water Circulation Pump specialists",
+      alternateName: BRAND_ALTERNATES,
+      description:
+        "Deivox, officially known as DEI VOX PVT. LTD., is India's BCP, Boiler Circulation Pump and Boiler Water Circulation Pump specialist.",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en-IN",
     },
