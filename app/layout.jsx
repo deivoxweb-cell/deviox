@@ -23,11 +23,11 @@ const BRAND_ALTERNATES = [
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Boiler Circulation Pump Repair & Overhauling | DEI VOX PVT. LTD.",
-    template: "%s | DEI VOX – BCP Specialists India",
+    default: "BCP Repair & Overhauling Specialists | DEI VOX",
+    template: "%s | DEI VOX BCP Specialists",
   },
   description:
-    "Deivox, officially known as DEI VOX PVT. LTD., is a leading Boiler Circulation Pump (BCP) repair, maintenance and overhauling company providing Boiler Water Circulation Pump and industrial pump services across India.",
+    "DEI VOX (Deivox) is India's leading BCP specialist offering Boiler Circulation Pump repair, overhauling, motor rewinding & insitu machining services.",
   keywords: [
     "deivox",
     "DEI VOX PVT. LTD.",

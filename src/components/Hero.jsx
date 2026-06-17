@@ -114,9 +114,9 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-[2.2rem] sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] text-black leading-[0.9] sm:leading-[0.88] uppercase mb-10"
           >
-            Precision Engineered<br />
-            <span className="text-black/20">Reliability for Critical</span><br />
-            Pump Systems
+            Boiler Circulation<br />
+            <span className="text-black/20">Pump (BCP) Repair &</span><br />
+            Overhauling
           </motion.h1>
 
           <div className="flex flex-col sm:flex-row sm:items-start gap-8 sm:gap-12 mb-12">
