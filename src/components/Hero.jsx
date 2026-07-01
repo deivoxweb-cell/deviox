@@ -92,7 +92,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="w-full px-6 lg:px-16 max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="w-full px-4 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
         {/* ── Left Content ── */}
         <div className="lg:col-span-6">
@@ -174,7 +174,7 @@ const Hero = () => {
         </div>
 
         {/* ── Right Content (Image & Floating Cards) ── */}
-        <div className="lg:col-span-6 relative h-full min-h-0 lg:min-h-[700px] flex flex-col lg:flex-row items-center justify-center lg:justify-end pr-0 lg:pr-12 mt-12 lg:mt-0 gap-8 lg:gap-0">
+        <div className="lg:col-span-6 relative h-full min-h-0 lg:min-h-[700px] flex flex-col lg:flex-row items-center justify-center lg:justify-end mt-12 lg:mt-0 gap-8 lg:gap-0">
 
           {/* Main Visual Image */}
           <motion.div
