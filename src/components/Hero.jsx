@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import {
@@ -55,12 +55,22 @@ const SPEC_DATA = {
 const Hero = () => {
   const [activeTab, setActiveTab] = useState("Mechanical");
   const [isFocused, setIsFocused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-card overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-20">
 
       {/* ── Background Elements ── */}
-      <div className="absolute top-0 right-0 w-[60%] h-full pointer-events-none">
+      <div className="hidden lg:block absolute top-0 right-0 w-[60%] h-full pointer-events-none">
         {/* The Lime Accent Block */}
         <motion.div
           initial={{ x: "100%" }}
@@ -174,16 +184,16 @@ const Hero = () => {
         </div>
 
         {/* ── Right Content (Image & Floating Cards) ── */}
-        <div className="lg:col-span-6 relative h-full min-h-0 lg:min-h-[700px] flex flex-col lg:flex-row items-center justify-center lg:justify-end mt-12 lg:mt-0 gap-8 lg:gap-0">
+        <div className="hidden lg:flex lg:col-span-6 relative h-full lg:min-h-[700px] lg:flex-row items-center justify-end gap-0">
 
           {/* Main Visual Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{
               opacity: 1,
-              scale: isFocused ? 1.05 : 1,
-              x: isFocused ? -50 : 0,
-              rotate: isFocused ? -2 : 0
+              scale: isFocused && !isMobile ? 1.05 : 1,
+              x: isFocused && !isMobile ? -50 : 0,
+              rotate: isFocused && !isMobile ? -2 : 0
             }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             onClick={() => setIsFocused(!isFocused)}
@@ -207,9 +217,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50, y: -50 }}
             animate={{
               opacity: 1,
-              x: isFocused ? 120 : 0,
-              y: isFocused ? -20 : 0,
-              scale: isFocused ? 0.95 : 1
+              x: isFocused && !isMobile ? 120 : 0,
+              y: isFocused && !isMobile ? -20 : 0,
+              scale: isFocused && !isMobile ? 0.95 : 1
             }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative lg:absolute lg:top-10 lg:right-0 bg-white shadow-2xl rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-10 w-full max-w-[340px] sm:max-w-[420px] z-30 border border-black/5 pointer-events-auto"
@@ -292,11 +302,11 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50, y: 50 }}
             animate={{
               opacity: 1,
-              x: isFocused ? 100 : 0,
-              y: isFocused ? 20 : 0
+              x: isFocused && !isMobile ? 100 : 0,
+              y: isFocused && !isMobile ? 20 : 0
             }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative lg:absolute lg:bottom-10 lg:right-4 bg-white shadow-2xl shadow-black/10 rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-8 z-40 border border-black/5 flex items-center gap-4 sm:gap-6 max-w-[280px] sm:max-w-[340px] overflow-hidden group"
+            className="hidden lg:flex lg:absolute lg:bottom-10 lg:right-4 bg-white shadow-2xl shadow-black/10 rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-8 z-40 border border-black/5 items-center gap-4 sm:gap-6 w-full max-w-[340px] overflow-hidden group"
           >
             {/* Subtle shimmer top */}
             <div className="absolute top-0 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
