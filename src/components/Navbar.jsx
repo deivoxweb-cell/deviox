@@ -36,7 +36,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-6 inset-x-0 z-50 flex justify-center px-4">
+    <div className="fixed top-8 inset-x-0 z-50 flex justify-center px-4">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

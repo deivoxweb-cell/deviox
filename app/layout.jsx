@@ -5,6 +5,7 @@ import Footer from "@/src/components/Footer";
 import Script from "next/script";
 import PageLoader from "@/src/components/PageLoader";
 import WhatsAppChat from "@/src/components/WhatsAppChat";
+import TopBar from "@/src/components/TopBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -197,6 +198,7 @@ export default function RootLayout({ children }) {
       >
         <div className="grain-overlay"></div>
         <PageLoader />
+        <TopBar />
         <Navbar />
 
         <main className="grow">{children}</main>
