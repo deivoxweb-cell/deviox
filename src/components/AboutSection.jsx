@@ -29,7 +29,7 @@ const TiltCard = ({ children, className }) => {
 };
 
 const BIG_STATS = [
-  { value: "10+", label: "Years of BCP Expertise", icon: <Award size={16} /> },
+  { value: "20+", label: "Years of BCP Expertise", icon: <Award size={16} /> },
   { value: "500+", label: "Pumps Overhauled", icon: <Zap size={16} /> },
 ];
 
@@ -120,7 +120,7 @@ const AboutSection = () => {
                   {/* Bottom metrics strip */}
                   <div className="relative z-10 flex items-center gap-5 pt-5 border-t border-white/[0.06]">
                     <div>
-                      <p className="text-2xl font-extrabold text-white tracking-tighter leading-none">10+</p>
+                      <p className="text-2xl font-extrabold text-white tracking-tighter leading-none">20+</p>
                       <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Yrs Expert</p>
                     </div>
                     <div className="w-px h-8 bg-white/10" />
@@ -196,7 +196,7 @@ const AboutSection = () => {
 
             <ScrollReveal stagger className="space-y-6 text-black/60 leading-relaxed text-lg mb-12 font-medium">
               {[
-                <><span className="font-bold text-black uppercase tracking-tighter">DEI VOX INDIA</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.</>,
+                <><span className="font-bold text-black uppercase tracking-tighter">DEI VOX INDIA</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP) & Boiler Water Circulation Pump (BWCP) </strong>.</>,
                 <>We deliver <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing. Our specialized workflows guarantee system reliability and maximum uptime for global power utilities.</>,
               ].map((text, i) => (
                 <ScrollRevealItem key={i} variant="fade-up">

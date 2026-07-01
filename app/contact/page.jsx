@@ -201,7 +201,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Consultation</label>
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Inquiry</label>
                   <div className="relative">
                     <select
                       name="subject"
@@ -234,7 +234,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-fit flex items-center gap-12 bg-black text-white px-12 py-6 rounded-full hover:bg-accent hover:text-black transition-all duration-500 shadow-2xl group"
+                    className="w-fit flex items-center gap-12 bg-black text-white px-8 py-4 rounded-full hover:bg-accent hover:text-black transition-all duration-500 shadow-2xl group"
                   >
                     <span className="text-xl font-bold uppercase tracking-widest">
                       {isSubmitting ? "Sending..." : "Send Request"}

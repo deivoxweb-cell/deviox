@@ -4,14 +4,60 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ScrollReveal } from "@/src/components/ScrollReveal";
 
 const LOGOS = [
-  { name: "DEI VOX", color: "#51139A", style: "font-bold tracking-tighter text-3xl" },
-  { name: "SIEMENS", color: "#009999", style: "font-bold italic text-3xl" },
-  { name: "ABB", color: "#ff000f", style: "font-bold text-3xl" },
-  { name: "GE", color: "#005eb8", style: "font-serif italic text-4xl" },
-  { name: "BHEL", color: "#1a1a2e", style: "font-bold tracking-widest text-3xl" },
-  { name: "KSB", color: "#51139A", style: "font-bold tracking-wider text-3xl" },
-  { name: "SULZER", color: "#333333", style: "font-bold tracking-wide text-2xl" },
+  { name: "JINDAL POWER" },
+  { name: "TATA POWER" },
+  { name: "ESSAR POWER" },
+  { name: "ADANI POWER" },
+  { name: "TSGENCO" },
+  { name: "NTPC" },
+  { name: "BHEL" },
+  { name: "APRAAVA ENERGY" },
+  { name: "POWERMECH" },
+  { name: "STEAG" },
+  { name: "SULZER" },
 ];
+
+const LOGO_IMAGES = {
+  "JINDAL POWER": "/logo-brand/jindal-steel-and-power_thumb.png",
+  "TATA POWER": "/logo-brand/tata-power-logo-png_seeklogo-247891.png",
+  "ESSAR POWER": "/logo-brand/611-6112632_essar-logo-essar-petrol-pump-logo.png",
+  "ADANI POWER": "/logo-brand/adani-power-logo-png_seeklogo-376105.png",
+  "TSGENCO": "/logo-brand/ts.png",
+  "NTPC": "/logo-brand/NTPC.NS-2417ca8e.png",
+  "BHEL": "/logo-brand/bhel-logo-png_seeklogo-305066.png",
+  "APRAAVA ENERGY": "/logo-brand/Apraava-Energy_Logo_Transparent-1200x484.png",
+  "POWERMECH": "/logo-brand/POWERMECH.NS-f4b44a59.png",
+  "STEAG": "/logo-brand/steag-logo-png_seeklogo-559287.png",
+  "SULZER": "/logo-brand/sulzer-logo-png-transparent.png",
+};
+
+const CompanyLogo = ({ name }) => {
+  const src = LOGO_IMAGES[name];
+  if (!src) return <span className="font-bold text-xl text-black/80">{name}</span>;
+
+  let sizeClass = "max-h-[75%] max-w-[85%]";
+  let scaleClass = "";
+
+  if (name === "TSGENCO" || name === "BHEL" || name === "NTPC" || name === "POWERMECH") {
+    sizeClass = "max-h-[90%] max-w-[90%]";
+  } else if (name === "JINDAL POWER" || name === "TATA POWER" || name === "SULZER" || name === "STEAG" || name === "APRAAVA ENERGY" || name === "ESSAR POWER") {
+    sizeClass = "max-h-[100%] max-w-[95%]";
+  }
+
+  if (name === "TATA POWER" || name === "SULZER" || name === "POWERMECH" || name === "BHEL" || name === "STEAG" || name === "JINDAL POWER" || name === "ADANI POWER" || name === "TSGENCO") {
+    scaleClass = "scale-[1.45]";
+  }
+
+  return (
+    <div className="w-40 h-16 flex items-center justify-center p-2 bg-[#F9F9F9] border border-black/[0.04] rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:bg-white hover:border-black/[0.08] hover:shadow-[0_8px_20px_rgba(0,0,0,0.04)] transition-all duration-500 overflow-hidden">
+      <img
+        src={src}
+        alt={name}
+        className={`${sizeClass} ${scaleClass} w-auto h-auto object-contain grayscale opacity-45 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 select-none pointer-events-none`}
+      />
+    </div>
+  );
+};
 
 const ClientSeries = () => {
   const sectionRef = useRef(null);
@@ -22,20 +68,10 @@ const ClientSeries = () => {
   /* Ticker drifts slightly on parallax for depth */
   const tickerY = useTransform(scrollYProgress, [0, 1], ["12px", "-12px"]);
   const ticker = (
-    <div className="flex items-center gap-24 pr-24">
+    <div className="flex items-center gap-12 pr-12">
       {LOGOS.map((logo, index) => (
-        <div key={`${logo.name}-${index}`} className="relative group cursor-default select-none flex items-center justify-center">
-          {/* Grayscale Base */}
-          <span className={`${logo.style} text-black/20 group-hover:opacity-0 transition-opacity duration-500 whitespace-nowrap`}>
-            {logo.name}
-          </span>
-          {/* Colored Overlay on Hover */}
-          <span 
-            className={`${logo.style} absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap`}
-            style={{ color: logo.color }}
-          >
-            {logo.name}
-          </span>
+        <div key={`${logo.name}-${index}`} className="relative group flex items-center justify-center shrink-0">
+          <CompanyLogo name={logo.name} />
         </div>
       ))}
     </div>

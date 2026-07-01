@@ -144,7 +144,7 @@ export default function AboutPage() {
             </div>
             {/* Absolute Stat */}
             <div className="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 bg-accent p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] shadow-2xl shadow-accent/20">
-              <p className="text-3xl sm:text-5xl font-extrabold text-black tracking-tighter">10+</p>
+              <p className="text-3xl sm:text-5xl font-extrabold text-black tracking-tighter">20+</p>
               <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-black/60 mt-1">Years Experience</p>
             </div>
           </motion.div>
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 industries across India.
               </p>
               <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.
+                Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP) & Boiler Water Circulation Pump (BWCP) </strong>.
               </p>
               <p className="text-lg font-medium text-black/40 leading-relaxed max-w-3xl">
                 We bridge the gap between complex engineering and field reliability by providing specialized BCW Pump services and high-precision re-engineering. Our mission is to deliver uncompromising <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing, ensuring maximum operational uptime for global utilities and heavy industry.
@@ -214,9 +214,9 @@ export default function AboutPage() {
               <div className="h-px w-8 sm:w-12 bg-accent" />
               <p className="text-accent text-[11px] font-bold uppercase tracking-[0.4em]">TECHNICAL DOMAIN</p>
             </div>
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-[-0.04em] uppercase leading-[0.88]">
+            <motion.h1 className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12">
               Core<br />Engineering.
-            </h2>
+            </motion.h1>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -244,17 +244,17 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ── 5. Meet The Team (Technical Directory) ─────────────────────── */}
-      <section className="py-24 sm:py-40 bg-white">
+      < section className="py-24 sm:py-40 bg-white" >
         <div className="w-full px-6 lg:px-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-24 gap-12 border-b-4 border-black pb-12">
             <div className="max-w-2xl">
               <p className="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-6">TECHNICAL LEADERSHIP</p>
-              <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-black tracking-[-0.04em] uppercase leading-[0.85]">
+              <motion.h1 className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12">
                 Executive<br />Leadership.
-              </h2>
+              </motion.h1>
             </div>
             <p className="text-black/40 text-lg max-w-md font-medium leading-relaxed">
               Bringing together India's finest technical minds to redefine boiler circulation expertise.
@@ -318,8 +318,8 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
-    </div>
+    </div >
   );
 }
