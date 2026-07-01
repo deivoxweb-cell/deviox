@@ -114,6 +114,7 @@ function getOffset(cardIndex, activeIndex) {
 
 export default function ServiceGrid() {
   const [activeIndex, setActiveIndex] = useState(2);
+  const [loadingService, setLoadingService] = useState(null);
   const isPaused = useRef(false);
   const prevOffsets = useRef({});
   const isMobile = useIsMobile();
@@ -248,9 +249,19 @@ export default function ServiceGrid() {
                         <p className={`text-black/60 text-sm font-medium leading-relaxed flex-1 mb-6 ${isMobile ? "line-clamp-2" : ""}`}>
                           {service.description}
                         </p>
-                        <Link href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                          <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-bold uppercase tracking-widest transition-all hover:bg-zinc-800">
-                            Technical Analysis
+                        <Link
+                          href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                          onClick={() => setLoadingService(service.title)}
+                        >
+                          <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-bold uppercase tracking-widest transition-all hover:bg-zinc-800 flex items-center justify-center gap-2">
+                            {loadingService === service.title ? (
+                              <>
+                                <span className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                Loading...
+                              </>
+                            ) : (
+                              "Technical Analysis"
+                            )}
                           </button>
                         </Link>
                       </>
