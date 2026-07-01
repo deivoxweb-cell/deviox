@@ -18,8 +18,8 @@ const capabilities = [
 ];
 
 const team = [
-  { name: "Mr. Kunal", role: "CEO & MD", qualification: "PMP, PMI USA, MBA, B.E. Mechanical", tag: "Founder", email: "sales@deivox.co.in", phone: "+917428200229" },
-  { name: "Mr. Ravi", role: "Head Technical", qualification: "M.Tech. Thermal, B.E. Mechanical", tag: "Founder" },
+  { name: "Kunal", role: "CEO & MD", qualification: "PMP, PMI USA, MBA, B.E. Mechanical", tag: "Founder", email: "sales@deivox.co.in", phone: "+91 74282-00229" },
+  { name: "Ravi", role: "Head Technical", qualification: "M.Tech. Thermal, B.E. Mechanical", tag: "Founder", phone: "+91 98864-24770" },
   { name: "Satya Narayan Sharma", role: "Head – Sales", qualification: "", tag: "" },
   { name: "Vijay Nehra", role: "Manager – Service", qualification: "", tag: "" },
   { name: "Pankaj Kumar", role: "Manager – Dispatch", qualification: "", tag: "" },
@@ -101,9 +101,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="h-px w-24 bg-white/10 hidden sm:block" />
-            <div>
-              <p className="text-4xl font-extrabold text-accent tracking-tighter">ESTD. 2014</p>
-            </div>
+
           </motion.div>
         </motion.div>
 
@@ -140,7 +138,7 @@ export default function AboutPage() {
                   alt="DEI VOX Logo"
                   width={220}
                   height={110}
-                  className="object-contain brightness-0 invert relative z-10 drop-shadow-[0_0_20px_rgba(103,172,67,0.25)]"
+                  className="object-contain relative z-10 drop-shadow-[0_0_20px_rgba(103,172,67,0.25)]"
                 />
               </div>
             </div>
@@ -155,14 +153,14 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-4 sm:mb-12 leading-[0.9]">
               The Trusted<br /><span className="text-black/20">BCP Doctors.</span>
             </h2>
-            <div className="flex flex-col gap-8"> 
+            <div className="flex flex-col gap-8">
               <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-  <strong className="text-black">Deivox</strong>, officially known as{" "}
-  <strong className="text-black">DEI VOX PVT. LTD.</strong>, is a trusted{" "}
-  <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
-  overhauling, and industrial pump solutions company serving power plants and
-  industries across India.
-</p>
+                <strong className="text-black">Deivox</strong>, officially known as{" "}
+                <strong className="text-black">DEI VOX PVT. LTD.</strong>, is a trusted{" "}
+                <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
+                overhauling, and industrial pump solutions company serving power plants and
+                industries across India.
+              </p>
               <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
                 Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP/CCP)</strong>.
               </p>

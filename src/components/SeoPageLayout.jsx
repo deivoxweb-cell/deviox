@@ -101,15 +101,15 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
                   <ArrowUpRight size={18} />
                 </div>
               </Link>
-              
+
               <div className="mt-10 space-y-4 pt-10 border-t border-white/10">
                 <div className="flex items-center gap-4">
-                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent"><Phone size={14} /></div>
-                   <p className="text-sm font-semibold">+91-9886424770</p>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent"><Phone size={14} /></div>
+                  <p className="text-sm font-semibold">+91-74282-00229</p>
                 </div>
                 <div className="flex items-center gap-4">
-                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent"><Mail size={14} /></div>
-                   <p className="text-sm font-semibold">sales@deivox.co.in</p>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent"><Mail size={14} /></div>
+                  <p className="text-sm font-semibold">sales@deivox.co.in</p>
                 </div>
               </div>
             </div>
@@ -162,14 +162,14 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
       <section className="py-32 border-t border-black/5 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
-             <div className="max-w-2xl">
-                <p className="text-accent text-[11px] font-semibold uppercase tracking-[0.2em] mb-6">FIELD DATA</p>
-                <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter leading-[0.9]">
-                  Engineering <br /><span className="text-black/20">In Action.</span>
-                </h2>
-             </div>
+            <div className="max-w-2xl">
+              <p className="text-accent text-[11px] font-semibold uppercase tracking-[0.2em] mb-6">FIELD DATA</p>
+              <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter leading-[0.9]">
+                Engineering <br /><span className="text-black/20">In Action.</span>
+              </h2>
+            </div>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { src: "/images/bcp_overhauling.png", label: "BCP Systems" },

@@ -40,7 +40,7 @@ const WhatsAppChat = () => {
 
           {/* Main Button */}
           <motion.a
-            href="https://wa.me/919886424770?text=Hello%21%20I%27m%20interested%20in%20your%20Boiler%20Circulation%20Pump%20services."
+            href="https://wa.me/917428200229?text=Hello%21%20I%27m%20interested%20in%20your%20Boiler%20Circulation%20Pump%20services."
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contact us on WhatsApp"

@@ -286,16 +286,14 @@ export default function ContactPage() {
                     <div className="border-l border-white/10 pl-8">
                       <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Service Hub</p>
                       <p className="text-2xl font-bold uppercase tracking-tighter leading-none">
-                        Bommasandra Area,<br />Bangalore.
+                        Bengaluru,<br />Karnataka, India.
                       </p>
                     </div>
 
                     <div className="border-l border-white/10 pl-8 md:col-span-2">
-                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Direct Lines</p>
+                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Direct Line</p>
                       <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-                        <a href="tel:+919886424770" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors">+91 98864 24770</a>
-                        <div className="h-4 w-px bg-white/10 hidden sm:block" />
-                        <a href="tel:+917428200229" className="text-2xl font-bold tracking-tighter text-white/30 hover:text-white transition-colors">+91 74282 00229</a>
+                        <a href="tel:+91-7428200229" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors">+91 74282 00229</a>
                       </div>
                     </div>
 

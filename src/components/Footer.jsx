@@ -59,7 +59,7 @@ const Footer = () => {
                 alt="DEI VOX PVT. LTD. logo"
                 width={120}
                 height={48}
-                className="brightness-0 invert mb-12 opacity-80"
+                className="mb-12"
               />
 
               <h3 className="text-3xl font-extrabold uppercase tracking-tighter mb-6 leading-tight">
@@ -84,7 +84,7 @@ const Footer = () => {
                       Headquarters
                     </p>
                     <p className="text-sm font-bold uppercase group-hover:text-accent/80 transition-colors">
-                      Bommasandra Industrial Area, Bengaluru, Karnataka
+                      Bengaluru, Karnataka, India
                     </p>
                   </div>
                 </div>
@@ -97,7 +97,7 @@ const Footer = () => {
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">
                       Business & Support
                     </p>
-                    <p className="text-sm font-bold">sales@deivoxbcp.com</p>
+                    <p className="text-sm font-bold">sales@deivox.co.in</p>
                   </div>
                 </div>
 
@@ -110,7 +110,7 @@ const Footer = () => {
                       Technical Support
                     </p>
                     <p className="text-sm font-bold group-hover:text-accent/80 transition-colors">
-                      +91-9886424770
+                      +91-74282-00229
                     </p>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const Footer = () => {
                   <ShieldCheck size={14} /> ISO 9001:2015
                 </div>
                 <div className="text-[10px] font-bold uppercase tracking-widest text-white/20">
-                  GSTIN: 29AAKCD5641B1Z9
+                  GSTIN: 29AAKCD5641B1ZQ
                 </div>
               </div>
             </div>

@@ -65,7 +65,7 @@ export default function PageLoader() {
     >
       {/* Watermark text */}
       <span className="loader-watermark">
-        DEIVOX
+        DEI VOX
       </span>
       {/* Logo + spinner */}
       <div className="loader-logo-container">

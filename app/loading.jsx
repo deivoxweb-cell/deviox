@@ -32,7 +32,7 @@ export default function Loading() {
           textTransform: "uppercase",
         }}
       >
-        DEIVOX
+        DEI VOX
       </span>
 
       {/* Spinning ring + logo */}
@@ -48,6 +48,7 @@ export default function Loading() {
             margin: "0 auto",
           }}
         />
+
         <Image
           src="/images/Logo.png"
           alt="DEI VOX"
@@ -59,7 +60,7 @@ export default function Loading() {
             left: "50%",
             transform: "translate(-50%, -50%)",
             objectFit: "contain",
-            filter: "brightness(0) invert(1)",
+
           }}
         />
       </div>

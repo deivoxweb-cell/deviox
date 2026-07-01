@@ -30,8 +30,8 @@ const SPEC_DATA = {
     title: "Direct Engineering Consultation",
     desc: "Connect with our specialists for rapid mobilization and technical diagnostics.",
     stats: [
-      { label: "Technical", value: "+91-9886424770", icon: Phone },
-      { label: "Email", value: "support@deivox.co.in", icon: Mail }
+      { label: "Technical", value: "+91-74282-00229", icon: Phone },
+      { label: "Email", value: "sales@deivox.co.in", icon: Mail }
     ]
   },
   Materials: {

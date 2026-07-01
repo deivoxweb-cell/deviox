@@ -111,13 +111,13 @@ const jsonLd = {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+91-9886424770",
+          telephone: "+91-74282-00229",
           contactType: "sales",
           areaServed: "IN",
           availableLanguage: ["English", "Hindi"],
         },
       ],
-      email: "sales@deivoxbcp.com",
+      email: "sales@deivox.co.in",
       sameAs: [
         "https://www.facebook.com/deivoxbcp",
         "https://www.linkedin.com/company/deivoxbcp",
@@ -130,11 +130,11 @@ const jsonLd = {
       alternateName: BRAND_ALTERNATES,
       image: `${SITE_URL}/images/hero_industrial.png`,
       url: SITE_URL,
-      telephone: "+91-9886424770",
-      email: "sales@deivoxbcp.com",
+      telephone: "+91-74282-00229",
+      email: "sales@deivox.co.in",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Bommasandra Industrial Area",
+        streetAddress: "Bengaluru, Karnataka, India",
         addressLocality: "Bengaluru",
         addressRegion: "Karnataka",
         postalCode: "560099",

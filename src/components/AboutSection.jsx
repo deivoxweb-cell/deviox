@@ -97,7 +97,7 @@ const AboutSection = () => {
                         alt="DEI VOX Logo"
                         width={155}
                         height={155}
-                        className="object-contain brightness-0 invert relative z-10 drop-shadow-[0_0_18px_rgba(103,172,67,0.28)]"
+                        className="object-contain relative z-10 drop-shadow-[0_0_18px_rgba(103,172,67,0.28)]"
                         loading="lazy"
                       />
                     </div>
@@ -165,7 +165,7 @@ const AboutSection = () => {
             <ScrollReveal stagger className="space-y-3">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
-                { label: "Solution Provider", location: "Bommasandra Industrial Area, Bangalore" },
+                { label: "Solution Provider", location: "Bengaluru Karnataka India" },
               ].map((office) => (
                 <ScrollRevealItem key={office.label} variant="fade-left">
                   <div className="flex items-center gap-4 bg-white border border-black/5 rounded-[2rem] px-6 py-5 hover:border-accent transition-all group">

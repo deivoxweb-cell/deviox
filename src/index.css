@@ -8,6 +8,7 @@
 
   --primary: #005696;
   /* Logo Blue */
+  --primary-light: #0c89e9;
   --secondary: #7D7D7D;
   /* Logo Gear Gray */
 
@@ -72,9 +73,19 @@ body {
 
   /* ── Gentle float (particle dots) ── */
   @keyframes float-up-down {
-    0%, 100% { transform: translateY(0); opacity: 0.15; }
-    50% { transform: translateY(-12px); opacity: 0.45; }
+
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.15;
+    }
+
+    50% {
+      transform: translateY(-12px);
+      opacity: 0.45;
+    }
   }
+
   .animate-float {
     animation: float-up-down 5s ease-in-out infinite;
   }
@@ -84,13 +95,14 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+    background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.06) 50%, transparent 60%);
     background-size: 200% 100%;
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
     border-radius: inherit;
   }
+
   .card-shine:hover::after {
     opacity: 1;
     animation: shimmer 0.8s ease forwards;
@@ -265,7 +277,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: var(--primary);
+    background: var(--foreground);
     transition: opacity 0.4s ease;
   }
 
@@ -303,7 +315,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     object-fit: contain;
-    filter: brightness(0) invert(1);
   }
 
   .loader-label {

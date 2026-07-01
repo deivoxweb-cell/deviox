@@ -89,7 +89,7 @@ const ClientSeries = () => {
         >
           <div className="flex items-center gap-3 px-6 py-3 rounded-full border border-black/10 bg-white hover:border-accent/30 hover:bg-[#f8f6ff] transition-all duration-500 group cursor-default shadow-sm">
             <div className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-[10px] font-bold text-black/50 group-hover:text-black uppercase tracking-[0.2em] transition-colors">GST Compliant — GSTIN 29AAKCD5641B1Z9</span>
+            <span className="text-[10px] font-bold text-black/50 group-hover:text-black uppercase tracking-[0.2em] transition-colors">GST Compliant — GSTIN 29AAKCD5641B1ZQ</span>
           </div>
         </motion.div>
       </div>
