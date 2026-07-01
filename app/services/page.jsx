@@ -8,6 +8,7 @@ import Magnetic from "@/src/components/Magnetic";
 
 const services = [
   {
+    id: "insitu-machining",
     icon: <Wrench size={32} />,
     title: "Insitu Machining",
     tagline: "Direct Operational Support",
@@ -16,6 +17,7 @@ const services = [
     points: ["On-site bore machining", "Flange facing restoration", "Minimized pull-out downtime", "Certified technical specialists"],
   },
   {
+    id: "bcp-overhauling",
     icon: <Cog size={32} />,
     title: "BCP Overhauling",
     tagline: "System Rehabilitation",
@@ -24,6 +26,7 @@ const services = [
     points: ["Full strip-down assessment", "Precision shaft restoration", "Advanced dynamic balancing", "Operational commissioning"],
   },
   {
+    id: "motor-rewinding",
     icon: <Zap size={32} />,
     title: "Motor Rewinding",
     tagline: "Efficiency Optimization",
@@ -32,6 +35,7 @@ const services = [
     points: ["HT & LT motor rewinding", "Dielectric insulation testing", "Winding architecture upgrades", "Comprehensive diagnostics"],
   },
   {
+    id: "components-procurement",
     icon: <Package size={32} />,
     title: "Components Procurement",
     tagline: "OEM & Compatible Solutions",
@@ -40,6 +44,7 @@ const services = [
     points: ["All BCP makes supported", "OEM procurement options", "Precision seals & impellers", "Optimized lead times"],
   },
   {
+    id: "reverse-engineering",
     icon: <Settings size={32} />,
     title: "Reverse Engineering",
     tagline: "Legacy Asset Restoration",
@@ -52,6 +57,7 @@ const services = [
 const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
   return (
     <div
+      id={service.id}
       ref={itemRef}
       className={`min-h-[80vh] flex flex-col justify-center py-24 transition-all duration-700 ${isActive ? "opacity-100" : "opacity-20 grayscale"}`}
     >
@@ -59,14 +65,14 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
         {/* Text Content */}
         <div className="lg:col-span-7">
           <div className="flex items-center gap-8 mb-16">
-            <span className="text-7xl md:text-9xl font-extrabold text-black/5 tracking-tighter">
+            <span className="text-7xl md:text-9xl font-extrabold text-primary tracking-tighter">
               0{index + 1}
             </span>
             <div className="w-24 h-px bg-black/10" />
           </div>
 
           <div className="flex items-center gap-6 mb-10">
-            <div className="w-16 h-16 bg-black rounded-[1.5rem] flex items-center justify-center text-accent">
+            <div className="w-16 h-16 bg-black rounded-3xl flex items-center justify-center text-accent">
               {service.icon}
             </div>
             <div>
@@ -87,7 +93,7 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
             {service.points.map((pt) => (
               <div key={pt} className="flex items-center gap-4 group">
                 <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-accent transition-transform group-hover:scale-110">
-                   <CheckCircle2 size={16} />
+                  <CheckCircle2 size={16} />
                 </div>
                 <span className="text-[11px] font-semibold text-black uppercase tracking-widest">
                   {pt}
@@ -97,12 +103,12 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
           </div>
 
           <Link href="/contact" className="inline-block">
-             <button className="flex items-center gap-4 bg-black text-white px-10 py-4 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
-                <span className="text-[11px] font-bold uppercase tracking-widest">Technical Consultation</span>
-                <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
-                  <ArrowUpRight size={18} />
-                </div>
-             </button>
+            <button className="flex items-center gap-4 bg-black text-white px-10 py-4 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
+              <span className="text-[11px] font-bold uppercase tracking-widest">Technical Consultation</span>
+              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
+                <ArrowUpRight size={18} />
+              </div>
+            </button>
           </Link>
         </div>
 
@@ -125,8 +131,8 @@ const ServiceScrollItem = ({ service, index, itemRef, isActive }) => {
             {/* Green shimmer bottom accent */}
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
             <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10">
-               <p className="text-accent text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.3em] mb-2">{service.tagline}</p>
-               <p className="text-white text-xl sm:text-2xl font-bold uppercase tracking-tighter">{service.title}</p>
+              <p className="text-accent text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.3em] mb-2">{service.tagline}</p>
+              <p className="text-white text-xl sm:text-2xl font-bold uppercase tracking-tighter">{service.title}</p>
             </div>
           </motion.div>
         </div>
@@ -198,7 +204,7 @@ export default function ServicesPage() {
             style={{ top: dot.top, left: dot.left, width: dot.size, height: dot.size }}
           />
         ))}
-        
+
         <motion.div style={{ y: yHeroText, opacity: opacityHero }} className="relative z-20 max-w-7xl">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -220,10 +226,10 @@ export default function ServicesPage() {
           </motion.h1>
 
           <div className="flex items-center gap-6 sm:gap-8 mt-12">
-             <div className="h-px w-16 sm:w-24 bg-white/10" />
-             <p className="text-white/40 text-base sm:text-lg max-w-sm font-medium leading-relaxed">
-               Advanced technical services for critical power systems and boiler infrastructure.
-             </p>
+            <div className="h-px w-16 sm:w-24 bg-white/10" />
+            <p className="text-white/40 text-base sm:text-lg max-w-sm font-medium leading-relaxed">
+              Advanced technical services for critical power systems and boiler infrastructure.
+            </p>
           </div>
         </motion.div>
       </section>
@@ -251,15 +257,15 @@ export default function ServicesPage() {
             </div>
             {/* Mobile Domain Indicator */}
             <div className="md:hidden flex overflow-x-auto w-full scrollbar-hide gap-6 pb-2 px-2">
-                {services.map((item, i) => (
-                    <button
-                        key={item.title}
-                        onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                        className={`whitespace-nowrap text-[9px] font-bold uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20"}`}
-                    >
-                        {item.title.split(' ')[0]}
-                    </button>
-                ))}
+              {services.map((item, i) => (
+                <button
+                  key={item.title}
+                  onClick={() => itemRefs.current[i].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                  className={`whitespace-nowrap text-[9px] font-bold uppercase tracking-widest transition-all ${activeIndex === i ? "text-black border-b-2 border-accent pb-1" : "text-black/20"}`}
+                >
+                  {item.title.split(' ')[0]}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -282,7 +288,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-accent/12 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[350px] h-[350px] bg-primary/15 rounded-full blur-[100px] pointer-events-none" />
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
           <h2 className="text-3xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
             Industrial <br /><span className="text-white/20">Capabilities.</span>
@@ -293,10 +299,10 @@ export default function ServicesPage() {
 
           <Link href="/contact" className="inline-block">
             <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-bold uppercase tracking-[0.25em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl shadow-accent/20 group">
-               Initiate Technical Engagement
-               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-accent group-hover:rotate-45 transition-transform duration-500">
-                 <ArrowUpRight size={16} />
-               </div>
+              Initiate Technical Engagement
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-full flex items-center justify-center text-accent group-hover:rotate-45 transition-transform duration-500">
+                <ArrowUpRight size={16} />
+              </div>
             </button>
           </Link>
         </div>

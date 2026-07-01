@@ -13,7 +13,7 @@ const navLinks = [
 
 const pumpLinks = [
   { name: "BCP Repair India", href: "/boiler-circulation-pump" },
-  { name: "Submersible Pump", href: "/submersible-pump-repair" },
+  { name: "Composite Material", href: "/composite-material" },
 ];
 
 const otherLinks = [

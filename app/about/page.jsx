@@ -8,10 +8,10 @@ import Magnetic from "@/src/components/Magnetic";
 
 
 const capabilities = [
-  { name: "In-Situ Machining", href: "/in-situ-machining-services" },
-  { name: "BCP Overhauling", href: "/boiler-circulation-pump" },
-  { name: "Motor Rewinding", href: "/motor-rewinding-services" },
-  { name: "Components Procurement", href: "/contact?subject=Spare Parts Request" },
+  { name: "In-Situ Machining", href: "/services#insitu-machining" },
+  { name: "BCP Overhauling", href: "/services#bcp-overhauling" },
+  { name: "Motor Rewinding", href: "/services#motor-rewinding" },
+  { name: "Components Procurement", href: "/services#components-procurement" },
   { name: "Retrofit & Reverse Engineering", href: "/services#reverse-engineering" },
   { name: "On-Site Troubleshooting", href: "/contact?subject=Technical Troubleshooting" },
   { name: "Strategic BCP Advisory", href: "/contact?subject=BCP Consultancy" },
