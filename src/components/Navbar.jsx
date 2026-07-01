@@ -48,7 +48,7 @@ const Navbar = () => {
             alt="DEI VOX Logo"
             width={130}
             height={52}
-            className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+            className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
             priority
           />
         </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 text-black hover:bg-black/5 rounded-full transition-colors"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
           </button>
         </div>
       </motion.nav>
