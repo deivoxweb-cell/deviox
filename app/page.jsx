@@ -8,7 +8,7 @@ import SeoContentSection from "@/src/components/SeoContentSection";
 export const metadata = {
   title: "BCP Boiler Circulation Pump Repair & Overhauling | DEI VOX",
   description:
-    "DEI VOX (Deivox) is India's leading BCP specialist for Boiler Circulation Pump repair, overhauling, motor rewinding & insitu machining services.",
+    "DEI VOX (Dei Vox) is India's leading BCP specialist for Boiler Circulation Pump repair, overhauling, motor rewinding & insitu machining services.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "DEI VOX PVT. LTD. | Boiler Circulation Pump Repair & BCP Specialists",

@@ -92,7 +92,7 @@ const ClientSeries = () => {
         >
           <div className="flex items-center gap-6">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-black/20" />
-            <p className="text-[10px] font-bold text-black/40 tracking-[0.4em] uppercase">Trusted By Industry Leaders</p>
+            <p className="text-[10px] font-bold text-black/40 tracking-[0.4em] uppercase">Trusted By Indian Leaders</p>
             <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-black/20" />
           </div>
         </motion.div>

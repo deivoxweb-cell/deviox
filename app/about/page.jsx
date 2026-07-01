@@ -155,7 +155,7 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-8">
               <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                <strong className="text-black">Deivox</strong>, officially known as{" "}
+                <strong className="text-black">Dei Vox</strong>, officially known as{" "}
                 <strong className="text-black">DEI VOX PVT. LTD.</strong>, is a trusted{" "}
                 <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
                 overhauling, and industrial pump solutions company serving power plants and

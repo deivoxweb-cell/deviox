@@ -165,7 +165,7 @@ const AboutSection = () => {
             <ScrollReveal stagger className="space-y-3">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
-                { label: "Solution Provider", location: "Bengaluru Karnataka India" },
+                { label: "Service Facility", location: "Bengaluru Karnataka India" },
               ].map((office) => (
                 <ScrollRevealItem key={office.label} variant="fade-left">
                   <div className="flex items-center gap-4 bg-white border border-black/5 rounded-[2rem] px-6 py-5 hover:border-accent transition-all group">

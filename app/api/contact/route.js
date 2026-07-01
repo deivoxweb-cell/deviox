@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 
 const RECIPIENT = "deivoxweb@gmail.com";
-const FROM = "Deivox Contact Form <onboarding@resend.dev>";
+const FROM = "Dei Vox Contact Form <onboarding@resend.dev>";
 
 export async function POST(request) {
   try {
@@ -42,14 +42,14 @@ export async function POST(request) {
       from: FROM,
       to: [RECIPIENT],
       replyTo: email,
-      subject: `[Deivox Enquiry] ${subject || "General Inquiry"} — ${name}`,
+      subject: `[Dei Vox Enquiry] ${subject || "General Inquiry"} — ${name}`,
       html: `
         <!DOCTYPE html>
         <html lang="en">
         <head>
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>New Enquiry — Deivox</title>
+          <title>New Enquiry — Dei Vox</title>
         </head>
         <body style="margin:0;padding:0;background:#0a0a0a;font-family:'Segoe UI',Arial,sans-serif;color:#ffffff;">
           <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0a;padding:40px 20px;">
@@ -61,7 +61,7 @@ export async function POST(request) {
                   <tr>
                     <td style="background:linear-gradient(135deg,#f97316,#ea580c);padding:40px 48px;border-radius:16px 16px 0 0;">
                       <p style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;color:rgba(0,0,0,0.6);">New Enquiry</p>
-                      <h1 style="margin:8px 0 0;font-size:32px;font-weight:900;letter-spacing:-0.02em;color:#000000;">DEIVOX</h1>
+                      <h1 style="margin:8px 0 0;font-size:32px;font-weight:900;letter-spacing:-0.02em;color:#000000;">DEI VOX</h1>
                     </td>
                   </tr>
 
@@ -70,7 +70,7 @@ export async function POST(request) {
                     <td style="background:#111111;padding:48px;border-radius:0 0 16px 16px;border:1px solid rgba(255,255,255,0.08);border-top:none;">
 
                       <p style="margin:0 0 32px;font-size:15px;color:rgba(255,255,255,0.5);line-height:1.6;">
-                        A new enquiry has been submitted through the Deivox contact form. Details below:
+                        A new enquiry has been submitted through the Dei Vox contact form. Details below:
                       </p>
 
                       <!-- Details Grid -->
@@ -106,7 +106,7 @@ export async function POST(request) {
 
                       <!-- Footer -->
                       <p style="margin:40px 0 0;font-size:12px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;">
-                        This email was sent from the Deivox website contact form. Do not reply directly to this email — use the button above.
+                        This email was sent from the Dei Vox website contact form. Do not reply directly to this email — use the button above.
                       </p>
                     </td>
                   </tr>

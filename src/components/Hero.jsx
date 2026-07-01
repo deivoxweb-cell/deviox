@@ -304,7 +304,7 @@ const Hero = () => {
               <img src="/images/user_1.png" alt="reviewer" className="w-full h-full object-cover" />
             </div>
             <div>
-              <p className="text-sm font-bold text-black uppercase tracking-tighter">Kunal Joshi</p>
+              <p className="text-sm font-bold text-black uppercase tracking-tighter">Vinay Joshi</p>
               <p className="text-[10px] font-medium text-black/50 leading-snug mt-1 italic">Excellent service for critical boiler circulation systems.</p>
               <div className="flex items-center gap-1.5 mt-3">
                 <div className="flex gap-0.5">
