@@ -1,32 +1,12 @@
 "use client";
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, CheckCircle2, Phone, Award, Zap, ArrowUpRight } from "lucide-react";
 import { ScrollReveal, ScrollRevealItem } from "@/src/components/ScrollReveal";
 
-const TiltCard = ({ children, className }) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    x.set(((e.clientX - rect.left) / rect.width - 0.5) * 18);
-    y.set(((e.clientY - rect.top) / rect.height - 0.5) * -18);
-  };
-  const handleMouseLeave = () => { x.set(0); y.set(0); };
-  return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ rotateX: mouseYSpring, rotateY: mouseXSpring, transformStyle: "preserve-3d" }}
-      className={className}
-    >
-      <div style={{ transform: "translateZ(40px)" }} className="w-full h-full">{children}</div>
-    </motion.div>
-  );
-};
+
 
 const BIG_STATS = [
   { value: "20+", label: "Years of BCP Expertise", icon: <Award size={16} /> },
@@ -43,7 +23,6 @@ const AboutSection = () => {
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-60px", "60px"]);
   const blobX = useTransform(scrollYProgress, [0, 1], ["0px", "-30px"]);
-  const logoCardY = useTransform(scrollYProgress, [0, 1], ["20px", "-20px"]);
 
   return (
     <section ref={sectionRef} className="py-28 bg-card relative overflow-hidden">
@@ -65,12 +44,9 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
           {/* ── Left bento column ── */}
-          <motion.div
-            style={{ y: logoCardY }}
-            className="lg:col-span-5 flex flex-col gap-5"
-          >
+          <div className="lg:col-span-5 flex flex-col gap-5">
             <ScrollReveal variant="scale-up" delay={0.05}>
-              <TiltCard className="w-full rounded-[3rem] cursor-crosshair shadow-2xl shadow-black/25 overflow-hidden group">
+              <Link href="/about" className="block w-full rounded-[3rem] shadow-2xl shadow-black/25 overflow-hidden group cursor-pointer">
                 <div className="relative bg-[#0a0a0a] rounded-[3rem] p-10 flex flex-col gap-8 min-h-[300px] overflow-hidden">
 
                   {/* Green glow orb top-right */}
@@ -140,7 +116,7 @@ const AboutSection = () => {
                     </div>
                   </div>
                 </div>
-              </TiltCard>
+              </Link>
             </ScrollReveal>
 
             {/* Stat bento cards */}
@@ -180,7 +156,7 @@ const AboutSection = () => {
                 </ScrollRevealItem>
               ))}
             </ScrollReveal>
-          </motion.div>
+          </div>
 
           {/* ── Right content ── */}
           <div className="lg:col-span-7 pl-0 lg:pl-10">

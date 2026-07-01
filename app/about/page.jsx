@@ -3,18 +3,19 @@ import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { CheckCircle2, Award, Users, Lightbulb, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import Magnetic from "@/src/components/Magnetic";
 
 
 const capabilities = [
-  "In-Situ Machining",
-  "BCP Overhauling",
-  "Motor Rewinding",
-  "Components Procurement",
-  "Retrofit & Reverse Engineering",
-  "On-Site Troubleshooting",
-  "Strategic BCP Advisory",
-  "Operational Support"
+  { name: "In-Situ Machining", href: "/in-situ-machining-services" },
+  { name: "BCP Overhauling", href: "/boiler-circulation-pump" },
+  { name: "Motor Rewinding", href: "/motor-rewinding-services" },
+  { name: "Components Procurement", href: "/contact?subject=Spare Parts Request" },
+  { name: "Retrofit & Reverse Engineering", href: "/services#reverse-engineering" },
+  { name: "On-Site Troubleshooting", href: "/contact?subject=Technical Troubleshooting" },
+  { name: "Strategic BCP Advisory", href: "/contact?subject=BCP Consultancy" },
+  { name: "Operational Support", href: "/contact?subject=General Inquiry" }
 ];
 
 const team = [
@@ -221,26 +222,27 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {capabilities.map((cap, i) => (
-              <motion.div
-                key={cap}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -6 }}
-                className="group p-8 sm:p-10 bg-white/[0.03] border border-white/5 rounded-[2rem] sm:rounded-[2.5rem] hover:bg-accent hover:border-accent hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 cursor-pointer relative overflow-hidden"
-              >
-                {/* Shimmer top on hover */}
-                <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="flex flex-col justify-between h-full">
-                  <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tighter text-white group-hover:text-black leading-tight mb-8">
-                    {cap}
-                  </h3>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:border-black group-hover:text-black transition-all group-hover:bg-black/10">
-                    <ArrowUpRight size={18} />
+              <Link key={cap.name} href={cap.href} className="block h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -6 }}
+                  className="group p-8 sm:p-10 bg-white/[0.03] border border-white/5 rounded-[2rem] sm:rounded-[2.5rem] hover:bg-accent hover:border-accent hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 cursor-pointer relative overflow-hidden h-full"
+                >
+                  {/* Shimmer top on hover */}
+                  <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="flex flex-col justify-between h-full">
+                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tighter text-white group-hover:text-black leading-tight mb-8">
+                      {cap.name}
+                    </h3>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:border-black group-hover:text-black transition-all group-hover:bg-black/10">
+                      <ArrowUpRight size={18} />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
