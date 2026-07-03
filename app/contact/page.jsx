@@ -41,15 +41,15 @@ const InputField = ({ id, label, type, form, handleChange }) => {
         }}
         className="absolute inset-0 border-l-2 transition-colors duration-300 pointer-events-none"
       />
-      <div className="relative px-6 py-6">
+      <div className="relative px-4 py-4">
         <motion.label
           initial={false}
           animate={{
-            y: isActive ? -12 : 0,
-            scale: isActive ? 0.75 : 1,
+            y: isActive ? -8 : 0,
+            scale: isActive ? 0.8 : 1,
             color: isActive ? "var(--accent)" : "rgba(0,0,0,0.4)"
           }}
-          className="absolute left-6 top-6 text-[10px] font-bold uppercase tracking-[0.2em] origin-left pointer-events-none z-20"
+          className="absolute left-4 top-4 text-[9px] font-bold uppercase tracking-[0.2em] origin-left pointer-events-none z-20"
         >
           {label}
         </motion.label>
@@ -60,7 +60,7 @@ const InputField = ({ id, label, type, form, handleChange }) => {
           onChange={handleChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="w-full bg-transparent pt-5 pb-1 text-black text-xl focus:outline-none transition-all font-bold rounded-none relative z-10"
+          className="w-full bg-transparent pt-3 pb-0 text-black text-base focus:outline-none transition-all font-bold rounded-none relative z-10"
         />
       </div>
     </div>
@@ -252,7 +252,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
 
           {/* Form Column */}
-          <div className="p-10 lg:p-24 border-r border-black/10 bg-card relative overflow-hidden">
+          <div className="p-8 lg:p-16 border-r border-black/10 bg-card relative overflow-hidden">
             {/* Subtle ambient glow */}
             <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-accent/4 rounded-full blur-[100px] pointer-events-none" />
             <motion.div
@@ -260,88 +260,88 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-6xl sm:text-6xl font-extrabold uppercase tracking-tighter leading-[0.8] mb-24">
+              <h2 className="text-4xl sm:text-5xl font-extrabold uppercase tracking-tighter leading-[0.8] mb-12">
                 Business<br /><span className="text-black/30">Inquiry.</span>
               </h2>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <InputField id="name" label="Full Name" type="text" form={form} className="text-black" handleChange={handleChange} />
                   <InputField id="company" label="Organization" type="text" form={form} className="text-black" handleChange={handleChange} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <InputField id="email" label="Professional Email" type="email" form={form} className="text-black" handleChange={handleChange} />
                   <InputField id="phone" label="Contact Number" type="tel" form={form} className="text-black" handleChange={handleChange} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <InputField id="country" label="Country" type="text" form={form} className="text-black" handleChange={handleChange} />
                   <InputField id="location" label="Location" type="text" form={form} className="text-black" handleChange={handleChange} />
                 </div>
                 <InputField id="designation" label="Designation" type="text" form={form} className="text-black" handleChange={handleChange} />
 
-                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Enquiry</label>
+                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-4 hover:bg-accent/5 hover:border-accent transition-all duration-300">
+                  <label className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30 mb-2 block group-hover:text-accent transition-colors">Nature of Enquiry</label>
                   <div className="relative">
                     <select
                       name="subject"
                       value={form.subject}
                       onChange={handleChange}
-                      className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-bold appearance-none cursor-pointer rounded-none relative z-10"
+                      className="w-full bg-transparent py-2 text-black text-base focus:outline-none font-bold appearance-none cursor-pointer rounded-none relative z-10"
                     >
                       <option value="">Select Domain...</option>
                       {SUBJECTS.map((s) => (
                         <option key={s} value={s}>{s}</option>
                       ))}
                     </select>
-                    <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 text-black/20 group-hover:text-black transition-colors" size={24} />
+                    <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 text-black/20 group-hover:text-black transition-colors" size={20} />
                   </div>
                 </div>
 
-                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Technical Details</label>
+                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-4 hover:bg-accent/5 hover:border-accent transition-all duration-300">
+                  <label className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30 mb-2 block group-hover:text-accent transition-colors">Technical Details</label>
                   <textarea
                     name="message"
-                    rows={5}
+                    rows={4}
                     value={form.message}
                     onChange={handleChange}
-                    className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-bold resize-none rounded-none relative z-10"
+                    className="w-full bg-transparent py-2 text-black text-base focus:outline-none font-bold resize-none rounded-none relative z-10"
                     placeholder="Elaborate on requirements..."
                   />
                 </div>
 
-                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">File Attachment</label>
-                  <div className="relative flex items-center gap-4">
-                    <Paperclip className="text-black/20 group-hover:text-black transition-colors" size={24} />
+                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-4 hover:bg-accent/5 hover:border-accent transition-all duration-300">
+                  <label className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30 mb-2 block group-hover:text-accent transition-colors">File Attachment</label>
+                  <div className="relative flex items-center gap-3">
+                    <Paperclip className="text-black/20 group-hover:text-black transition-colors" size={20} />
                     <input
                       ref={fileInputRef}
                       name="attachment"
                       type="file"
                       accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png"
                       onChange={handleFileChange}
-                      className="w-full bg-transparent py-4 text-black text-xl focus:outline-none font-bold rounded-none relative z-10"
+                      className="w-full bg-transparent py-2 text-black text-base focus:outline-none font-bold rounded-none relative z-10"
                     />
                   </div>
                 </div>
 
-                <div className="pt-10 flex justify-start">
+                <div className="pt-6 flex justify-start">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-fit flex items-center gap-12 bg-black text-white px-8 py-4 rounded-full hover:bg-accent hover:text-black transition-all duration-500 shadow-2xl group"
+                    className="w-fit flex items-center gap-6 bg-black text-white px-6 py-3 rounded-full hover:bg-accent hover:text-black transition-all duration-500 shadow-xl group"
                   >
-                    <span className="text-xl font-bold uppercase tracking-widest">
+                    <span className="text-sm font-bold uppercase tracking-widest">
                       {isSubmitting ? "Sending..." : "Send Request"}
                     </span>
-                    <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-black/10 flex items-center justify-center transition-colors">
-                      <ArrowUpRight size={24} className="group-hover:rotate-45 transition-transform" />
+                    <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-black/10 flex items-center justify-center transition-colors">
+                      <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform" />
                     </div>
                   </button>
                 </div>
               </form>
 
               {status.message && (
-                <div className={`mt-8 p-6 font-bold uppercase tracking-widest text-sm ${status.type === 'error' ? 'bg-red-50 text-red-600' : 'bg-accent/10 text-black'}`}>
+                <div className={`mt-6 p-4 font-bold uppercase tracking-widest text-xs ${status.type === 'error' ? 'bg-red-50 text-red-600' : 'bg-accent/10 text-black'}`}>
                   {status.message}
                 </div>
               )}
@@ -385,17 +385,18 @@ export default function ContactPage() {
                     </div>
 
                     <div className="border-l border-white/10 pl-8 md:col-span-2">
-                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Direct Line</p>
-                      <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-                        <a href="tel:+91-7428200229" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors">+91 74282 00229</a>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                          <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Direct Line</p>
+                          <a href="tel:+91-7428200229" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors">+91 74282 00229</a>
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Digital</p>
+                          <a href="mailto:sales@deivox.co.in" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors break-all underline decoration-accent decoration-2 underline-offset-8">
+                            sales@deivox.co.in
+                          </a>
+                        </div>
                       </div>
-                    </div>
-
-                    <div className="border-l border-white/10 pl-8">
-                      <p className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em] mb-6">Digital</p>
-                      <a href="mailto:sales@deivox.co.in" className="text-2xl font-bold tracking-tighter hover:text-accent transition-colors break-all underline decoration-accent decoration-2 underline-offset-8">
-                        sales@deivox.co.in
-                      </a>
                     </div>
                   </div>
                 </motion.div>
