@@ -343,11 +343,7 @@ export default function ContactPage() {
                 </div>
               </form>
 
-              {status.message && (
-                <div className={`mt-6 p-4 font-bold uppercase tracking-widest text-xs ${status.type === 'error' ? 'bg-red-50 text-red-600' : 'bg-accent/10 text-black'}`}>
-                  {status.message}
-                </div>
-              )}
+
             </motion.div>
           </div>
 
@@ -422,6 +418,35 @@ export default function ContactPage() {
 
         </div>
       </section>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {status.message && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="fixed top-8 right-8 z-50 flex items-center gap-4 bg-white text-black px-6 py-4 rounded-2xl border border-black/10 shadow-[0_15px_50px_rgba(0,0,0,0.12)] min-w-[320px] max-w-md"
+          >
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${status.type === 'error' ? 'bg-red-500/10 text-red-500' : 'bg-accent/20 text-black'}`}>
+              {status.type === 'error' ? <AlertTriangle size={18} /> : <Check size={18} />}
+            </div>
+            <div className="flex-1">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-black/40">
+                {status.type === 'error' ? 'Error Encountered' : 'System Notification'}
+              </p>
+              <p className="text-xs font-semibold text-black/85 mt-0.5">{status.message}</p>
+            </div>
+            <button
+              onClick={() => setStatus({ type: null, message: "" })}
+              className="text-black/30 hover:text-black transition-colors"
+            >
+              <X size={16} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
