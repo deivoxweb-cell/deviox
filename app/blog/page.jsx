@@ -18,7 +18,13 @@ const imagePresets = [
 export default function BlogListPage() {
   const [allPosts, setAllPosts] = useState(blogPosts);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
   const containerRef = useRef(null);
+
+  // Reset to page 1 when category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
 
   // Form State
   const [isOpenForm, setIsOpenForm] = useState(false);
@@ -60,9 +66,13 @@ export default function BlogListPage() {
     ? allPosts
     : allPosts.filter(post => post.category === selectedCategory);
 
-  // Dynamic Featured Post selection (First in filtered list, or first overall if all)
-  const featuredPost = filteredPosts[0];
-  const regularPosts = filteredPosts.slice(1);
+  // Dynamic Featured Post selection & Pagination (5 posts per page)
+  const postsPerPage = 5;
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const featuredPost = currentPage === 1 ? filteredPosts[0] : null;
+  const regularPosts = currentPage === 1
+    ? filteredPosts.slice(1, postsPerPage)
+    : filteredPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
   // Form Submission
   const handleSubmit = (e) => {
@@ -343,6 +353,51 @@ export default function BlogListPage() {
                 </motion.article>
               ))}
             </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="mt-16 flex items-center justify-center gap-2">
+                <button
+                  disabled={currentPage === 1}
+                  onClick={() => {
+                    setCurrentPage(prev => Math.max(1, prev - 1));
+                    window.scrollTo({ top: 350, behavior: "smooth" });
+                  }}
+                  className="px-4 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 bg-white text-black/60 border border-black/5 hover:bg-black/5 hover:text-black disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-black/60"
+                >
+                  Prev
+                </button>
+                {Array.from({ length: totalPages }).map((_, idx) => {
+                  const pageNum = idx + 1;
+                  return (
+                    <button
+                      key={pageNum}
+                      onClick={() => {
+                        setCurrentPage(pageNum);
+                        window.scrollTo({ top: 350, behavior: "smooth" });
+                      }}
+                      className={`w-10 h-10 rounded-full text-[11px] font-bold transition-all duration-300 ${
+                        currentPage === pageNum
+                          ? "bg-black text-white shadow-lg"
+                          : "bg-white text-black/60 border border-black/5 hover:bg-black/5 hover:text-black"
+                      }`}
+                    >
+                      {pageNum}
+                    </button>
+                  );
+                })}
+                <button
+                  disabled={currentPage === totalPages}
+                  onClick={() => {
+                    setCurrentPage(prev => Math.min(totalPages, prev + 1));
+                    window.scrollTo({ top: 350, behavior: "smooth" });
+                  }}
+                  className="px-4 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 bg-white text-black/60 border border-black/5 hover:bg-black/5 hover:text-black disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-black/60"
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </>
         )}
       </section>

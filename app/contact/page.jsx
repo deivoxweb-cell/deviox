@@ -88,8 +88,9 @@ export default function ContactPage() {
   const handleChange = (e) => {
     let { name, value } = e.target;
     if (name === "phone") {
-      value = value.replace(/\D/g, "");
-      if (value.length > 15) return;
+      // Allow digits, space, hyphen, and leading '+'
+      value = value.replace(/[^0-9+\s-]/g, "");
+      if (value.length > 20) return;
     }
     setForm({ ...form, [name]: value });
   };
@@ -143,8 +144,10 @@ export default function ContactPage() {
       return "Please provide a valid email address.";
     }
 
-    if (!/^\d{7,15}$/.test(form.phone)) {
-      return "Please provide a valid phone number.";
+    // Clean phone number to check digit count (standard E.164: 7 to 15 digits)
+    const digitsOnly = form.phone.replace(/\D/g, "");
+    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+      return "Please provide a valid phone number (7 to 15 digits).";
     }
 
     return validateAttachment(attachment);
