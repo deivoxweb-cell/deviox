@@ -4,6 +4,16 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Mail, Phone, MapPin, Paperclip, ChevronDown, Send, X, Check, AlertTriangle, ArrowUpRight } from "lucide-react";
 import Magnetic from "@/src/components/Magnetic";
 
+const MAX_ATTACHMENT_SIZE = 10 * 1024 * 1024;
+const ALLOWED_ATTACHMENT_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "image/jpeg",
+  "image/png",
+];
+const ALLOWED_ATTACHMENT_EXTENSIONS = [".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png"];
+
 const SUBJECTS = [
   "General Inquiry",
   "BCP Consultancy",
@@ -59,6 +69,7 @@ const InputField = ({ id, label, type, form, handleChange }) => {
 
 export default function ContactPage() {
   const container = useRef(null);
+  const fileInputRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"],
@@ -68,8 +79,9 @@ export default function ContactPage() {
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const [form, setForm] = useState({
-    name: "", phone: "", company: "", email: "", subject: "", message: "",
+    name: "", phone: "", company: "", email: "", country: "", location: "", designation: "", subject: "", message: "",
   });
+  const [attachment, setAttachment] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState({ type: null, message: "" });
 
@@ -77,15 +89,72 @@ export default function ContactPage() {
     let { name, value } = e.target;
     if (name === "phone") {
       value = value.replace(/\D/g, "");
-      if (value.length > 10) return;
+      if (value.length > 15) return;
     }
     setForm({ ...form, [name]: value });
   };
 
+  const validateAttachment = (file) => {
+    if (!file) return "";
+
+    const extension = file.name.slice(file.name.lastIndexOf(".")).toLowerCase();
+    if (!ALLOWED_ATTACHMENT_TYPES.includes(file.type) || !ALLOWED_ATTACHMENT_EXTENSIONS.includes(extension)) {
+      return "Attachment must be PDF, DOC, DOCX, JPG, JPEG, or PNG.";
+    }
+
+    if (file.size > MAX_ATTACHMENT_SIZE) {
+      return "Attachment must be 10 MB or smaller.";
+    }
+
+    return "";
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0] || null;
+    const error = validateAttachment(file);
+
+    if (error) {
+      setAttachment(null);
+      e.target.value = "";
+      setStatus({ type: "error", message: error });
+      return;
+    }
+
+    setAttachment(file);
+    setStatus({ type: null, message: "" });
+  };
+
+  const validateForm = () => {
+    const requiredFields = [
+      ["name", "Name"],
+      ["email", "Email"],
+      ["phone", "Phone"],
+      ["country", "Country"],
+      ["location", "Location"],
+      ["designation", "Designation"],
+      ["subject", "Nature of Enquiry"],
+      ["message", "Message"],
+    ];
+
+    const missing = requiredFields.find(([key]) => !form[key]?.trim());
+    if (missing) return `Required: ${missing[1]}.`;
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      return "Please provide a valid email address.";
+    }
+
+    if (!/^\d{7,15}$/.test(form.phone)) {
+      return "Please provide a valid phone number.";
+    }
+
+    return validateAttachment(attachment);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      setStatus({ type: "error", message: "Required: Name, Email, Message." });
+    const validationError = validateForm();
+    if (validationError) {
+      setStatus({ type: "error", message: validationError });
       return;
     }
 
@@ -93,10 +162,13 @@ export default function ContactPage() {
     setStatus({ type: null, message: "" });
 
     try {
+      const formData = new FormData();
+      Object.entries(form).forEach(([key, value]) => formData.append(key, value));
+      if (attachment) formData.append("attachment", attachment);
+
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
+        body: formData
       });
 
       const result = await res.json();
@@ -106,7 +178,9 @@ export default function ContactPage() {
       }
 
       setStatus({ type: "success", message: "Transmission Successful. We will respond shortly." });
-      setForm({ name: "", phone: "", company: "", email: "", subject: "", message: "" });
+      setForm({ name: "", phone: "", company: "", email: "", country: "", location: "", designation: "", subject: "", message: "" });
+      setAttachment(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
       setTimeout(() => setStatus({ type: null, message: "" }), 5000);
     } catch (error) {
       setStatus({ type: "error", message: error.message });
@@ -199,9 +273,14 @@ export default function ContactPage() {
                   <InputField id="email" label="Professional Email" type="email" form={form} className="text-black" handleChange={handleChange} />
                   <InputField id="phone" label="Contact Number" type="tel" form={form} className="text-black" handleChange={handleChange} />
                 </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <InputField id="country" label="Country" type="text" form={form} className="text-black" handleChange={handleChange} />
+                  <InputField id="location" label="Location" type="text" form={form} className="text-black" handleChange={handleChange} />
+                </div>
+                <InputField id="designation" label="Designation" type="text" form={form} className="text-black" handleChange={handleChange} />
 
                 <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Inquiry</label>
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">Nature of Enquiry</label>
                   <div className="relative">
                     <select
                       name="subject"
@@ -228,6 +307,21 @@ export default function ContactPage() {
                     className="w-full bg-transparent py-4 text-black text-2xl focus:outline-none font-bold resize-none rounded-none relative z-10"
                     placeholder="Elaborate on requirements..."
                   />
+                </div>
+
+                <div className="relative group bg-black/[0.02] border-l-2 border-black/5 p-6 hover:bg-accent/5 hover:border-accent transition-all duration-300">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/30 mb-4 block group-hover:text-accent transition-colors">File Attachment</label>
+                  <div className="relative flex items-center gap-4">
+                    <Paperclip className="text-black/20 group-hover:text-black transition-colors" size={24} />
+                    <input
+                      ref={fileInputRef}
+                      name="attachment"
+                      type="file"
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png"
+                      onChange={handleFileChange}
+                      className="w-full bg-transparent py-4 text-black text-xl focus:outline-none font-bold rounded-none relative z-10"
+                    />
+                  </div>
                 </div>
 
                 <div className="pt-10 flex justify-start">
