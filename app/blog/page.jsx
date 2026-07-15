@@ -148,7 +148,7 @@ export default function BlogListPage() {
     <div className="bg-[#F5F5F5] text-black selection:bg-accent selection:text-black min-h-screen" ref={containerRef}>
       
       {/* ── 1. Brutalist Hero Section ──────────────── */}
-      <section className="relative min-h-[70vh] flex flex-col justify-center pt-40 pb-20 overflow-hidden px-6 lg:px-16 bg-black text-white">
+      <section className="relative min-h-[70vh] flex flex-col justify-center pt-40 pb-20 overflow-hidden px-4 bg-black text-white">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-accent/15 sm:bg-accent/25 rounded-full blur-[80px] sm:blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] bg-primary/20 rounded-full blur-[80px] pointer-events-none" />
@@ -203,7 +203,7 @@ export default function BlogListPage() {
       </section>
 
       {/* ── 2. Category Filter & Content Grid ─────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-16 py-24 relative z-30">
+      <section className="max-w-7xl mx-auto px-4 py-24 relative z-30">
         
         {/* Category Selector & Write Button */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-black/5 pb-12 mb-16">
@@ -405,7 +405,7 @@ export default function BlogListPage() {
       {/* ── 3. Bottom CTA Grid ────────────────────────────────────────── */}
       <section className="bg-black text-white py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-16">
+        <div className="relative max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="max-w-2xl">
             <h3 className="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tighter leading-[0.85] mb-8">
               Resolve your <br /><span className="text-accent">Industrial Challenge.</span>

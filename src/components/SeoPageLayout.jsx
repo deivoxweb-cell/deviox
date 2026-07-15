@@ -23,7 +23,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-12">
             {breadcrumb.map((crumb, i) => (
@@ -72,7 +72,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
       </div>
 
       {/* ─── Main content ────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-32">
+      <div className="max-w-7xl mx-auto px-4 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
 
           {/* Article */}
@@ -160,7 +160,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
 
       {/* ─── Engineering In Action ──────────────────────────────── */}
       <section className="py-32 border-t border-black/5 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
             <div className="max-w-2xl">
               <p className="text-accent text-[11px] font-semibold uppercase tracking-[0.2em] mb-6">FIELD DATA</p>
@@ -196,7 +196,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
       </section>
 
       {/* ─── Bottom CTA ────────────────────────────────────────── */}
-      <section className="bg-black py-40 px-6 lg:px-16 relative overflow-hidden">
+      <section className="bg-black py-40 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
         <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="max-w-2xl">

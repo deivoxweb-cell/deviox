@@ -50,16 +50,16 @@ const Footer = () => {
         INDUSTRIAL
       </motion.div>
 
-      <div className="relative z-10 pt-32 pb-16 px-6 lg:px-16">
+      <div className="relative z-10 pt-16 sm:pt-32 pb-10 sm:pb-16 px-6 lg:px-16">
         <div className="max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-12 sm:mb-32">
             <div className="lg:col-span-5">
               <Image
                 src="/images/Logo.png"
                 alt="DEI VOX PVT. LTD. logo"
                 width={120}
                 height={48}
-                className="mb-12"
+                className="mb-8 sm:mb-12"
               />
 
               <h3 className="text-3xl font-extrabold uppercase tracking-tighter mb-6 leading-tight">
@@ -119,8 +119,11 @@ const Footer = () => {
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-12">
               {Object.entries(NAV_LINKS).map(([title, links]) => (
-                <div key={title}>
-                  <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-10">
+                <div 
+                  key={title}
+                  className={title === "Core" || title === "Infrastructure" ? "hidden sm:block" : ""}
+                >
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-6 sm:mb-10">
                     {title}
                   </h4>
                   <ul className="space-y-4">
