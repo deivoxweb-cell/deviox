@@ -103,16 +103,15 @@ const ClientSeries = () => {
           <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-          <div className="flex overflow-hidden w-full py-4 group">
+          <motion.div style={{ y: tickerY }} className="flex overflow-hidden w-full py-4 group">
             <motion.div
-              style={{ y: tickerY }}
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
               className="flex items-center w-max group-hover:[animation-play-state:paused]"
             >
               {ticker}{ticker}
             </motion.div>
-          </div>
+          </motion.div>
         </div>
 
         {/* GST tag */}

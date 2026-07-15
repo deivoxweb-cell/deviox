@@ -54,7 +54,6 @@ const WhyChooseUs = () => {
 
         {/* ── Header ── */}
         <motion.div
-          style={{ y: headingY }}
           className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 md:gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-24"
         >
           <div className="max-w-2xl">
@@ -90,21 +89,21 @@ const WhyChooseUs = () => {
               <ScrollRevealItem key={feature.title} variant="fade-up">
                 <motion.div
                   whileHover={{ y: -10 }}
-                  className="relative group bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 h-full flex flex-col justify-between transition-all duration-500 overflow-hidden cursor-default hover:shadow-2xl hover:shadow-black/10"
+                  className="relative group bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 lg:p-8 h-full flex flex-col justify-between transition-all duration-500 overflow-hidden cursor-default hover:shadow-2xl hover:shadow-black/10"
                 >
                   {/* Background Number */}
-                  <div className="absolute top-[-10%] right-[-10%] text-[100px] sm:text-[120px] lg:text-[140px] font-extrabold text-black/[0.03] pointer-events-none leading-none tracking-tighter">
+                  <div className="absolute top-[-5%] right-[-5%] text-[100px] sm:text-[120px] lg:text-[130px] font-extrabold text-black/[0.03] pointer-events-none leading-none tracking-tighter">
                     {feature.number}
                   </div>
                   {/* Shimmer top on hover */}
                   <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div className="relative z-10">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-black flex items-center justify-center text-accent mb-6 sm:mb-8 lg:mb-10 group-hover:scale-110 group-hover:bg-black group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-black flex items-center justify-center text-accent mb-6 lg:mb-8 group-hover:scale-110 group-hover:bg-black group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
                       <Icon className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2} />
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tighter text-black leading-tight mb-3 sm:mb-4">
+                    <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tighter text-black leading-tight mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-black/50 text-xs sm:text-sm font-medium leading-relaxed">
@@ -112,8 +111,8 @@ const WhyChooseUs = () => {
                     </p>
                   </div>
 
-                  <div className="mt-8 sm:mt-10 lg:mt-12 relative z-10">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-black/10 flex items-center justify-center text-black group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                  <div className="mt-6 lg:mt-8 relative z-10">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-black/10 flex items-center justify-center text-black group-hover:bg-accent group-hover:border-accent transition-all duration-300">
                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                   </div>
