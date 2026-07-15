@@ -78,7 +78,7 @@ const ClientSeries = () => {
   );
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white border-y border-black/[0.04] overflow-hidden relative">
+    <section ref={sectionRef} className="py-12 md:py-24 bg-white border-y border-black/[0.04] overflow-hidden relative">
       <div className="absolute inset-0 industrial-grid opacity-10 pointer-events-none" />
 
       <div className="relative z-10">
@@ -88,20 +88,20 @@ const ClientSeries = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center gap-4 mb-24"
+          className="flex flex-col items-center gap-4 mb-10 md:mb-20"
         >
-          <div className="flex items-center gap-6">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-black/20" />
-            <p className="text-[10px] font-bold text-black/40 tracking-[0.4em] uppercase">Trusted By Indian Leaders</p>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-black/20" />
+          <div className="flex items-center gap-3 sm:gap-6 max-w-full px-4 justify-center">
+            <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-r from-transparent to-black/20 shrink-0" />
+            <p className="text-[9px] sm:text-[10px] font-bold text-black/40 tracking-[0.3em] sm:tracking-[0.4em] uppercase whitespace-nowrap">Trusted By Indian Leaders</p>
+            <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent to-black/20 shrink-0" />
           </div>
         </motion.div>
 
         {/* Ticker */}
         <div className="relative">
           {/* Fade masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
           <div className="flex overflow-hidden w-full py-4 group">
             <motion.div
@@ -121,11 +121,11 @@ const ClientSeries = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex justify-center mt-24"
+          className="flex justify-center mt-10 md:mt-20 px-4"
         >
-          <div className="flex items-center gap-3 px-6 py-3 rounded-full border border-black/10 bg-white hover:border-accent/30 hover:bg-[#f8f6ff] transition-all duration-500 group cursor-default shadow-sm">
-            <div className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-[10px] font-bold text-black/50 group-hover:text-black uppercase tracking-[0.2em] transition-colors">GST Compliant — GSTIN 29AAKCD5641B1ZQ</span>
+          <div className="flex items-center gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-black/10 bg-white hover:border-accent/30 hover:bg-[#f8f6ff] transition-all duration-500 group cursor-default shadow-sm text-center">
+            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-accent animate-pulse shrink-0" />
+            <span className="text-[9px] sm:text-[10px] font-bold text-black/50 group-hover:text-black uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-colors leading-tight">GST Compliant — GSTIN 29AAKCD5641B1ZQ</span>
           </div>
         </motion.div>
       </div>
