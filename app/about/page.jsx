@@ -38,7 +38,7 @@ export default function AboutPage() {
     offset: ["start start", "end start"],
   });
 
-  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const yHeroText = useTransform(scrollYProgress, [0, 1], ["0px", "120px"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
@@ -115,73 +115,75 @@ export default function AboutPage() {
 
       {/* ── 2. The Mission ──────────────── */}
       <section className="py-24 sm:py-40 w-full px-6 lg:px-16 relative z-30">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="lg:col-span-5 relative"
-          >
-            <div className="relative bg-[#0a0a0a] rounded-[2.5rem] sm:rounded-[4rem] p-12 sm:p-20 flex items-center justify-center border border-white/5 shadow-2xl overflow-hidden group">
-              {/* Glow orb */}
-              <div className="absolute -top-8 -right-8 w-40 h-40 bg-accent/20 rounded-full blur-[60px] pointer-events-none group-hover:bg-accent/35 transition-all duration-700" />
-              <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-primary/15 rounded-full blur-[50px] pointer-events-none" />
-              {/* Shimmer top */}
-              <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
-              {/* Circuit dots */}
-              <div className="absolute top-5 right-5 grid grid-cols-3 gap-1.5 opacity-20">
-                {[...Array(9)].map((_, i) => <div key={i} className={`w-1 h-1 rounded-full ${i % 2 === 0 ? 'bg-accent' : 'bg-white/30'}`} />)}
+        <div className="max-w-[90rem] mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative bg-[#0a0a0a] rounded-[2.5rem] sm:rounded-[4rem] p-12 sm:p-20 flex items-center justify-center border border-white/5 shadow-2xl overflow-hidden group">
+                {/* Glow orb */}
+                <div className="absolute -top-8 -right-8 w-40 h-40 bg-accent/20 rounded-full blur-[60px] pointer-events-none group-hover:bg-accent/35 transition-all duration-700" />
+                <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-primary/15 rounded-full blur-[50px] pointer-events-none" />
+                {/* Shimmer top */}
+                <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+                {/* Circuit dots */}
+                <div className="absolute top-5 right-5 grid grid-cols-3 gap-1.5 opacity-20">
+                  {[...Array(9)].map((_, i) => <div key={i} className={`w-1 h-1 rounded-full ${i % 2 === 0 ? 'bg-accent' : 'bg-white/30'}`} />)}
+                </div>
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-full bg-accent/8 blur-2xl scale-150" />
+                  <Image
+                    src="/images/Logo.png"
+                    alt="DEI VOX Logo"
+                    width={220}
+                    height={110}
+                    className="object-contain relative z-10 drop-shadow-[0_0_20px_rgba(103,172,67,0.25)]"
+                  />
+                </div>
               </div>
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-accent/8 blur-2xl scale-150" />
-                <Image
-                  src="/images/Logo.png"
-                  alt="DEI VOX Logo"
-                  width={220}
-                  height={110}
-                  className="object-contain relative z-10 drop-shadow-[0_0_20px_rgba(103,172,67,0.25)]"
-                />
+              {/* Absolute Stat */}
+              <div className="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 bg-accent p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] shadow-2xl shadow-accent/20">
+                <p className="text-3xl sm:text-5xl font-extrabold text-black tracking-tighter">20+</p>
+                <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-black/60 mt-1">Years Experience</p>
               </div>
-            </div>
-            {/* Absolute Stat */}
-            <div className="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 bg-accent p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] shadow-2xl shadow-accent/20">
-              <p className="text-3xl sm:text-5xl font-extrabold text-black tracking-tighter">20+</p>
-              <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-black/60 mt-1">Years Experience</p>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          <div className="lg:col-span-7 flex flex-col gap-8 sm:gap-12 pt-10">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-4 sm:mb-12 leading-[0.9]">
-              The Trusted<br /><span className="text-black/20">BCP Doctors.</span>
-            </h2>
-            <div className="flex flex-col gap-8">
-              <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                <strong className="text-black">Dei Vox</strong>, officially known as{" "}
-                <strong className="text-black">DEI VOX PVT. LTD.</strong>, is a trusted{" "}
-                <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
-                overhauling, and industrial pump solutions company serving power plants and
-                industries across India.
-              </p>
-              <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP) & Boiler Water Circulation Pump (BWCP) </strong>.
-              </p>
-              <p className="text-lg font-medium text-black/40 leading-relaxed max-w-3xl">
-                We bridge the gap between complex engineering and field reliability by providing specialized BCW Pump services and high-precision re-engineering. Our mission is to deliver uncompromising <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing, ensuring maximum operational uptime for global utilities and heavy industry.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4">
-              <motion.div whileHover={{ y: -4 }} className="p-6 sm:p-10 bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all group">
-                <CheckCircle2 className="text-accent mb-4 sm:mb-6 group-hover:scale-110 transition-transform" size={24} />
-                <p className="text-xs sm:text-sm font-medium text-black/60 leading-relaxed">
-                  OEM-quality spare parts and advanced reverse engineering that meets global standards.
+            <div className="lg:col-span-7 flex flex-col gap-6 sm:gap-8 pt-4">
+              <h2 className="text-4xl md:text-6xl font-extrabold text-black uppercase tracking-tighter mb-2 sm:mb-4 leading-[0.9]">
+                The Trusted<br /><span className="text-black/20">BCP Doctors.</span>
+              </h2>
+              <div className="flex flex-col gap-4 sm:gap-6">
+                <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
+                  <strong className="text-black">Dei Vox</strong>, officially known as{" "}
+                  <strong className="text-black">DEI VOX PVT. LTD.</strong>, is a trusted{" "}
+                  <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
+                  overhauling, and industrial pump solutions company serving power plants and
+                  industries across India.
                 </p>
-              </motion.div>
-              <motion.div whileHover={{ y: -4 }} className="p-6 sm:p-10 bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all group">
-                <Award className="text-accent mb-4 sm:mb-6 group-hover:scale-110 transition-transform" size={24} />
-                <p className="text-xs sm:text-sm font-medium text-black/60 leading-relaxed">
-                  Uncompromising performance at domestic pricing, ensuring maximum ROI for your facility.
+                <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
+                  Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX INDIA is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP) & Boiler Water Circulation Pump (BWCP) </strong>.
                 </p>
-              </motion.div>
+                <p className="text-lg font-medium text-black/40 leading-relaxed max-w-3xl">
+                  We bridge the gap between complex engineering and field reliability by providing specialized BCW Pump services and high-precision re-engineering. Our mission is to deliver uncompromising <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing, ensuring maximum operational uptime for global utilities and heavy industry.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-2">
+                <motion.div whileHover={{ y: -4 }} className="p-6 sm:p-10 bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all group">
+                  <CheckCircle2 className="text-accent mb-4 sm:mb-6 group-hover:scale-110 transition-transform" size={24} />
+                  <p className="text-xs sm:text-sm font-medium text-black/60 leading-relaxed">
+                    OEM-quality spare parts and advanced reverse engineering that meets global standards.
+                  </p>
+                </motion.div>
+                <motion.div whileHover={{ y: -4 }} className="p-6 sm:p-10 bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all group">
+                  <Award className="text-accent mb-4 sm:mb-6 group-hover:scale-110 transition-transform" size={24} />
+                  <p className="text-xs sm:text-sm font-medium text-black/60 leading-relaxed">
+                    Uncompromising performance at domestic pricing, ensuring maximum ROI for your facility.
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,7 +211,7 @@ export default function AboutPage() {
         <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.03] industrial-grid pointer-events-none" />
 
-        <div className="w-full px-6 lg:px-16 relative z-10">
+        <div className="max-w-[90rem] mx-auto w-full px-6 lg:px-16 relative z-10">
           <div className="max-w-4xl mb-12 sm:mb-24">
             <div className="flex items-center gap-4 mb-6 sm:mb-8">
               <div className="h-px w-8 sm:w-12 bg-accent" />
@@ -250,7 +252,7 @@ export default function AboutPage() {
 
       {/* ── 5. Meet The Team (Technical Directory) ─────────────────────── */}
       < section className="py-24 sm:py-40 bg-white" >
-        <div className="w-full px-6 lg:px-16">
+        <div className="max-w-[90rem] mx-auto w-full px-6 lg:px-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-24 gap-12 border-b-4 border-black pb-12">
             <div className="max-w-2xl">
               <p className="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-6">TECHNICAL LEADERSHIP</p>

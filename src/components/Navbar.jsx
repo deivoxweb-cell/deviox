@@ -40,7 +40,7 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="w-full max-w-6xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-full px-2 py-2 flex items-center justify-between"
+        className="w-full max-w-7xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-full px-2 py-2 flex items-center justify-between"
       >
         <Link href="/" className="flex items-center group pl-2">
           <Image

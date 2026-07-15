@@ -46,8 +46,8 @@ const AboutSection = () => {
           {/* ── Left bento column ── */}
           <div className="lg:col-span-5 flex flex-col gap-5">
             <ScrollReveal variant="scale-up" delay={0.05}>
-              <Link href="/about" className="block w-full rounded-[3rem] shadow-2xl shadow-black/25 overflow-hidden group cursor-pointer">
-                <div className="relative bg-[#0a0a0a] rounded-[3rem] p-10 flex flex-col gap-8 min-h-[300px] overflow-hidden">
+              <Link href="/about" className="block w-full rounded-[2rem] sm:rounded-[3rem] shadow-2xl shadow-black/25 overflow-hidden group cursor-pointer">
+                <div className="relative bg-[#0a0a0a] rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-10 flex flex-col gap-6 sm:gap-8 min-h-[280px] sm:min-h-[300px] overflow-hidden">
 
                   {/* Green glow orb top-right */}
                   <div className="absolute -top-10 -right-10 w-52 h-52 bg-accent/20 rounded-full blur-[70px] pointer-events-none group-hover:bg-accent/35 transition-all duration-700" />
@@ -65,14 +65,13 @@ const AboutSection = () => {
                   <div className="absolute top-0 left-[8%] right-[8%] h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
 
                   {/* Logo + divider + text */}
-                  <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8">
-                    <div className="relative flex-shrink-0">
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+                    <div className="relative flex-shrink-0 w-[120px] sm:w-[155px] aspect-square">
                       <div className="absolute inset-0 rounded-full bg-accent/10 blur-xl scale-150" />
                       <Image
                         src="/images/Logo.png"
                         alt="DEI VOX Logo"
-                        width={155}
-                        height={155}
+                        fill
                         className="object-contain relative z-10 drop-shadow-[0_0_18px_rgba(103,172,67,0.28)]"
                         loading="lazy"
                       />
@@ -94,22 +93,24 @@ const AboutSection = () => {
                   </div>
 
                   {/* Bottom metrics strip */}
-                  <div className="relative z-10 flex items-center gap-5 pt-5 border-t border-white/[0.06]">
-                    <div>
-                      <p className="text-2xl font-extrabold text-white tracking-tighter leading-none">20+</p>
-                      <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Yrs Expert</p>
+                  <div className="relative z-10 flex items-center justify-between gap-4 pt-5 border-t border-white/[0.06]">
+                    <div className="flex-1 grid grid-cols-3 gap-2 sm:flex sm:flex-initial sm:items-center sm:gap-6">
+                      <div>
+                        <p className="text-xl sm:text-2xl font-extrabold text-white tracking-tighter leading-none">20+</p>
+                        <p className="text-[8px] text-white/30 uppercase tracking-widest mt-1">Yrs Expert</p>
+                      </div>
+                      <div className="w-px h-8 bg-white/10 hidden sm:block" />
+                      <div>
+                        <p className="text-xl sm:text-2xl font-extrabold text-white tracking-tighter leading-none">500+</p>
+                        <p className="text-[8px] text-white/30 uppercase tracking-widest mt-1">Pumps Done</p>
+                      </div>
+                      <div className="w-px h-8 bg-white/10 hidden sm:block" />
+                      <div>
+                        <p className="text-xl sm:text-2xl font-extrabold text-accent tracking-tighter leading-none">24/7</p>
+                        <p className="text-[8px] text-white/30 uppercase tracking-widest mt-1">Support</p>
+                      </div>
                     </div>
-                    <div className="w-px h-8 bg-white/10" />
-                    <div>
-                      <p className="text-2xl font-extrabold text-white tracking-tighter leading-none">500+</p>
-                      <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Pumps Done</p>
-                    </div>
-                    <div className="w-px h-8 bg-white/10" />
-                    <div>
-                      <p className="text-2xl font-extrabold text-accent tracking-tighter leading-none">24/7</p>
-                      <p className="text-[8px] text-white/30 uppercase tracking-widest mt-0.5">Support</p>
-                    </div>
-                    <div className="ml-auto">
+                    <div className="flex-shrink-0">
                       <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 group-hover:border-accent group-hover:text-accent transition-all duration-300">
                         <ArrowUpRight size={16} />
                       </div>
