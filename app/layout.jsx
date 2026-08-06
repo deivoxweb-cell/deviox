@@ -12,14 +12,24 @@ const inter = Inter({ subsets: ["latin"] });
 const SITE_URL = "https://deivoxbcp.com";
 
 const BRAND_ALTERNATES = [
-  "Dei Vox",
-  "Deivox",
-  "deivox",
-  "DEI VOX",
-  "DEI VOX India",
-  "DEI VOX BCP",
-  "DEI VOX Company",
-  "DEI VOX PVT. LTD.",
+    "deivox",
+    "DEIVOX Company",
+    "Torishima BCP",
+    "KSB BCP",
+    "Hayward Tyler BCP",
+    "boiler Water Circulation Pump",
+    "Glandless Boiler Circulation Pump",
+    "Wet stator motor BCP",
+    "high pressure boiler circulation pump",
+    "boiler circulation pump",
+    "boiler recirculation pump",
+    "HLAV, LUV",    
+    "Boiler Circulation Pump repair India",
+    "BCP overhauling",
+    "Boiler Water Circulation Pump service",
+    "motor rewinding",
+    "insitu machining",
+    "industrial pump repair Bengaluru",
 ];
 
 export const metadata = {
