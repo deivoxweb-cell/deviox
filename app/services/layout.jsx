@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Services | BCP Overhauling, Motor Rewinding & Insitu Machining",
   description:
-    "DEI VOX India offers full-spectrum Boiler Circulation Pump (BCP) services: BCP overhauling, insitu machining, motor rewinding, spare parts supply and reverse engineering. Expert boiler water circulation pump service across India.",
+    "DEIVOX offers full-spectrum Boiler Circulation Pump (BCP) services: BCP overhauling, insitu machining, motor rewinding, spare parts supply and reverse engineering. Expert boiler water circulation pump service across India.",
   alternates: { canonical: "/services" },
   keywords: [
     "BCP services",
@@ -11,16 +11,16 @@ export const metadata = {
     "motor rewinding",
     "spare parts boiler pump",
     "reverse engineering pump",
-    "DEI VOX services",
-    "DEI VOX Company",
+    "DEIVOX services",
+    "DEIVOX Company",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
   ],
   openGraph: {
-    title: "Services | DEI VOX BCP Boiler Circulation Pump Specialists",
+    title: "Services | DEIVOX BCP Boiler Circulation Pump Specialists",
     description:
-      "Complete Boiler Circulation Pump services: overhauling, motor rewinding, insitu machining, spare parts & reverse engineering by DEI VOX India.",
+      "Complete Boiler Circulation Pump services: overhauling, motor rewinding, insitu machining, spare parts & reverse engineering by DEIVOX.",
     url: "https://deivoxbcp.com/services",
   },
 };

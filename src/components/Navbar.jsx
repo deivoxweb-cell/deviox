@@ -14,11 +14,12 @@ const navLinks = [
 const pumpLinks = [
   { name: "BCP Repair India", href: "/boiler-circulation-pump" },
   { name: "Composite Material", href: "/composite-material" },
+  { name: "Submersible Repair", href: "/submersible-pump-repair" },
 ];
 
 const otherLinks = [
   { name: "Services", href: "/services" },
-  { name: "ISO Certificate", href: "/iso-certificate" },
+  // { name: "ISO Certificate", href: "/iso-certificate" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
@@ -45,7 +46,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center group pl-2">
           <Image
             src="/images/Logo.png"
-            alt="DEI VOX Logo"
+            alt="DEIVOX Logo"
             width={130}
             height={52}
             className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-500"

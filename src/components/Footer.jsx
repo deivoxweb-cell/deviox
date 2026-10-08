@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="lg:col-span-5">
               <Image
                 src="/images/Logo.png"
-                alt="DEI VOX PVT. LTD. logo"
+                alt="DEI VOX INDIA PVT. LTD. logo"
                 width={120}
                 height={48}
                 className="mb-8 sm:mb-12"

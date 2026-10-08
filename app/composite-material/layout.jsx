@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Composite Material & Industrial Bearings | DEI VOX India",
+  title: "Composite Material & Industrial Bearings | DEIVOX",
   description:
-    "DEI VOX India supplies thermoplastic composite materials and all types of industrial bearings — ball, roller, thrust, needle, taper and spherical bearings. High-quality composite materials for aerospace, automotive, healthcare and construction sectors.",
+    "DEIVOX supplies thermoplastic composite materials and all types of industrial bearings — ball, roller, thrust, needle, taper and spherical bearings. High-quality composite materials for aerospace, automotive, healthcare and construction sectors.",
   alternates: { canonical: "/composite-material" },
   keywords: [
     "composite material India",
@@ -9,17 +9,17 @@ export const metadata = {
     "industrial bearings India",
     "ball bearings",
     "roller bearings",
-    "DEI VOX composite",
+    "DEIVOX composite",
     "bearing supplier India",
-    "DEI VOX Company",
+    "DEIVOX Company",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
   ],
   openGraph: {
-    title: "Composite Material & Bearings | DEI VOX India",
+    title: "Composite Material & Bearings | DEIVOX",
     description:
-      "Thermoplastic composites and all types of industrial bearings by DEI VOX India. Serving aviation, automotive, healthcare and construction sectors.",
+      "Thermoplastic composites and all types of industrial bearings by DEIVOX. Serving aviation, automotive, healthcare and construction sectors.",
     url: "https://deivoxbcp.com/composite-material",
   },
 };

@@ -60,7 +60,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
             <div className="relative w-full aspect-[21/9] rounded-[3rem] overflow-hidden border-2 border-white/5 shadow-2xl">
               <Image
                 src={heroImage}
-                alt="DEI VOX Industrial"
+                alt="DEIVOX Industrial"
                 fill
                 className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
                 priority

@@ -64,12 +64,12 @@ const applications = [
 ];
 
 const bearingTypes = [
-  "Ball Bearings",
-  "Roller Bearings",
   "Thrust Bearings",
-  "Needle Bearings",
-  "Taper Bearings",
-  "Spherical Bearings",
+  "Tilt Pad",
+  "Metal Bearings",
+  // "Needle Bearings",
+  // "Taper Bearings",
+  // "Spherical Bearings",
 ];
 
 /* ── Page ─────────────────────────────────────── */
@@ -295,7 +295,7 @@ export default function CompositeMaterialPage() {
             {/* Left column – text */}
             <div className="lg:col-span-6 flex flex-col gap-8">
               <p className="text-black/60 text-lg font-medium leading-relaxed">
-                At Dei Vox, we specialize in providing <strong className="text-black">all types of bearings</strong> to meet the diverse needs of various industries. Whether it's for automotive, industrial machinery, agriculture, aerospace, or household appliances, we offer a comprehensive range of bearing solutions tailored to your application.
+                At DeiVox, we specialize in providing <strong className="text-black">all types of bearings</strong> to meet the diverse needs of various industries. Whether it's for automotive, industrial machinery, agriculture, aerospace, or household appliances, we offer a comprehensive range of bearing solutions tailored to your application.
               </p>
               <p className="text-black/60 text-lg font-medium leading-relaxed">
                 We work with leading manufacturers to ensure every bearing we supply meets the highest standards of quality, precision, and durability. From high-speed performance to heavy-load endurance, we have the right bearing for every requirement.
@@ -388,7 +388,7 @@ export default function CompositeMaterialPage() {
             Advanced <br /><span className="text-white/20">Materials.</span>
           </h2>
           <p className="text-white/40 text-lg sm:text-xl font-medium mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
-            Whether you need standard, miniature, or high-performance bearings — or advanced thermoplastic composite solutions — count on Dei Vox for reliability, competitive pricing, and top-notch support.
+            Whether you need standard, miniature, or high-performance bearings — or advanced thermoplastic composite solutions — count on DeiVox for reliability, competitive pricing, and top-notch support.
           </p>
           <Link href="/contact" className="inline-block">
             <button className="flex items-center gap-4 sm:gap-6 bg-accent text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full font-bold uppercase tracking-[0.25em] text-[10px] sm:text-sm hover:scale-105 transition-all shadow-2xl shadow-accent/20 group">

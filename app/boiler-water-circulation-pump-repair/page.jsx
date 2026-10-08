@@ -1,17 +1,17 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Boiler Water Circulation Pump Repair | DEI VOX India",
+  title: "Boiler Circulation Pump Repair | DEIVOX",
   description: "Specialized Boiler Water Circulation Pump repair and maintenance. ISO certified experts for thermal power plant pump solutions.",
   keywords: [
     "Boiler Water Circulation Pump Repair",
-    "DEI VOX India",
+    "DEIVOX",
     "BCP",
     "pump repair"
   ],
   alternates: { canonical: "/boiler-water-circulation-pump-repair" },
   openGraph: {
-    title: "Boiler Water Circulation Pump Repair | DEI VOX India",
+    title: "Boiler Water Circulation Pump Repair | DEIVOX",
     description: "Specialized Boiler Water Circulation Pump repair and maintenance. ISO certified experts for thermal power plant pump solutions.",
     url: "https://deivoxbcp.com/boiler-water-circulation-pump-repair",
     images: [
@@ -19,7 +19,7 @@ export const metadata = {
         url: "https://deivoxbcp.com/images/bcp_overhauling.png",
         width: 1200,
         height: 630,
-        alt: "Boiler Water Circulation Pump Repair - DEI VOX India",
+        alt: "Boiler Circulation Pump Repair - DEIVOX",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata = {
 const breadcrumb = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Boiler Water Circulation Pump Repair" },
+  { label: "Boiler Circulation Pump Repair" },
 ];
 
 const relatedLinks = [
@@ -44,7 +44,7 @@ const jsonLd = {
       name: "Boiler Water Circulation Pump Repair",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX PVT. LTD.",
+        name: "DEI VOX INDIA PVT. LTD.",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Boiler Water Circulation Pump Repair",
@@ -74,7 +74,7 @@ export default function Page() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEI VOX India is a recognized leader in <strong>Boiler Water Circulation Pump Repair</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
+          DEIVOX is a recognized leader in <strong>Boiler Water Circulation Pump Repair</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
@@ -85,7 +85,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Choose DEI VOX India?
+          Why Choose DEIVOX?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li>ISO Certified execution for highest reliability</li>

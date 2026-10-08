@@ -32,7 +32,7 @@ export default function Loading() {
           textTransform: "uppercase",
         }}
       >
-        DEI VOX
+        DEIVOX
       </span>
 
       {/* Spinning ring + logo */}
@@ -51,7 +51,7 @@ export default function Loading() {
 
         <Image
           src="/images/Logo.png"
-          alt="DEI VOX"
+          alt="DEIVOX"
           width={44}
           height={44}
           style={{
@@ -78,7 +78,7 @@ export default function Loading() {
           color: "rgba(255,255,255,0.4)",
         }}
       >
-        DEI VOX INDIA
+        DEIVOX
       </p>
 
       {/* Indeterminate shimmer bar at bottom */}

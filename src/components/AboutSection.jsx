@@ -70,7 +70,7 @@ const AboutSection = () => {
                       <div className="absolute inset-0 rounded-full bg-accent/10 blur-xl scale-150" />
                       <Image
                         src="/images/Logo.png"
-                        alt="DEI VOX Logo"
+                        alt="DEIVOX Logo"
                         fill
                         className="object-contain relative z-10 drop-shadow-[0_0_18px_rgba(103,172,67,0.28)]"
                         loading="lazy"

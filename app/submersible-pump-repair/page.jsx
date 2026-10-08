@@ -1,26 +1,26 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX India",
+  title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEIVOX",
   description:
-    "DEI VOX India provides specialist repair, upgrading, motor rewinding, and maintenance services for industrial submersible pumping motor units. ISO 9001:2015 certified. Pan-India service.",
+    "DEIVOX provides specialist repair, upgrading, motor rewinding, and maintenance services for industrial submersible pumping motor units. ISO 9001:2015 certified. Pan-India service.",
   keywords: [
     "submersible pump repair India",
     "submersible pumping motor unit",
     "submersible motor rewinding",
     "submersible pump overhauling",
     "industrial submersible pump service",
-    "DEI VOX submersible pump",
-    "DEI VOX Company",
+    "DEIVOX submersible pump",
+    "DEIVOX Company",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
   ],
   alternates: { canonical: "/submersible-pump-repair" },
   openGraph: {
-    title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEI VOX India",
+    title: "Submersible Pump Repair, Upgrading & Motor Rewinding — DEIVOX",
     description:
-      "Specialist repair, upgrading and motor rewinding of industrial submersible pumping motor units by DEI VOX India. ISO certified. 24/7 emergency response.",
+      "Specialist repair, upgrading and motor rewinding of industrial submersible pumping motor units by DEIVOX. ISO certified. 24/7 emergency response.",
     url: "https://deivoxbcp.com/submersible-pump-repair",
   },
 };
@@ -44,7 +44,7 @@ const jsonLd = {
       name: "Submersible Pump Repair, Upgrading & Motor Rewinding",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX India",
+        name: "DEIVOX",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Submersible Pump Motor Service",
@@ -58,10 +58,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What types of submersible pumps does DEI VOX repair?",
+          name: "What types of submersible pumps does DEIVOX repair?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "DEI VOX India repairs and overhauls industrial submersible pumping motor units used in dewatering, process water supply, cooling water intake, condensate extraction, and boiler/turbine auxiliary systems. We work on units from all major manufacturers and can reverse-engineer obsolete components.",
+            text: "DEIVOX repairs and overhauls industrial submersible pumping motor units used in dewatering, process water supply, cooling water intake, condensate extraction, and boiler/turbine auxiliary systems. We work on units from all major manufacturers and can reverse-engineer obsolete components.",
           },
         },
         {
@@ -69,7 +69,7 @@ const jsonLd = {
           name: "Can submersible pump motors be rewound economically?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Motor rewinding is typically more economical than replacement for large submersible motors, especially when the pump casing and hydraulic components are in serviceable condition. DEI VOX evaluates the cost-benefit of rewinding versus replacement for each unit and provides transparent recommendations based on motor condition assessment.",
+            text: "Yes. Motor rewinding is typically more economical than replacement for large submersible motors, especially when the pump casing and hydraulic components are in serviceable condition. DEIVOX evaluates the cost-benefit of rewinding versus replacement for each unit and provides transparent recommendations based on motor condition assessment.",
           },
         },
         {
@@ -104,10 +104,10 @@ export default function SubmersiblePumpRepairPage() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEI VOX India provides comprehensive repair, upgrading, and motor rewinding
+          DEIVOX provides comprehensive repair, upgrading, and motor rewinding
           services for industrial <strong>submersible pumping motor units</strong> across India.
           Combining BCP-grade engineering discipline with a dedicated submersible pump service
-          capability, DEI VOX delivers reliable, ISO-certified solutions for plant operators who
+          capability, DEIVOX delivers reliable, ISO-certified solutions for plant operators who
           cannot afford unplanned pump downtime.
         </p>
 
@@ -130,7 +130,7 @@ export default function SubmersiblePumpRepairPage() {
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Unlike standard surface pumps, submersible motor units require specialised repair
           expertise because the motor and hydraulic components are intimately integrated, moisture
-          sealing is critical, and field disassembly is constrained by the unit's geometry. DEI VOX
+          sealing is critical, and field disassembly is constrained by the unit's geometry. DEIVOX
           engineers are trained in the complete repair workflow for submersible pump motor units of
           all major manufacturers.
         </p>
@@ -176,7 +176,7 @@ export default function SubmersiblePumpRepairPage() {
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Mechanical shaft seals are the most frequent failure point in oil-filled submersible motors.
           Seal face wear, spring fatigue, or secondary seal (O-ring) degradation allows water to
-          enter the motor housing, leading to rapid winding insulation failure. DEI VOX replaces
+          enter the motor housing, leading to rapid winding insulation failure. DEIVOX replaces
           seals with equivalent or upgraded seal face material pairings (silicon carbide, tungsten
           carbide, carbon) to match the specific fluid and duty conditions.
         </p>
@@ -186,7 +186,7 @@ export default function SubmersiblePumpRepairPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Motor winding insulation degrades over time due to thermal cycling, moisture ingress, and
-          voltage transients. DEI VOX performs complete stator rewinding using new insulation
+          voltage transients. DEIVOX performs complete stator rewinding using new insulation
           materials rated to the motor's original class (typically F or H), verified by insulation
           resistance, hi-pot, and surge comparison testing.
         </p>
@@ -197,7 +197,7 @@ export default function SubmersiblePumpRepairPage() {
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Radial and thrust bearings in submersible motors are subject to accelerated wear when
           abrasive particles are present in the pumped fluid, or when the pump operates at low
-          flow rates (low-flow cavitation). DEI VOX replaces bearings with OEM-equivalent or
+          flow rates (low-flow cavitation). DEIVOX replaces bearings with OEM-equivalent or
           superior-specification units and addresses root causes such as worn impellers that
           increase hydraulic radial loads.
         </p>
@@ -208,13 +208,13 @@ export default function SubmersiblePumpRepairPage() {
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           High-velocity flow and sand abrasion erode impeller vane profiles, reducing pump head and
           efficiency. Cavitation — vapour bubble collapse on impeller surfaces — causes pitting damage
-          that accelerates wear and generates severe vibration. DEI VOX restores impeller geometry
+          that accelerates wear and generates severe vibration. DEIVOX restores impeller geometry
           using hard-facing and precision grinding, or manufactures replacement impellers where
           damage is beyond economic repair.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          DEI VOX Submersible Pump Services
+          DEIVOX Submersible Pump Services
         </h2>
 
         <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-5 mb-2">
@@ -231,7 +231,7 @@ export default function SubmersiblePumpRepairPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           When plant conditions change — flow demand increases, head requirements are revised, or
-          energy efficiency targets are imposed — DEI VOX engineers assess and execute submersible
+          energy efficiency targets are imposed — DEIVOX engineers assess and execute submersible
           pump upgrades. This may include hydraulic re-rating, impeller replacement with a
           modified design, motor power upgrade, or conversion to improved seal technology.
         </p>
@@ -241,7 +241,7 @@ export default function SubmersiblePumpRepairPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Rewinding is often the most cost-effective intervention when motor winding insulation
-          has failed. DEI VOX completes rewinds using certified magnet wire and insulation systems,
+          has failed. DEIVOX completes rewinds using certified magnet wire and insulation systems,
           with final testing to IEC 60034 standards.
         </p>
 
@@ -249,7 +249,7 @@ export default function SubmersiblePumpRepairPage() {
           Spare Parts &amp; Reverse Engineering
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
-          For older submersible pump models where OEM spare parts are unavailable, DEI VOX
+          For older submersible pump models where OEM spare parts are unavailable, DEIVOX
           produces precision-dimensioned replacement components through reverse engineering —
           from impellers and wear rings to bearing housings and seal carriers.
         </p>
@@ -267,7 +267,7 @@ export default function SubmersiblePumpRepairPage() {
         </ul>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Choose DEI VOX for Submersible Pump Repair
+          Why Choose DEIVOX for Submersible Pump Repair
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">
           <li>ISO 9001:2015, 14001:2015 &amp; 45001:2018 certified service quality</li>

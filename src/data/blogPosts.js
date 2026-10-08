@@ -50,9 +50,9 @@ To achieve the design lifetime of **18,000 to 25,000 operating hours** between m
 - **Water Quality Controls:** Maintaining oxygen scavenging, pH levels, and silica limits within strict boiler water limits to minimize magnetite formation.
 - **Scheduled Mid-Life Inspections:** Pulling the motor unit during planned unit outages to check bearing clearances, thrust disc wear, and can liner integrity.
 
-DEI VOX India specializes in the diagnostic assessment, [motor rewinding](/services#motor-rewinding), can liner fabrication, and full-load testing of BCP units. Partnering with a dedicated service specialist ensures that your critical boiler assets achieve maximum reliability and zero unplanned downtime.
+DEIVOX specializes in the diagnostic assessment, [motor rewinding](/services#motor-rewinding), can liner fabrication, and full-load testing of BCP units. Partnering with a dedicated service specialist ensures that your critical boiler assets achieve maximum reliability and zero unplanned downtime.
 `,
-    author: "Engineering Team, DEI VOX",
+    author: "Engineering Team, DEIVOX",
     date: "May 15, 2026",
     readTime: "6 min read",
     image: "/images/bcp_overhauling.png",
@@ -112,9 +112,9 @@ The principal benefit of on-site machining is **time compression**. By eliminati
 
 ### Conclusion
 
-At DEI VOX India, our dedicated in-situ machining division is equipped with state-of-the-art portable machine tools and highly trained machinists. We mobilize quickly to power plants across India, restoring pump casings and large industrial flanges to original tolerances directly on-site.
+At DEIVOX, our dedicated in-situ machining division is equipped with state-of-the-art portable machine tools and highly trained machinists. We mobilize quickly to power plants across India, restoring pump casings and large industrial flanges to original tolerances directly on-site.
 `,
-    author: "Machining Specialists, DEI VOX",
+    author: "Machining Specialists, DEIVOX",
     date: "April 28, 2026",
     readTime: "5 min read",
     image: "/images/insitu_machining.png",
@@ -145,7 +145,7 @@ Rewinding a wet submersible motor requires vastly different materials, tooling, 
 #### 1. Wire Selection: Submersible Magnet Wire
 Standard enamel-coated magnet wire is entirely unsuitable. Submersible wet motors must be wound using specialized **PE (Polyethylene) or PA (Polyamide / Nylon)** insulated copper wire.
 - **Double Insulation:** A primary layer of high-density polyethylene provides dielectric strength, wrapped in a secondary protective sheath of polyamide/nylon to resist mechanical scraping during coil insertion.
-- **Continuous Leads:** Lead joint connections inside the motor should be minimized. DEI VOX ensures winding leads are brought out continuously to the terminal gland to prevent joint degradation underwater.
+- **Continuous Leads:** Lead joint connections inside the motor should be minimized. DEIVOX ensures winding leads are brought out continuously to the terminal gland to prevent joint degradation underwater.
 
 #### 2. Slot Liner and Phase Insulation
 Slots must be lined with heavy-duty polyester film (e.g., Mylar or Nomex) capable of resisting water absorption. Slot wedges must be made of non-hygroscopic composite materials that will not swell or degrade when continuously submerged.
@@ -172,9 +172,9 @@ To guarantee a reliable rewind, the motor must undergo rigorous electrical diagn
 
 Submersible motor rewinding is a highly skilled craft that cannot be cut-short. Using the wrong class of wire, low-grade slot materials, or failing to perform wet immersion tests invariably results in premature motor failure within weeks of installation.
 
-DEI VOX India operates a dedicated, ISO-certified clean winding shop equipped with specialized tooling for high-power [submersible motor rewinding](/services#motor-rewinding). Each motor undergoes our strict 24-hour wet-submersion testing protocol before final assembly, giving plant operators complete confidence in the longevity of their repaired assets.
+DEIVOX operates a dedicated, ISO-certified clean winding shop equipped with specialized tooling for high-power [submersible motor rewinding](/services#motor-rewinding). Each motor undergoes our strict 24-hour wet-submersion testing protocol before final assembly, giving plant operators complete confidence in the longevity of their repaired assets.
 `,
-    author: "Electrical Engineering, DEI VOX",
+    author: "Electrical Engineering, DEIVOX",
     date: "March 12, 2026",
     readTime: "7 min read",
     image: "/images/motor_rewinding.png",
@@ -225,7 +225,7 @@ No. Vibration is an important indicator, but bearing diagnosis should also consi
 
 Follow the plant trip limits and OEM guidance. A sudden step change, rubbing indication, rapid temperature rise, or unstable process condition requires immediate engineering assessment.
 `,
-    author: "DEI VOX Rotating Equipment Engineering Team",
+    author: "DEIVOX Rotating Equipment Engineering Team",
     authorCredentials: "BCP diagnostics, overhaul, alignment, and rotating-equipment inspection",
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",
@@ -265,7 +265,7 @@ Before condemning the winding, verify cable condition, terminal joints, supply v
 - Replace or repair the can liner and pressure-test it before final motor assembly.
 - Complete phase resistance, insulation, surge, and approved dielectric tests before commissioning.
 
-DEI VOX provides diagnosis and motor work as part of its [boiler circulation pump repair services in India](/boiler-circulation-pump).
+DEIVOX provides diagnosis and motor work as part of its [boiler circulation pump repair services in India](/boiler-circulation-pump).
 
 ### FAQ
 
@@ -277,7 +277,7 @@ No. Temperature, moisture, contamination, cables, and test setup affect the read
 
 Yes. A pinhole or crack can allow process fluid into the stator area, rapidly reducing insulation integrity and causing an earth fault.
 `,
-    author: "DEI VOX Electrical Engineering Team",
+    author: "DEIVOX Electrical Engineering Team",
     authorCredentials: "Industrial motor diagnostics, stator rewinding, insulation testing, and wet-motor repair",
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",
@@ -336,7 +336,7 @@ Use the OEM interval, plant experience, operating hours, water chemistry, condit
 
 Retain as-found and as-left dimensions, clearances, runout, electrical results, NDT reports, balance records, material traceability, and final test documentation.
 `,
-    author: "DEI VOX BCP Overhaul Engineering Team",
+    author: "DEIVOX BCP Overhaul Engineering Team",
     authorCredentials: "Boiler circulation pump strip inspection, dimensional restoration, assembly, and testing",
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",
@@ -382,7 +382,7 @@ Sometimes, but only after engineering review of material, thickness, defect caus
 
 Excessive bearing clearance or rotor displacement may have caused the contact. Repairing only the liner leaves the root cause unresolved.
 `,
-    author: "DEI VOX Mechanical and Electrical Inspection Team",
+    author: "DEIVOX Mechanical and Electrical Inspection Team",
     authorCredentials: "Canned-motor inspection, liner assessment, dimensional control, and leak testing",
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",
@@ -422,7 +422,7 @@ Request a condition-based scope through our [boiler circulation pump repair serv
 
 ### FAQ
 
-#### Can DEI VOX give a fixed price before dismantling?
+#### Can DEIVOX give a fixed price before dismantling?
 
 A budget range may be possible from good records, but concealed damage cannot be priced reliably until inspection. A staged quotation provides better technical and commercial control.
 
@@ -430,7 +430,7 @@ A budget range may be possible from good records, but concealed damage cannot be
 
 Send pump identification, drawings, operating data, failure history, photographs, required tests, delivery location, and outage deadline.
 `,
-    author: "DEI VOX Projects and Engineering Team",
+    author: "DEIVOX Projects and Engineering Team",
     authorCredentials: "Industrial pump inspection, repair scoping, project planning, and technical-commercial estimation",
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",
@@ -484,7 +484,7 @@ Only if measured condition meets the approved criteria. Acceptable overall vibra
 
 Repeat failures usually indicate an unresolved cause such as contamination, blocked cooling flow, incorrect clearance, shaft damage, misalignment, or abnormal hydraulic thrust.
 `,
-    author: "DEI VOX Rotating Equipment Engineering Team",
+    author: "DEIVOX Rotating Equipment Engineering Team",
     authorCredentials: "BCP bearing inspection, dimensional metrology, rotor assessment, and failure analysis",
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",

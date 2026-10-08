@@ -1,17 +1,17 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Motor Rewinding Services for BCP | DEI VOX India",
+  title: "Motor Rewinding Services for BCP | DEIVOX",
   description: "High-temperature motor rewinding services for Boiler Circulation Pumps. IEC standard testing and guaranteed reliability.",
   keywords: [
     "Motor Rewinding Services",
-    "DEI VOX India",
+    "DEIVOX",
     "BCP",
     "pump repair"
   ],
   alternates: { canonical: "/motor-rewinding-services" },
   openGraph: {
-    title: "Motor Rewinding Services for BCP | DEI VOX India",
+    title: "Motor Rewinding Services for BCP | DEIVOX",
     description: "High-temperature motor rewinding services for Boiler Circulation Pumps. IEC standard testing and guaranteed reliability.",
     url: "https://deivoxbcp.com/motor-rewinding-services",
     images: [
@@ -19,7 +19,7 @@ export const metadata = {
         url: "https://deivoxbcp.com/images/bcp_overhauling.png",
         width: 1200,
         height: 630,
-        alt: "Motor Rewinding Services - DEI VOX India",
+        alt: "Motor Rewinding Services - DEIVOX",
       },
     ],
   },
@@ -44,7 +44,7 @@ const jsonLd = {
       name: "Motor Rewinding Services",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX PVT. LTD.",
+        name: "DEI VOX INDIA PVT. LTD.",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Motor Rewinding Services",
@@ -74,7 +74,7 @@ export default function Page() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEI VOX India is a recognized leader in <strong>Motor Rewinding Services</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
+          DEIVOX is a recognized leader in <strong>Motor Rewinding Services</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
@@ -85,7 +85,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Choose DEI VOX India?
+          Why Choose DEIVOX?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li>ISO Certified execution for highest reliability</li>

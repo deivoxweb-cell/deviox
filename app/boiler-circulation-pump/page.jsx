@@ -51,7 +51,7 @@ const maintenance = [
   },
   {
     title: "Planned Overhauls",
-    desc: "At OEM-recommended intervals or based on condition trigger points — typically every 18,000–25,000 operating hours.",
+    desc: "At OEM-recommended intervals or based on condition trigger points — typically every 30,000–40,000 operating hours.",
   },
   {
     title: "Wear Component Replacement",
@@ -79,11 +79,11 @@ const faqs = [
   },
   {
     q: "How often should a Boiler Circulation Pump be overhauled?",
-    a: "Typical overhaul intervals range from 12,000 to 24,000 operating hours depending on water chemistry, operating pressures, and manufacturer recommendations. DEIVOX recommends a condition-based maintenance approach with regular vibration monitoring and seal inspections.",
+    a: "Typical overhaul intervals range from 30,000 to 40,000 operating hours depending on water chemistry, operating pressures, and manufacturer recommendations. DEIVOX recommends a condition-based maintenance approach with regular vibration monitoring and physical inspections.",
   },
   {
-    q: "Can DEIVOX repair BCPs from all major manufacturers?",
-    a: "Yes. We have extensive experience overhauling BCPs from all major OEM manufacturers including KSB, Sulzer, Weir, BHEL, and imported units. Our reverse engineering capability also enables us to produce hard-to-source spare parts for legacy pump models.",
+    q: "Can DEIVOX repair BCPs of all major manufacturers?",
+    a: "Yes. We have extensive experience overhauling BCPs of all major OEM's including KSB, Hayward, Fuji, V-Flow, Sulzer, Torishima across all power utilities around a world. Our reverse engineering capability also enables us to produce hard-to-source spare parts for legacy pump models.",
   },
 ];
 

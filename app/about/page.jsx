@@ -20,12 +20,12 @@ const capabilities = [
 
 const team = [
   { name: "Kunal", role: "CEO & MD", qualification: "PMP, PMI USA, MBA, B.E. Mechanical", tag: "Founder", email: "sales@deivox.co.in", phone: "+91 74282-00229" },
-  { name: "Ravi", role: "Head Technical", qualification: "M.Tech. Thermal, B.E. Mechanical", tag: "Founder", phone: "+91 98864-24770" },
-  { name: "Satya Narayan Sharma", role: "Head – Sales", qualification: "", tag: "" },
+  { name: "Ravi", role: "Head Technical", qualification: "M.Tech. Thermal, B.E. Mechanical", tag: "Founder", email: "service@deivox.co.in", phone: "+91 98864-24770" },
+  { name: "Sanjay Sharma", role: "Head – Sales", qualification: "", tag: "" },
   { name: "Vijay Nehra", role: "Manager – Service", qualification: "", tag: "" },
   { name: "Pankaj Kumar", role: "Manager – Dispatch", qualification: "", tag: "" },
   { name: "Ramesh Yadav", role: "Manager Procurement", qualification: "", tag: "" },
-  { name: "Abhishek Singh", role: "Executive Engineer", qualification: "", tag: "" },
+  { name: "Abhishek Singh", role: "Document Controller", qualification: "", tag: "" },
   { name: "Namita Singh", role: "Manager – Sales", qualification: "", tag: "" },
   { name: "Ritika", role: "Manager (HR)", qualification: "", tag: "" },
   { name: "Rama", role: "Manager (Accounts)", qualification: "", tag: "" },
