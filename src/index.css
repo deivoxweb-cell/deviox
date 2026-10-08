@@ -294,8 +294,8 @@ body {
   }
 
   .loader-ring {
-    width: 72px;
-    height: 72px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.08);
     border-top: 3px solid var(--accent-light);
@@ -321,7 +321,7 @@ body {
     position: relative;
     z-index: 1;
     margin-top: 20px;
-    font-size: 10px;
+    font-size: 26px;
     font-weight: 700;
     letter-spacing: 0.3em;
     text-transform: uppercase;

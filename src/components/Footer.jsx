@@ -7,7 +7,7 @@ import { MapPin, Mail, Phone, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 const NAV_LINKS = {
   Solutions: [
-    { label: "About Dei Vox", href: "/about" },
+    { label: "About DeiVox", href: "/about" },
     { label: "ISO Excellence", href: "/iso-certificate" },
     { label: "Engineering Blog", href: "/blog" },
     { label: "Contact Hub", href: "/contact" },
@@ -22,8 +22,8 @@ const NAV_LINKS = {
   ],
   Infrastructure: [
     { label: "Boiler Circulation Pump", href: "/boiler-circulation-pump" },
-    { label: "Boiler Water Circulation Pump", href: "/boiler-circulation-pump" },
-    { label: "Submersible Pump", href: "/submersible-pump-repair" },
+    // { label: "Boiler Water Circulation Pump", href: "/boiler-circulation-pump" },
+    // { label: "Submersible Pump", href: "/submersible-pump-repair" },
   ],
 };
 
@@ -69,9 +69,8 @@ const Footer = () => {
               </h3>
 
               <p className="text-sm text-white/45 max-w-md leading-relaxed mb-10">
-                Dei Vox is the brand identity of DEI VOX PVT. LTD., specializing
-                in Boiler Circulation Pump (BCP) repair, Boiler Water Circulation
-                Pump maintenance, and industrial pump solutions across India.
+                DeiVox is the brand identity of DEI VOX INDIA PVT. LTD., specializing
+                in Boiler Circulation Pump (BCP) repair and industrial pump solutions across India.
               </p>
 
               <div className="space-y-6">
@@ -150,7 +149,7 @@ const Footer = () => {
           <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex flex-col gap-2">
               <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">
-                © 2026 DEI VOX PVT. LTD. ALL RIGHTS RESERVED.
+                © 2026 DEI VOX INDIA PVT. LTD. ALL RIGHTS RESERVED.
               </p>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-accent">

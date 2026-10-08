@@ -56,7 +56,7 @@ export async function POST(request) {
         from: process.env.CONTACT_EMAIL_FROM,
         to: process.env.CONTACT_OWNER_EMAIL,
         replyTo: fields.email,
-        subject: `[Dei Vox Enquiry ${enquiryId}] ${fields.subject} - ${fields.name}`,
+        subject: `[DeiVox Enquiry ${enquiryId}] ${fields.subject} - ${fields.name}`,
         html: renderOwnerEmail(fields, enquiryId, attachmentPayload?.filename),
         attachments: attachmentPayload ? [attachmentPayload] : undefined,
       }),
@@ -64,7 +64,7 @@ export async function POST(request) {
         from: process.env.CONTACT_EMAIL_FROM,
         to: fields.email,
         replyTo: process.env.CONTACT_OWNER_EMAIL,
-        subject: `We received your Dei Vox enquiry - ${enquiryId}`,
+        subject: `We received your DeiVox enquiry - ${enquiryId}`,
         html: renderCustomerEmail(fields, enquiryId),
       }),
     ]);
@@ -213,7 +213,7 @@ function renderOwnerEmail(fields, enquiryId, attachmentName) {
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>New Enquiry - Dei Vox</title>
+      <title>New Enquiry - DeiVox</title>
     </head>
     <body style="margin:0;padding:0;background:#f5f5f0;font-family:'Segoe UI',Arial,sans-serif;color:#111111;">
       <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f0;padding:40px 20px;">
@@ -222,14 +222,14 @@ function renderOwnerEmail(fields, enquiryId, attachmentName) {
             <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid rgba(0,0,0,0.08);box-shadow:0 10px 30px rgba(0,0,0,0.05);border-radius:24px;overflow:hidden;">
               <tr>
                 <td style="background:#0a0a0a;padding:36px 44px;border-bottom:1px solid rgba(255,255,255,0.06);">
-                  <p style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;color:#C6F023;">DEI VOX</p>
+                  <p style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;color:#C6F023;">DEIVOX</p>
                   <h1 style="margin:10px 0 0;font-size:28px;font-weight:900;letter-spacing:-0.02em;color:#ffffff;text-transform:uppercase;">New Enquiry &bull; ${escapeHtml(enquiryId)}</h1>
                 </td>
               </tr>
               <tr>
                 <td style="padding:44px;background:#ffffff;">
                   <p style="margin:0 0 24px;font-size:15px;line-height:1.7;color:#333333;">
-                    A new enquiry has been submitted through the Dei Vox contact form. Details below:
+                    A new enquiry has been submitted through the DeiVox contact form. Details below:
                   </p>
                   <table width="100%" cellpadding="0" cellspacing="0">
                     ${renderRow("Full Name", fields.name)}
@@ -261,7 +261,7 @@ function renderOwnerEmail(fields, enquiryId, attachmentName) {
                     </tr>
                   </table>
                   <p style="margin:40px 0 0;font-size:12px;line-height:1.6;color:#666666;border-top:1px solid rgba(0,0,0,0.08);padding-top:24px;">
-                    Dei Vox India<br />
+                    DeiVox<br />
                     Mission-critical power systems support and technical consultation.
                   </p>
                 </td>
@@ -282,7 +282,7 @@ function renderCustomerEmail(fields, enquiryId) {
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Enquiry Received - Dei Vox</title>
+      <title>Enquiry Received - DeiVox</title>
     </head>
     <body style="margin:0;padding:0;background:#f5f5f0;font-family:'Segoe UI',Arial,sans-serif;color:#111111;">
       <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f0;padding:40px 20px;">
@@ -291,7 +291,7 @@ function renderCustomerEmail(fields, enquiryId) {
             <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid rgba(0,0,0,0.08);">
               <tr>
                 <td style="background:#0a0a0a;padding:36px 44px;">
-                  <p style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;color:#C6F023;">DEI VOX</p>
+                  <p style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;color:#C6F023;">DEIVOX</p>
                   <h1 style="margin:10px 0 0;font-size:28px;font-weight:900;letter-spacing:-0.02em;color:#ffffff;">Enquiry Received</h1>
                 </td>
               </tr>
@@ -313,7 +313,7 @@ function renderCustomerEmail(fields, enquiryId) {
                     </tr>
                   </table>
                   <p style="margin:24px 0 0;font-size:13px;line-height:1.6;color:#666666;">
-                    Dei Vox India<br />
+                    DeiVox<br />
                     Mission-critical power systems support and technical consultation.
                   </p>
                 </td>

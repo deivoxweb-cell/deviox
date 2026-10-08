@@ -76,7 +76,7 @@ const WhyChooseUs = () => {
 
           <ScrollReveal variant="fade-left" delay={0.2} className="lg:mb-4">
             <p className="text-white/40 text-base md:text-lg max-w-sm leading-relaxed font-medium">
-              Trusted by India's leading thermal power plants and industrial facilities to power the core.
+              Thermal power plants and industrial facilities to power the core.
             </p>
           </ScrollReveal>
         </motion.div>

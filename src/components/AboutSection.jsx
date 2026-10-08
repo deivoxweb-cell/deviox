@@ -10,7 +10,7 @@ import { ScrollReveal, ScrollRevealItem } from "@/src/components/ScrollReveal";
 
 const BIG_STATS = [
   { value: "20+", label: "Years of BCP Expertise", icon: <Award size={16} /> },
-  { value: "500+", label: "Pumps Overhauled", icon: <Zap size={16} /> },
+  { value: "200+", label: "Pumps Overhauled", icon: <Zap size={16} /> },
 ];
 
 const AboutSection = () => {
@@ -101,7 +101,7 @@ const AboutSection = () => {
                       </div>
                       <div className="w-px h-8 bg-white/10 hidden sm:block" />
                       <div>
-                        <p className="text-xl sm:text-2xl font-extrabold text-white tracking-tighter leading-none">500+</p>
+                        <p className="text-xl sm:text-2xl font-extrabold text-white tracking-tighter leading-none">200+</p>
                         <p className="text-[8px] text-white/30 uppercase tracking-widest mt-1">Pumps Done</p>
                       </div>
                       <div className="w-px h-8 bg-white/10 hidden sm:block" />
@@ -142,7 +142,7 @@ const AboutSection = () => {
             <ScrollReveal stagger className="space-y-3">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
-                { label: "Service Facility", location: "Bengaluru Karnataka India" },
+                { label: "Service Facility", location: "Bengaluru, Karnataka India" },
               ].map((office) => (
                 <ScrollRevealItem key={office.label} variant="fade-left">
                   <div className="flex items-center gap-4 bg-white border border-black/5 rounded-[2rem] px-6 py-5 hover:border-accent transition-all group">
@@ -173,8 +173,8 @@ const AboutSection = () => {
 
             <ScrollReveal stagger className="space-y-6 text-black/60 leading-relaxed text-lg mb-12 font-medium">
               {[
-                <><span className="font-bold text-black uppercase tracking-tighter">DEI VOX INDIA</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP) & Boiler Water Circulation Pump (BWCP) </strong>.</>,
-                <>We deliver <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing. Our specialized workflows guarantee system reliability and maximum uptime for global power utilities.</>,
+                <><span className="font-bold text-black uppercase tracking-tighter">DEIVOX</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering trusted specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.</>,
+                <>We deliver <strong className="text-black uppercase">OEM-equivalent quality</strong> & guarantee at cost-efficient pricing. Our specialized expertise and proven processes ensure reliable performance, system integrity, and maximum uptime for power utilities worldwide.</>,
               ].map((text, i) => (
                 <ScrollRevealItem key={i} variant="fade-up">
                   <p>{text}</p>

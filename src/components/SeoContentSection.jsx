@@ -12,7 +12,7 @@ const SeoContentSection = () => {
   return (
     <section
       id="about-deivox-bcp"
-      aria-label="About DEI VOX India — Boiler Circulation Pump Specialists"
+      aria-label="About DEIVOX — Boiler Circulation Pump Specialists"
       className="bg-[#F5F5F5] py-32 px-6 lg:px-16 relative overflow-hidden"
     >
       {/* Background ambient glow */}
@@ -35,15 +35,15 @@ const SeoContentSection = () => {
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-[-0.04em] text-black uppercase mb-10 leading-[0.9]">
               Pioneers in Boiler<br />
               <span className="text-black/20">Circulation Pump</span><br />
-              Engineering
+              Services
             </h2>
             
             <div className="space-y-6 text-black/60 text-base md:text-lg leading-relaxed font-medium">
               <p>
-                <strong className="text-black font-bold uppercase tracking-tight">DEI VOX India</strong> is one of India's foremost
+                <strong className="text-black font-bold uppercase tracking-tight">DEIVOX</strong> is one of India's foremost
                 engineering companies specialising exclusively in{" "}
                 <strong className="text-black font-bold">Boiler Circulation Pump (BCP)</strong> and{" "}
-                <strong className="text-black font-bold">Boiler Water Circulation Pump (BWCP)</strong> services.
+                <strong className="text-black font-bold"></strong> services.
               </p>
               <p>
                 Operating at extreme temperatures and differential pressures, these pumps circulate water through boiler circuits to maintain

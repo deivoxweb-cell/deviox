@@ -82,7 +82,7 @@ export default function PageLoader() {
       </div>
       {/* Brand label */}
       <p className="loader-label">
-        DEI VOX INDIA
+        DEIVOX
       </p>
       {/* Progress bar (bottom) */}
       <div className="loader-progress-bg">

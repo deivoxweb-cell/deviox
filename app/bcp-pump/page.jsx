@@ -1,9 +1,9 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX India",
+  title: "BCP Pump — Boiler Circulation Pump Services | DEIVOX",
   description:
-    "DEI VOX India is a dedicated BCP (Boiler Circulation Pump) specialist. Overhauling, repair, motor rewinding, reverse engineering and spare parts for BCPs across India. ISO certified.",
+    "DEIVOX is a dedicated BCP (Boiler Circulation Pump) specialist. Overhauling, repair, motor rewinding, reverse engineering and spare parts for BCPs across India. ISO certified.",
   keywords: [
     "BCP",
     "BCP pump",
@@ -12,14 +12,14 @@ export const metadata = {
     "BCP repair",
     "BCP maintenance",
     "boiler circulation pump BCP",
-    "DEI VOX BCP",
-    "DEI VOX Company",
+    "DEIVOX BCP",
+    "DEIVOX Company",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
   ],
   alternates: { canonical: "/bcp-pump" },
   openGraph: {
-    title: "BCP Pump — Boiler Circulation Pump Services | DEI VOX India",
+    title: "BCP Pump — Boiler Circulation Pump Services | DEIVOX",
     description:
       "India's leading BCP pump specialists. Expert overhauling, repair, rewinding, reverse engineering and 24/7 emergency service. ISO 9001:2015 certified.",
     url: "https://deivoxbcp.com/bcp-pump",
@@ -47,7 +47,7 @@ const jsonLd = {
       name: "BCP Pump Overhauling, Repair & Maintenance",
       provider: {
         "@type": "Organization",
-        name: "DEI VOX India",
+        name: "DEIVOX",
         url: "https://deivoxbcp.com",
       },
       serviceType: "BCP Boiler Circulation Pump Service",
@@ -77,10 +77,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Can DEI VOX supply BCP spare parts without doing a full overhaul?",
+          name: "Can DEIVOX supply BCP spare parts without doing a full overhaul?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. DEI VOX India maintains a stock of common BCP spare parts and can also manufacture custom components through reverse engineering for obsolete or hard-to-source pump models. We supply impellers, wear rings, bearings, can liners, and mechanical seal components as stand-alone supply.",
+            text: "Yes. DEIVOX maintains a stock of common BCP spare parts and can also manufacture custom components through reverse engineering for obsolete or hard-to-source pump models. We supply impellers, wear rings, bearings, can liners, and mechanical seal components as stand-alone supply.",
           },
         },
       ],
@@ -108,7 +108,7 @@ export default function BcpPumpPage() {
 
         <p className="text-black/60 text-lg font-medium leading-relaxed mb-10">
           The acronym <strong>BCP</strong> — Boiler Circulation Pump — represents one of the most
-          demanding engineering challenges in the power generation industry. DEI VOX India
+          demanding engineering challenges in the power generation industry. DEIVOX
           has built its entire engineering identity around BCP expertise.
         </p>
 
@@ -171,7 +171,7 @@ export default function BcpPumpPage() {
         </ul>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          DEI VOX BCP Services
+          DEIVOX BCP Services
         </h2>
 
         <h3 className="text-base font-semibold text-primary uppercase tracking-wide mt-6 mb-2">
@@ -190,7 +190,7 @@ export default function BcpPumpPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           BCP casings that develop leaks at joint faces can frequently be repaired with the casing
-          remaining connected to boiler piping. DEI VOX's in-situ machining team uses portable
+          remaining connected to boiler piping. DEIVOX's in-situ machining team uses portable
           precision equipment to resurface flange faces and restore sealing surfaces to specification.
           This dramatically reduces outage time compared to full casing removal and return to workshop.
         </p>
@@ -200,7 +200,7 @@ export default function BcpPumpPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Rewinding of canned motor BCP stators requires high-temperature insulation systems rated
-          for continuous immersion in hot pressurised water. DEI VOX uses only certified insulation
+          for continuous immersion in hot pressurised water. DEIVOX uses only certified insulation
           materials and verifies each rewind with IEC-standard electrical testing, including
           insulation resistance, dielectric strength (hi-pot), and partial discharge measurement.
         </p>
@@ -210,7 +210,7 @@ export default function BcpPumpPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           A significant portion of India's installed BCP fleet consists of older imported units
-          for which OEM support has been discontinued. DEI VOX's reverse engineering capability
+          for which OEM support has been discontinued. DEIVOX's reverse engineering capability
           addresses this challenge: we measure, model, and manufacture replacement impellers,
           wear rings, can liners, bearing housings, and other components from appropriate base
           materials to defined dimensional and material specifications.
@@ -221,7 +221,7 @@ export default function BcpPumpPage() {
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Improving BCP availability requires a structured reliability programme, not reactive
-          maintenance. DEI VOX works with plant maintenance teams to develop:
+          maintenance. DEIVOX works with plant maintenance teams to develop:
         </p>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">
           <li>Condition monitoring protocols (vibration, temperature, motor current signature)</li>
@@ -232,7 +232,7 @@ export default function BcpPumpPage() {
         </ul>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Clients Choose DEI VOX for BCP Work
+          Why Clients Choose DEIVOX for BCP Work
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">
           <li>India's dedicated BCP specialist — this is our primary engineering focus</li>
