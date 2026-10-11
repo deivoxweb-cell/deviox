@@ -6,6 +6,7 @@ const staticRoutes = [
   { path: "",                                  changeFreq: "weekly",  priority: 1.0 },
   { path: "/about",                            changeFreq: "monthly", priority: 0.8 },
   { path: "/services",                         changeFreq: "monthly", priority: 0.9 },
+  { path: "/our-experience",                   changeFreq: "monthly", priority: 0.8 },
   { path: "/contact",                          changeFreq: "monthly", priority: 0.8 },
   { path: "/blog",                             changeFreq: "weekly",  priority: 0.8 },
   // Core service pages — high priority for search

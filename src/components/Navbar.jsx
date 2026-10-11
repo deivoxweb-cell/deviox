@@ -17,6 +17,8 @@ const pumpLinks = [
   { name: "Submersible Repair", href: "/submersible-pump-repair" },
 ];
 
+const experienceLink = { name: "Our Experience", href: "/our-experience" };
+
 const otherLinks = [
   { name: "Services", href: "/services" },
   // { name: "ISO Certificate", href: "/iso-certificate" },
@@ -87,6 +89,16 @@ const Navbar = () => {
               ))}
             </div>
           </div>
+
+          <Link
+            href={experienceLink.href}
+            className={`px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 ${pathname === experienceLink.href
+              ? "bg-accent text-black shadow-lg shadow-accent/20"
+              : "text-black/60 hover:text-black hover:bg-black/5"
+              }`}
+          >
+            {experienceLink.name}
+          </Link>
 
           {otherLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -187,6 +199,14 @@ const Navbar = () => {
                   )}
                 </AnimatePresence>
               </div>
+
+              <Link
+                href={experienceLink.href}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-bold text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5"
+              >
+                {experienceLink.name}
+              </Link>
 
               {otherLinks.map((link) => (
                 <Link

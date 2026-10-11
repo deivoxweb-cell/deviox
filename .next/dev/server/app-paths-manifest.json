@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/boiler-circulation-pump/page": "app/boiler-circulation-pump/page.js"
+  "/our-experience/page": "app/our-experience/page.js",
+  "/about/page": "app/about/page.js"
 }
