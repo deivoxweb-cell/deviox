@@ -40,7 +40,7 @@ export default function BlogListPage() {
   // Load localStorage posts on mount
   useEffect(() => {
     try {
-      const localPostsRaw = localStorage.getItem("deivox_blog_posts");
+      const localPostsRaw = localStorage.getItem("DEI VOX_blog_posts");
       if (localPostsRaw) {
         const localPosts = JSON.parse(localPostsRaw);
         // Avoid adding duplicate slugs if any
@@ -119,10 +119,10 @@ export default function BlogListPage() {
 
     // Save to localStorage
     try {
-      const localPostsRaw = localStorage.getItem("deivox_blog_posts");
+      const localPostsRaw = localStorage.getItem("DEI VOX_blog_posts");
       const localPosts = localPostsRaw ? JSON.parse(localPostsRaw) : [];
       localPosts.unshift(newPost);
-      localStorage.setItem("deivox_blog_posts", JSON.stringify(localPosts));
+      localStorage.setItem("DEI VOX_blog_posts", JSON.stringify(localPosts));
     } catch (err) {
       console.error("Failed to write post to local storage", err);
     }

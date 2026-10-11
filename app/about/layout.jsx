@@ -1,16 +1,16 @@
 export const metadata = {
-  title: "About DeiVox | DEIVOX Company & Boiler Circulation Pump Specialists",
+  title: "About DEI VOX | DEI VOX Company & Boiler Circulation Pump Specialists",
   description:
-    "DeiVox, officially known as DEI VOX INDIA PVT. LTD., is a trusted Boiler Circulation Pump (BCP) repair, overhauling and maintenance company at world.",
+    "DEI VOX, officially known as DEI VOX INDIA PVT. LTD., is a trusted Boiler Circulation Pump (BCP) repair, overhauling and maintenance company at world.",
   alternates: { canonical: "/about" },
   keywords: [
-    "DeiVox",
-    "deivox",
-    "DeiVox Company",
-    "DEIVOX",
-    "DEIVOX Company",
+    "DEI VOX",
+    "DEI VOX",
+    "DEI VOX Company",
+    "DEI VOX",
+    "DEI VOX Company",
     "DEI VOX INDIA PVT. LTD.",
-    "about DEIVOX",
+    "about DEI VOX",
     "BCP company",
     "Boiler Circulation Pump company",
     // "Boiler Water Circulation Pump specialist",
@@ -21,9 +21,9 @@ export const metadata = {
     "BCP overhauling",
   ],
   openGraph: {
-    title: "About DeiVox | DEIVOX Boiler Circulation Pump Company India",
+    title: "About DEI VOX | DEI VOX Boiler Circulation Pump Company India",
     description:
-      "DeiVox, officially known as DEI VOX INDIA PVT. LTD., specializes in BCP repair, Boiler Circulation Pump overhauling, maintenance and industrial pump services.",
+      "DEI VOX, officially known as DEI VOX INDIA PVT. LTD., specializes in BCP repair, Boiler Circulation Pump overhauling, maintenance and industrial pump services.",
     url: "https://deivoxbcp.com/about",
   },
 };

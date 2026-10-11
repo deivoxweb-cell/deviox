@@ -32,7 +32,7 @@ export default function Loading() {
           textTransform: "uppercase",
         }}
       >
-        DEIVOX
+        DEI VOX
       </span>
 
       {/* Spinning ring + logo */}
@@ -44,14 +44,14 @@ export default function Loading() {
             borderRadius: "50%",
             border: "3px solid rgba(255,255,255,0.08)",
             borderTop: "3px solid #C6F023",
-            animation: "deivox-spin 0.8s linear infinite",
+            animation: "DEI VOX-spin 0.8s linear infinite",
             margin: "0 auto",
           }}
         />
 
         <Image
           src="/images/Logo.png"
-          alt="DEIVOX"
+          alt="DEI VOX"
           width={44}
           height={44}
           style={{
@@ -78,7 +78,7 @@ export default function Loading() {
           color: "rgba(255,255,255,0.4)",
         }}
       >
-        DEIVOX
+        DEI VOX
       </p>
 
       {/* Indeterminate shimmer bar at bottom */}
@@ -99,14 +99,14 @@ export default function Loading() {
             width: "40%",
             background: "linear-gradient(90deg, transparent, #C6F023, transparent)",
             boxShadow: "0 0 12px rgba(198,240,35,0.6)",
-            animation: "deivox-shimmer 1.4s ease-in-out infinite",
+            animation: "DEI VOX-shimmer 1.4s ease-in-out infinite",
           }}
         />
       </div>
 
       <style>{`
-        @keyframes deivox-spin { to { transform: rotate(360deg); } }
-        @keyframes deivox-shimmer {
+        @keyframes DEI VOX-spin { to { transform: rotate(360deg); } }
+        @keyframes DEI VOX-shimmer {
           0%   { transform: translateX(-150%); }
           100% { transform: translateX(350%); }
         }

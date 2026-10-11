@@ -11,8 +11,8 @@ import { ArrowUpRight, Settings } from "lucide-react";
 const SeoContentSection = () => {
   return (
     <section
-      id="about-deivox-bcp"
-      aria-label="About DEIVOX — Boiler Circulation Pump Specialists"
+      id="about-DEI VOX-bcp"
+      aria-label="About DEI VOX — Boiler Circulation Pump Specialists"
       className="bg-[#F5F5F5] py-32 px-6 lg:px-16 relative overflow-hidden"
     >
       {/* Background ambient glow */}
@@ -40,7 +40,7 @@ const SeoContentSection = () => {
             
             <div className="space-y-6 text-black/60 text-base md:text-lg leading-relaxed font-medium">
               <p>
-                <strong className="text-black font-bold uppercase tracking-tight">DEIVOX</strong> is one of India's foremost
+                <strong className="text-black font-bold uppercase tracking-tight">DEI VOX</strong> is one of India's foremost
                 engineering companies specialising exclusively in{" "}
                 <strong className="text-black font-bold">Boiler Circulation Pump (BCP)</strong> and{" "}
                 <strong className="text-black font-bold"></strong> services.

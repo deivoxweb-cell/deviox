@@ -7,7 +7,7 @@ import { MapPin, Mail, Phone, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 const NAV_LINKS = {
   Solutions: [
-    { label: "About DeiVox", href: "/about" },
+    { label: "About DEI VOX", href: "/about" },
     { label: "ISO Excellence", href: "/iso-certificate" },
     { label: "Engineering Blog", href: "/blog" },
     { label: "Contact Hub", href: "/contact" },
@@ -69,7 +69,7 @@ const Footer = () => {
               </h3>
 
               <p className="text-sm text-white/45 max-w-md leading-relaxed mb-10">
-                DeiVox is the brand identity of DEI VOX INDIA PVT. LTD., specializing
+                DEI VOX is the brand identity of DEI VOX INDIA PVT. LTD., specializing
                 in Boiler Circulation Pump (BCP) repair and industrial pump solutions across India.
               </p>
 

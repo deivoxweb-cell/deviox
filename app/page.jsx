@@ -6,9 +6,9 @@ import ClientSeries from "@/src/components/ClientSeries";
 import SeoContentSection from "@/src/components/SeoContentSection";
 
 export const metadata = {
-  title: "BCP Boiler Circulation Pump Repair & Overhauling | DEIVOX",
+  title: "BCP Boiler Circulation Pump Repair & Overhauling | DEI VOX",
   description:
-    "DEIVOX (DeiVox) is global leading BCP specialist for Boiler Circulation Pump repair, overhauling, motor rewinding & insitu machining services.",
+    "DEI VOX (DEI VOX) is global leading BCP specialist for Boiler Circulation Pump repair, overhauling, motor rewinding & insitu machining services.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "DEI VOX INDIA PVT. LTD. | Boiler Circulation Pump Repair & BCP Specialists",
@@ -31,7 +31,7 @@ const businessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://deivoxbcp.com/#localbusiness",
   name: "DEI VOX INDIA PVT. LTD.",
-  alternateName: ["DEIVOX", "DEIVOX", "DEIVOX BCP"],
+  alternateName: ["DEI VOX", "DEI VOX", "DEI VOX BCP"],
   url: "https://deivoxbcp.com",
   logo: "https://deivoxbcp.com/images/Logo.png",
   image: "https://deivoxbcp.com/images/hero_industrial.png",
@@ -98,10 +98,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Does DEIVOX provide on-site pump repair?",
+      name: "Does DEI VOX provide on-site pump repair?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, DEIVOX specializes in in-situ machining and on-site BCP maintenance to reduce downtime for power plants.",
+        text: "Yes, DEI VOX specializes in in-situ machining and on-site BCP maintenance to reduce downtime for power plants.",
       },
     },
   ],

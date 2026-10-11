@@ -1,17 +1,17 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Industrial Pump Maintenance India | DEIVOX",
+  title: "Industrial Pump Maintenance India | DEI VOX",
   description: "Professional industrial pump maintenance services. We offer condition monitoring, repair, and overhauling for heavy-duty industrial pumps.",
   keywords: [
     "Industrial Pump Maintenance",
-    "DEIVOX",
+    "DEI VOX",
     "BCP",
     "pump repair"
   ],
   alternates: { canonical: "/industrial-pump-maintenance" },
   openGraph: {
-    title: "Industrial Pump Maintenance India | DEIVOX",
+    title: "Industrial Pump Maintenance India | DEI VOX",
     description: "Professional industrial pump maintenance services. We offer condition monitoring, repair, and overhauling for heavy-duty industrial pumps.",
     url: "https://deivoxbcp.com/industrial-pump-maintenance",
     images: [
@@ -19,7 +19,7 @@ export const metadata = {
         url: "https://deivoxbcp.com/images/bcp_overhauling.png",
         width: 1200,
         height: 630,
-        alt: "Industrial Pump Maintenance - DEIVOX",
+        alt: "Industrial Pump Maintenance - DEI VOX",
       },
     ],
   },
@@ -74,7 +74,7 @@ export default function Page() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEIVOX is a recognized leader in <strong>Industrial Pump Maintenance</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
+          DEI VOX is a recognized leader in <strong>Industrial Pump Maintenance</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
@@ -85,7 +85,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Choose DEIVOX?
+          Why Choose DEI VOX?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li>ISO Certified execution for highest reliability</li>

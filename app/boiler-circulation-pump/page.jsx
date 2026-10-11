@@ -28,7 +28,7 @@ const capabilities = [
   {
     icon: <Settings size={22} />,
     title: "Spare Parts & Reverse Engineering",
-    desc: "OEM spare parts for older BCP models are frequently discontinued. DEIVOX uses reverse engineering to recreate precise dimensional replicas of impellers, wear rings, bearing housings, and can liners.",
+    desc: "OEM spare parts for older BCP models are frequently discontinued. DEI VOX uses reverse engineering to recreate precise dimensional replicas of impellers, wear rings, bearing housings, and can liners.",
   },
 ];
 
@@ -59,7 +59,7 @@ const maintenance = [
   },
   {
     title: "Emergency Response",
-    desc: "24/7 on-site support when pump trips or abnormal performance is detected. DEIVOX mobilises within 24–48 hours anywhere in India.",
+    desc: "24/7 on-site support when pump trips or abnormal performance is detected. DEI VOX mobilises within 24–48 hours anywhere in India.",
   },
 ];
 
@@ -79,11 +79,11 @@ const faqs = [
   },
   {
     q: "How often should a Boiler Circulation Pump be overhauled?",
-    a: "Typical overhaul intervals range from 30,000 to 40,000 operating hours depending on water chemistry, operating pressures, and manufacturer recommendations. DEIVOX recommends a condition-based maintenance approach with regular vibration monitoring and physical inspections.",
+    a: "Typical overhaul intervals range from 30,000 to 40,000 operating hours depending on water chemistry, operating pressures, and manufacturer recommendations. DEI VOX recommends a condition-based maintenance approach with regular vibration monitoring and physical inspections.",
   },
   {
-    q: "Can DEIVOX repair BCPs of all major manufacturers?",
-    a: "Yes. We have extensive experience overhauling BCPs of all major OEM's including KSB, Hayward, Fuji, V-Flow, Sulzer, Torishima across all power utilities around a world. Our reverse engineering capability also enables us to produce hard-to-source spare parts for legacy pump models.",
+    q: "Can DEI VOX repair BCPs of all major manufacturers?",
+    a: "Yes. DEI VOX has extensive experience as NON-OEM in the repair, overhauling, and servicing of Boiler Circulation Pumps (BCPs) across power utilities, covering equipment from leading manufacturers such as KSB, Hayward Tyler, Fuji, V-FLO, Sulzer, and Torishima. As a provider of Alternative BCP Solutions, DEI VOX leverages its reverse engineering and in-house technical capabilities to develop and supply technically compatible replacement components for legacy and hard-to-source pump models.",
   },
 ];
 
@@ -119,7 +119,7 @@ export default function BoilerCirculationPumpPage() {
               {
                 "@type": "Service",
                 name: "Boiler Circulation Pump Repair India",
-                provider: { "@type": "Organization", name: "DEIVOX", url: "https://deivoxbcp.com" },
+                provider: { "@type": "Organization", name: "DEI VOX", url: "https://deivoxbcp.com" },
                 serviceType: "Boiler Circulation Pump Repair and Overhauling",
                 areaServed: "India",
                 description: "Complete BCP overhauling, repair, motor rewinding, in-situ casing machining, spare parts supply and reverse engineering. ISO 9001:2015 certified.",
@@ -218,7 +218,7 @@ export default function BoilerCirculationPumpPage() {
                 <div className="relative rounded-[3rem] overflow-hidden aspect-[16/10] border border-white/5 shadow-2xl">
                   <Image
                     src="/images/bcp_overhauling.png"
-                    alt="Boiler Circulation Pump Overhauling — DEIVOX"
+                    alt="Boiler Circulation Pump Overhauling — DEI VOX"
                     fill
                     className="object-cover"
                   />
@@ -254,7 +254,7 @@ export default function BoilerCirculationPumpPage() {
           <div className="w-full px-6 lg:px-16">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-10 border-b border-white/5 pb-16">
               <div>
-                <p className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-6">DEIVOX CAPABILITIES</p>
+                <p className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-6">DEI VOX CAPABILITIES</p>
                 <h2 className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88]">
                   BCP Specialist<br />
                   <span className="text-white/20">Services.</span>
@@ -304,7 +304,7 @@ export default function BoilerCirculationPumpPage() {
                 </h2>
               </div>
               <p className="text-black/50 text-lg font-medium leading-relaxed max-w-md">
-                From thermal power stations to refinery steam generators — Boiler Circulation Pumps are critical infrastructure that DeiVox is trusted to maintain.
+                From thermal power stations to refinery steam generators — Boiler Circulation Pumps are critical infrastructure that DEI VOX is trusted to maintain.
               </p>
             </div>
 
@@ -387,7 +387,7 @@ export default function BoilerCirculationPumpPage() {
           <div className="w-full px-6 lg:px-16">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-10 border-b border-black/5 pb-16">
               <div>
-                <p className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-6">WHY DEIVOX</p>
+                <p className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-6">WHY DEI VOX</p>
                 <h2 className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88]">
                   The BCP<br />
                   <span className="text-black/20">Doctors.</span>
@@ -419,7 +419,7 @@ export default function BoilerCirculationPumpPage() {
                 <div className="relative rounded-[3rem] overflow-hidden aspect-[4/5] border border-black/5 shadow-2xl">
                   <Image
                     src="/images/bcp-motor-winding-inspection.png"
-                    alt="DEIVOX BCP Motor Winding Inspection"
+                    alt="DEI VOX BCP Motor Winding Inspection"
                     fill
                     className="object-cover"
                   />
@@ -427,7 +427,7 @@ export default function BoilerCirculationPumpPage() {
                   <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <p className="text-accent text-[9px] font-bold uppercase tracking-[0.3em] mb-2">TECHNICAL LEADERSHIP</p>
-                    <p className="text-white text-xl font-bold uppercase tracking-tighter">DEIVOX Engineers</p>
+                    <p className="text-white text-xl font-bold uppercase tracking-tighter">DEI VOX Engineers</p>
                   </div>
                   <div className="absolute top-8 right-8 bg-accent px-6 py-3 rounded-[1.5rem] shadow-xl shadow-accent/20">
                     <p className="text-black text-[10px] font-bold uppercase tracking-widest">ISO Certified</p>
@@ -495,7 +495,7 @@ export default function BoilerCirculationPumpPage() {
 
           <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
             <h2 className="text-3xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-12 sm:mb-20 leading-[0.9]">
-              BCP Emergency?<br /><span className="text-white/20">Call DEIVOX.</span>
+              BCP Emergency?<br /><span className="text-white/20">Call DEI VOX.</span>
             </h2>
             <p className="text-white/40 text-lg sm:text-xl font-medium mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
               Our certified engineers can be mobilised to any plant location in India within 24–48 hours for emergency assessment, in-situ repair, or full BCP overhauling.

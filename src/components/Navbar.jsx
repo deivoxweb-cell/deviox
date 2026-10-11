@@ -46,7 +46,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center group pl-2">
           <Image
             src="/images/Logo.png"
-            alt="DEIVOX Logo"
+            alt="DEI VOX Logo"
             width={130}
             height={52}
             className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-500"

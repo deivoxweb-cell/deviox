@@ -53,7 +53,7 @@ const CompanyLogo = ({ name }) => {
       <img
         src={src}
         alt={name}
-        className={`${sizeClass} ${scaleClass} w-auto h-auto object-contain grayscale opacity-45 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 select-none pointer-events-none`}
+        className={`${sizeClass} ${scaleClass} w-auto h-auto object-contain  group-hover:opacity-100 transition-all duration-500 select-none pointer-events-none`}
       />
     </div>
   );
@@ -80,28 +80,28 @@ const ClientSeries = () => {
   return (
     <section ref={sectionRef} className="py-12 md:py-24 bg-white border-y border-black/[0.04] overflow-hidden relative">
       <div className="absolute inset-0 industrial-grid opacity-10 pointer-events-none" />
-
+ 
       <div className="relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 1, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }}
           className="flex flex-col items-center gap-4 mb-10 md:mb-20"
         >
           <div className="flex items-center gap-3 sm:gap-6 max-w-full px-4 justify-center">
-            <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-r from-transparent to-black/20 shrink-0" />
+            <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-r to-black/20 shrink-0" />
             <p className="text-[9px] sm:text-[10px] font-bold text-black/40 tracking-[0.3em] sm:tracking-[0.4em] uppercase whitespace-nowrap">Trusted By Leaders</p>
-            <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent to-black/20 shrink-0" />
+            <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l to-black/20 shrink-0" />
           </div>
         </motion.div>
 
         {/* Ticker */}
         <div className="relative">
           {/* Fade masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-40 from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
           <motion.div style={{ y: tickerY }} className="flex overflow-hidden w-full py-4 group">
             <motion.div

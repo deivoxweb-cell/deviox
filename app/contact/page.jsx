@@ -238,7 +238,7 @@ export default function ContactPage() {
             className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12"
           >
             Connect<br />
-            <span className="text-white/20">DeiVox.</span>
+            <span className="text-white/20">DEI VOX.</span>
           </motion.h1>
 
           <div className="flex items-center gap-6 sm:gap-8 mt-12">

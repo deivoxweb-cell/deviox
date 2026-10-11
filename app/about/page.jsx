@@ -137,7 +137,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0 rounded-full bg-accent/8 blur-2xl scale-150" />
                   <Image
                     src="/images/Logo.png"
-                    alt="DEIVOX Logo"
+                    alt="DEI VOX Logo"
                     width={220}
                     height={110}
                     className="object-contain relative z-10 drop-shadow-[0_0_20px_rgba(103,172,67,0.25)]"
@@ -157,14 +157,14 @@ export default function AboutPage() {
               </h2>
               <div className="flex flex-col gap-4 sm:gap-6">
                 <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                  <strong className="text-black">DeiVox</strong>, officially known as{" "}
+                  <strong className="text-black">DEI VOX</strong>, officially known as{" "}
                   <strong className="text-black">DEI VOX INDIA PVT. LTD.</strong>, is a trusted{" "}
                   <strong className="text-black">Boiler Circulation Pump (BCP)</strong> repair,
                   overhauling, and industrial pump solutions company serving power plants and
                   industries across India.
                 </p>
                 <p className="text-xl font-medium text-black/60 leading-relaxed max-w-3xl">
-                  Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEIVOX is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.
+                  Widely recognized as the <strong className="text-black">BCP Doctors</strong>, DEI VOX is a pioneering 100% <strong className="text-black uppercase">Make in India</strong> engineering firm specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.
                 </p>
                 <p className="text-lg font-medium text-black/40 leading-relaxed max-w-3xl">
                   We bridge the gap between complex engineering and field reliability by providing specialized BCW Pump services and high-precision re-engineering. Our mission is to deliver uncompromising <strong className="text-black uppercase">OEM-standard quality</strong> at cost-efficient pricing, ensuring maximum operational uptime for global utilities and heavy industry.

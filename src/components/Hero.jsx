@@ -50,7 +50,7 @@ const SPEC_DATA = {
       { label: "Mobilization", value: "24h", icon: Activity }
     ]
   }
-};
+}; 
 
 const Hero = () => {
   const [activeTab, setActiveTab] = useState("Mechanical");
@@ -115,7 +115,7 @@ const Hero = () => {
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
               <Settings className="text-accent animate-spin-slow" size={20} />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">Industrial Excellence</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">DEI VOX — Your Partner for Multi-Make BCP Repair, Engineering & Alternative Solutions.</span>
           </motion.div>
 
           <motion.h1
@@ -125,7 +125,7 @@ const Hero = () => {
             className="text-[2.2rem] sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] text-black leading-[0.9] sm:leading-[0.88] uppercase mb-10"
           >
             Boiler Circulation<br />
-            <span className="text-black/20">Pump (BCP) Repair &</span><br />
+            <span className="text-black/20">Pump (BCP)</span><br />Repair &
             Overhauling
           </motion.h1>
 
@@ -197,7 +197,7 @@ const Hero = () => {
             }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             onClick={() => setIsFocused(!isFocused)}
-            className="relative z-20 w-full max-w-[500px] aspect-[4/5] rounded-[3rem] sm:rounded-[4rem] overflow-hidden bg-white border-2 border-black/5 shadow-2xl flex items-center justify-center p-6 sm:p-8 cursor-pointer group"
+            className="relative z-20 w-full max-w-[500px] aspect-[4/5] rounded-[3rem] sm:rounded-[4rem] overflow-hidden bg-white border-2 border-black/5 shadow-2xl flex items-center justify-center p-6 sm:p-8 cursor-pointer group right-45"
           >
             <Image
               src="/images/hero_industrial.png"

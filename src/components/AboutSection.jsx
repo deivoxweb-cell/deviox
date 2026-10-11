@@ -70,7 +70,7 @@ const AboutSection = () => {
                       <div className="absolute inset-0 rounded-full bg-accent/10 blur-xl scale-150" />
                       <Image
                         src="/images/Logo.png"
-                        alt="DEIVOX Logo"
+                        alt="DEI VOX Logo"
                         fill
                         className="object-contain relative z-10 drop-shadow-[0_0_18px_rgba(103,172,67,0.28)]"
                         loading="lazy"
@@ -142,7 +142,7 @@ const AboutSection = () => {
             <ScrollReveal stagger className="space-y-3">
               {[
                 { label: "Sales Office", location: "Gurugram, Haryana, India" },
-                { label: "Service Facility", location: "Bengaluru, Karnataka India" },
+                { label: "Service Facility", location: "Bengaluru, Karnataka, India" },
               ].map((office) => (
                 <ScrollRevealItem key={office.label} variant="fade-left">
                   <div className="flex items-center gap-4 bg-white border border-black/5 rounded-[2rem] px-6 py-5 hover:border-accent transition-all group">
@@ -173,7 +173,7 @@ const AboutSection = () => {
 
             <ScrollReveal stagger className="space-y-6 text-black/60 leading-relaxed text-lg mb-12 font-medium">
               {[
-                <><span className="font-bold text-black uppercase tracking-tighter">DEIVOX</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering trusted specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.</>,
+                <><span className="font-bold text-black uppercase tracking-tighter">DEI VOX</span> is recognized as the <strong className="text-black">BCP Doctors</strong> — India's premier engineering trusted specialized in the maintenance of <strong className="text-black">Boiler Circulation Pumps (BCP)</strong>.</>,
                 <>We deliver <strong className="text-black uppercase">OEM-equivalent quality</strong> & guarantee at cost-efficient pricing. Our specialized expertise and proven processes ensure reliable performance, system integrity, and maximum uptime for power utilities worldwide.</>,
               ].map((text, i) => (
                 <ScrollRevealItem key={i} variant="fade-up">

@@ -1,24 +1,24 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Boiler Water Circulation Pump Repair & Maintenance — DEIVOX",
+  title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX",
   description:
-    "Specialised repair, overhauling, and maintenance of Boiler Water Circulation Pumps (BWCP) by DEIVOX. Serving thermal power plants and industrial boilers across India. ISO 9001:2015 certified.",
+    "Specialised repair, overhauling, and maintenance of Boiler Water Circulation Pumps (BWCP) by DEI VOX. Serving thermal power plants and industrial boilers across India. ISO 9001:2015 certified.",
   keywords: [
     "Boiler Water Circulation Pump",
     "BWCP repair India",
     "boiler water pump overhauling",
     "boiler feed pump specialists",
     "boiler pump service India",
-    "DEIVOX BCP",
-    "DEIVOX Company",
+    "DEI VOX BCP",
+    "DEI VOX Company",
     "BCP",
     "Boiler Circulation Pump",
     "Boiler water circulation pump",
   ],
   alternates: { canonical: "/boiler-water-circulation-pump" },
   openGraph: {
-    title: "Boiler Water Circulation Pump Repair & Maintenance — DEIVOX",
+    title: "Boiler Water Circulation Pump Repair & Maintenance — DEI VOX",
     description:
       "India's trusted Boiler Water Circulation Pump specialists. Expert repair, overhauling, rewinding and spare parts. ISO certified. 24/7 support across India.",
     url: "https://deivoxbcp.com/boiler-water-circulation-pump",
@@ -46,7 +46,7 @@ const jsonLd = {
       name: "Boiler Water Circulation Pump Repair & Overhauling",
       provider: {
         "@type": "Organization",
-        name: "DEIVOX",
+        name: "DEI VOX",
         url: "https://deivoxbcp.com",
       },
       serviceType: "Boiler Water Circulation Pump Maintenance",
@@ -76,10 +76,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "How quickly can DEIVOX respond to a BWCP emergency?",
+          name: "How quickly can DEI VOX respond to a BWCP emergency?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "DEIVOX maintains 24/7 emergency response capability. Our engineers can be mobilised and on-site within 24 to 48 hours for most locations in India. We maintain a stock of critical spare components for common BCP/BWCP configurations to minimise plant downtime.",
+            text: "DEI VOX maintains 24/7 emergency response capability. Our engineers can be mobilised and on-site within 24 to 48 hours for most locations in India. We maintain a stock of critical spare components for common BCP/BWCP configurations to minimise plant downtime.",
           },
         },
       ],
@@ -106,7 +106,7 @@ export default function BoilerWaterCirculationPumpPage() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEIVOX provides specialist repair, overhauling, and maintenance services for{" "}
+          DEI VOX provides specialist repair, overhauling, and maintenance services for{" "}
            across India's power generation
           and industrial sectors. Our engineering team combines deep field experience with
           ISO-certified workshop processes to restore pump performance to OEM specification.
@@ -149,7 +149,7 @@ export default function BoilerWaterCirculationPumpPage() {
         </p>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           The pump performance curve — head vs. flow — must be matched precisely to the boiler
-          system resistance curve at design, part-load, and transient conditions. DEIVOX engineers
+          system resistance curve at design, part-load, and transient conditions. DEI VOX engineers
           verify hydraulic performance after every overhaul using calibrated test instrumentation.
         </p>
 
@@ -188,7 +188,7 @@ export default function BoilerWaterCirculationPumpPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           High-velocity water flow and flash vapour at impeller vane tips progressively erodes
-          impeller material, reducing hydraulic efficiency and pump head. DEIVOX restores impeller
+          impeller material, reducing hydraulic efficiency and pump head. DEI VOX restores impeller
           geometry using hard-facing weld deposition and precision grinding to re-establish
           original vane profiles.
         </p>
@@ -198,7 +198,7 @@ export default function BoilerWaterCirculationPumpPage() {
         </h3>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           Thermal cycling and oxygen ingress degrade winding insulation in canned motor BWCPs.
-          DEIVOX performs comprehensive stator rewinding using Class H or F insulation systems rated
+          DEI VOX performs comprehensive stator rewinding using Class H or F insulation systems rated
           for continuous immersion, restoring the motor to its original electrical performance.
         </p>
 
@@ -208,12 +208,12 @@ export default function BoilerWaterCirculationPumpPage() {
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
           The thin stainless steel can separating the motor from the pump fluid is vulnerable to
           corrosion and mechanical damage. Can liner replacement requires precise manufacturing to
-          the original dimensions and surface finish. DEIVOX manufactures replacement can liners
+          the original dimensions and surface finish. DEI VOX manufactures replacement can liners
           in-house using certified materials.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          DEIVOX's Boiler Circulation Pump Services
+          DEI VOX's Boiler Circulation Pump Services
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li><strong>Complete BCP Overhauling</strong> — strip-down, inspection, restoration, and performance testing</li>
@@ -229,7 +229,7 @@ export default function BoilerWaterCirculationPumpPage() {
           Maintenance Schedule Recommendations
         </h2>
         <p className="text-foreground/80 text-sm font-medium leading-relaxed mb-4">
-          DEIVOX recommends the following maintenance approach for Boiler Circulation Pumps:
+          DEI VOX recommends the following maintenance approach for Boiler Circulation Pumps:
         </p>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li>Continuous online vibration and temperature monitoring via plant DCS</li>
@@ -240,7 +240,7 @@ export default function BoilerWaterCirculationPumpPage() {
         </ul>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why DEIVOX
+          Why DEI VOX
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-4">
           <li>ISO 9001:2015, 14001:2015 &amp; 45001:2018 certified quality management</li>

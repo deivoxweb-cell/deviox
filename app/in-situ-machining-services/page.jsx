@@ -1,17 +1,17 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "In-situ Machining Services India | DEIVOX",
+  title: "In-situ Machining Services India | DEI VOX",
   description: "Precision in-situ casing machining services for BCPs and industrial pumps. Reduce downtime with on-site flange and casing repair.",
   keywords: [
     "In-situ Machining Services",
-    "DEIVOX",
+    "DEI VOX",
     "BCP",
     "pump repair"
   ],
   alternates: { canonical: "/in-situ-machining-services" },
   openGraph: {
-    title: "In-situ Machining Services India | DEIVOX",
+    title: "In-situ Machining Services India | DEI VOX",
     description: "Precision in-situ casing machining services for BCPs and industrial pumps. Reduce downtime with on-site flange and casing repair.",
     url: "https://deivoxbcp.com/in-situ-machining-services",
     images: [
@@ -19,7 +19,7 @@ export const metadata = {
         url: "https://deivoxbcp.com/images/bcp_overhauling.png",
         width: 1200,
         height: 630,
-        alt: "In-situ Machining Services - DEIVOX",
+        alt: "In-situ Machining Services - DEI VOX",
       },
     ],
   },
@@ -74,7 +74,7 @@ export default function Page() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEIVOX is a recognized leader in <strong>In-situ Machining Services</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
+          DEI VOX is a recognized leader in <strong>In-situ Machining Services</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
@@ -85,7 +85,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Choose DEIVOX?
+          Why Choose DEI VOX?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li>ISO Certified execution for highest reliability</li>

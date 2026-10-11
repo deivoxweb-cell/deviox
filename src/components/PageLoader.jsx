@@ -65,7 +65,7 @@ export default function PageLoader() {
     >
       {/* Watermark text */}
       <span className="loader-watermark">
-        DEIVOX
+        DEI VOX
       </span>
       {/* Logo + spinner */}
       <div className="loader-logo-container">
@@ -74,7 +74,7 @@ export default function PageLoader() {
         {/* Logo centered */}
         <Image
           src="/images/Logo.png"
-          alt="DEIVOX"
+          alt="DEI VOX"
           width={44}
           height={44}
           className="loader-logo"
@@ -82,7 +82,7 @@ export default function PageLoader() {
       </div>
       {/* Brand label */}
       <p className="loader-label">
-        DEIVOX
+        DEI VOX
       </p>
       {/* Progress bar (bottom) */}
       <div className="loader-progress-bg">

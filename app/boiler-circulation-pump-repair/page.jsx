@@ -1,25 +1,25 @@
 import SeoPageLayout from "@/src/components/SeoPageLayout";
 
 export const metadata = {
-  title: "Boiler Circulation Pump Repair Services | DEIVOX",
-  description: "Expert Boiler Circulation Pump repair services across India by DEIVOX. Specializing in overhauling, maintenance, and emergency repair for power plants.",
+  title: "Boiler Circulation Pump Repair Services | DEI VOX",
+  description: "Expert Boiler Circulation Pump repair services across India by DEI VOX. Specializing in overhauling, maintenance, and emergency repair for power plants.",
   keywords: [
     "Boiler Circulation Pump Repair",
-    "DEIVOX",
+    "DEI VOX",
     "BCP",
     "pump repair"
   ],
   alternates: { canonical: "/boiler-circulation-pump-repair" },
   openGraph: {
-    title: "Boiler Circulation Pump Repair Services | DEIVOX",
-    description: "Expert Boiler Circulation Pump repair services across India by DEIVOX. Specializing in overhauling, maintenance, and emergency repair for power plants.",
+    title: "Boiler Circulation Pump Repair Services | DEI VOX",
+    description: "Expert Boiler Circulation Pump repair services across India by DEI VOX. Specializing in overhauling, maintenance, and emergency repair for power plants.",
     url: "https://deivoxbcp.com/boiler-circulation-pump-repair",
     images: [
       {
         url: "https://deivoxbcp.com/images/bcp_overhauling.png",
         width: 1200,
         height: 630,
-        alt: "Boiler Circulation Pump Repair - DEIVOX",
+        alt: "Boiler Circulation Pump Repair - DEI VOX",
       },
     ],
   },
@@ -49,7 +49,7 @@ const jsonLd = {
       },
       serviceType: "Boiler Circulation Pump Repair",
       areaServed: "India",
-      description: "Expert Boiler Circulation Pump repair services across world by DEIVOX. Specializing in overhauling, maintenance, and emergency repair for power plants.",
+      description: "Expert Boiler Circulation Pump repair services across world by DEI VOX. Specializing in overhauling, maintenance, and emergency repair for power plants.",
       url: "https://deivoxbcp.com/boiler-circulation-pump-repair",
     }
   ],
@@ -74,7 +74,7 @@ export default function Page() {
         <div className="w-20 h-2 bg-accent mb-12" />
 
         <p className="text-foreground/80 text-base font-medium leading-relaxed mb-6">
-          DEIVOX is a recognized leader in <strong>Boiler Circulation Pump Repair</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
+          DEI VOX is a recognized leader in <strong>Boiler Circulation Pump Repair</strong>. Our certified engineers provide unmatched expertise for thermal power plants and industrial facilities across India.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
@@ -85,7 +85,7 @@ export default function Page() {
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold text-primary uppercase tracking-tight mt-10 mb-3">
-          Why Choose DEIVOX?
+          Why Choose DEI VOX?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80 font-medium mb-6">
           <li>ISO Certified execution for highest reliability</li>

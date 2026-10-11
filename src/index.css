@@ -68,7 +68,7 @@ body {
 
   /* ── Slow spin (Hero icon) ── */
   .animate-spin-slow {
-    animation: deivox-spin 8s linear infinite;
+    animation: DEI VOX-spin 8s linear infinite;
   }
 
   /* ── Gentle float (particle dots) ── */
@@ -252,7 +252,7 @@ body {
     }
   }
 
-  @keyframes deivox-spin {
+  @keyframes DEI VOX-spin {
     to {
       transform: rotate(360deg);
     }
@@ -267,7 +267,7 @@ body {
       background-position: 200% center;
     }
   }
-
+  .right-45{right: 45%;}
   /* ── Page Loader Styles ── */
   .loader-overlay {
     position: fixed;
@@ -299,7 +299,7 @@ body {
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.08);
     border-top: 3px solid var(--accent-light);
-    animation: deivox-spin 0.8s linear infinite;
+    animation: DEI VOX-spin 0.8s linear infinite;
     margin: 0 auto;
   }
 
