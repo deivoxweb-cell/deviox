@@ -200,7 +200,7 @@ const Hero = () => {
             className="relative z-20 w-full max-w-[500px] aspect-[4/5] rounded-[3rem] sm:rounded-[4rem] overflow-hidden bg-white border-2 border-black/5 shadow-2xl flex items-center justify-center p-6 sm:p-8 cursor-pointer group right-45"
           >
             <Image
-              src="/images/hero_industrial.png"
+              src="/images/hero_industrial_bcp.png"
               alt="Industrial Pump"
               width={600}
               height={600}
