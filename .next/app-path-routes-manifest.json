@@ -19,6 +19,7 @@
   "/blog/page": "/blog",
   "/blog/[slug]/page": "/blog/[slug]",
   "/boiler-circulation-pump/page": "/boiler-circulation-pump",
+  "/case-studies/page": "/case-studies",
   "/composite-material/page": "/composite-material",
   "/contact/page": "/contact",
   "/iso-certificate/page": "/iso-certificate",

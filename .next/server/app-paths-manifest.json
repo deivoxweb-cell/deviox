@@ -19,6 +19,7 @@
   "/blog/page": "app/blog/page.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/boiler-circulation-pump/page": "app/boiler-circulation-pump/page.js",
+  "/case-studies/page": "app/case-studies/page.js",
   "/composite-material/page": "app/composite-material/page.js",
   "/contact/page": "app/contact/page.js",
   "/iso-certificate/page": "app/iso-certificate/page.js",

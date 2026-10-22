@@ -152,6 +152,12 @@
       "namedRegex": "^/boiler\\-water\\-circulation\\-pump\\-repair(?:/)?$"
     },
     {
+      "page": "/case-studies",
+      "regex": "^/case\\-studies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/case\\-studies(?:/)?$"
+    },
+    {
       "page": "/composite-material",
       "regex": "^/composite\\-material(?:/)?$",
       "routeKeys": {},

@@ -38,10 +38,14 @@ const navGroups = [
   },
   {
     name: "Resources",
-    href: "/our-experience#project-references",
+    href: "/case-studies",
     items: [
-      { name: "Case Studies", href: "/our-experience" },
-      { name: "Downloads (Capability Statement, Catalogue, RFQ Form)", href: "/contact?subject=Downloads" },
+      { name: "Case Studies", href: "/case-studies" },
+      {
+        name: "Downloads (Capability Statement, Catalogue, RFQ Form)",
+        href: "/images/DEI_VOX_Brochure_without_V-FLO.pdf",
+        download: true,
+      },
     ],
   },
   {
@@ -146,6 +150,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       href={item.href}
+                      download={item.download ? true : undefined}
                       className={`block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider transition-all rounded-2xl ${
                         isTargetActive(item.href)
                           ? "bg-accent text-black"
@@ -237,6 +242,7 @@ const Navbar = () => {
                             <Link
                               key={item.name}
                               href={item.href}
+                              download={item.download ? true : undefined}
                               onClick={closeMobileMenu}
                               className={`text-sm sm:text-base font-semibold uppercase tracking-tight py-1 ${
                                 isTargetActive(item.href)
