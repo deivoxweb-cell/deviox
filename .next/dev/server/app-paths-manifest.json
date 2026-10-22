@@ -1,7 +1,5 @@
 {
-  "/motor-rewinding-services/page": "app/motor-rewinding-services/page.js",
   "/bcp-overhauling-services/page": "app/bcp-overhauling-services/page.js",
-  "/testing-quality-assurance/page": "app/testing-quality-assurance/page.js",
-  "/reverse-engineering-custom-components/page": "app/reverse-engineering-custom-components/page.js",
-  "/emergency-outage-support/page": "app/emergency-outage-support/page.js"
+  "/page": "app/page.js",
+  "/spare-parts/page": "app/spare-parts/page.js"
 }

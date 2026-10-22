@@ -139,25 +139,41 @@ const Navbar = () => {
           </Link>
 
           {navGroups.map((group) => (
-            <div key={group.name} className="relative group">
+            <div
+              key={group.name}
+              className="relative"
+              onMouseEnter={() => setOpenGroup(group.name)}
+              onMouseLeave={() =>
+                setOpenGroup((current) => (current === group.name ? null : current))
+              }
+              onFocus={() => setOpenGroup(group.name)}
+            >
               <Link
                 href={group.href}
+                onClick={() => setOpenGroup(null)}
                 className={`${linkClassName(isGroupActive(group))} inline-flex items-center gap-1`}
               >
                 {group.name}
                 <ChevronDown size={12} aria-hidden="true" />
               </Link>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
+              <div
+                className={`absolute top-full left-1/2 -translate-x-1/2 w-72 z-50 transition-all duration-200 ${
+                  openGroup === group.name
+                    ? "visible opacity-100"
+                    : "invisible opacity-0"
+                }`}
+              >
                 <div className="max-h-[70vh] overflow-y-auto bg-white shadow-2xl rounded-3xl border border-black/5 p-2">
                   {group.items.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       download={item.download ? true : undefined}
+                      onClick={() => setOpenGroup(null)}
                       className={`block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider transition-all rounded-2xl ${
                         isTargetActive(item.href)
                           ? "bg-accent text-black"
-                          : "text-black/60 hover:bg-accent hover:text-black"
+                          : "text-black/60 hover:bg-[#8bc34a] hover:text-black"
                       }`}
                     >
                       {item.name}
@@ -249,8 +265,8 @@ const Navbar = () => {
                               onClick={closeMobileMenu}
                               className={`text-sm sm:text-base font-semibold uppercase tracking-tight py-1 ${
                                 isTargetActive(item.href)
-                                  ? "text-accent"
-                                  : "text-black/60 hover:text-black"
+                                  ? "text-[#8bc34a]"
+                                  : "text-black/60 hover:text-[#8bc34a]"
                               }`}
                             >
                               {item.name}
