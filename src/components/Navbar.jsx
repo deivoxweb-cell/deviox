@@ -22,10 +22,10 @@ const navGroups = [
   },
   {
     name: "Spare Parts",
-    href: "/services#components-procurement",
+    href: "/spare-parts",
     items: [
-      { name: "Spare Parts Overview", href: "/services#components-procurement" },
-      { name: "Parts Catalogue (Filterable)", href: "/services#components-procurement" },
+      { name: "Spare Parts Overview", href: "/spare-parts" },
+      { name: "Parts Catalogue (Filterable)", href: "/parts-catalogue" },
     ],
   },
   {

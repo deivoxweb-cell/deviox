@@ -1,4 +1,8 @@
 {
-  "/case-studies/page": "app/case-studies/page.js",
-  "/make-models-supported/page": "app/make-models-supported/page.js"
+  "/make-models-supported/page": "app/make-models-supported/page.js",
+  "/quality-compliance-confidentiality/page": "app/quality-compliance-confidentiality/page.js",
+  "/about/page": "app/about/page.js",
+  "/spare-parts/page": "app/spare-parts/page.js",
+  "/parts-catalogue/page": "app/parts-catalogue/page.js",
+  "/contact/page": "app/contact/page.js"
 }

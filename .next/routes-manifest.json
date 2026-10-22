@@ -206,6 +206,12 @@
       "namedRegex": "^/our\\-experience(?:/)?$"
     },
     {
+      "page": "/parts-catalogue",
+      "regex": "^/parts\\-catalogue(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/parts\\-catalogue(?:/)?$"
+    },
+    {
       "page": "/power-generation",
       "regex": "^/power\\-generation(?:/)?$",
       "routeKeys": {},
@@ -234,6 +240,12 @@
       "regex": "^/sitemap\\.xml(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/spare-parts",
+      "regex": "^/spare\\-parts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/spare\\-parts(?:/)?$"
     },
     {
       "page": "/submersible-pump-repair",

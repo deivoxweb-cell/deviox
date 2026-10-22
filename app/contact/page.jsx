@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin, Paperclip, ChevronDown, Send, X, Check, AlertTriangle, ArrowUpRight } from "lucide-react";
 import Magnetic from "@/src/components/Magnetic";
@@ -84,6 +84,20 @@ export default function ContactPage() {
   const [attachment, setAttachment] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState({ type: null, message: "" });
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get("subject");
+    const message = params.get("message");
+
+    if (!subject && !message) return;
+
+    setForm((current) => ({
+      ...current,
+      subject: SUBJECTS.includes(subject) ? subject : current.subject,
+      message: message || current.message,
+    }));
+  }, []);
 
   const handleChange = (e) => {
     let { name, value } = e.target;

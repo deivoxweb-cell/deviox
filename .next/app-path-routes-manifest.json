@@ -24,8 +24,10 @@
   "/contact/page": "/contact",
   "/iso-certificate/page": "/iso-certificate",
   "/make-models-supported/page": "/make-models-supported",
+  "/parts-catalogue/page": "/parts-catalogue",
   "/power-generation/page": "/power-generation",
   "/quality-compliance-confidentiality/page": "/quality-compliance-confidentiality",
   "/services/page": "/services",
+  "/spare-parts/page": "/spare-parts",
   "/team/page": "/team"
 }
