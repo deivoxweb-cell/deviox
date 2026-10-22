@@ -22,12 +22,16 @@
   "/case-studies/page": "app/case-studies/page.js",
   "/composite-material/page": "app/composite-material/page.js",
   "/contact/page": "app/contact/page.js",
+  "/emergency-outage-support/page": "app/emergency-outage-support/page.js",
   "/iso-certificate/page": "app/iso-certificate/page.js",
   "/make-models-supported/page": "app/make-models-supported/page.js",
   "/parts-catalogue/page": "app/parts-catalogue/page.js",
   "/power-generation/page": "app/power-generation/page.js",
   "/quality-compliance-confidentiality/page": "app/quality-compliance-confidentiality/page.js",
+  "/reverse-engineering-custom-components/page": "app/reverse-engineering-custom-components/page.js",
+  "/services-overview/page": "app/services-overview/page.js",
   "/services/page": "app/services/page.js",
   "/spare-parts/page": "app/spare-parts/page.js",
-  "/team/page": "app/team/page.js"
+  "/team/page": "app/team/page.js",
+  "/testing-quality-assurance/page": "app/testing-quality-assurance/page.js"
 }

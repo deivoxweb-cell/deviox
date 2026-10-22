@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/testing-quality-assurance/layout,_N_T_/testing-quality-assurance/page,_N_T_/testing-quality-assurance"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/testing-quality-assurance/__PAGE__",
+    "/testing-quality-assurance",
+    "/_index",
+    "/_head"
+  ]
+}

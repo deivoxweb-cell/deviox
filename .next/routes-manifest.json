@@ -170,6 +170,12 @@
       "namedRegex": "^/contact(?:/)?$"
     },
     {
+      "page": "/emergency-outage-support",
+      "regex": "^/emergency\\-outage\\-support(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/emergency\\-outage\\-support(?:/)?$"
+    },
+    {
       "page": "/in-situ-machining-services",
       "regex": "^/in\\-situ\\-machining\\-services(?:/)?$",
       "routeKeys": {},
@@ -224,6 +230,12 @@
       "namedRegex": "^/quality\\-compliance\\-confidentiality(?:/)?$"
     },
     {
+      "page": "/reverse-engineering-custom-components",
+      "regex": "^/reverse\\-engineering\\-custom\\-components(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reverse\\-engineering\\-custom\\-components(?:/)?$"
+    },
+    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},
@@ -234,6 +246,12 @@
       "regex": "^/services(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/services-overview",
+      "regex": "^/services\\-overview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services\\-overview(?:/)?$"
     },
     {
       "page": "/sitemap.xml",
@@ -258,6 +276,12 @@
       "regex": "^/team(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/team(?:/)?$"
+    },
+    {
+      "page": "/testing-quality-assurance",
+      "regex": "^/testing\\-quality\\-assurance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/testing\\-quality\\-assurance(?:/)?$"
     }
   ],
   "dataRoutes": [],

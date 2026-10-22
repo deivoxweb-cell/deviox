@@ -4,7 +4,7 @@
 type AppRoutes = never
 type AppRouteHandlerRoutes = "/api/contact"
 type PageRoutes = never
-type LayoutRoutes = "/" | "/about" | "/blog" | "/boiler-circulation-pump" | "/case-studies" | "/composite-material" | "/contact" | "/iso-certificate" | "/make-models-supported" | "/parts-catalogue" | "/power-generation" | "/quality-compliance-confidentiality" | "/services" | "/spare-parts" | "/team"
+type LayoutRoutes = "/" | "/about" | "/blog" | "/boiler-circulation-pump" | "/case-studies" | "/composite-material" | "/contact" | "/emergency-outage-support" | "/iso-certificate" | "/make-models-supported" | "/parts-catalogue" | "/power-generation" | "/quality-compliance-confidentiality" | "/reverse-engineering-custom-components" | "/services" | "/services-overview" | "/spare-parts" | "/team" | "/testing-quality-assurance"
 type RedirectRoutes = "/bcp-pump" | "/boiler-water-circulation-pump"
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
@@ -21,14 +21,18 @@ interface ParamMap {
   "/case-studies": {}
   "/composite-material": {}
   "/contact": {}
+  "/emergency-outage-support": {}
   "/iso-certificate": {}
   "/make-models-supported": {}
   "/parts-catalogue": {}
   "/power-generation": {}
   "/quality-compliance-confidentiality": {}
+  "/reverse-engineering-custom-components": {}
   "/services": {}
+  "/services-overview": {}
   "/spare-parts": {}
   "/team": {}
+  "/testing-quality-assurance": {}
 }
 
 
@@ -42,14 +46,18 @@ interface LayoutSlotMap {
   "/case-studies": never
   "/composite-material": never
   "/contact": never
+  "/emergency-outage-support": never
   "/iso-certificate": never
   "/make-models-supported": never
   "/parts-catalogue": never
   "/power-generation": never
   "/quality-compliance-confidentiality": never
+  "/reverse-engineering-custom-components": never
   "/services": never
+  "/services-overview": never
   "/spare-parts": never
   "/team": never
+  "/testing-quality-assurance": never
 }
 
 

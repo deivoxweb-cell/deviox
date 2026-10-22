@@ -22,12 +22,16 @@
   "/case-studies/page": "/case-studies",
   "/composite-material/page": "/composite-material",
   "/contact/page": "/contact",
+  "/emergency-outage-support/page": "/emergency-outage-support",
   "/iso-certificate/page": "/iso-certificate",
   "/make-models-supported/page": "/make-models-supported",
   "/parts-catalogue/page": "/parts-catalogue",
   "/power-generation/page": "/power-generation",
   "/quality-compliance-confidentiality/page": "/quality-compliance-confidentiality",
+  "/reverse-engineering-custom-components/page": "/reverse-engineering-custom-components",
+  "/services-overview/page": "/services-overview",
   "/services/page": "/services",
   "/spare-parts/page": "/spare-parts",
-  "/team/page": "/team"
+  "/team/page": "/team",
+  "/testing-quality-assurance/page": "/testing-quality-assurance"
 }
