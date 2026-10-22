@@ -18,6 +18,7 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: post.keywords,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
@@ -25,8 +26,8 @@ export async function generateMetadata({ params }) {
       description: post.excerpt,
       url: `${SITE_URL}/blog/${post.slug}`,
       images: post.image ? [{ url: post.image }] : undefined,
-      publishedTime: post.date,
-      modifiedTime: post.updatedDate || post.date,
+      publishedTime: post.publishedAt || post.date,
+      modifiedTime: post.updatedAt || post.publishedAt || post.date,
       authors: [post.author],
     },
   };
@@ -49,9 +50,35 @@ export default async function BlogPostPage({ params }) {
   const relatedLinks = [
     { label: "Boiler Circulation Pump Overhauling", href: "/boiler-circulation-pump" },
   ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image ? [`${SITE_URL}${post.image}`] : undefined,
+    datePublished: new Date(post.publishedAt || post.date).toISOString(),
+    dateModified: new Date(post.updatedAt || post.publishedAt || post.updatedDate || post.date).toISOString(),
+    author: {
+      "@type": "Organization",
+      name: post.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "DEI VOX INDIA PVT. LTD.",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    keywords: post.keywords?.join(", "),
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* React 19 Head Hoisting */}
       <title>{`${post.title} — DEI VOX India`}</title>
       <meta name="description" content={post.excerpt} />

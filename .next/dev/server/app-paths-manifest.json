@@ -1,5 +1,4 @@
 {
-  "/bcp-overhauling-services/page": "app/bcp-overhauling-services/page.js",
   "/page": "app/page.js",
-  "/spare-parts/page": "app/spare-parts/page.js"
+  "/blog/page": "app/blog/page.js"
 }

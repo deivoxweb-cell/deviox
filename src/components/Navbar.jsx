@@ -59,6 +59,11 @@ const navGroups = [
       { name: "Team", href: "/team" },
     ],
   },
+  {
+    name: "Blog",
+    href: "/blog",
+    items: [{ name: "All Articles", href: "/blog" }],
+  },
 ];
 
 const linkClassName = (isActive) =>
@@ -138,51 +143,64 @@ const Navbar = () => {
             Home
           </Link>
 
-          {navGroups.map((group) => (
-            <div
-              key={group.name}
-              className="relative"
-              onMouseEnter={() => setOpenGroup(group.name)}
-              onMouseLeave={() =>
-                setOpenGroup((current) => (current === group.name ? null : current))
-              }
-              onFocus={() => setOpenGroup(group.name)}
-            >
+          {navGroups.map((group) =>
+            group.name === "Blog" ? (
               <Link
+                key={group.name}
                 href={group.href}
                 onClick={() => setOpenGroup(null)}
-                className={`${linkClassName(isGroupActive(group))} inline-flex items-center gap-1`}
+                className={linkClassName(isGroupActive(group))}
               >
                 {group.name}
-                <ChevronDown size={12} aria-hidden="true" />
               </Link>
+            ) : (
               <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 w-72 z-50 transition-all duration-200 ${
-                  openGroup === group.name
-                    ? "visible opacity-100"
-                    : "invisible opacity-0"
-                }`}
+                key={group.name}
+                className="relative"
+                onMouseEnter={() => setOpenGroup(group.name)}
+                onMouseLeave={() =>
+                  setOpenGroup((current) =>
+                    current === group.name ? null : current,
+                  )
+                }
+                onFocus={() => setOpenGroup(group.name)}
               >
-                <div className="max-h-[70vh] overflow-y-auto bg-white shadow-2xl rounded-3xl border border-black/5 p-2">
-                  {group.items.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      download={item.download ? true : undefined}
-                      onClick={() => setOpenGroup(null)}
-                      className={`block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider transition-all rounded-2xl ${
-                        isTargetActive(item.href)
-                          ? "bg-accent text-black"
-                          : "text-black/60 hover:bg-[#8bc34a] hover:text-black"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                <Link
+                  href={group.href}
+                  onClick={() => setOpenGroup(null)}
+                  className={`${linkClassName(isGroupActive(group))} inline-flex items-center gap-1`}
+                >
+                  {group.name}
+                  <ChevronDown size={12} aria-hidden="true" />
+                </Link>
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 w-72 z-50 transition-all duration-200 ${
+                    openGroup === group.name
+                      ? "visible opacity-100"
+                      : "invisible opacity-0"
+                  }`}
+                >
+                  <div className="max-h-[70vh] overflow-y-auto bg-white shadow-2xl rounded-3xl border border-black/5 p-2">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        download={item.download ? true : undefined}
+                        onClick={() => setOpenGroup(null)}
+                        className={`block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider transition-all rounded-2xl ${
+                          isTargetActive(item.href)
+                            ? "bg-accent text-black"
+                            : "text-black/60 hover:bg-[#8bc34a] hover:text-black"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ),
+          )}
 
           <Link href="/contact" className={linkClassName(pathname === "/contact")}>
             Contact
@@ -229,6 +247,23 @@ const Navbar = () => {
               </Link>
 
               {navGroups.map((group) => {
+                if (group.name === "Blog") {
+                  return (
+                    <Link
+                      key={group.name}
+                      href={group.href}
+                      onClick={closeMobileMenu}
+                      className={`border-b border-black/5 py-3 text-xl font-bold uppercase tracking-tighter ${
+                        isGroupActive(group)
+                          ? "text-accent"
+                          : "text-black hover:text-accent"
+                      }`}
+                    >
+                      {group.name}
+                    </Link>
+                  );
+                }
+
                 const isExpanded = openGroup === group.name;
                 return (
                   <div key={group.name} className="border-b border-black/5">

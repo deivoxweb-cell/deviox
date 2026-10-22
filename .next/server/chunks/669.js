@@ -371,4 +371,200 @@ Only if measured condition meets the approved criteria. Acceptable overall vibra
 #### Why do replacement bearings sometimes fail quickly?
 
 Repeat failures usually indicate an unresolved cause such as contamination, blocked cooling flow, incorrect clearance, shaft damage, misalignment, or abnormal hydraulic thrust.
-`,author:"DEI VOX Rotating Equipment Engineering Team",authorCredentials:"BCP bearing inspection, dimensional metrology, rotor assessment, and failure analysis",date:"June 12, 2026",updatedDate:"June 12, 2026",readTime:"7 min read",image:"/images/bcp-liner-bearing-inspection.png",category:"Reliability"}]}};
+`,author:"DEI VOX Rotating Equipment Engineering Team",authorCredentials:"BCP bearing inspection, dimensional metrology, rotor assessment, and failure analysis",date:"June 12, 2026",updatedDate:"June 12, 2026",readTime:"7 min read",image:"/images/bcp-liner-bearing-inspection.png",category:"Reliability"},{id:10,title:"KSB and Hayward Tyler BCPs: How to Identify Your Pump Before Repair",slug:"ksb-hayward-tyler-bcp-identification-repair",excerpt:"A practical identification checklist for KSB BCP and Hayward Tyler BCP equipment, including nameplate data, configuration checks, drawings, and repair-scope questions.",keywords:["KSB BCP","Hayward Tyler BCP","boiler circulation pump repair India","BCP repair"],content:`
+### Start with the equipment, not the assumption
+
+When arranging a **KSB BCP** or **Hayward Tyler BCP** inspection, do not rely on the make name alone. Pumps may have different hydraulic ends, motor configurations, materials, revisions, and site modifications. A familiar model family is a useful starting point, not proof that a replacement part or repair procedure is interchangeable.
+
+### Information to collect before requesting repair
+
+- Photograph the pump and motor nameplates clearly, including serial and type numbers.
+- Record the installation, operating hours, process conditions, and recent maintenance history.
+- Note the symptoms: vibration, temperature changes, leakage, trips, abnormal current, or a loss of head or flow.
+- Gather available sectional drawings, parts lists, previous condition reports, and test records.
+- Photograph connections, orientation, terminal arrangements, and any visible damage.
+
+If the nameplate is missing or unreadable, share clear overall and component photographs. Engineering review may help narrow down the configuration, but identification should be confirmed before a scope, parts, or tolerances are approved.
+
+### What about HLAV and LUV?
+
+HLAV and LUV are design or model identifiers that may appear in equipment records. Treat each exact designation, revision, serial number, and drawing as important. Do not infer dimensions, interchangeability, or OEM approval from an abbreviated model code alone. If a component is obsolete or drawings are incomplete, a feasibility review can establish what measurements and samples are needed.
+
+### A sound repair decision
+
+A useful repair scope connects the as-found measurements to the proposed work. It should distinguish inspection findings, repair options, replacement parts, testing, documentation, and any exclusions. For a multi-make pump, the responsible engineering team should confirm applicability against the actual unit and agreed acceptance criteria.
+
+DEI VOX provides [BCP pump overhaul and refurbishment](/bcp-overhauling-services) and [motor repair and rewinding](/motor-rewinding-services), subject to equipment assessment and scope confirmation. Share the available identification and fault information through our [contact page](/contact) to start a review.
+
+### Frequently Asked Questions
+
+#### Can a KSB or Hayward Tyler part be selected from the make alone?
+
+No. Confirm the pump type, serial number, revision, dimensions, materials, and mating interfaces against the actual equipment and approved documentation.
+
+#### What if the original drawing is unavailable?
+
+Provide the sample or worn component, photographs, equipment details, and operating context. Feasibility and measurement requirements can then be assessed.
+`,author:"DEI VOX BCP Engineering Team",authorCredentials:"Pump identification, inspection planning, and repair-scope assessment",date:"October 22, 2026",updatedDate:"October 22, 2026",publishedAt:"2026-10-22T00:00:00+05:30",readTime:"5 min read",image:"/images/bcp_overhauling.png",category:"Engineering"},{id:11,title:"Boiler Water Circulation Pumps: Purpose, Operating Context, and Service",slug:"boiler-water-circulation-pump-purpose-service",excerpt:"Understand the role of a boiler water circulation pump in a forced-circulation boiler and the operating information that helps guide inspection and service.",keywords:["boiler water circulation pump","boiler circulation pump","boiler recirculation pump","high pressure boiler circulation pump"],content:`
+### What does a boiler water circulation pump do?
+
+A **boiler water circulation pump** moves boiler water through the circulation circuit in a forced-circulation system. Maintaining the intended flow supports heat transfer through the evaporator circuit. The pump operates as part of a larger system, so its condition and performance must be considered alongside boiler operating data and the applicable plant requirements.
+
+The terms **boiler circulation pump** and **boiler recirculation pump** are often used when discussing water movement in boiler systems. The exact duty and arrangement vary by plant. A **high pressure boiler circulation pump** must be assessed against its own design, process conditions, and operating limits rather than a generic specification.
+
+### Information that helps diagnose performance changes
+
+When investigating a reported change in pump operation, collect trends rather than a single reading where possible:
+
+- Pump suction and discharge pressure, flow, and operating condition.
+- Motor current, winding or cavity temperature where monitored, and protection alarms.
+- Vibration and noise trends at repeatable measurement locations.
+- Water chemistry, cooling-circuit condition, and any known contamination.
+- Operating hours, starts, outage history, and recent work.
+- Nameplate details, drawings, previous inspection measurements, and repair records.
+
+Changes in head or flow, vibration, temperature, leakage, or electrical readings can have different causes. An inspection should test the likely causes against measurement evidence instead of assuming one component has failed.
+
+### Repair and service planning
+
+A repair scope typically begins with identification and a review of operating history. Inspection and dismantling can then establish as-found condition, component clearances, wear, and any electrical or pressure-boundary concerns. Repair options and tests should be agreed against OEM documentation, plant requirements, and the approved scope.
+
+For pump condition assessment and component restoration, see [BCP pump overhaul and refurbishment](/bcp-overhauling-services). Where the motor also needs attention, [BCP motor repair and rewinding](/motor-rewinding-services) can be assessed as part of the wider project.
+
+### Frequently Asked Questions
+
+#### Is every boiler recirculation pump the same design?
+
+No. Equipment design, duty, materials, motor arrangement, and site-specific modifications differ. Confirm the exact unit before applying repair or maintenance guidance.
+
+#### What should be sent with a service request?
+
+Start with the nameplate, symptoms, operating data, photographs, fault history, and any available drawings or previous reports.
+`,author:"DEI VOX Rotating Equipment Engineering Team",authorCredentials:"Boiler circulation pump operation, inspection, and repair planning",date:"October 22, 2026",updatedDate:"October 22, 2026",publishedAt:"2026-10-22T00:00:00+05:30",readTime:"5 min read",image:"/images/hero_industrial_bcp.png",category:"Engineering"},{id:12,title:"Glandless Boiler Circulation Pumps and Wet-Stator Motor Maintenance",slug:"glandless-boiler-circulation-pump-wet-stator-motor",excerpt:"An introduction to glandless Boiler Circulation Pump construction, wet-stator motor considerations, and the inspection evidence useful during a repair.",keywords:["glandless boiler circulation pump","wet stator motor BCP","BCP motor repair","motor rewinding"],content:`
+### What makes a BCP glandless?
+
+A **glandless boiler circulation pump** uses a pump and motor arrangement designed without a conventional external shaft seal. In a wet-stator motor BCP, the internal construction and pressure boundary are specific to the pump design. The motor, bearings, insulation system, cooling arrangements, and protected components must all be understood as a coordinated assembly.
+
+The phrase **wet stator motor BCP** should not be taken to mean that any standard motor rewind method is suitable. The design, insulation system, pressure-boundary components, operating environment, and manufacturer or plant requirements determine the correct inspection and repair approach.
+
+### What to monitor
+
+Useful indicators include insulation-resistance trends, winding-resistance balance, motor current, vibration, temperature, cooling-flow condition, trips, and unusual noise. Readings should be recorded with relevant conditions and compared with prior results and approved criteria. A single test value, without context, is not a complete diagnosis.
+
+If a unit is removed for an outage, retain the nameplate details, fault history, photographs, test results, and available drawings. During a repair assessment, the stator winding, can or pressure boundary, bearings, rotor, leads, and cooling path may need examination depending on symptoms and scope.
+
+### Rewinding within the pump design
+
+**Motor rewinding** for a BCP should be treated as a design-specific engineering task, not simply a coil replacement. Before work begins, agree the repair scope, winding information and insulation requirements available, inspection hold points, applicable tests, and acceptance criteria. Final documentation should record work performed and test results relevant to the agreed scope.
+
+DEI VOX offers [BCP motor repair and rewinding](/motor-rewinding-services), with broader pump inspection available through [BCP overhaul and refurbishment](/bcp-overhauling-services). Feasibility and repair details are confirmed against the actual equipment.
+
+### Frequently Asked Questions
+
+#### Can a conventional motor shop rewind a wet-stator BCP motor?
+
+The work requires knowledge of the specific BCP motor design and its pressure-boundary and insulation requirements. Confirm the provider's capability and the proposed procedure for the particular unit.
+
+#### Which records are useful after repair?
+
+Keep the inspection report, measured findings, repair scope, applicable electrical and mechanical test results, and any agreed release documentation.
+`,author:"DEI VOX Electrical Engineering Team",authorCredentials:"Wet-motor inspection, winding assessment, and repair documentation",date:"October 22, 2026",updatedDate:"October 22, 2026",publishedAt:"2026-10-22T00:00:00+05:30",readTime:"5 min read",image:"/images/motor_rewinding.png",category:"Electrical"},{id:13,title:"BCP Overhauling in India: Planning a Boiler Circulation Pump Repair",slug:"bcp-overhauling-boiler-circulation-pump-repair-india",excerpt:"Plan a boiler circulation pump repair in India with a clear outage scope, baseline data, inspection hold points, parts decisions, and agreed acceptance criteria.",keywords:["BCP overhauling","boiler circulation pump repair India","boiler water circulation pump service","boiler circulation pump repair"],content:`
+### Plan the outage around evidence
+
+**BCP overhauling** is easier to manage when equipment information and outage constraints are assembled before removal. Record the pump and motor identification, operating hours, service conditions, performance trends, alarm and trip history, previous repairs, and the required return-to-service date. This helps the repair team prepare an inspection plan and identify long-lead decisions early.
+
+### A practical repair-planning sequence
+
+- **Define the equipment and concern:** Share nameplate photographs, symptoms, operating data, and fault history.
+- **Agree incoming checks:** Record external condition, orientation, connections, and initial permitted readings.
+- **Plan inspection and hold points:** Decide which findings require customer or third-party review before repair proceeds.
+- **Set the repair decision process:** Compare as-found measurements with OEM or customer criteria and document repair options.
+- **Confirm parts and testing:** Identify components, material records, dimensional checks, and tests required by the agreed scope.
+- **Close with records:** Collect as-left measurements, repair details, applicable test results, and dispatch information.
+
+This approach supports a condition-based **boiler circulation pump repair in India** and makes it easier to distinguish essential restoration from optional improvements. A schedule or budget should remain provisional until the unit is inspected and hidden damage is understood.
+
+### Pump and motor together
+
+Where the condition warrants it, a **boiler water circulation pump service** can include both hydraulic and motor work. Agree whether the pump end and motor will be inspected together, what evidence is needed for the repair decision, and which acceptance criteria apply to each assembly.
+
+DEI VOX provides [BCP pump overhaul and refurbishment](/bcp-overhauling-services) and [motor repair and rewinding](/motor-rewinding-services). Share the required outage window, equipment details, and available records to discuss feasibility and scope.
+
+### Frequently Asked Questions
+
+#### Can a final repair price be confirmed before dismantling?
+
+A preliminary estimate may be possible from records, but concealed damage and measured clearances can change the scope. Confirm final work after inspection and approval.
+
+#### How can outage risk be reduced?
+
+Prepare records early, agree inspection hold points, identify critical parts, and establish who can approve scope changes during the outage.
+`,author:"DEI VOX Service Engineering Team",authorCredentials:"BCP overhaul planning, inspection coordination, and repair-scope development",date:"October 22, 2026",updatedDate:"October 22, 2026",publishedAt:"2026-10-22T00:00:00+05:30",readTime:"5 min read",image:"/images/bcp_overhauling.png",category:"Maintenance"},{id:14,title:"BCP Motor Rewinding: Inspection and Test Records to Request",slug:"bcp-motor-rewinding-inspection-test-records",excerpt:"Learn what inspection details and test records to agree for wet-stator Boiler Circulation Pump motor rewinding, from as-found readings to final documentation.",keywords:["motor rewinding","wet stator motor BCP","glandless boiler circulation pump","BCP motor repair"],content:`
+### Why BCP motor rewinding needs a defined scope
+
+Motor rewinding on a **glandless boiler circulation pump** must be planned around the specific motor construction and the pump's pressure boundary. A rewind is not only a winding operation: inspection findings on the can, rotor, bearings, leads, cooling circuit, and assembly may affect the repair plan. The applicable requirements should be established with the equipment information and customer criteria.
+
+### Before repair begins
+
+Provide the nameplate, winding or connection details available, drawings, operating history, protection trips, recent electrical readings, and the reason for removal. Agree how incoming condition will be recorded, who reviews the findings, which components are in scope, and what requires approval before extra work.
+
+### Useful inspection and test records
+
+- As-found insulation and winding-resistance readings, with the test conditions recorded.
+- Inspection notes and photographs for stator, rotor, bearings, leads, and pressure-boundary components, as applicable.
+- Measurements and repair details for components included in the approved scope.
+- Rewind details and material information required by the project specification.
+- Test methods, results, instrument identification, and acceptance criteria.
+- As-left assembly checks and the final repair summary.
+
+Not every test is appropriate for every motor or repair. The testing plan should be confirmed by competent personnel against motor design, approved procedures, and customer or OEM requirements. Avoid applying a test voltage or acceptance limit copied from an unrelated motor.
+
+### After the rewind
+
+Review the report before installation. Confirm that deviations or results outside agreed criteria were raised and dispositioned. Retain baseline values for comparison after commissioning, together with the operating conditions and checks recommended by the responsible engineering team.
+
+DEI VOX supports [BCP motor repair and rewinding](/motor-rewinding-services) and [testing and quality assurance](/testing-quality-assurance) as defined by the project scope.
+
+### Frequently Asked Questions
+
+#### Should every rewound motor receive the same tests?
+
+No. The test plan depends on design, repair scope, procedures, and agreed acceptance requirements.
+
+#### What should happen when a result is outside tolerance?
+
+Pause the affected work, document the result, notify the responsible parties, and agree the disposition before proceeding.
+`,author:"DEI VOX Electrical Engineering Team",authorCredentials:"BCP motor inspection, winding repair, electrical testing, and records",date:"October 22, 2026",updatedDate:"October 22, 2026",publishedAt:"2026-10-22T00:00:00+05:30",readTime:"5 min read",image:"/images/bcp-motor-winding-inspection.png",category:"Electrical"},{id:15,title:"In-Situ Machining for Industrial Pump Repair in Bengaluru",slug:"insitu-machining-industrial-pump-repair-bengaluru",excerpt:"When is on-site machining a practical option for industrial pump repair in Bengaluru? Review casing condition, access, alignment, inspection, and outage planning.",keywords:["insitu machining","industrial pump repair Bengaluru","boiler circulation pump repair India","BCP overhauling"],content:`
+### When on-site machining may help
+
+**Insitu machining** brings a machining setup to a component or installed assembly instead of moving it to a workshop. For industrial pump repair in Bengaluru and other locations, it may be considered when a casing face, bore, or fit needs restoration and dismantling or transport would create significant project constraints.
+
+It is not automatically the best option for every repair. Feasibility depends on the damage, required tolerance and surface finish, available datum references, machine setup rigidity, access, lifting and safety arrangements, site permissions, and whether the component can be inspected adequately in place.
+
+### Questions to resolve during feasibility review
+
+- Is the damaged feature accessible for the required machining operation?
+- Can the setup be aligned to a reliable reference and secured against movement?
+- What measurements define the original geometry and acceptable finished condition?
+- Can nearby components, piping, instruments, and personnel be protected from chips and contamination?
+- Is there enough room for tooling, measurement, guarding, and safe work?
+- Would workshop repair provide better control for the actual damage?
+
+For a **boiler circulation pump repair in India**, the choice between on-site work and workshop overhaul should follow an inspection and a clear scope. Site machining can address selected features, while a complete pump overhaul may be necessary when internal wear, bearing condition, rotor geometry, or motor issues also need attention.
+
+### Documentation and coordination
+
+Before mobilization, agree the work boundary, setup references, measurement points, tolerances, inspection hold points, permits, utilities, and completion criteria. Record as-found dimensions, machining steps, and as-left measurements. The responsible engineer should confirm that the finished feature is suitable for assembly and service.
+
+DEI VOX can discuss [in-situ machining services](/in-situ-machining-services), [BCP pump overhaul](/bcp-overhauling-services), and [emergency or outage support](/emergency-outage-support) based on the equipment and site requirements.
+
+### Frequently Asked Questions
+
+#### Does in-situ machining always shorten an outage?
+
+Not necessarily. Setup access, inspection findings, tooling, approvals, and the required operation all influence duration. Assess the actual job before comparing schedules.
+
+#### What information should be provided for an initial review?
+
+Send equipment identification, photographs, damage location, available drawings, required completion date, site location, and any access or safety constraints.
+`,author:"DEI VOX Field Engineering Team",authorCredentials:"On-site machining feasibility, industrial pump repair, and outage coordination",date:"October 22, 2026",updatedDate:"October 22, 2026",publishedAt:"2026-10-22T00:00:00+05:30",readTime:"5 min read",image:"/images/insitu_machining.png",category:"Maintenance"}]}};
