@@ -105,7 +105,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\shaan\\OneDrive\\Desktop\\deivoxbcp",
+    "outputFileTracingRoot": "C:\\Users\\shaan\\OneDrive\\Desktop\\deivox",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -305,7 +305,7 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs",
     "turbopack": {
-      "root": "C:\\Users\\shaan\\OneDrive\\Desktop\\deivoxbcp"
+      "root": "C:\\Users\\shaan\\OneDrive\\Desktop\\deivox"
     },
     "distDirRoot": ".next",
     "_originalRedirects": [
@@ -321,7 +321,7 @@ self.__SERVER_FILES_MANIFEST={
       }
     ]
   },
-  "appDir": "C:\\Users\\shaan\\OneDrive\\Desktop\\deivoxbcp",
+  "appDir": "C:\\Users\\shaan\\OneDrive\\Desktop\\deivox",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

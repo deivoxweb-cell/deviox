@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\power-generation\page.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\power-generation\page.jsx
 import * as entry from '../../../../app/power-generation/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

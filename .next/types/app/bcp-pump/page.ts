@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\bcp-pump\page.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\bcp-pump\page.jsx
 import * as entry from '../../../../app/bcp-pump/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

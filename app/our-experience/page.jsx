@@ -193,7 +193,7 @@ export default function OurExperiencePage() {
         </div>
       </section>
 
-      <section className="bg-black py-20 text-white">
+      <section id="project-references" className="bg-black py-20 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-16">
           <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>

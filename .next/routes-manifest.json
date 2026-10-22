@@ -222,6 +222,12 @@
       "regex": "^/submersible\\-pump\\-repair(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/submersible\\-pump\\-repair(?:/)?$"
+    },
+    {
+      "page": "/team",
+      "regex": "^/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/team(?:/)?$"
     }
   ],
   "dataRoutes": [],

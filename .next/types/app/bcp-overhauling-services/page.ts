@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\bcp-overhauling-services\page.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\bcp-overhauling-services\page.jsx
 import * as entry from '../../../../app/bcp-overhauling-services/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

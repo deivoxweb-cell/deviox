@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\in-situ-machining-services\page.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\in-situ-machining-services\page.jsx
 import * as entry from '../../../../app/in-situ-machining-services/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

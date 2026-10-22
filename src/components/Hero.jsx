@@ -102,10 +102,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="w-full px-4 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-
-        {/* ── Left Content ── */}
-        <div className="lg:col-span-6">
+        <div className="w-full  lg:px-16 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,8 +112,25 @@ const Hero = () => {
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
               <Settings className="text-accent animate-spin-slow" size={20} />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">DEI VOX — Your Partner for Multi-Make BCP Repair, Engineering & Alternative Solutions.</span>
-          </motion.div>
+            <span className="text-[20px] font-bold uppercase tracking-[0.3em] text-black">DEI VOX — Your Partner for Multi-Make BCP Repair</span>
+          </motion.div>        
+        </div>
+
+      <div className="w-full px-4 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        {/* ── Left Content ── */}
+        <div className="lg:col-span-6">
+          {/* <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex items-center gap-3 mb-8"
+          >
+            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
+              <Settings className="text-accent animate-spin-slow" size={20} />
+            </div>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-black">DEI VOX — Your Partner for Multi-Make BCP Repair, Engineering & Alternative Solutions.</span>
+          </motion.div> */}
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -125,8 +139,7 @@ const Hero = () => {
             className="text-[2.2rem] sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] text-black leading-[0.9] sm:leading-[0.88] uppercase mb-10"
           >
             Boiler Circulation<br />
-            <span className="text-black/20">Pump (BCP)</span><br />Repair &
-            Overhauling
+            <span className="text-black/20">Pump (BCP)</span><br />Repair
           </motion.h1>
 
           <div className="flex flex-col sm:flex-row sm:items-start gap-8 sm:gap-12 mb-12">
@@ -137,8 +150,8 @@ const Hero = () => {
               className="flex items-center sm:block gap-6"
             >
               <div>
-                <p className="text-4xl font-bold text-black tracking-tighter">10K+</p>
-                <p className="text-[9px] font-semibold text-black/40 uppercase tracking-widest mt-1">Global Clients<br />Trusted Us</p>
+                <p className="text-4xl font-bold text-black tracking-tighter">20K+</p>
+                <p className="text-[9px] font-semibold text-black/40 uppercase tracking-widest mt-1">BCP Installed<br />Trusted Us</p>
               </div>
               <div className="flex -space-x-3 mt-0 sm:mt-4">
                 {[1, 2, 3, 4].map((i) => (

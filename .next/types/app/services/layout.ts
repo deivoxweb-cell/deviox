@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\services\layout.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\services\layout.jsx
 import * as entry from '../../../../app/services/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

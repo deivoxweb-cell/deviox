@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\iso-certificate\layout.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\iso-certificate\layout.jsx
 import * as entry from '../../../../app/iso-certificate/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

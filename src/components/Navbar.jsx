@@ -2,34 +2,70 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+const navGroups = [
+  {
+    name: "Services",
+    href: "/services",
+    items: [
+      { name: "Services Overview", href: "/services" },
+      { name: "BCP Motor Repair & Rewinding", href: "/services#motor-rewinding" },
+      { name: "BCP Pump Overhaul & Refurbishment", href: "/services#bcp-overhauling" },
+      { name: "Multi-Make Capability", href: "/our-experience" },
+      { name: "Testing & Quality Assurance", href: "/iso-certificate" },
+      { name: "Reverse Engineering & Custom Components", href: "/services#reverse-engineering" },
+      { name: "Emergency / Outage Support", href: "/contact" },
+    ],
+  },
+  {
+    name: "Spare Parts",
+    href: "/services#components-procurement",
+    items: [
+      { name: "Spare Parts Overview", href: "/services#components-procurement" },
+      { name: "Parts Catalogue (Filterable)", href: "/services#components-procurement" },
+    ],
+  },
+  {
+    name: "Capabilities",
+    href: "/our-experience",
+    items: [
+      { name: "Make & Models Supported", href: "/our-experience" },
+      { name: "Quality, Compliance & Confidentiality", href: "/iso-certificate" },
+    ],
+  },
+  {
+    name: "Resources",
+    href: "/our-experience#project-references",
+    items: [
+      { name: "Case Studies", href: "/our-experience" },
+      { name: "Downloads (Capability Statement, Catalogue, RFQ Form)", href: "/contact?subject=Downloads" },
+    ],
+  },
+  {
+    name: "About",
+    href: "/about",
+    items: [
+      { name: "Company Overview", href: "/about" },
+      { name: "Team", href: "/team" },
+    ],
+  },
 ];
 
-const pumpLinks = [
-  { name: "BCP Repair India", href: "/boiler-circulation-pump" },
-  { name: "Composite Material", href: "/composite-material" },
-  { name: "Submersible Repair", href: "/submersible-pump-repair" },
-];
-
-const experienceLink = { name: "Our Experience", href: "/our-experience" };
-
-const otherLinks = [
-  { name: "Services", href: "/services" },
-  // { name: "ISO Certificate", href: "/iso-certificate" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
+const linkClassName = (isActive) =>
+  `px-2.5 py-2 rounded-full text-[9px] font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${
+    isActive
+      ? "bg-accent text-black shadow-lg shadow-accent/20"
+      : "text-black/60 hover:text-black hover:bg-black/5"
+  }`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -38,14 +74,48 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const syncHash = () => setCurrentHash(window.location.hash);
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, [pathname]);
+
+  const isTargetActive = (href) => {
+    const [targetPath, targetHash] = href.split("#");
+    return (
+      pathname === targetPath &&
+      (targetHash ? currentHash === `#${targetHash}` : !currentHash)
+    );
+  };
+
+  const isGroupActive = (group) => {
+    const [groupPath, groupHash] = group.href.split("#");
+    if (groupHash) return isTargetActive(group.href);
+
+    const hashTargetActive = navGroups.some((otherGroup) => {
+      const [otherPath, otherHash] = otherGroup.href.split("#");
+      return otherHash && pathname === otherPath && currentHash === `#${otherHash}`;
+    });
+
+    return pathname === groupPath && !hashTargetActive;
+  };
+
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    setOpenGroup(null);
+  };
+
   return (
     <div className="fixed top-8 inset-x-0 z-50 flex justify-center px-4">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="w-full max-w-7xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-full px-2 py-2 flex items-center justify-between"
+        className={`w-full max-w-7xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-full px-2 py-2 flex items-center justify-between ${
+          scrolled ? "shadow-2xl" : ""
+        }`}
       >
-        <Link href="/" className="flex items-center group pl-2">
+        <Link href="/" className="flex items-center group pl-2" onClick={closeMobileMenu}>
           <Image
             src="/images/Logo.png"
             alt="DEI VOX Logo"
@@ -56,168 +126,141 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
-                  ? "bg-accent text-black shadow-lg shadow-accent/20"
-                  : "text-black/60 hover:text-black hover:bg-black/5"
-                  }`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-
-          {/* Products Dropdown */}
-          <div className="relative group px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider text-black/60 hover:text-black hover:bg-black/5 cursor-pointer transition-all">
-            Products
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl rounded-3xl border border-black/5 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2">
-              {pumpLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider text-black/60 hover:bg-accent hover:text-black transition-all rounded-2xl"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <Link
-            href={experienceLink.href}
-            className={`px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 ${pathname === experienceLink.href
-              ? "bg-accent text-black shadow-lg shadow-accent/20"
-              : "text-black/60 hover:text-black hover:bg-black/5"
-              }`}
-          >
-            {experienceLink.name}
+        <div className="hidden xl:flex items-center gap-0.5">
+          <Link href="/" className={linkClassName(pathname === "/")}>
+            Home
           </Link>
 
-          {otherLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
+          {navGroups.map((group) => (
+            <div key={group.name} className="relative group">
               <Link
-                key={link.name}
-                href={link.href}
-                className={`px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
-                  ? "bg-accent text-black shadow-lg shadow-accent/20"
-                  : "text-black/60 hover:text-black hover:bg-black/5"
-                  }`}
+                href={group.href}
+                className={`${linkClassName(isGroupActive(group))} inline-flex items-center gap-1`}
               >
-                {link.name}
+                {group.name}
+                <ChevronDown size={12} aria-hidden="true" />
               </Link>
-            );
-          })}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
+                <div className="max-h-[70vh] overflow-y-auto bg-white shadow-2xl rounded-3xl border border-black/5 p-2">
+                  {group.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`block px-4 py-3 text-[10px] font-semibold uppercase tracking-wider transition-all rounded-2xl ${
+                        isTargetActive(item.href)
+                          ? "bg-accent text-black"
+                          : "text-black/60 hover:bg-accent hover:text-black"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <Link href="/contact" className={linkClassName(pathname === "/contact")}>
+            Contact
+          </Link>
         </div>
 
-        {/* CTA Section */}
         <div className="flex items-center gap-3">
-          <Link href="/contact">
-            <button className="hidden sm:flex items-center gap-4 bg-black text-white px-8 py-3 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em]">Get Quote</span>
-              <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
+          <Link href="/contact" className="hidden xl:block">
+            <button className="flex items-center gap-3 bg-black text-white px-5 py-2 rounded-full group hover:bg-zinc-900 transition-all shadow-xl shadow-black/10 active:scale-95">
+              <span className="text-[10px] font-bold uppercase tracking-[0.15em]">Get Quote</span>
+              <div className="w-7 h-7 bg-accent rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform">
                 <ArrowUpRight size={16} />
               </div>
             </button>
           </Link>
 
-          {/* Mobile menu toggle */}
           <button
+            type="button"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-black hover:bg-black/5 rounded-full transition-colors"
+            className="xl:hidden p-2 text-black hover:bg-black/5 rounded-full transition-colors"
           >
             {isOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="absolute top-20 left-4 right-4 bg-white shadow-2xl rounded-[2.5rem] p-8 border border-black/5 lg:hidden z-40"
+            className="absolute top-20 left-4 right-4 max-h-[calc(100vh-7rem)] overflow-y-auto bg-white shadow-2xl rounded-[2rem] p-6 sm:p-8 border border-black/5 xl:hidden z-40"
           >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-bold text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5"
-                >
-                  {link.name}
-                </Link>
-              ))}
-
-              {/* Products Accordion for Mobile */}
-              <div className="border-b border-black/5">
-                <button
-                  onClick={() => setProductsOpen(!productsOpen)}
-                  className="w-full flex items-center justify-between text-2xl font-bold text-black uppercase tracking-tighter py-2"
-                >
-                  Products
-                  <motion.span
-                    animate={{ rotate: productsOpen ? 45 : 0 }}
-                    className="text-accent"
-                  >
-                    +
-                  </motion.span>
-                </button>
-
-                <AnimatePresence>
-                  {productsOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden flex flex-col gap-2 pb-4 pl-4"
-                    >
-                      {pumpLinks.map((link) => (
-                        <Link
-                          key={link.name}
-                          href={link.href}
-                          onClick={() => {
-                            setIsOpen(false);
-                            setProductsOpen(false);
-                          }}
-                          className="text-lg font-semibold text-black/60 hover:text-black uppercase tracking-tighter"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
+            <div className="flex flex-col">
               <Link
-                href={experienceLink.href}
-                onClick={() => setIsOpen(false)}
-                className="text-2xl font-bold text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5"
+                href="/"
+                onClick={closeMobileMenu}
+                className="text-xl font-bold text-black hover:text-accent uppercase tracking-tighter py-3 border-b border-black/5"
               >
-                {experienceLink.name}
+                Home
               </Link>
 
-              {otherLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-bold text-black hover:text-accent uppercase tracking-tighter py-2 border-b border-black/5 last:border-b-0"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navGroups.map((group) => {
+                const isExpanded = openGroup === group.name;
+                return (
+                  <div key={group.name} className="border-b border-black/5">
+                    <button
+                      type="button"
+                      aria-expanded={isExpanded}
+                      onClick={() => setOpenGroup(isExpanded ? null : group.name)}
+                      className={`w-full flex items-center justify-between text-xl font-bold uppercase tracking-tighter py-3 ${
+                        isGroupActive(group) ? "text-accent" : "text-black"
+                      }`}
+                    >
+                      {group.name}
+                      <motion.span
+                        animate={{ rotate: isExpanded ? 180 : 0 }}
+                        className="text-accent"
+                      >
+                        <ChevronDown size={20} />
+                      </motion.span>
+                    </button>
+
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden flex flex-col gap-2 pb-4 pl-4"
+                        >
+                          {group.items.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={closeMobileMenu}
+                              className={`text-sm sm:text-base font-semibold uppercase tracking-tight py-1 ${
+                                isTargetActive(item.href)
+                                  ? "text-accent"
+                                  : "text-black/60 hover:text-black"
+                              }`}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
+                className="text-xl font-bold text-black hover:text-accent uppercase tracking-tighter py-3"
+              >
+                Contact
+              </Link>
             </div>
           </motion.div>
         )}

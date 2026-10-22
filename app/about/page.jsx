@@ -1,10 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
-import { CheckCircle2, Award, Users, Lightbulb, ArrowUpRight } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { CheckCircle2, Award, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Magnetic from "@/src/components/Magnetic";
 
 
 const capabilities = [
@@ -16,19 +15,6 @@ const capabilities = [
   { name: "On-Site Troubleshooting", href: "/contact?subject=Technical Troubleshooting" },
   { name: "Strategic BCP Advisory", href: "/contact?subject=BCP Consultancy" },
   { name: "Operational Support", href: "/contact?subject=General Inquiry" }
-];
-
-const team = [
-  { name: "Kunal", role: "CEO & MD", qualification: "PMP, PMI USA, MBA, B.E. Mechanical", tag: "Founder", email: "sales@deivox.co.in", phone: "+91 74282-00229" },
-  { name: "Ravi", role: "Head Technical", qualification: "M.Tech. Thermal, B.E. Mechanical", tag: "Founder", email: "service@deivox.co.in", phone: "+91 98864-24770" },
-  { name: "Sanjay Sharma", role: "Head – Sales", qualification: "", tag: "" },
-  { name: "Vijay Nehra", role: "Manager – Service", qualification: "", tag: "" },
-  { name: "Pankaj Kumar", role: "Manager – Dispatch", qualification: "", tag: "" },
-  { name: "Ramesh Yadav", role: "Manager Procurement", qualification: "", tag: "" },
-  { name: "Abhishek Singh", role: "Document Controller", qualification: "", tag: "" },
-  { name: "Namita Singh", role: "Manager – Sales", qualification: "", tag: "" },
-  { name: "Ritika", role: "Manager (HR)", qualification: "", tag: "" },
-  { name: "Rama", role: "Manager (Accounts)", qualification: "", tag: "" },
 ];
 
 export default function AboutPage() {
@@ -245,80 +231,6 @@ export default function AboutPage() {
                   </div>
                 </motion.div>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section >
-
-      {/* ── 5. Meet The Team (Technical Directory) ─────────────────────── */}
-      < section className="py-24 sm:py-40 bg-white" >
-        <div className="max-w-[90rem] mx-auto w-full px-6 lg:px-16">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-24 gap-12 border-b-4 border-black pb-12">
-            <div className="max-w-2xl">
-              <p className="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-6">TECHNICAL LEADERSHIP</p>
-              <motion.h1 className="text-4xl sm:text-6xl md:text-[72px] font-extrabold tracking-[-0.04em] uppercase leading-[0.88] mb-12">
-                Executive<br />Leadership.
-              </motion.h1>
-            </div>
-            <p className="text-black/40 text-lg max-w-md font-medium leading-relaxed">
-              Bringing together India's finest technical minds to redefine boiler circulation expertise.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1">
-            {team.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-[#111111] p-8 sm:p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10"
-              >
-                {/* Accent Line */}
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-accent/20 group-hover:bg-accent transition-all duration-500" />
-                {/* Top shimmer on hover */}
-                <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                {/* Glow orb on hover */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/0 group-hover:bg-accent/15 rounded-full blur-[50px] transition-all duration-700" />
-
-                <div className="flex justify-between items-start mb-12">
-                  <span className="text-4xl font-extrabold text-white/5 tracking-tighter">0{i + 1}</span>
-                  {member.tag && (
-                    <span className="text-[9px] font-bold text-accent uppercase tracking-[0.25em] border border-accent/20 px-3 py-1">
-                      {member.tag}
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white uppercase tracking-tighter leading-none mb-3 group-hover:text-accent transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.15em] mb-8">
-                    {member.role}
-                  </p>
-
-                  {member.qualification && (
-                    <p className="text-[11px] text-white/20 font-medium leading-relaxed mb-10 border-l border-white/5 pl-6 group-hover:text-white/40 transition-colors">
-                      {member.qualification}
-                    </p>
-                  )}
-                </div>
-
-                <div className="mt-auto flex flex-col gap-2 pt-8 border-t border-white/5">
-                  {member.email && (
-                    <a href={`mailto:${member.email}`} className="text-[10px] font-bold text-white/40 hover:text-accent transition-colors">
-                      {member.email}
-                    </a>
-                  )}
-                  {member.phone && (
-                    <span className="text-[10px] font-bold text-white/20">
-                      {member.phone}
-                    </span>
-                  )}
-                </div>
-              </motion.div>
             ))}
           </div>
         </div>

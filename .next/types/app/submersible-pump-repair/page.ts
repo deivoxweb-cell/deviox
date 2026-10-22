@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\submersible-pump-repair\page.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\submersible-pump-repair\page.jsx
 import * as entry from '../../../../app/submersible-pump-repair/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

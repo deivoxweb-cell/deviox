@@ -23,5 +23,6 @@
   "/contact/page": "/contact",
   "/iso-certificate/page": "/iso-certificate",
   "/power-generation/page": "/power-generation",
-  "/services/page": "/services"
+  "/services/page": "/services",
+  "/team/page": "/team"
 }

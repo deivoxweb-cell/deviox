@@ -23,5 +23,6 @@
   "/contact/page": "app/contact/page.js",
   "/iso-certificate/page": "app/iso-certificate/page.js",
   "/power-generation/page": "app/power-generation/page.js",
-  "/services/page": "app/services/page.js"
+  "/services/page": "app/services/page.js",
+  "/team/page": "app/team/page.js"
 }

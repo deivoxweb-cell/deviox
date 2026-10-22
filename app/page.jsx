@@ -1,9 +1,7 @@
 import Hero from "@/src/components/Hero";
 import AboutSection from "@/src/components/AboutSection";
 import ServiceGrid from "@/src/components/ServiceGrid";
-import WhyChooseUs from "@/src/components/WhyChooseUs";
 import ClientSeries from "@/src/components/ClientSeries";
-import SeoContentSection from "@/src/components/SeoContentSection";
 
 export const metadata = {
   title: "BCP Boiler Circulation Pump Repair & Overhauling | DEI VOX",
@@ -119,9 +117,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ServiceGrid />
-      <WhyChooseUs />
       <ClientSeries />
-      <SeoContentSection />
     </div>
   );
 }

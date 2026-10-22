@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\motor-rewinding-services\page.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\motor-rewinding-services\page.jsx
 import * as entry from '../../../../app/motor-rewinding-services/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

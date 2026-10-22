@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\composite-material\layout.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\composite-material\layout.jsx
 import * as entry from '../../../../app/composite-material/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

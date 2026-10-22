@@ -1,4 +1,4 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivoxbcp\app\boiler-circulation-pump\layout.jsx
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\boiler-circulation-pump\layout.jsx
 import * as entry from '../../../../app/boiler-circulation-pump/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
