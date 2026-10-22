@@ -62,22 +62,22 @@ const SERVICES = [
   {
     title: "BCP Overhauling",
     description: "Industry-leading pump maintenance ensuring maximum uptime between service cycles.",
-    image: "/images/bcp_overhauling.png",
+    image: "/images/pump-overhaul-refurbishment-1.png",
   },
   {
     title: "Motor Rewinding",
     description: "Expert armature winding process restoring efficiency to older critical power systems.",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-1.png",
   },
   {
     title: "Components Procurement",
     description: "Strategic inventory management of OEM-standard industrial components to minimize operational downtime.",
-    image: "/images/spare_parts_selling.png",
+    image: "/images/spares-overview-image7.png",
   },
   {
     title: "Reverse Engineering",
     description: "OEM-standard pump rebuilds through advanced re-engineering of existing components.",
-    image: "/images/reverse_engineering.png",
+    image: "/images/reverse-engineering-components-1.png",
   },
 ];
 
