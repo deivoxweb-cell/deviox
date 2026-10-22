@@ -188,6 +188,12 @@
       "namedRegex": "^/iso\\-certificate(?:/)?$"
     },
     {
+      "page": "/make-models-supported",
+      "regex": "^/make\\-models\\-supported(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/make\\-models\\-supported(?:/)?$"
+    },
+    {
       "page": "/motor-rewinding-services",
       "regex": "^/motor\\-rewinding\\-services(?:/)?$",
       "routeKeys": {},

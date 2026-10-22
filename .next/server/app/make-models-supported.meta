@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/make-models-supported/layout,_N_T_/make-models-supported/page,_N_T_/make-models-supported"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/make-models-supported/__PAGE__",
+    "/make-models-supported",
+    "/_index",
+    "/_head"
+  ]
+}
