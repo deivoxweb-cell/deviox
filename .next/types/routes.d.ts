@@ -4,7 +4,7 @@
 type AppRoutes = never
 type AppRouteHandlerRoutes = "/api/contact"
 type PageRoutes = never
-type LayoutRoutes = "/" | "/about" | "/blog" | "/boiler-circulation-pump" | "/case-studies" | "/composite-material" | "/contact" | "/iso-certificate" | "/make-models-supported" | "/power-generation" | "/services" | "/team"
+type LayoutRoutes = "/" | "/about" | "/blog" | "/boiler-circulation-pump" | "/case-studies" | "/composite-material" | "/contact" | "/iso-certificate" | "/make-models-supported" | "/power-generation" | "/quality-compliance-confidentiality" | "/services" | "/team"
 type RedirectRoutes = "/bcp-pump" | "/boiler-water-circulation-pump"
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
@@ -24,6 +24,7 @@ interface ParamMap {
   "/iso-certificate": {}
   "/make-models-supported": {}
   "/power-generation": {}
+  "/quality-compliance-confidentiality": {}
   "/services": {}
   "/team": {}
 }
@@ -42,6 +43,7 @@ interface LayoutSlotMap {
   "/iso-certificate": never
   "/make-models-supported": never
   "/power-generation": never
+  "/quality-compliance-confidentiality": never
   "/services": never
   "/team": never
 }

@@ -212,6 +212,12 @@
       "namedRegex": "^/power\\-generation(?:/)?$"
     },
     {
+      "page": "/quality-compliance-confidentiality",
+      "regex": "^/quality\\-compliance\\-confidentiality(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/quality\\-compliance\\-confidentiality(?:/)?$"
+    },
+    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},

@@ -33,7 +33,10 @@ const navGroups = [
     href: "/make-models-supported",
     items: [
       { name: "Make & Models Supported", href: "/make-models-supported" },
-      { name: "Quality, Compliance & Confidentiality", href: "/iso-certificate" },
+      {
+        name: "Quality, Compliance & Confidentiality",
+        href: "/quality-compliance-confidentiality",
+      },
     ],
   },
   {

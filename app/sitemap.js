@@ -8,6 +8,7 @@ const staticRoutes = [
   { path: "/team",                             changeFreq: "monthly", priority: 0.7 },
   { path: "/case-studies",                     changeFreq: "monthly", priority: 0.8 },
   { path: "/make-models-supported",            changeFreq: "monthly", priority: 0.8 },
+  { path: "/quality-compliance-confidentiality", changeFreq: "monthly", priority: 0.8 },
   { path: "/services",                         changeFreq: "monthly", priority: 0.9 },
   { path: "/our-experience",                   changeFreq: "monthly", priority: 0.8 },
   { path: "/contact",                          changeFreq: "monthly", priority: 0.8 },

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/quality-compliance-confidentiality/layout,_N_T_/quality-compliance-confidentiality/page,_N_T_/quality-compliance-confidentiality"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/quality-compliance-confidentiality/__PAGE__",
+    "/quality-compliance-confidentiality",
+    "/_index",
+    "/_head"
+  ]
+}
