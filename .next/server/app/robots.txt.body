@@ -1,6 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /api/
-
-Host: https://deivoxbcp.com
-Sitemap: https://deivoxbcp.com/sitemap.xml

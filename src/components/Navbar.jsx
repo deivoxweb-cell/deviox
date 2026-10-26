@@ -44,8 +44,9 @@ const navGroups = [
     href: "/case-studies",
     items: [
       { name: "Case Studies", href: "/case-studies" },
+      { name: "ISO Certificates", href: "/iso-certificate" },
       {
-        name: "Downloads (Capability Statement, Catalogue, RFQ Form)",
+        name: "Downloads",
         href: "/images/DEI_VOX_Brochure_without_V-FLO.pdf",
         download: true,
       },

@@ -1,1 +1,0 @@
-globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/robots.txt/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"C:\\Users\\shaan\\OneDrive\\Desktop\\deivox\\app\\robots.txt\\route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};

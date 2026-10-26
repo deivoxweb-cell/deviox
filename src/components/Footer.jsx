@@ -13,17 +13,11 @@ const NAV_LINKS = {
     { label: "Contact Hub", href: "/contact" },
   ],
   Core: [
-    { label: "Insitu Machining", href: "/services#insitu-machining" },
-    { label: "BCP Overhauling", href: "/boiler-circulation-pump" },
-    { label: "BCP Repair India", href: "/boiler-circulation-pump" },
-    { label: "Motor Rewinding", href: "/services#motor-rewinding" },
-    { label: "Reverse Engineering", href: "/services#reverse-engineering" },
-    { label: "Submersible Repair", href: "/submersible-pump-repair" },
-  ],
-  Infrastructure: [
-    { label: "Boiler Circulation Pump", href: "/boiler-circulation-pump" },
-    // { label: "Boiler Water Circulation Pump", href: "/boiler-circulation-pump" },
-    // { label: "Submersible Pump", href: "/submersible-pump-repair" },
+    { label: "Services Overview", href: "/services-overview" },
+    { label: "BCP Overhauling", href: "/bcp-overhauling-services" },
+    { label: "BCP Motor Repair", href: "/motor-rewinding-services" },
+    { label: "All-Makes Capability", href: "/our-experience" },
+    { label: "Reverse Engineering", href: "/reverse-engineering-custom-components" },
   ],
 };
 
@@ -70,7 +64,7 @@ const Footer = () => {
 
               <p className="text-sm text-white/45 max-w-md leading-relaxed mb-10">
                 DEI VOX is the brand identity of DEI VOX INDIA PVT. LTD., specializing
-                in Boiler Circulation Pump (BCP) repair and industrial pump solutions across India.
+                in Boiler Circulation Pump (BCP) repair and industrial pump solutions worldwide.
               </p>
 
               <div className="space-y-6">
@@ -120,7 +114,7 @@ const Footer = () => {
               {Object.entries(NAV_LINKS).map(([title, links]) => (
                 <div 
                   key={title}
-                  className={title === "Core" || title === "Infrastructure" ? "hidden sm:block" : ""}
+                  className={title === "Core" ? "hidden sm:block" : ""}
                 >
                   <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent mb-6 sm:mb-10">
                     {title}
@@ -146,6 +140,10 @@ const Footer = () => {
             </div>
           </div>
 
+          <p className="mb-8 max-w-5xl text-xs leading-relaxed text-white/35">
+            Disclaimer: DEI VOX India Pvt. Ltd. is an independent, all-makes of BCP aftermarket service provider and is not affiliated with or endorsed by any OEM. All third-party intellectual property, including trademarks, logos and images, remains the property of its respective owners. References to company names, pump origins and designs are for identification and technical reference purposes only.
+          </p>
+
           <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex flex-col gap-2">
               <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">
@@ -159,6 +157,7 @@ const Footer = () => {
                   GSTIN: 29AAKCD5641B1ZQ
                 </div>
               </div>
+
             </div>
 
             <div className="flex items-center gap-8">

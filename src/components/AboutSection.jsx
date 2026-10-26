@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 import {
   MapPin,
   CheckCircle2,
@@ -55,11 +54,7 @@ const AboutSection = () => {
           {/* ── Left bento column ── */}
           <div className="lg:col-span-5 flex flex-col gap-5">
             <ScrollReveal variant="scale-up" delay={0.05}>
-              <Link
-                href="/about"
-                aria-label="Learn more about DEI VOX BCP specialists"
-                className="block w-full overflow-hidden rounded-[2rem] sm:rounded-[3rem] border border-black/5 bg-white shadow-xl shadow-black/5 transition-shadow hover:shadow-2xl"
-              >
+              <div className="block w-full overflow-hidden rounded-[2rem] sm:rounded-[3rem] border border-black/5 bg-white shadow-xl shadow-black/5">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-black/10">
                   {BCP_SPECIALTIES.map((item) => {
                     const Icon = item.icon;
@@ -94,7 +89,7 @@ const AboutSection = () => {
                     </span>
                   ))}
                 </div>
-              </Link>
+              </div>
             </ScrollReveal>
 
             {/* Office cards */}

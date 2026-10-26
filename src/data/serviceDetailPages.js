@@ -168,7 +168,7 @@ export const serviceDetailPages = {
         type: "faq",
         items: [
           { question: "How do I know whether a pump needs an overhaul or only a repair?", answer: "A condition report compares measured wear against design values and includes photographs and a recommendation, helping you make an evidence-based decision." },
-          { question: "Do you overhaul pumps from different manufacturers?", answer: "Share the nameplate, drawings and previous repair reports so feasibility can be confirmed." },
+          { question: "Do you overhaul pumps from different manufacturers?", answer: "Yes, we do all makes – Japanese, German UK, China Make." },
           { question: "What information do you need to quote?", answer: "The nameplate, photographs, operating data, fault history, drawings and earlier overhaul records are useful." },
           { question: "Can you overhaul the pump and motor together?", answer: "Yes. The pump end and motor can be handled as one project, subject to assessment." },
           { question: "Can you work behind our brand?", answer: "The source document describes subcontract and white-label support for service companies, with customer relationships respected." },

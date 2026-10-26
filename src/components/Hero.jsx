@@ -36,7 +36,7 @@ const SPEC_DATA = {
   },
   Materials: {
     title: "Metallurgical Reverse Engineering",
-    desc: "OEM-grade spare parts replication using advanced 3D scanning and CAD.",
+    desc: "Reverse-engineered spare parts developed using advanced 3D scanning and CAD.",
     stats: [
       { label: "Accuracy", value: "99.9%", icon: Zap },
       { label: "Material", value: "SS/Inconel", icon: Activity }
@@ -44,7 +44,7 @@ const SPEC_DATA = {
   },
   Support: {
     title: "24/7 Emergency Technical Support",
-    desc: "Rapid mobilization for critical thermal power plant shutdowns across India.",
+    desc: "Rapid mobilization for critical thermal power plant shutdowns worldwide.",
     stats: [
       { label: "Response", value: "Instant", icon: Zap },
       { label: "Mobilization", value: "24h", icon: Activity }
@@ -112,7 +112,7 @@ const Hero = () => {
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center p-2">
               <Settings className="text-accent animate-spin-slow" size={20} />
             </div>
-            <span className="text-[20px] font-bold uppercase tracking-[0.3em] text-black">DEI VOX — Your Partner for Multi-Make BCP Repair</span>
+            <span className="text-[20px] font-bold uppercase tracking-[0.3em] text-black">DEI VOX — Your Partner for All-Makes of BCP Worldwide</span>
           </motion.div>        
         </div>
 
@@ -188,8 +188,8 @@ const Hero = () => {
             <div className="relative z-10">
               <h4 className="text-[10px] font-bold text-black/40 uppercase tracking-[0.25em] mb-4">Operational Evolution</h4>
               <p className="text-xl font-semibold text-black leading-tight mb-6">Efficiency Optimized<br />for Critical Systems</p>
-              <Link href="/about" className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300 text-black/60 hover:text-black">
-                Operational Details <ArrowRight size={12} />
+              <Link href="/services-overview" className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all duration-300 text-black/60 hover:text-black">
+                Services Overview <ArrowRight size={12} />
               </Link>
             </div>
             <div className="absolute bottom-[-20%] right-[-10%] w-36 h-36 bg-accent rounded-full blur-3xl opacity-15 group-hover:opacity-35 transition-opacity duration-500" />

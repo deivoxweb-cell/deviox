@@ -6,12 +6,12 @@ import ClientSeries from "@/src/components/ClientSeries";
 export const metadata = {
   title: "BCP Boiler Circulation Pump Repair & Overhauling | DEI VOX",
   description:
-    "DEI VOX (DEI VOX) is global leading BCP specialist for Boiler Circulation Pump repair, overhauling, motor rewinding & insitu machining services.",
+    "DEI VOX is an all-makes BCP specialist providing Boiler Circulation Pump repair, overhauling, motor rewinding and in-situ machining services worldwide.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "DEI VOX INDIA PVT. LTD. | Boiler Circulation Pump Repair & BCP Specialists",
     description:
-      "DEI VOX INDIA PVT. LTD. is a leading Boiler Circulation Pump (BCP) repair, overhauling, motor rewinding and industrial pump maintenance company serving power plants across India.",
+      "DEI VOX INDIA PVT. LTD. is an all-makes Boiler Circulation Pump (BCP) repair, overhauling, motor rewinding and industrial pump maintenance provider serving power plants worldwide.",
     url: "https://deivoxbcp.com",
     images: [
       {
@@ -44,7 +44,7 @@ const businessSchema = {
     postalCode: "560099",
     addressCountry: "IN",
   },
-  areaServed: "India",
+  areaServed: "Worldwide",
   sameAs: ["https://www.indiamart.com/dei-vox-expert-services/"],
 };
 
@@ -57,7 +57,7 @@ const homepageSchema = {
     name: "DEI VOX INDIA PVT. LTD.",
     url: "https://deivoxbcp.com",
   },
-  areaServed: "India",
+  areaServed: "Worldwide",
   description:
     "Specialized engineering services for BCP, BWCP, and industrial pumps including rewinding, overhauling, and in-situ machining.",
   hasOfferCatalog: {

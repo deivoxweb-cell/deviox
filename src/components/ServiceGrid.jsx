@@ -55,29 +55,40 @@ function useIsMobile(breakpoint = 768) {
 
 const SERVICES = [
   {
-    title: "Insitu Machining",
-    description: "Precision on-site leakage arrest solutions using skilled technicians on live casing boiler pipes.",
+    title: "BCP Casing Machining On Site",
+    description: "Precision on-site BCP casing machining using skilled technicians.",
     image: "/images/insitu_machining.png",
+    href: "/services-overview",
   },
   {
     title: "BCP Overhauling",
     description: "Industry-leading pump maintenance ensuring maximum uptime between service cycles.",
     image: "/images/pump-overhaul-refurbishment-1.png",
+    href: "/bcp-overhauling-services",
   },
   {
-    title: "Motor Rewinding",
+    title: "BCP Motor Repair & Rewinding",
     description: "Expert armature winding process restoring efficiency to older critical power systems.",
     image: "/images/motor-repair-rewinding-1.png",
+    href: "/motor-rewinding-services",
   },
   {
-    title: "Components Procurement",
+    title: "Spare Parts Overview",
     description: "Strategic inventory management of OEM-standard industrial components to minimize operational downtime.",
     image: "/images/spares-overview-image7.png",
+    href: "/spare-parts",
   },
   {
     title: "Reverse Engineering",
     description: "OEM-standard pump rebuilds through advanced re-engineering of existing components.",
     image: "/images/reverse-engineering-components-1.png",
+    href: "/reverse-engineering-custom-components",
+  },
+  {
+    title: "BCP Repair",
+    description: "On-site BCP O/Haul",
+    image: "/images/pump-overhaul-refurbishment-1.png",
+    href: "/boiler-circulation-pump-repair",
   },
 ];
 
@@ -250,10 +261,11 @@ export default function ServiceGrid() {
                           {service.description}
                         </p>
                         <Link
-                          href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                          href={service.href}
                           onClick={() => setLoadingService(service.title)}
+                          className="w-full"
                         >
-                          <button className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-bold uppercase tracking-widest transition-all hover:bg-zinc-800 flex items-center justify-center gap-2">
+                          <span className="w-full py-4 rounded-2xl bg-black text-white text-[11px] font-bold uppercase tracking-widest transition-all hover:bg-zinc-800 flex items-center justify-center gap-2">
                             {loadingService === service.title ? (
                               <>
                                 <span className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -262,7 +274,7 @@ export default function ServiceGrid() {
                             ) : (
                               "Technical Analysis"
                             )}
-                          </button>
+                          </span>
                         </Link>
                       </>
                     ) : (
@@ -285,7 +297,7 @@ export default function ServiceGrid() {
           />
         </div>
         <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-black/20">
-          SEC {activeIndex + 1} // 0{SERVICES.length}
+          SEC {activeIndex + 1} / 0{SERVICES.length}
         </div>
       </div>
     </section>
