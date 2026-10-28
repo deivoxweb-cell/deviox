@@ -30,7 +30,7 @@ const services = [
     icon: <Zap size={32} />,
     title: "Motor Rewinding",
     tagline: "Efficiency Optimization",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-2.png",
     description: "Restore operational efficiency to legacy motor systems at a fraction of capital expenditure. We provide specialized HT/LT motor diagnostics and precision rewinding services.",
     points: ["HT & LT motor rewinding", "Dielectric insulation testing", "Winding architecture upgrades", "Comprehensive diagnostics"],
   },

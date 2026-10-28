@@ -96,7 +96,7 @@ export default function SubmersiblePumpRepairPage() {
       <SeoPageLayout
         breadcrumb={breadcrumb}
         relatedLinks={relatedLinks}
-        heroImage="/images/motor_rewinding.png"
+        heroImage="/images/motor-repair-rewinding-2.png"
       >
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
           Submersible Pump: Repair &amp; Rewinding

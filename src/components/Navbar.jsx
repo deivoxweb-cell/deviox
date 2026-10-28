@@ -48,11 +48,16 @@ const navGroups = [
     ],
   },
   {
-    name: "Resources",
+    name: "Case Studies",
     href: "/case-studies",
+    items: [],
+  },
+  {
+    name: "Resources",
+    href: "/downloads",
     items: [
-      { name: "Case Studies", href: "/case-studies" },
-      { name: "ISO Certificates", href: "/iso-certificate" },
+      // { name: "Case Studies", href: "/case-studies" },
+      // { name: "ISO Certificates", href: "/iso-certificate" },
       {
         name: "Downloads",
         href: "/downloads",
@@ -144,7 +149,7 @@ const Navbar = () => {
           </Link>
 
           {navGroups.map((group) =>
-            group.name === "Blog" ? (
+            !group.items?.length ? (
               <Link
                 key={group.name}
                 href={group.href}
@@ -247,7 +252,7 @@ const Navbar = () => {
               </Link>
 
               {navGroups.map((group) => {
-                if (group.name === "Blog") {
+                if (!group.items?.length) {
                   return (
                     <Link
                       key={group.name}

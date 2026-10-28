@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const stats = [
-  { value: "65+", label: "BCPs Overhauled" },
-  { value: "85+", label: "BCPs Troubleshot" },
-  { value: "22+", label: "BCP Motors Rewound" },
+  { value: "200+", label: "BCPs Overhauled" },
+  { value: "65+", label: "BCPs Troubleshot" },
+  { value: "250+", label: "BCP Motors Rewound" },
   { value: "1000 MW", label: "Unit Capacity" },
   { value: "Multiple", label: "BCP Designs & Configurations" },
   { value: "Worldwide", label: "Service Capability" },

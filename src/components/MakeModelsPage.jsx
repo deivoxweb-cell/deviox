@@ -37,7 +37,7 @@ const services = [
   { title: "Testing & Quality Assurance", href: "/testing-quality-assurance" },
   { title: "Reverse Engineering & Custom Components", href: "/reverse-engineering-custom-components" },
   { title: "Spare Parts Supply", href: "/spare-parts" },
-  { title: "Upgrades & Reliability Improvements", href: "/industrial-pump-maintenance" },
+  { title: "Upgrades & Reliability Improvements", href: "#" },
 ];
 
 const feasibilityItems = [

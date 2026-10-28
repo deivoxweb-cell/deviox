@@ -174,7 +174,7 @@ export default function SeoPageLayout({ breadcrumb, children, relatedLinks, hero
             {[
               { src: "/images/bcp_overhauling.png", label: "BCP Systems" },
               { src: "/images/insitu_machining.png", label: "Precision Machining" },
-              { src: "/images/motor_rewinding.png", label: "Rewinding Ops" },
+              { src: "/images/motor-repair-rewinding-2.png", label: "Rewinding Ops" },
               { src: "/images/reverse_engineering.png", label: "Material Engineering" },
             ].map((img) => (
               <div key={img.label} className="relative rounded-[2rem] overflow-hidden group aspect-square shadow-xl">

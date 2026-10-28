@@ -55,7 +55,7 @@ DEI VOX specializes in the diagnostic assessment, [motor rewinding](/services#mo
     author: "Engineering Team, DEI VOX",
     date: "May 15, 2026",
     readTime: "6 min read",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-2.png",
     category: "Engineering",
   },
   {
@@ -177,7 +177,7 @@ DEI VOX operates a dedicated, ISO-certified clean winding shop equipped with spe
     author: "Electrical Engineering, DEI VOX",
     date: "March 12, 2026",
     readTime: "7 min read",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-2.png",
     category: "Electrical",
   },
   {
@@ -435,7 +435,7 @@ Send pump identification, drawings, operating data, failure history, photographs
     date: "June 12, 2026",
     updatedDate: "June 12, 2026",
     readTime: "6 min read",
-    image: "/images/pump_rebuild.png",
+    image: "/images/pump-overhaul-refurbishment-2.png",
     category: "Planning",
   },
   {
@@ -544,7 +544,7 @@ Provide the sample or worn component, photographs, equipment details, and operat
     updatedDate: "October 22, 2026",
     publishedAt: "2026-10-22T00:00:00+05:30",
     readTime: "5 min read",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-2.png",
     category: "Engineering",
   },
   {
@@ -649,7 +649,7 @@ Keep the inspection report, measured findings, repair scope, applicable electric
     updatedDate: "October 22, 2026",
     publishedAt: "2026-10-22T00:00:00+05:30",
     readTime: "5 min read",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-2.png",
     category: "Electrical",
   },
   {
@@ -701,7 +701,7 @@ Prepare records early, agree inspection hold points, identify critical parts, an
     updatedDate: "October 22, 2026",
     publishedAt: "2026-10-22T00:00:00+05:30",
     readTime: "5 min read",
-    image: "/images/motor_rewinding.png",
+    image: "/images/motor-repair-rewinding-2.png",
     category: "Maintenance",
   },
   {

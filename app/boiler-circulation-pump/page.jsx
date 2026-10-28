@@ -312,7 +312,7 @@ export default function BoilerCirculationPumpPage() {
               <div className="lg:col-span-5">
                 <div className="relative rounded-[3rem] overflow-hidden aspect-[4/5] border border-black/5 shadow-2xl">
                   <Image
-                    src="/images/pump_rebuild.png"
+                    src="/images/pump-overhaul-refurbishment-2.png"
                     alt="BCP Applications — Power Plants India"
                     fill
                     className="object-cover"

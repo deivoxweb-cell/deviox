@@ -84,12 +84,6 @@ const SERVICES = [
     image: "/images/reverse-engineering-components-1.png",
     href: "/reverse-engineering-custom-components",
   },
-  {
-    title: "BCP Repair",
-    description: "On-site BCP O/Haul",
-    image: "/images/pump-overhaul-refurbishment-1.png",
-    href: "/boiler-circulation-pump-repair",
-  },
 ];
 
 const CARD_STYLES = {

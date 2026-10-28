@@ -58,7 +58,7 @@ export default function PowerGenerationPage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="lg:order-2 relative">
             <div className="relative rounded-[4rem] overflow-hidden border border-white/5 aspect-square group shadow-2xl">
-              <Image src="/images/pump_rebuild.png" alt="Pump Rebuild" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+              <Image src="/images/pump-overhaul-refurbishment-2.png" alt="Boiler circulation pump overhaul work" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-10 left-10 right-10 bg-white/5 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/10">
                 <div className="flex items-center gap-4 mb-4 text-accent">

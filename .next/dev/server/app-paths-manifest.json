@@ -1,5 +1,5 @@
 {
-  "/page": "app/page.js",
-  "/downloads/page": "app/downloads/page.js",
-  "/spare-parts/page": "app/spare-parts/page.js"
+  "/our-experience/page": "app/our-experience/page.js",
+  "/team/page": "app/team/page.js",
+  "/make-models-supported/page": "app/make-models-supported/page.js"
 }

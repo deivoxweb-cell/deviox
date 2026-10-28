@@ -99,7 +99,7 @@ export default function BcpPumpPage() {
       <SeoPageLayout
         breadcrumb={breadcrumb}
         relatedLinks={relatedLinks}
-        heroImage="/images/pump_rebuild.png"
+        heroImage="/images/pump-overhaul-refurbishment-2.png"
       >
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-black uppercase mb-6 leading-tight">
           BCP Pump: Industrial Circulation Expertise
