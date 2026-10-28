@@ -58,8 +58,6 @@ const Footer = () => {
 
               <h3 className="text-3xl font-extrabold uppercase tracking-tighter mb-6 leading-tight">
                 Engineering Reliability
-                <br />
-                <span className="text-white/20">For Power Infrastructure.</span>
               </h3>
 
               <p className="text-sm text-white/45 max-w-md leading-relaxed mb-10">
@@ -139,10 +137,6 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          <p className="mb-8 max-w-5xl text-xs leading-relaxed text-white/35">
-            Disclaimer: DEI VOX India Pvt. Ltd. is an independent, all-makes of BCP aftermarket service provider and is not affiliated with or endorsed by any OEM. All third-party intellectual property, including trademarks, logos and images, remains the property of its respective owners. References to company names, pump origins and designs are for identification and technical reference purposes only.
-          </p>
 
           <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex flex-col gap-2">

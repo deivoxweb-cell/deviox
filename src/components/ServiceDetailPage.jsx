@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check, Phone, Wrench } from "lucide-react";
 import { serviceDetailPages } from "@/src/data/serviceDetailPages";
-
+ 
 function ServiceSection({ section, index, showFaqPlus = false }) {
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -207,7 +207,7 @@ function ServiceSection({ section, index, showFaqPlus = false }) {
                 +91 74282 00229
               </a>
               <p className="mt-2 text-sm text-white/55">
-                sales@deivox.co.in · Monday-Saturday, 09:00-19:00 IST
+                sales@deivox.co.in · Monday-Sunday, 24X7
               </p>
             </div>
             <a
@@ -337,7 +337,7 @@ export default function ServiceDetailPage({ serviceKey }) {
                 alt={service.introImage.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 35vw"
-                className="object-cover"
+                className={service.introImage.fit === "contain" ? "object-contain" : "object-cover"}
               />
             </div>
           ) : (
@@ -360,36 +360,38 @@ export default function ServiceDetailPage({ serviceKey }) {
         />
       ))}
 
-      <section className="bg-black px-6 py-20 text-white sm:py-28 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-                Workshop & Service Work
-              </p>
-              <h2 className="text-3xl font-extrabold uppercase tracking-[-0.04em] sm:text-5xl">
-                Service in focus.
-              </h2>
+      {Array.isArray(service.images) && service.images.length > 0 && (
+        <section className="bg-black px-6 py-20 text-white sm:py-28 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+              <div>
+                <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+                  Workshop & Service Work
+                </p>
+                <h2 className="text-3xl font-extrabold uppercase tracking-[-0.04em] sm:text-5xl">
+                  Service in focus.
+                </h2>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {service.images.map((image) => (
+                <div
+                  key={image.src}
+                  className="relative aspect-[4/6] overflow-hidden rounded-[1.5rem] bg-zinc-900"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-fill transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              ))}
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {service.images.map((image) => (
-              <div
-                key={image.src}
-                className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-zinc-900"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="bg-accent px-6 py-16 sm:py-20 lg:px-16">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">

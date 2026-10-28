@@ -191,10 +191,10 @@ export const serviceDetailPages = {
       alt: "Pump component undergoing a dimensional quality inspection",
     },
     images: [
-      {
-        src: "/images/testing-quality-assurance-1.png",
-        alt: "DEI VOX quality management certificate",
-      },
+      // {
+      //   src: "/images/testing-quality-assurance-1.png",
+      //   alt: "DEI VOX quality management certificate",
+      // },
       {
         src: "/images/testing-quality-assurance-2.png",
         alt: "Pump component undergoing a dimensional inspection",
@@ -299,7 +299,7 @@ export const serviceDetailPages = {
     },
     images: [
       {
-        src: "/images/reverse-engineering-components-1.png",
+        src: "/images/quality-compliance-image3.png",
         alt: "Engineering inspection of a pump component for reverse engineering",
       },
       {
@@ -356,18 +356,14 @@ export const serviceDetailPages = {
     introImage: {
       src: "/images/emergency-outage-support-1.jpeg",
       alt: "Field engineer inspecting a pump assembly during urgent service work",
+      fit: "contain",
     },
-    images: [
-      {
-        src: "/images/emergency-outage-support-1.jpeg",
-        alt: "Field engineer inspecting a pump assembly during urgent service work",
-      },
-    ],
+    images: [],
     urgentContact: true,
     sections: [
       {
-        heading: "Direct Urgent Contact",
-        text: "Call or message the service team and share the pump or motor nameplate, fault details and required outage date. The source document lists service hours as Monday to Saturday, 09:00-19:00 IST, with urgent-line monitoring beyond those hours.",
+        heading: "DIRECT URGENT CONTACT – ANY DAY, ANY TIME",
+        text: "Call, WhatsApp or email our service team at sales@deivox.co.in, Monday-Sunday, 24X7. Share the pump or motor nameplate, fault details and required outage date.",
         contact: true,
       },
       {

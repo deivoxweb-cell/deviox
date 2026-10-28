@@ -8,6 +8,14 @@ import { usePathname } from "next/navigation";
 
 const navGroups = [
   {
+    name: "About",
+    href: "/about",
+    items: [
+      { name: "Company Overview", href: "/about" },
+      { name: "Team", href: "/team" },
+    ],
+  },
+  {
     name: "Services",
     href: "/services",
     items: [
@@ -47,24 +55,15 @@ const navGroups = [
       { name: "ISO Certificates", href: "/iso-certificate" },
       {
         name: "Downloads",
-        href: "/images/DEI_VOX_Brochure_without_V-FLO.pdf",
-        download: true,
+        href: "/downloads",
       },
     ],
   },
-  {
-    name: "About",
-    href: "/about",
-    items: [
-      { name: "Company Overview", href: "/about" },
-      { name: "Team", href: "/team" },
-    ],
-  },
-  {
-    name: "Blog",
-    href: "/blog",
-    items: [{ name: "All Articles", href: "/blog" }],
-  },
+  // {
+  //   name: "Blog",
+  //   href: "/blog",
+  //   items: [{ name: "All Articles", href: "/blog" }],
+  // },
 ];
 
 const linkClassName = (isActive) =>

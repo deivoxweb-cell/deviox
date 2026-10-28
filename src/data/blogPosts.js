@@ -55,7 +55,7 @@ DEI VOX specializes in the diagnostic assessment, [motor rewinding](/services#mo
     author: "Engineering Team, DEI VOX",
     date: "May 15, 2026",
     readTime: "6 min read",
-    image: "/images/bcp_overhauling.png",
+    image: "/images/motor_rewinding.png",
     category: "Engineering",
   },
   {
@@ -544,7 +544,7 @@ Provide the sample or worn component, photographs, equipment details, and operat
     updatedDate: "October 22, 2026",
     publishedAt: "2026-10-22T00:00:00+05:30",
     readTime: "5 min read",
-    image: "/images/bcp_overhauling.png",
+    image: "/images/motor_rewinding.png",
     category: "Engineering",
   },
   {
@@ -701,7 +701,7 @@ Prepare records early, agree inspection hold points, identify critical parts, an
     updatedDate: "October 22, 2026",
     publishedAt: "2026-10-22T00:00:00+05:30",
     readTime: "5 min read",
-    image: "/images/bcp_overhauling.png",
+    image: "/images/motor_rewinding.png",
     category: "Maintenance",
   },
   {

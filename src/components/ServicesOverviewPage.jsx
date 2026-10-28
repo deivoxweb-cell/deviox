@@ -37,7 +37,7 @@ const services = [
     title: "Spare Parts & Reverse Engineering",
     description:
       "Engineering assessment and development of replacement components for supported equipment, including parts that may be difficult to source.",
-    href: "/reverse-engineering-custom-components",
+    href: "/spare-parts",
     icon: Boxes,
   },
   {
@@ -58,10 +58,10 @@ const services = [
   },
   {
     number: "06",
-    title: "On-Site Technical Support",
+    title: "Quality Assured BCP Servicing",
     description:
-      "Assistance for inspection, maintenance and repair activities, depending on project requirements and site conditions.",
-    href: "/in-situ-machining-services",
+      "Precision-driven servicing with rigorous inspection, dimensional checks, and quality-controlled reassembly to ensure reliable performance, operational safety, and extended pump life.",
+    href: "/quality-compliance-confidentiality",
     icon: Wrench,
   },
 ];
@@ -191,8 +191,8 @@ export default function ServicesOverviewPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-zinc-100">
             <Image
-              src="/images/services-overview-image1.png"
-              alt="Technicians inspecting a boiler circulation pump assembly"
+              src="/images/pump-overhaul-refurbishment-2.png"
+              alt="DEI VOX technicians inspecting a boiler circulation pump assembly"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -314,7 +314,7 @@ export default function ServicesOverviewPage() {
           </div>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
             <Link
-              href="/services"
+              href="/make-models-supported"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-black px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-white transition-transform hover:scale-[1.03]"
             >
               Explore our services <ArrowUpRight size={16} />

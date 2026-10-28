@@ -9,7 +9,7 @@ import { blogPosts } from "@/src/data/blogPosts";
 const categories = ["All", "Engineering", "Maintenance", "Electrical"];
 
 const imagePresets = [
-  { path: "/images/bcp_overhauling.png", label: "BCP Overhauling" },
+  { path: "/images/motor_rewinding.png", label: "Motor Rewinding" },
   { path: "/images/insitu_machining.png", label: "Insitu Machining" },
   { path: "/images/motor_rewinding.png", label: "Motor Rewinding" },
   { path: "/images/reverse_engineering.png", label: "Reverse Engineering" },
@@ -31,7 +31,7 @@ export default function BlogListPage() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [category, setCategory] = useState("Engineering");
-  const [selectedImage, setSelectedImage] = useState("/images/bcp_overhauling.png");
+  const [selectedImage, setSelectedImage] = useState("/images/motor_rewinding.png");
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [error, setError] = useState("");

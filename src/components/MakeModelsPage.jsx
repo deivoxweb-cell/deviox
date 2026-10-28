@@ -32,12 +32,12 @@ const pumpTypes = [
 ];
 
 const services = [
-  { title: "BCP Pump Overhaul & Refurbishment", href: "/services#bcp-overhauling" },
-  { title: "BCP Motor Repair & Rewinding", href: "/services#motor-rewinding" },
-  { title: "In-Situ Machining", href: "/services#insitu-machining" },
-  { title: "Reverse Engineering & Custom Components", href: "/services#reverse-engineering" },
-  { title: "Spare Parts Supply", href: "/services#components-procurement" },
-  { title: "Upgrades & Reliability Improvements", href: "/contact?subject=BCP%20Reliability%20Improvements" },
+  { title: "BCP Pump Overhaul & Refurbishment", href: "/bcp-overhauling-services" },
+  { title: "BCP Motor Repair & Rewinding", href: "/motor-rewinding-services" },
+  { title: "Testing & Quality Assurance", href: "/testing-quality-assurance" },
+  { title: "Reverse Engineering & Custom Components", href: "/reverse-engineering-custom-components" },
+  { title: "Spare Parts Supply", href: "/spare-parts" },
+  { title: "Upgrades & Reliability Improvements", href: "/industrial-pump-maintenance" },
 ];
 
 const feasibilityItems = [
@@ -63,11 +63,6 @@ const faqs = [
     question: "Can you service older or discontinued pumps?",
     answer:
       "Often, yes. We can reverse engineer components that are no longer available. Feasibility depends on the condition of the unit and the data available.",
-  },
-  {
-    question: "Will independent servicing affect my OEM warranty?",
-    answer:
-      "That depends on your warranty terms and contract. We recommend checking with your OEM or reviewing your contract before using a third-party service on a pump still under warranty.",
   },
   {
     question: "Can you work behind our brand?",
@@ -188,7 +183,7 @@ export default function MakeModelsPage() {
           </div>
 
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {["Japanese Make", "German Make", "UK Make", "China Make"].map((make, index) => (
+            {["UK Make", "Japanese Make", "China Make", "German Make"].map((make, index) => (
               <motion.div
                 key={make}
                 initial={{ opacity: 0, y: 18 }}
@@ -228,8 +223,12 @@ export default function MakeModelsPage() {
           </div>
 
           <p className="mt-7 border-l-2 border-accent pl-4 text-xs leading-relaxed text-black/45">
-            DEI VOX is an independent service provider and is not affiliated
-            with, endorsed by or sponsored by any BCP manufacturer.
+            DEI VOX India Pvt. Ltd. is an independent, multi-make BCP aftermarket
+            service provider and is not affiliated with or endorsed by any OEM.
+            All third-party intellectual property, including trademarks, logos
+            and images, remains the property of its respective owners. References
+            to pump origins and designs are for identification and technical
+            reference purposes only.
           </p>
         </div>
       </section>
@@ -309,42 +308,6 @@ export default function MakeModelsPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 sm:py-28 lg:px-16">
-        <div className="mx-auto grid max-w-[90rem] gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-              FIELD CASE STUDY
-            </p>
-            <h2 className="text-3xl font-extrabold uppercase leading-tight tracking-tighter sm:text-5xl">
-              Wet-stator motor rewinding.
-            </h2>
-          </div>
-          <div className="rounded-[2rem] bg-[#f5f5f0] p-7 sm:p-10 lg:col-span-7">
-            <div className="grid gap-6 sm:grid-cols-3">
-              {[
-                { label: "Make & series", value: "V-FLO make · LUV model" },
-                { label: "Challenge", value: "Zero Megger reading" },
-                { label: "Approach", value: "Root-cause investigation and data analysis" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-black/40">{item.label}</p>
-                  <p className="mt-2 text-sm font-semibold leading-relaxed text-black/75">{item.value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-7 border-t border-black/10 pt-6">
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-black/40">Result</p>
-              <p className="mt-2 text-sm leading-relaxed text-black/65">
-                The BCP motor was rewound and Megger readings returned to acceptable limits.
-              </p>
-            </div>
-            <Link href="/case-studies" className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black hover:text-green-900">
-              View all case studies <ArrowUpRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="px-6 py-20 sm:py-28 lg:px-16">
         <div className="mx-auto grid max-w-[90rem] gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -359,7 +322,7 @@ export default function MakeModelsPage() {
               we&apos;ll confirm feasibility within 7 business days.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/services" className="rounded-full bg-black px-5 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent hover:text-black">
+              <Link href="/services-overview" className="rounded-full bg-black px-5 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent hover:text-black">
                 Explore Our Services
               </Link>
               <Link href="/contact?subject=Submit%20an%20RFQ" className="rounded-full bg-accent px-5 py-3 text-xs font-bold uppercase tracking-wider text-black hover:bg-accent/80">
@@ -438,11 +401,12 @@ export default function MakeModelsPage() {
                 </p>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {[
-                    { label: "BCP Pump Overhaul", href: "/services#bcp-overhauling" },
-                    { label: "Motor Repair & Rewinding", href: "/services#motor-rewinding" },
-                    { label: "Reverse Engineering", href: "/services#reverse-engineering" },
-                    { label: "Spare Parts", href: "/services#components-procurement" },
-                    { label: "Quality & Compliance", href: "/iso-certificate" },
+                    { label: "BCP Pump Overhaul", href: "/bcp-overhauling-services" },
+                    { label: "Motor Repair & Rewinding", href: "/motor-rewinding-services" },
+                    { label: "Testing & Quality Assurance", href: "/testing-quality-assurance" },
+                    { label: "Reverse Engineering", href: "/reverse-engineering-custom-components" },
+                    { label: "Spare Parts", href: "/spare-parts" },
+                    { label: "Quality & Compliance", href: "/quality-compliance-confidentiality" },
                     { label: "Partner With Us", href: "/contact?subject=Service%20Partnership" },
                     { label: "Case Studies", href: "/case-studies" },
                   ].map((page) => (

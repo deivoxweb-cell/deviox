@@ -1,7 +1,6 @@
 "use client";
 import React, { useMemo, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, ListFilter, Search, X } from "lucide-react";
 
@@ -38,18 +37,6 @@ const categories = [
   "Sealing and joints",
   "Cooling circuit",
   "Kits",
-];
-
-const representativeImages = [
-  { src: "/images/spares-overview-image1.png", alt: "Packaged stator coil" },
-  { src: "/images/spares-overview-image2.png", alt: "Packaged bearing sleeves" },
-  { src: "/images/spares-overview-image3.png", alt: "Packaged thrust pads" },
-  { src: "/images/spares-overview-image4.jpeg", alt: "Packaged thrust collar" },
-  { src: "/images/spares-overview-image5.jpeg", alt: "Packaged winding terminals" },
-  { src: "/images/spares-overview-image6.jpeg", alt: "Packaged plain bearings" },
-  { src: "/images/spares-overview-image7.png", alt: "Packaged pump impeller" },
-  { src: "/images/spares-overview-image8.jpeg", alt: "Packaged metal-bearing thrust pads" },
-  { src: "/images/spares-overview-image9.png", alt: "Packaged tilting pads" },
 ];
 
 export default function PartsCataloguePage() {
@@ -170,41 +157,76 @@ export default function PartsCataloguePage() {
         </div>
       </section>
 
-      <section className="px-4 py-12 sm:px-8 sm:py-16 lg:px-16">
-        <div className="mx-auto max-w-[90rem] rounded-[1.5rem] border border-amber-300/60 bg-amber-50 p-5 sm:p-7">
-          <p className="text-sm font-bold text-amber-950">
-            Catalogue starter list — items are not confirmed stock or an offer to supply.
-          </p>
-          <p className="mt-2 text-sm leading-relaxed text-amber-950/75">
-            The workbook marks every suggested item as not ready for website publication and says the list is a planning aid, not a statement of DEI VOX stock or capability. Use this catalogue to submit parts for evaluation. We will confirm whether a part can be supplied, its specification, route, availability, lead time, documents and quotation after reviewing your request.
-          </p>
-          <p className="mt-3 text-xs leading-relaxed text-amber-950/60">
-            Placeholder part IDs are for catalogue reference only; they are not OEM part numbers.
-          </p>
-        </div>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { value: "23", label: "Suggested parts in workbook" },
-            { value: "0", label: "Approved for publication" },
-            { value: "6", label: "Catalogue categories" },
-            { value: "10", label: "High-priority suggestions" },
-          ].map((item) => (
-            <div key={item.label} className="rounded-2xl border border-black/5 bg-white p-5">
-              <p className="text-3xl font-extrabold tracking-tighter">{item.value}</p>
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] text-black/45">
-                {item.label}
-              </p>
+      <section className="px-4 pt-12 sm:px-8 sm:pt-16 lg:px-16">
+        <div className="mx-auto max-w-[90rem]">
+          <div
+            id="quote-list"
+            className="scroll-mt-28 rounded-[1.75rem] bg-black p-6 text-white sm:p-8"
+          >
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent">
+                  Your request
+                </p>
+                <h2 className="mt-2 text-2xl font-extrabold uppercase tracking-tight">
+                  Quote list <span className="text-white/35">({quoteList.length})</span>
+                </h2>
+              </div>
+              <Link
+                href={requestHref}
+                className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-4 text-xs font-bold uppercase tracking-wider transition-colors ${
+                  quoteList.length
+                    ? "bg-accent text-black hover:bg-accent/80"
+                    : "border border-white/20 text-white hover:border-accent hover:text-accent"
+                }`}
+              >
+                {quoteList.length
+                  ? "Submit Parts for Evaluation"
+                  : "Submit a Part for Evaluation"}
+                <ArrowUpRight size={15} />
+              </Link>
             </div>
-          ))}
+            {quoteList.length ? (
+              <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+                {quoteList.map((part) => (
+                  <li
+                    key={part.id}
+                    className="flex items-center justify-between gap-3 rounded-xl bg-white/[0.06] px-4 py-3"
+                  >
+                    <span className="text-sm text-white/75">
+                      <span className="mr-2 text-xs text-white/35">{part.id}</span>
+                      {part.name}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => togglePart(part)}
+                      aria-label={`Remove ${part.name} from quote list`}
+                      className="rounded-full p-2 text-white/40 hover:bg-white/10 hover:text-white"
+                    >
+                      <X size={15} />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-4 text-sm leading-relaxed text-white/45">
+                Add one or more parts to send a combined request, or submit a
+                single part for evaluation.
+              </p>
+            )}
+          </div>
         </div>
       </section>
 
-      <section id="catalogue" className="scroll-mt-28 px-4 pb-20 sm:px-8 lg:px-16">
+      <section
+        id="catalogue"
+        className="scroll-mt-28 px-4 pb-20 pt-10 sm:px-8 lg:px-16"
+      >
         <div className="mx-auto max-w-[90rem]">
           <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-                STARTER PARTS LIST
+                PARTS CATALOGUE
               </p>
               <h2 className="text-3xl font-extrabold uppercase tracking-tighter sm:text-5xl">
                 Filter the catalogue.
@@ -325,78 +347,6 @@ export default function PartsCataloguePage() {
             </div>
           )}
 
-          <div id="quote-list" className="mt-10 scroll-mt-28 rounded-[1.75rem] bg-black p-6 text-white sm:p-8">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent">Your request</p>
-                <h2 className="mt-2 text-2xl font-extrabold uppercase tracking-tight">
-                  Quote list <span className="text-white/35">({quoteList.length})</span>
-                </h2>
-              </div>
-              <Link
-                href={requestHref}
-                className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-4 text-xs font-bold uppercase tracking-wider transition-colors ${
-                  quoteList.length ? "bg-accent text-black hover:bg-accent/80" : "border border-white/20 text-white hover:border-accent hover:text-accent"
-                }`}
-              >
-                {quoteList.length ? "Submit Parts for Evaluation" : "Submit a Part for Evaluation"}
-                <ArrowUpRight size={15} />
-              </Link>
-            </div>
-            {quoteList.length ? (
-              <ul className="mt-6 grid gap-2 sm:grid-cols-2">
-                {quoteList.map((part) => (
-                  <li key={part.id} className="flex items-center justify-between gap-3 rounded-xl bg-white/[0.06] px-4 py-3">
-                    <span className="text-sm text-white/75">
-                      <span className="mr-2 text-xs text-white/35">{part.id}</span>
-                      {part.name}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => togglePart(part)}
-                      aria-label={`Remove ${part.name} from quote list`}
-                      className="rounded-full p-2 text-white/40 hover:bg-white/10 hover:text-white"
-                    >
-                      <X size={15} />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-4 text-sm leading-relaxed text-white/45">
-                Add one or more parts to send a combined request, or submit a single part for evaluation.
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f5f5f0] px-4 py-20 sm:px-8 sm:py-24 lg:px-16">
-        <div className="mx-auto max-w-[90rem]">
-          <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-              REPRESENTATIVE PART PHOTOGRAPHS
-            </p>
-            <h2 className="text-3xl font-extrabold uppercase tracking-tighter sm:text-5xl">
-              Example components.
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-black/50">
-              These photos illustrate component types; they do not confirm that any listed part is currently stocked or available to supply.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {representativeImages.map((image) => (
-              <div key={image.src} className="relative aspect-square overflow-hidden rounded-2xl bg-white">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -455,12 +405,10 @@ export default function PartsCataloguePage() {
             Ready to request a quotation?
           </h2>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-white/55 sm:text-base">
-            Open your quote list, or send us a part list, drawing or nameplate. We aim to respond within 24 business hours and can sign your NDA on request.
+            Send us a part list, drawing or nameplate. We aim to respond within
+            24 business hours and can sign your NDA on request.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="#quote-list" className="inline-flex items-center gap-3 rounded-full bg-accent px-5 py-3 text-xs font-bold uppercase tracking-wider text-black">
-              Open My Quote List <ArrowUpRight size={15} />
-            </Link>
             <Link href="/contact?subject=Spare%20Parts%20Request&message=Please%20evaluate%20this%20part%20for%20supply.%20I%20will%20provide%20a%20part%20list%2C%20drawing%20or%20nameplate." className="inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white hover:border-accent hover:text-accent">
               Submit a Part for Evaluation <ArrowUpRight size={15} />
             </Link>
@@ -476,11 +424,11 @@ export default function PartsCataloguePage() {
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {[
                 ["Spare Parts Overview", "/spare-parts"],
-                ["Reverse Engineering & Custom Components", "/services#reverse-engineering"],
-                ["BCP Pump Overhaul", "/services#bcp-overhauling"],
-                ["BCP Motor Repair & Rewinding", "/services#motor-rewinding"],
+                ["Reverse Engineering & Custom Components", "/reverse-engineering-custom-components"],
+                ["BCP Pump Overhaul", "/bcp-overhauling-services"],
+                ["BCP Motor Repair & Rewinding", "/motor-rewinding-services"],
                 ["Multi-Make Capability", "/make-models-supported"],
-                ["Testing & Quality Assurance", "/iso-certificate"],
+                ["Testing & Quality Assurance", "/testing-quality-assurance"],
                 ["Partner With Us", "/contact?subject=Service%20Partnership"],
               ].map(([label, href]) => (
                 <Link key={label} href={href} className="text-[10px] font-semibold text-white/45 hover:text-accent">

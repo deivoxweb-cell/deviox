@@ -305,7 +305,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full bg-transparent py-2 text-black text-base focus:outline-none font-bold appearance-none cursor-pointer rounded-none relative z-10"
                     >
-                      <option value="">Select Domain...</option>
+                      <option value="">Select Nature of Enquiry...</option>
                       {SUBJECTS.map((s) => (
                         <option key={s} value={s}>{s}</option>
                       ))}

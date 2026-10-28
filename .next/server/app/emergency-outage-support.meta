@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/emergency-outage-support/layout,_N_T_/emergency-outage-support/page,_N_T_/emergency-outage-support"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/emergency-outage-support/__PAGE__",
+    "/emergency-outage-support",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -18,7 +18,8 @@ const BCP_SPECIALTIES = [
   { value: "200+", label: "Pumps overhauled", icon: Cog },
   { value: "3 ISO", label: "Quality, environment, safety", icon: BadgeCheck },
   { value: "Make in India", label: "Engineered at our own facility", icon: Factory },
-  { value: "In-situ", label: "Casing machining on site", icon: Wrench },
+  { value: "In-situ", label: "BCP casing machining on site", icon: Wrench },
+  { value: "BCP Repair", label: "On-site BCP Overhaul", icon: Wrench },
 ];
 
 const AboutSection = () => {

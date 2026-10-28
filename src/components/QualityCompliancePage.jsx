@@ -94,17 +94,6 @@ const ethicsPractices = [
   },
 ];
 
-const supplierDocuments = [
-  "Company registration details, including GSTIN and CIN",
-  "ISO 9001, ISO 14001 and ISO 45001 certificates",
-  "Quality policy and HSE policy",
-  "Code of conduct and anti-bribery statement",
-  "Facility and equipment list",
-  "Bank and tax details for onboarding",
-  "Insurance certificates",
-  "Completed customer supplier questionnaires",
-];
-
 const faqs = [
   {
     question: "Which certifications do you hold?",
@@ -223,38 +212,27 @@ export default function QualityCompliancePage() {
       </section>
 
       <section className="px-6 py-20 sm:py-28 lg:px-16">
-        <div className="mx-auto grid max-w-[90rem] gap-12 lg:grid-cols-12 lg:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-black/10 lg:col-span-5">
-            <Image
-              src="/images/quality-compliance-image1.png"
-              alt="DEI VOX technicians carrying out controlled pump inspection and service work"
-              fill
-              sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="lg:col-span-7">
-            <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-              TRUST BUILT INTO EVERY ASSIGNMENT
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+            TRUST BUILT INTO EVERY ASSIGNMENT
+          </p>
+          <h2 className="text-3xl font-extrabold uppercase leading-[0.95] tracking-tighter sm:text-5xl">
+            Confidence from the first review.
+          </h2>
+          <div className="mt-7 space-y-5 text-base leading-relaxed text-black/60">
+            <p>
+              Boiler circulation pumps sit at the heart of critical plant, and
+              the companies that service them are chosen carefully. Behind
+              every repair is a question of trust: will the work be done to a
+              controlled standard, will drawings and customer data stay
+              private, and will the supplier behave properly in international
+              business?
             </p>
-            <h2 className="text-3xl font-extrabold uppercase leading-[0.95] tracking-tighter sm:text-5xl">
-              Confidence from the first review.
-            </h2>
-            <div className="mt-7 space-y-5 text-base leading-relaxed text-black/60">
-              <p>
-                Boiler circulation pumps sit at the heart of critical plant, and
-                the companies that service them are chosen carefully. Behind
-                every repair is a question of trust: will the work be done to a
-                controlled standard, will drawings and customer data stay
-                private, and will the supplier behave properly in international
-                business?
-              </p>
-              <p>
-                This page sets out how DEI VOX answers those questions—from our
-                certifications and quality system to the rules we work to and
-                the way we protect information and customer relationships.
-              </p>
-            </div>
+            <p>
+              This page sets out how DEI VOX answers those questions—from our
+              certifications and quality system to the rules we work to and
+              the way we protect information and customer relationships.
+            </p>
           </div>
         </div>
       </section>
@@ -501,7 +479,7 @@ export default function QualityCompliancePage() {
             </p>
             <p className="mt-4 text-base leading-relaxed text-black/60">
               We do not use OEM logos or present our parts or services as
-              OEM-supplied unless they are.
+              OEM-supplied.
             </p>
           </div>
         </div>
@@ -553,79 +531,6 @@ export default function QualityCompliancePage() {
               If your company requires a security questionnaire, we are glad to
               complete one.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-20 sm:py-28 lg:px-16">
-        <div className="mx-auto grid max-w-[90rem] gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-accent/20">
-              <FileCheck2 size={22} />
-            </div>
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">
-              DOCUMENTS AVAILABLE ON REQUEST
-            </p>
-            <h2 className="text-3xl font-extrabold uppercase leading-tight tracking-tighter sm:text-5xl">
-              Supplier information pack.
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-black/55">
-              For supplier approval, onboarding or review, contact us to
-              request the relevant documents.
-            </p>
-            <Link
-              href="/contact?subject=Supplier%20Information%20Pack"
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-black px-6 py-4 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent hover:text-black"
-            >
-              Request Supplier Pack <ArrowUpRight size={15} />
-            </Link>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:col-span-7">
-            {supplierDocuments.map((document, index) => (
-              <div
-                key={document}
-                className="flex gap-4 rounded-2xl border border-black/5 bg-white p-5"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/20 text-[10px] font-bold text-green-950">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="pt-1 text-sm leading-relaxed text-black/65">{document}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-20 sm:py-28 lg:px-16">
-        <div className="mx-auto grid max-w-[90rem] gap-12 lg:grid-cols-12 lg:items-center">
-          <div className="lg:col-span-5">
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-              AUDITS &amp; CUSTOMER VISITS
-            </p>
-            <h2 className="text-3xl font-extrabold uppercase leading-tight tracking-tighter sm:text-5xl">
-              Welcome to review our work.
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-black/55">
-              We welcome supplier audits and visits to our workshop. Remote
-              audits by video are also possible. Customer witness of testing
-              and inspection can be arranged as described on our Testing and
-              Quality Assurance page.
-            </p>
-            <Link
-              href="/contact?subject=Plan%20an%20Audit%20or%20Visit"
-              className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black hover:text-green-900"
-            >
-              Plan an audit or visit <ArrowUpRight size={15} />
-            </Link>
-          </div>
-          <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] lg:col-span-7">
-            <Image
-              src="/images/quality-compliance-image1.png"
-              alt="Workshop visit and inspection of a BCP service job"
-              fill
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-cover"
-            />
           </div>
         </div>
       </section>

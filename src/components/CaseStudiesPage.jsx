@@ -21,7 +21,7 @@ const caseStudies = [
     solution: [
       "Repaired the rotor using root-cause analysis and advanced technology.",
     ],
-    images: [1],
+    images: ["/images/pump-overhaul-refurbishment-2.png"],
   },
   {
     title: "BCP Motor Thrust Disc Material Issue",
@@ -38,7 +38,7 @@ const caseStudies = [
     solution: [
       "Used an advanced material to help prevent frequent wear.",
     ],
-    images: [2, 3, 4],
+    images: ["/images/spares-overview-image8.jpeg", 3, 4],
   },
   {
     title: "Casing Leakage Arrest",
@@ -130,8 +130,10 @@ const caseStudies = [
   },
 ];
 
-const photoPath = (number) =>
-  `/images/case-study-${String(number).padStart(2, "0")}.png`;
+const photoPath = (image) =>
+  typeof image === "number"
+    ? `/images/case-study-${String(image).padStart(2, "0")}.png`
+    : image;
 
 function CaseCard({ study, index }) {
   const isMultiPhoto = study.images.length > 1;
@@ -143,7 +145,7 @@ function CaseCard({ study, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: (index % 2) * 0.08 }}
       viewport={{ once: true, amount: 0.1 }}
-      className="grid scroll-mt-32 overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-xl shadow-black/5 lg:grid-cols-12"
+      className="grid scroll-mt-32 overflow-hidden rounded-[2rem] border-2 border-black/15 bg-white shadow-xl shadow-black/5 lg:grid-cols-12"
     >
       <div
         className={`grid gap-1 bg-black/5 p-1 ${

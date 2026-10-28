@@ -13,6 +13,13 @@ const team = [
   { name: "Namita Singh", role: "Manager – Sales", qualification: "", tag: "" },
   { name: "Ritika", role: "Manager (HR)", qualification: "", tag: "" },
   { name: "Rama", role: "Manager (Accounts)", qualification: "", tag: "" },
+  { name: "Shantaram", role: "Head – Service", qualification: "", tag: "" },
+  { name: "Dahnpal M.", role: "Head – Dispatch & Logistics", qualification: "", tag: "" },
+  { name: "Ritika", role: "Head – Procurement", qualification: "", tag: "" },
+  { name: "Ankit", role: "Head – Documents & IT", qualification: "", tag: "" },
+  { name: "Ritika", role: "Head – HR", qualification: "", tag: "" },
+  { name: "Ramadevi", role: "Head – Accounts", qualification: "", tag: "" },
+  { name: "Abhay", role: "Head – Import/Export", qualification: "", tag: "" },
 ];
 
 export default function TeamSection() {
@@ -107,7 +114,7 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1">
           {team.map((member, i) => (
             <motion.div
-              key={member.name}
+              key={`${member.name}-${member.role}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
@@ -144,12 +151,12 @@ export default function TeamSection() {
 
               <div className="mt-auto flex flex-col gap-2 pt-8 border-t border-white/5">
                 {member.email && (
-                  <a href={`mailto:${member.email}`} className="text-[10px] font-bold text-white/40 hover:text-accent transition-colors">
+                  <a href={`mailto:${member.email}`} className="text-sm font-bold text-accent hover:text-white transition-colors">
                     {member.email}
                   </a>
                 )}
                 {member.phone && (
-                  <span className="text-[10px] font-bold text-white/20">
+                  <span className="text-sm font-bold text-accent">
                     {member.phone}
                   </span>
                 )}

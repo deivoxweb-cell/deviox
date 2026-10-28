@@ -71,6 +71,7 @@ const componentGroups = [
       "Diffusers and wear rings",
       "Shafts and sleeves",
       "Thrust and journal bearing components",
+      "Bearing housings and end covers",
       "Casing components and flange parts",
       "Studs, nuts and special fasteners",
     ],
@@ -79,7 +80,6 @@ const componentGroups = [
     title: "Motor",
     description: "Components for glandless BCP motor service and restoration.",
     components: [
-      "Bearing housings and end covers",
       "Winding coils",
       "Stators and stampings",
       "Rotor and stator components",
@@ -97,7 +97,7 @@ const faqs = [
   {
     question: "Which parts do you supply?",
     answer:
-      "See the categories above. If you don’t see your part, send us a photo or drawing and we’ll confirm whether we can supply it.",
+      "We supply almost all BCP spares, whether motor- or pump-specific.",
   },
   {
     question: "Are your parts OEM parts?",
@@ -294,10 +294,9 @@ export default function SparePartsPage() {
           </div>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/10 pt-7">
             {[
-              { label: "Partner with us", href: "/contact?subject=Service%20Partnership" },
-              { label: "BCP Pump Overhaul", href: "/services#bcp-overhauling" },
-              { label: "BCP Motor Repair & Rewinding", href: "/services#motor-rewinding" },
-              { label: "Reverse Engineering", href: "/services#reverse-engineering" },
+              { label: "BCP Pump Overhaul", href: "/bcp-overhauling-services" },
+              { label: "BCP Motor Repair & Rewinding", href: "/motor-rewinding-services" },
+              { label: "Reverse Engineering", href: "/reverse-engineering-custom-components" },
             ].map((item) => (
               <Link
                 key={item.label}
@@ -410,12 +409,6 @@ export default function SparePartsPage() {
                 >
                   Request a Parts Quote <ArrowUpRight size={15} />
                 </Link>
-                <Link
-                  href="/contact?subject=Become%20a%20Distributor"
-                  className="inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white hover:border-accent hover:text-accent"
-                >
-                  Become a Distributor <ArrowUpRight size={15} />
-                </Link>
                 <a
                   href="https://wa.me/917428200229?text=Hello%21%20I%27m%20interested%20in%20BCP%20spare%20parts."
                   className="inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white hover:border-accent hover:text-accent"
@@ -423,10 +416,10 @@ export default function SparePartsPage() {
                   WhatsApp Us <ArrowUpRight size={15} />
                 </a>
                 <a
-                  href="mailto:sales@deivox.co.in"
+                  href="mailto:Sales@deivox.co.in"
                   className="inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white hover:border-accent hover:text-accent"
                 >
-                  Email sales@deivox.co.in <ArrowUpRight size={15} />
+                  Email: Sales@deivox.co.in <ArrowUpRight size={15} />
                 </a>
               </div>
               <div className="mt-9 border-t border-white/10 pt-5">
@@ -435,13 +428,12 @@ export default function SparePartsPage() {
                 </p>
                 <div className="flex flex-wrap gap-x-5 gap-y-2">
                   {[
-                    { label: "Reverse Engineering & Custom Components", href: "/services#reverse-engineering" },
-                    { label: "BCP Pump Overhaul", href: "/services#bcp-overhauling" },
-                    { label: "BCP Motor Repair & Rewinding", href: "/services#motor-rewinding" },
+                    { label: "Reverse Engineering & Custom Components", href: "/reverse-engineering-custom-components" },
+                    { label: "BCP Pump Overhaul", href: "/bcp-overhauling-services" },
+                    { label: "BCP Motor Repair & Rewinding", href: "/motor-rewinding-services" },
                     { label: "Multi-Make Capability", href: "/make-models-supported" },
-                    { label: "Testing & Quality Assurance", href: "/iso-certificate" },
-                    { label: "Emergency & Outage Support", href: "/contact" },
-                    { label: "Partner With Us", href: "/contact?subject=Service%20Partnership" },
+                    { label: "Testing & Quality Assurance", href: "/testing-quality-assurance" },
+                    { label: "Emergency & Outage Support", href: "/emergency-outage-support" },
                   ].map((item) => (
                     <Link
                       key={item.label}

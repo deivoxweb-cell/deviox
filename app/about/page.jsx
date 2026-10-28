@@ -10,12 +10,12 @@ const capabilities = [
   {
     name: "BCP Stator Repair & Rewinding",
     detail: "Solutions for complex stator and winding-related failures.",
-    href: "/services#motor-rewinding",
+    href: "/motor-rewinding-services",
   },
   {
     name: "On-Site BCP Overhauling",
     detail: "Specialist on-site overhaul solutions for suitable applications.",
-    href: "/services#bcp-overhauling",
+    href: "/bcp-overhauling-services",
   },
   {
     name: "BCP Motor Revival",
@@ -25,17 +25,17 @@ const capabilities = [
   {
     name: "OEM Spare Parts Refurbishment",
     detail: "Restoration and reuse of eligible original components.",
-    href: "/services#components-procurement",
+    href: "/spare-parts",
   },
   {
     name: "Expedited Motor Rewinding",
     detail: "Targeted turnaround of approximately 4–6 weeks, subject to condition, scope and material availability.",
-    href: "/services#motor-rewinding",
+    href: "/motor-rewinding-services",
   },
   {
     name: "Reverse Engineering & Equivalent Spares",
     detail: "Alternative components designed for application suitability and one-to-one fitment, subject to technical verification.",
-    href: "/services#reverse-engineering",
+    href: "/reverse-engineering-custom-components",
   },
 ];
 
@@ -329,12 +329,6 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-between gap-8 rounded-full bg-accent px-6 py-4 text-xs font-bold uppercase tracking-wider text-black transition-transform hover:-translate-y-1"
                 >
                   Discuss Your Requirement <ArrowUpRight size={16} />
-                </Link>
-                <Link
-                  href="/contact?subject=Technical%20Assessment"
-                  className="inline-flex items-center justify-between gap-8 rounded-full border border-white/20 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:border-accent hover:text-accent"
-                >
-                  Request a Technical Assessment <ArrowUpRight size={16} />
                 </Link>
               </div>
             </div>

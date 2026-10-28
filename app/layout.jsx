@@ -221,6 +221,18 @@ export default function RootLayout({ children }) {
 
         <main className="grow">{children}</main>
 
+        <div className="bg-[#f5f5f0] px-6 py-8 text-black lg:px-16">
+          <div className="mx-auto max-w-[1600px] rounded-2xl border border-black/10 bg-white px-6 py-5 shadow-sm sm:px-8">
+            <p className="text-xs leading-relaxed text-black/60">
+              Disclaimer: DEI VOX India Pvt. Ltd. is an independent, multi-make
+              BCP (Boiler circulation pump) aftermarket service provider and is
+              not affiliated with or endorsed by any Boiler circulation pump -
+              original equipment manufacturer (OEM). All third-party trademarks,
+              logos, brand names, model, photo and intellectual property remain
+              the property of their respective owners.
+            </p>
+          </div>
+        </div>
         <Footer />
         <WhatsAppChat />
 

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/motor-rewinding-services/layout,_N_T_/motor-rewinding-services/page,_N_T_/motor-rewinding-services"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/motor-rewinding-services/__PAGE__",
+    "/motor-rewinding-services",
+    "/_index",
+    "/_head"
+  ]
+}

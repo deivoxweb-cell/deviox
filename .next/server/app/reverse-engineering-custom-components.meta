@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/reverse-engineering-custom-components/layout,_N_T_/reverse-engineering-custom-components/page,_N_T_/reverse-engineering-custom-components"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/reverse-engineering-custom-components/__PAGE__",
+    "/reverse-engineering-custom-components",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -7,9 +7,9 @@ const stats = [
   { value: "65+", label: "BCPs Overhauled" },
   { value: "85+", label: "BCPs Troubleshot" },
   { value: "22+", label: "BCP Motors Rewound" },
-  { value: "500–685 MW", label: "Unit Experience" },
+  { value: "1000 MW", label: "Unit Capacity" },
   { value: "Multiple", label: "BCP Designs & Configurations" },
-  { value: "India & Overseas", label: "Service Capability" },
+  { value: "Worldwide", label: "Service Capability" },
 ];
 
 const capabilityRows = [
@@ -33,19 +33,6 @@ const capabilityRows = [
     title: "Troubleshooting & Site Support",
     description: "Specialist diagnosis and corrective action for BCP operating issues.",
   },
-];
-
-const projectReferences = [
-  { site: "Jindal Power, Jhajjar", capacity: "2 × 660 MW", scope: "Spares, Refurbishment & Installation" },
-  { site: "Adani Power, Mundra", capacity: "2 × 660 MW + 5 × 660 MW", scope: "Spares & Reconditioning" },
-  { site: "MB Power, Anuppur", capacity: "2 × 600 MW", scope: "BCP Spares Supply" },
-  { site: "Adani Power, Tiroda", capacity: "5 × 660 MW", scope: "BCP Servicing" },
-  { site: "Adani Power, Raipur", capacity: "2 × 685 MW", scope: "Re-engineered & Supplied Spares" },
-  { site: "Adani Power, Raigarh", capacity: "1 × 600 MW", scope: "Complete BCP Overhaul" },
-  { site: "Adani Power, Raigarh", capacity: "1 × 600 MW", scope: "Major BCP Spares Supply" },
-  { site: "Tata Power, Maharashtra", capacity: "1 × 500 MW", scope: "BCP Overhaul" },
-  { site: "Tata Power, Maharashtra", capacity: "1 × 500 MW", scope: "BCP Installation" },
-  { site: "Kakatiya Thermal Power Station", capacity: "1 × 500 MW", scope: "BCP Installation" },
 ];
 
 export default function OurExperiencePage() {
@@ -95,9 +82,8 @@ export default function OurExperiencePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-8 max-w-2xl text-base font-medium leading-relaxed text-white/70 md:text-xl"
           >
-            DEI VOX has successfully executed Boiler Circulation Pump (BCP) repair,
-            refurbishment, overhaul, installation, troubleshooting and spare-supply
-            assignments across major power generation facilities in India.
+            DEI VOX has successfully executed all-makes of BCP till date
+            (Japanese, UK, German and China-make BCPs).
           </motion.p>
         </div>
       </section>
@@ -154,7 +140,7 @@ export default function OurExperiencePage() {
             <div className="h-px w-full bg-black/10" />
             <p className="text-base font-medium leading-relaxed text-black/65">
               Our experience covers multiple BCP designs, configurations and equipment generations,
-              including units ranging from 500 MW to 685 MW, with capability extending from
+              including unit capacities up to 1000 MW, with capability extending from
               individual component supply to complete BCP overhaul and installation.
             </p>
           </div>
@@ -190,52 +176,6 @@ export default function OurExperiencePage() {
               <p className="text-sm leading-relaxed text-black/60">{item.description}</p>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      <section id="project-references" className="bg-black py-20 text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-16">
-          <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
-                Selected Project References
-              </p>
-              <h3 className="text-3xl font-extrabold uppercase leading-tight tracking-[-0.05em] sm:text-5xl">
-                Experience across major thermal power assets
-              </h3>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/3">
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-left">
-                <thead className="bg-white/5 text-accent">
-                  <tr>
-                    <th className="px-5 py-4 text-left text-[10px] font-bold uppercase tracking-[0.25em]">
-                      Site
-                    </th>
-                    <th className="px-5 py-4 text-left text-[10px] font-bold uppercase tracking-[0.25em]">
-                      Unit Capacity
-                    </th>
-                    <th className="px-5 py-4 text-left text-[10px] font-bold uppercase tracking-[0.25em]">
-                      Scope of Work
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {projectReferences.map((project, index) => (
-                    <tr key={`${project.site}-${index}`} className="border-t border-white/10">
-                      <td className="px-5 py-4 align-top text-sm font-semibold text-white/90">
-                        {project.site}
-                      </td>
-                      <td className="px-5 py-4 align-top text-sm text-white/70">{project.capacity}</td>
-                      <td className="px-5 py-4 align-top text-sm text-white/70">{project.scope}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </section>
 
