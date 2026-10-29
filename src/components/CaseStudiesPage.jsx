@@ -21,7 +21,7 @@ const caseStudies = [
     solution: [
       "Repaired the rotor using root-cause analysis and advanced technology.",
     ],
-    images: ["/images/pump-overhaul-refurbishment-2.png"],
+    images: ["/images/case-1.jpeg"],
   },
   {
     title: "BCP Motor Thrust Disc Material Issue",
@@ -38,7 +38,8 @@ const caseStudies = [
     solution: [
       "Used an advanced material to help prevent frequent wear.",
     ],
-    images: ["/images/spares-overview-image8.jpeg", 3, 4],
+    images: [3, 4],
+    fillPhotoArea: true,
   },
   {
     title: "Casing Leakage Arrest",
@@ -156,7 +157,9 @@ function CaseCard({ study, index }) {
           <div
             key={image}
             className={`relative overflow-hidden bg-black/10 ${
-              study.images.length === 3 && imageIndex === 0
+              study.fillPhotoArea
+                ? "aspect-auto min-h-[30rem]"
+                : study.images.length === 3 && imageIndex === 0
                 ? "col-span-2 aspect-[16/10] lg:col-span-1 lg:row-span-2 lg:aspect-auto"
                 : isMultiPhoto
                   ? "aspect-[4/3]"

@@ -768,6 +768,9 @@
   .aspect-\[21\/9\] {
     aspect-ratio: 21/9;
   }
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
@@ -905,6 +908,9 @@
   }
   .min-h-\[22rem\] {
     min-height: 22rem;
+  }
+  .min-h-\[30rem\] {
+    min-height: 30rem;
   }
   .min-h-\[70vh\] {
     min-height: 70vh;
