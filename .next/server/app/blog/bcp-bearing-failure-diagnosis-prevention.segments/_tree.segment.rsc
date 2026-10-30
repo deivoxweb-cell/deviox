@@ -1,3 +1,3 @@
 :HL["/_next/static/css/a6fc798b75e96a95.css","style"]
-:HL["/_next/static/css/c1c6854036915018.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bcp-bearing-failure-diagnosis-prevention","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"eQgtJ1YR0_liQ-ETiASUc"}
+:HL["/_next/static/css/39ff3837ba3a7afd.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bcp-bearing-failure-diagnosis-prevention","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"jPsAJuTBI3ykbTybso5Qi"}

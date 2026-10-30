@@ -83,7 +83,7 @@ export default function OurExperiencePage() {
             className="mt-8 max-w-2xl text-base font-medium leading-relaxed text-white/70 md:text-xl"
           >
             DEI VOX has successfully executed all-makes of BCP till date
-            (Japanese, UK, German and China-make BCPs).
+            (Japanese, German and China-make BCPs).
           </motion.p>
         </div>
       </section>

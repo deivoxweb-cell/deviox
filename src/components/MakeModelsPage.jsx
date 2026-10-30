@@ -6,10 +6,10 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const images = [
-  {
-    src: "/images/multi-make-capability-01.png",
-    alt: "DEI VOX engineers carrying out on-site boiler circulation pump work",
-  },
+  // {
+  //   src: "/images/multi-make-capability-01.png",
+  //   alt: "DEI VOX engineers carrying out on-site boiler circulation pump work",
+  // },
   {
     src: "/images/multi-make-capability-02.png",
     alt: "DEI VOX technicians overhauling a large industrial pump",
@@ -177,13 +177,13 @@ export default function MakeModelsPage() {
               hard to service elsewhere.
             </p>
             <p className="text-base leading-relaxed text-black/65">
-              We have hands-on experience working on Japanese-, German-, UK-
-              and China-make BCP units.
+              We have hands-on experience working on Japanese-, German- and
+              China-make BCP units.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {["UK Make", "Japanese Make", "China Make", "German Make"].map((make, index) => (
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {["Japanese Make", "China Make", "German Make"].map((make, index) => (
               <motion.div
                 key={make}
                 initial={{ opacity: 0, y: 18 }}
@@ -199,7 +199,7 @@ export default function MakeModelsPage() {
             ))}
           </div>
 
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {images.map((image, index) => (
               <motion.div
                 key={image.src}
@@ -215,7 +215,7 @@ export default function MakeModelsPage() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
               </motion.div>

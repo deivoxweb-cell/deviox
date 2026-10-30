@@ -1,10 +1,10 @@
-// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\case-studies\layout.jsx
-import * as entry from '../../../../../app/case-studies/layout.js'
+// File: C:\Users\shaan\OneDrive\Desktop\deivox\app\make-models-supported\layout.jsx
+import * as entry from '../../../../../app/make-models-supported/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 import type { InstantConfigForTypeCheckInternal } from 'next/dist/build/segment-config/app/app-segment-config.js'
 
-type TEntry = typeof import('../../../../../app/case-studies/layout.js')
+type TEntry = typeof import('../../../../../app/make-models-supported/layout.js')
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }
